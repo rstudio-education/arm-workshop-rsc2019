@@ -1,0 +1,21 @@
+# Theme metadata
+name = "advr"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#ef8759"
+primary_light = "#ef8759"
+primary_dark = "#ef8759"
+
+# Menu
+menu_primary = "#6999cd"
+menu_text = "#fff"
+menu_text_active = "#343c56"
+menu_title = "#fff"
+
+# Backgrounds
+background = "#efede8"
+home_section_odd = "#efede8"
+home_section_even = "#efede8"

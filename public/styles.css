@@ -17,7 +17,7 @@
  **************************************************/
 
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 16px;
   color: rgba(0,0,0,0.8);
   line-height: 1.65;
@@ -33,7 +33,7 @@ body {
   font-size: 1rem;
   line-height: inherit;
   color: inherit;
-  background-color: #fff;
+  background-color: #efede8;
   margin-top: 71px; /* Offset body content by navbar height. */
   padding-top: 0;
   counter-reset: captions;
@@ -71,7 +71,7 @@ ul, ol, dl {
 
 /* Navigation bar text */
 .navbar-light {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'PT Serif', sans-serif;
   font-weight: 400;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
@@ -79,7 +79,7 @@ ul, ol, dl {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'PT Serif', sans-serif;
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: .5rem;
@@ -108,14 +108,14 @@ h4, h5, h6 {
 
 a,
 h3.article-title a:hover {
-  color: #3f51b5;
+  color: #ef8759;
   text-decoration: none;
   transition: color 0.6s ease;
 }
 
 a:hover,
 a:focus {
-  color: #3f51b5;
+  color: #ef8759;
 }
 
 img,
@@ -142,7 +142,7 @@ figcaption {
   line-height: 1.25;
   font-size: 1rem;
   margin-bottom: 1.65rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'PT Serif', sans-serif;
 }
 
 figcaption.numbered:before {
@@ -297,8 +297,8 @@ small,
 }
 
 .form-control:focus {
-  border-color: #3f51b5;
-  box-shadow: 0 0 0 .2rem #757de8;
+  border-color: #ef8759;
+  box-shadow: 0 0 0 .2rem #ef8759;
 }
 
 /*************************************************
@@ -306,7 +306,7 @@ small,
  **************************************************/
 
 .modal-content {
-  background: #fff;
+  background: #efede8;
 }
 
 .modal-title {
@@ -406,7 +406,7 @@ a[data-fancybox] img {
 }
 
 .home-section {
-  background-color: rgb(255, 255, 255);
+  background-color: #efede8;
   padding: 110px 0 110px 0;
   animation: intro 0.3s both;
   animation-delay: 0.15s;
@@ -417,7 +417,7 @@ a[data-fancybox] img {
 }
 
 .home-section:nth-of-type(even) {
-  background-color: rgb(247, 247, 247);
+  background-color: #efede8;
 }
 
 @media screen and (max-width: 768px) {
@@ -511,7 +511,7 @@ a[data-fancybox] img {
 .featurette-icon {
   display: block;
   width: 100%;
-  color: #3f51b5;
+  color: #ef8759;
   font-size: 3rem;
   text-align: center;
 }
@@ -797,7 +797,7 @@ article .article-metadata {
 }
 
 .article-metadata a:hover {
-  color: #3f51b5;
+  color: #ef8759;
 }
 
 .middot-divider {
@@ -1046,11 +1046,11 @@ article .article-metadata {
 
 .experience .m-2 .border,
 .experience .col.border-right {
-  border-color: #3f51b5 !important;
+  border-color: #ef8759 !important;
 }
 
 .experience .m-2 .border.exp-fill {
-  background-color: #3f51b5 !important;
+  background-color: #ef8759 !important;
 }
 
 /*************************************************
@@ -1340,13 +1340,13 @@ a.badge:hover {
  **************************************************/
 
 .btn-primary {
-  border-color: #3f51b5;
-  background: #3f51b5;
+  border-color: #ef8759;
+  background: #ef8759;
 }
 
 .btn-outline-primary {
-  border-color: #3f51b5;
-  color: #3f51b5;
+  border-color: #ef8759;
+  color: #ef8759;
 }
 
 .btn-primary:hover,
@@ -1354,7 +1354,7 @@ a.badge:hover {
 .btn-primary.active,
 .btn-primary:visited,
 .open > .dropdown-toggle.btn-primary {
-  background: #3f51b5;
+  background: #ef8759;
 }
 
 .btn-outline-light:hover,
@@ -1367,8 +1367,8 @@ a.badge:hover {
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #3f51b5;
-  border-color: #3f51b5;
+  background-color: #ef8759;
+  border-color: #ef8759;
 }
 
 .dark .btn-outline-primary:not(:disabled):not(.disabled).active,
@@ -1379,8 +1379,8 @@ a.badge:hover {
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #3f51b5;
-  border-color: #3f51b5;
+  background-color: #ef8759;
+  border-color: #ef8759;
 }
 
 .dark .btn-outline-primary:hover {
@@ -1407,18 +1407,18 @@ a.badge:hover {
 
 .btn-toolbar .btn.btn-primary:hover,
 .btn-toolbar .btn.btn-primary:focus {
-  background-color: #757de8 !important;
+  background-color: #ef8759 !important;
 }
 
 .btn-toolbar .btn.btn-primary:active,
 .btn-toolbar .btn.btn-primary.active {
-  background-color: #002984 !important;
+  background-color: #ef8759 !important;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 .2rem #757de8;
+  box-shadow: 0 0 0 .2rem #ef8759;
 }
 
 /*************************************************
@@ -1430,7 +1430,7 @@ a.badge:hover {
 }
 
 .navbar-light {
-  background: #3f51b5 !important;
+  background: #6999cd !important;
   box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.11)
 }
 
@@ -1468,14 +1468,14 @@ nav#navbar-main li.nav-item {
 }
 
 .navbar-light .navbar-nav>.nav-item>.nav-link:hover {
-  color: #8c9eff;
+  color: #343c56;
   background-color: transparent;
 }
 
 .navbar-light .navbar-nav>li.nav-item>a.active,
 .navbar-light .navbar-nav>li.nav-item>a.active:focus,
 .navbar-light .navbar-nav>li.nav-item>a.active:hover {
-  color: #8c9eff;
+  color: #343c56;
   font-weight: 700;
   background-color: transparent !important; /* Override Bootstrap. */
 }
@@ -1497,7 +1497,7 @@ nav#navbar-main li.nav-item {
 }
 
 .dropdown-menu {
-  background-color: #3f51b5 !important;
+  background-color: #6999cd !important;
 }
 
 .dropdown-menu > li > a {
@@ -1512,17 +1512,17 @@ nav#navbar-main li.nav-item {
 
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
-  color: #8c9eff;
+  color: #343c56;
   text-decoration: none;
-  background-color: #3f51b5;
+  background-color: #6999cd;
 }
 
 .dropdown-menu > .active,
 .dropdown-menu > .active:focus,
 .dropdown-menu > .active:hover {
-  color: #3f51b5;
+  color: #6999cd;
   text-decoration: none;
-  background-color: #8c9eff;
+  background-color: #343c56;
   outline: 0;
 }
 
@@ -1531,7 +1531,7 @@ nav#navbar-main li.nav-item {
 .navbar-light .navbar-nav>.open>a:hover,
 .navbar-light .navbar-nav>.open>a:visited {
   color: #fff !important;
-  background-color: #3f51b5 !important;
+  background-color: #6999cd !important;
 }
 
 .navbar-light .navbar-brand {
@@ -1612,7 +1612,7 @@ nav#navbar-main li.nav-item {
   .navbar-light .navbar-nav .open .dropdown-menu >.nav-item> .active,
   .navbar-light .navbar-nav .open .dropdown-menu >.nav-item> .active:focus,
   .navbar-light .navbar-nav .open .dropdown-menu >.nav-item> .active:hover {
-    color: #8c9eff;
+    color: #343c56;
     background-color: transparent;
   }
 
@@ -1776,8 +1776,8 @@ div.alert a {
 }
 
 .docs-search .form-control:focus {
-  border-color: #3f51b5;
-  box-shadow: 0 0 0 3px #757de8;
+  border-color: #ef8759;
+  box-shadow: 0 0 0 3px #ef8759;
 }
 
 /* Docs sidebar. */
@@ -1842,7 +1842,7 @@ div.alert a {
 .docs-sidebar .nav>.active:hover>a,
 .docs-sidebar .nav>.active>a {
   font-weight: bold;
-  color: #3f51b5;
+  color: #ef8759;
   background-color: transparent;
 }
 
@@ -1851,7 +1851,7 @@ div.alert a {
 .docs-toggle {
   line-height: 1;
   font-size: 1.2rem;
-  color: #3f51b5;
+  color: #ef8759;
   background-color: transparent;
 }
 
@@ -1968,7 +1968,7 @@ ul.toc-top {
 
 #TableOfContents li a:hover,
 .toc-top li a:hover {
-  color: #3f51b5;
+  color: #ef8759;
   text-decoration: none;
 }
 
@@ -1976,12 +1976,12 @@ ul.toc-top {
 
 .anchorjs-link {
   font-weight: 400;
-  color: #002984;
+  color: #ef8759;
   transition: color .16s linear;
 }
 
 .anchorjs-link:hover {
-  color: #3f51b5;
+  color: #ef8759;
   text-decoration: none;
 }
 
@@ -2005,8 +2005,8 @@ body.dark,
 
 .dark .form-control:focus {
   background-color: rgb(68, 71, 90);
-  border-color: #3f51b5;
-  box-shadow: 0 0 0 .2rem #002984;
+  border-color: #ef8759;
+  box-shadow: 0 0 0 .2rem #ef8759;
 }
 
 .dark h1,
@@ -2038,7 +2038,7 @@ body.dark,
 }
 
 .dark ul.share li a {
-  background-color: #3f51b5;
+  background-color: #ef8759;
 }
 
 .dark table table {
@@ -2091,7 +2091,7 @@ body.dark,
 }
 
 .dark .card h4 a {
-  color: #3f51b5;
+  color: #ef8759;
   border-bottom: solid 1px transparent;
 }
 

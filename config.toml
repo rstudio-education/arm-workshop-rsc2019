@@ -51,11 +51,11 @@ enableGitInfo = false
 [params]
   # Color theme.
   #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
-  color_theme = "ocean"
+  color_theme = "custom-theme"
 
   # Font style.
   #   Choose from `default`, `classic`, or `playfair`.
-  font = "default"
+  font = "custom-fonts"
 
   # Project name.
   name = "Advanced R Markdown Workshop"
@@ -260,7 +260,7 @@ enableGitInfo = false
   weight = 30
 
 [[menu.main]]
-  name = "GitHub"
+  name = "GitHub Repo"
   post = "<i class=\"fas fa-external-link-alt \"></i>"
   url = "https://github.com/rstudio-education/rmarkdown-extensions-conf19"
   weight = 50

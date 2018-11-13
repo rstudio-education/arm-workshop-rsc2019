@@ -8,7 +8,6 @@
 
 [Check out the demo](https://sourcethemes.com/academic/) of what you'll get in less than 5 minutes or [view the documentation](https://sourcethemes.com/academic/docs/).
 
-[![Screenshot](https://raw.githubusercontent.com/sourcethemes/project-kickstart-r/master/project-kickstart-r.png)](https://github.com/sourcethemes/project-kickstart-r)
 
 ## Install in 5 Steps
 

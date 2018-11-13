@@ -13,12 +13,14 @@
     
     
     <item>
-      <title>Academic</title>
+      <title></title>
       <link>/home/hero/</link>
       <pubDate>Sun, 15 Oct 2017 00:00:00 -0700</pubDate>
       
       <guid>/home/hero/</guid>
-      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀</description>
+      <description>This is the website for a two-day hands-on workshop based on the book &amp;ldquo;R Markdown: The Definitive Guide&amp;rdquo;.
+This workshop will be offered January 15-16, just before rstudio::conf 2019 in Austin, TX. It is designed for those who want to take their R Markdown skills to the next level.
+  </description>
     </item>
     
     <item>

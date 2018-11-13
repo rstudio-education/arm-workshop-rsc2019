@@ -1,0 +1,15 @@
+# Font style metadata
+name = "advr"
+
+# Optional Google font URL
+google_fonts = "Lato:400,700|PT+Serif|Roboto+Mono"
+
+# Font families
+heading_font = "PT Serif"
+body_font = "Lato"
+nav_font = "PT Serif"
+mono_font = "Roboto Mono"
+
+# Font size
+font_size = "20"
+font_size_small = "16"
