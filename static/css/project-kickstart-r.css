@@ -1,0 +1,31 @@
+/* Override margins for figures. */
+figure {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Make homepage section padding compact. */
+.home-section {
+  padding: 60px 0 60px 0;
+}
+
+/* Clean, minimal style for Hero widget. */
+.hero-overlay .hero-title,
+.hero-overlay .hero-lead {
+  color: #000;
+  text-shadow: none;
+}
+
+.hero-overlay .btn {
+  color: #fff;
+  text-shadow: none;
+}
+
+.hero-overlay .hero-lead a {
+  color: #aaa;
+  text-decoration-line: underline;
+}
+
+.hero-overlay {
+  padding: 0;
+}

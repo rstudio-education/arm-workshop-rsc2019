@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Overview of AM session on Advanced R Markdown Workshop</title>
+    <link>/day2-am/</link>
+    <description>Recent content in Overview of AM session on Advanced R Markdown Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sun, 09 Sep 2018 00:00:00 -0700</lastBuildDate>
+    
+	<atom:link href="/day2-am/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Example Page</title>
+      <link>/day2-am/example-am/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 -0700</pubDate>
+      
+      <guid>/day2-am/example-am/</guid>
+      <description>In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:
+Tip 1 &amp;hellip;
+Tip 2 &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>R Markdown Page</title>
+      <link>/day2-am/rmarkdown-am/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/day2-am/rmarkdown-am/</guid>
+      <description> true  This page provides an example of using R Markdown.
+x &amp;lt;- 1:10 y &amp;lt;- round(rnorm(10, x, 1), 2) df &amp;lt;- data.frame(x, y) df ## x y ## 1 1 2.49 ## 2 2 2.34 ## 3 3 1.88 ## 4 4 3.85 ## 5 5 5.06 ## 6 6 6.61 ## 7 7 6.15 ## 8 8 9.84 ## 9 9 9.11 ## 10 10 10.86 </description>
+    </item>
+    
+  </channel>
+</rss>

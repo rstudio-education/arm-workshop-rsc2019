@@ -1,0 +1,38 @@
+---
+title: R Markdown Page
+
+date: 2018-09-09T00:00:00.000Z
+lastmod: 2018-09-09T00:00:00.000Z
+
+draft: false
+toc: true
+type: docs
+
+linktitle: R Markdown Example
+menu:
+  day2-am:
+    parent: Example Topic
+    weight: 2
+---
+
+
+<div id="TOC">
+true
+</div>
+
+<p>This page provides an example of using R Markdown.</p>
+<pre class="r"><code>x &lt;- 1:10
+y &lt;- round(rnorm(10, x, 1), 2)
+df &lt;- data.frame(x, y)
+df</code></pre>
+<pre><code>##     x     y
+## 1   1  2.49
+## 2   2  2.34
+## 3   3  1.88
+## 4   4  3.85
+## 5   5  5.06
+## 6   6  6.61
+## 7   7  6.15
+## 8   8  9.84
+## 9   9  9.11
+## 10 10 10.86</code></pre>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Advanced R Markdown Workshop on Advanced R Markdown Workshop</title>
+    <link>/</link>
+    <description>Recent content in Advanced R Markdown Workshop on Advanced R Markdown Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0700</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Example Page</title>
+      <link>/day2-am/example-am/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 -0700</pubDate>
+      
+      <guid>/day2-am/example-am/</guid>
+      <description>
+
+&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example Page</title>
+      <link>/docs/contibute/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 -0700</pubDate>
+      
+      <guid>/docs/contibute/</guid>
+      <description>
+
+&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R Markdown Page</title>
+      <link>/day2-am/rmarkdown-am/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/day2-am/rmarkdown-am/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+true
+&lt;/div&gt;
+
+&lt;p&gt;This page provides an example of using R Markdown.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
+y &amp;lt;- round(rnorm(10, x, 1), 2)
+df &amp;lt;- data.frame(x, y)
+df&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     x     y
+## 1   1  2.49
+## 2   2  2.34
+## 3   3  1.88
+## 4   4  3.85
+## 5   5  5.06
+## 6   6  6.61
+## 7   7  6.15
+## 8   8  9.84
+## 9   9  9.11
+## 10 10 10.86&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R Markdown Page</title>
+      <link>/day2-pm/rmarkdown-pm/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/day2-pm/rmarkdown-pm/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+true
+&lt;/div&gt;
+
+&lt;p&gt;This page provides an example of using R Markdown.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
+y &amp;lt;- round(rnorm(10, x, 1), 2)
+df &amp;lt;- data.frame(x, y)
+df&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     x    y
+## 1   1 0.55
+## 2   2 0.79
+## 3   3 3.09
+## 4   4 3.54
+## 5   5 6.03
+## 6   6 7.52
+## 7   7 8.03
+## 8   8 8.27
+## 9   9 8.81
+## 10 10 9.19&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R Markdown Page</title>
+      <link>/docs/get-started/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/get-started/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+true
+&lt;/div&gt;
+
+&lt;p&gt;This page provides an example of using R Markdown.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
+y &amp;lt;- round(rnorm(10, x, 1), 2)
+df &amp;lt;- data.frame(x, y)
+df&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     x    y
+## 1   1 0.75
+## 2   2 3.36
+## 3   3 2.37
+## 4   4 3.50
+## 5   5 5.34
+## 6   6 6.49
+## 7   7 5.85
+## 8   8 6.12
+## 9   9 8.09
+## 10 10 9.41&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
