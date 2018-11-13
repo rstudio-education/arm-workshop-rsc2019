@@ -1,3 +1,5 @@
+[![Join the chat at https://gitter.im/advrmarkdown-conf19/Lobby](https://badges.gitter.im/advrmarkdown-conf19/Lobby.svg)](https://gitter.im/advrmarkdown-conf19/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 # Project Kickstart-R
 
 **Project Kickstart-R** provides a minimal template to create a **Landing Page** and **Knowledge Sharing Platform** with *Academic* and **(R) Markdown**.
