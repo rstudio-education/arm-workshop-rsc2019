@@ -31,4 +31,4 @@ You’ll get the most from it if you enjoy learning how R Markdown works under t
 
 We will give minimal tutorials on these languages and tools in the workshop, but it may be easier for you to keep pace with the instructor if you already know them before.
 
-{{< figure library="1" src="cover.png" title="Showcase your projects with the new  *showcase* layout for the project widget." >}}
+<!--{{< figure library="1" src="cover.png" title="Showcase your projects with the new  *showcase* layout for the project widget." >}}-->
