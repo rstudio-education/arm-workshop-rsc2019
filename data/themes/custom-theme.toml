@@ -1,21 +1,25 @@
 # Theme metadata
-name = "advr"
+name = "arm"
 
 # Is theme light or dark?
 light = true
 
 # Primary
-primary = "#ef8759"
-primary_light = "#ef8759"
-primary_dark = "#ef8759"
+primary = "#A3C586"
+primary_light = "#6999cd"
+primary_dark = "#6999cd"
+
+# Links
+link = "#4254a7"
+link_hover = "#A3C586"
 
 # Menu
-menu_primary = "#6999cd"
+menu_primary = "#A3C586"
 menu_text = "#fff"
-menu_text_active = "#343c56"
+menu_text_active = "#4254a7"
 menu_title = "#fff"
 
 # Backgrounds
-background = "#efede8"
-home_section_odd = "#efede8"
-home_section_even = "#efede8"
+background = ""
+home_section_odd = ""
+home_section_even = ""

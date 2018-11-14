@@ -33,7 +33,7 @@
   
   
   
-  <meta name="theme-color" content="#ef8759">
+  <meta name="theme-color" content="#A3C586">
   
 
   
@@ -66,12 +66,12 @@
 
   
   
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|PT+Serif|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro|Roboto+Mono">
   
 
   <link rel="stylesheet" href="/styles.css">
   
-  <link rel="stylesheet" href="/css/project-kickstart-r.css">
+  <link rel="stylesheet" href="/css/arm-theme.css">
   
 
   
@@ -146,8 +146,8 @@
 
         <li class="nav-item">
           <a class="nav-link" href="/docs/" data-target="docs/">
-            <i class="fas fa-book" style="color: #00d1b2;"></i>
-            <span>Documentation</span>
+            <i class="fab fa-r-project" style="color: #4254a7;"></i>
+            <span>Set-up</span>
             
           </a>
         </li>
@@ -165,7 +165,7 @@
 
         <li class="nav-item">
           <a class="nav-link" href="/day2-am/" data-target="day2-am/">
-            <i class="fas fa-user-ninja" style="color: #00d1b2;"></i>
+            <i class="fas fa-magic" style="color: #4254a7;"></i>
             <span>Day 2- AM</span>
             
           </a>
@@ -184,7 +184,7 @@
 
         <li class="nav-item">
           <a class="nav-link" href="/day2-pm/" data-target="day2-pm/">
-            <i class="fas fa-hat-wizard" style="color: #00d1b2;"></i>
+            <i class="fas fa-hat-wizard" style="color: #4254a7;"></i>
             <span>Day 2- PM</span>
             
           </a>
@@ -193,28 +193,28 @@
         
         
 
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
         
 
         
         
         
-          
-            
-          
+        
+        
+        
         
 
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/rstudio-education/rmarkdown-extensions-conf19" data-target="https://github.com/rstudio-education/rmarkdown-extensions-conf19" target="_blank" rel="noopener">
-            
-            <span>GitHub Repo</span>
-            <i class="fas fa-external-link-alt "></i>
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+          <i class="fas fa-external-link-alt "></i>
           </a>
         </li>
-
-        
-        
-
-      
 
         
 
@@ -254,11 +254,11 @@
     <div class="row">
       <div class="col-12 col-lg-5">
         <h1 class="hero-title" itemprop="headline">
-          
+          <code>rstudio::conf</code>
         </h1>
 
         
-        <p class="hero-lead"><p>This is the website for a two-day hands-on workshop based on the book <a href="https://bookdown.org/yihui/rmarkdown/" target="_blank">&ldquo;R Markdown: The Definitive Guide&rdquo;</a>.</p>
+        <p class="hero-lead"><p>This is the website for a two-day hands-on workshop based on the book <a href="https://bookdown.org/yihui/rmarkdown/" target="_blank">&ldquo;R Markdown: The Definitive Guide.&rdquo;</a></p>
 
 <p>This workshop will be offered January 15-16, just before <a href="https://www.rstudio.com/conference/" target="_blank">rstudio::conf 2019</a> in Austin, TX. It is designed for those who want to take their R Markdown skills to the next level.</p>
 
@@ -274,7 +274,7 @@
       </div>
       <div class="col-12 col-lg-7">
         
-        <img src="/img/cover.png" alt="">
+        <img src="/img/bandthree2.png" alt="">
         
       </div>
     </div>
@@ -296,6 +296,11 @@
 
 <div class="row featurette">
   
+  <div class="col-md-12 section-heading">
+    <h1>Overview for Day 2</h1>
+    
+  </div>
+  
 
   
 
@@ -306,9 +311,9 @@
     
   
   <div class="col-12 col-sm-4">
-    <div class="featurette-icon"><i class="fas fa-copy"></i></div>
-    <h3>Highly Flexible</h3>
-    <p>Easily manage many different types of content including the homepage, blog posts, publications, talks, projects, and custom pages. Academic even has multilingual support.</p>
+    <div class="featurette-icon"><i class="fas fa-tape"></i></div>
+    <h3>Extending R Markdown</h3>
+    <p>We&rsquo;ll highlight existing extension packages that bring different styles, layouts, and applications to the R Markdown ecosystem including <a href="https://rmarkdown.rstudio.com/flexdashboard/" target="_blank"><code>flexdashboard</code></a> and <a href="https://rstudio.github.io/learnr/" target="_blank"><code>learnr</code></a>.</p>
   </div>
   
   
@@ -317,9 +322,9 @@
     
   
   <div class="col-12 col-sm-4">
-    <div class="featurette-icon"><i class="fas fa-edit"></i></div>
-    <h3>Markdown, Code, and Math Support</h3>
-    <p>Write in Markdown (or RMarkdown) with support for code highlighting and LaTeX math formatting. You can even use our time-saving shortcodes too.</p>
+    <div class="featurette-icon"><i class="fas fa-user-ninja"></i></div>
+    <h3>Presentations</h3>
+    <p>You&rsquo;ll learn to generate HTML5 presentations using the <a href="https://github.com/yihui/xaringan" target="_blank"><code>xaringan</code></a> package, an R Markdown extension based on the JavaScript library <a href="https://remarkjs.com" target="_blank">remark.js</a>.</p>
   </div>
   
   
@@ -328,9 +333,36 @@
     
   
   <div class="col-12 col-sm-4">
-    <div class="featurette-icon"><i class="fas fa-camera"></i></div>
-    <h3>Themes and Plugins</h3>
-    <p>Academic has a powerful theme and plugin system. Themes let you modify Academic&rsquo;s colors to suit your preferences. Then choose the widgets you want and place them where you want.</p>
+    <div class="featurette-icon"><i class="fas fa-boxes"></i></div>
+    <h3>Multiple R Markdown Documents</h3>
+    <p>You can work with multiple <code>.Rmd</code> documents in a project, and organize them in a meaningful way (e.g., pages can reference each other). We&rsquo;ll cover the two major ways to build multiple <code>.Rmd</code> documents: <code>blogdown</code> for building websites, and <code>bookdown</code> for authoring books.</p>
+  </div>
+  
+</div>
+
+    </div>
+  </section>
+  
+
+  
+  
+  
+  <section id="intro" class="home-section">
+    <div class="container">
+      
+
+
+<div class="row">
+  
+  <div class="col-12 col-lg-4 section-heading">
+    <h1>About this workshop</h1>
+    
+  </div>
+  <div class="col-12 col-lg-8">
+    <p>This workshop is designed for those who want to take their R Markdown skills to the next level. We&rsquo;ll talk about many low-level details in the rmarkdown package and the whole R Markdown ecosystem. The two goals of this workshop are: 1) learn how to fully customize R Markdown output (HTML, LaTeX/PDF, Word, and PowerPoint); and 2) learn more about existing R Markdown extensions in the ecosystem, such as flexdashboard, bookdown, blogdown, pkgdown, xaringan, rticles, and learnr. We will also talk about how to use or develop new language engines (languages that are not R), how to develop HTML widgets, and integrate Shiny with R Markdown.</p>
+
+<p>You should take this workshop if you have experience programming in R and want to learn how to take advantage of the amazing breadth and depth of R Markdown. You&rsquo;ll get the most from it if you enjoy learning how R Markdown works under the hood (which will involve reading some source code), and are seriously interested in hacking (playing) with HTML, JavaScript, CSS, LaTeX, and command-line tools. We will give minimal tutorials on these languages and tools in the workshop, but it may be easier for you to keep pace with the instructor if you already know them before.</p>
+
   </div>
   
 </div>
@@ -372,7 +404,7 @@
       <li>
         <i class="fa-li fas fa-comments fa-2x" aria-hidden="true"></i>
         <span>
-          <a href="https://gitter.im/advrmarkdown-conf19/Lobby" target="_blank" rel="noopener">Gitter Chat Room</a>
+          <a href="https://gitter.im/arm-austin/Lobby" target="_blank" rel="noopener">Gitter Chat Room</a>
         </span>
       </li>
       

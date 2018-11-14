@@ -6,22 +6,24 @@ date = "2017-11-21"
 # Order that this section will appear in.
 weight = 20
 
+title = "Overview for Day 2"
+
 [[feature]]
-  icon = "copy"
+  icon = "tape"
   icon_pack = "fas"
-  name = "Highly Flexible"
-  description = "Easily manage many different types of content including the homepage, blog posts, publications, talks, projects, and custom pages. Academic even has multilingual support."
+  name = "Extending R Markdown"
+  description = "We'll highlight existing extension packages that bring different styles, layouts, and applications to the R Markdown ecosystem including [`flexdashboard`](https://rmarkdown.rstudio.com/flexdashboard/) and [`learnr`](https://rstudio.github.io/learnr/)."
   
 [[feature]]
-  icon = "edit"
+  icon = "user-ninja"
   icon_pack = "fas"
-  name = "Markdown, Code, and Math Support"
-  description = "Write in Markdown (or RMarkdown) with support for code highlighting and LaTeX math formatting. You can even use our time-saving shortcodes too."
-  
+  name = "Presentations"
+  description = "You'll learn to generate HTML5 presentations using the [`xaringan`](https://github.com/yihui/xaringan) package, an R Markdown extension based on the JavaScript library [remark.js](https://remarkjs.com)."
+
 [[feature]]
-  icon = "camera"
+  icon = "boxes"
   icon_pack = "fas"
-  name = "Themes and Plugins"
-  description = "Academic has a powerful theme and plugin system. Themes let you modify Academic's colors to suit your preferences. Then choose the widgets you want and place them where you want."    
+  name = "Multiple R Markdown Documents"
+  description = "You can work with multiple `.Rmd` documents in a project, and organize them in a meaningful way (e.g., pages can reference each other). We'll cover the two major ways to build multiple `.Rmd` documents: `blogdown` for building websites, and `bookdown` for authoring books."    
 
 +++

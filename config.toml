@@ -81,7 +81,7 @@ enableGitInfo = false
 
   # Discussion link (e.g. link to a forum, mailing list, or chat).
   #   Uncomment line below to use.
-  discussion = { name = "Gitter Chat Room", url = "https://gitter.im/advrmarkdown-conf19/Lobby" }
+  discussion = { name = "Gitter Chat Room", url = "https://gitter.im/arm-austin/Lobby" }
 
   # Diplay a logo in navigation bar rather than title (optional).
   #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
@@ -166,7 +166,7 @@ enableGitInfo = false
 
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
-  custom_css = ["project-kickstart-r.css"]
+  custom_css = ["arm-theme.css"]
   custom_js  = []
 
   # Publication types.
@@ -242,28 +242,29 @@ enableGitInfo = false
   align_right = false
 
 [[menu.main]]
-  pre = "<i class=\"fas fa-book\" style=\"color: #00d1b2;\"></i>"
-  name = "Documentation"
+  pre = "<i class=\"fab fa-r-project\" style=\"color: #4254a7;\"></i>"
+  name = "Set-up"
   url = "docs/"
   weight = 10
 
 [[menu.main]]
-  pre = "<i class=\"fas fa-user-ninja\" style=\"color: #00d1b2;\"></i>"
+  pre = "<i class=\"fas fa-magic\" style=\"color: #4254a7;\"></i>"
   name = "Day 2- AM"
   url = "day2-am/"
   weight = 20
 
 [[menu.main]]
-  pre = "<i class=\"fas fa-hat-wizard\" style=\"color: #00d1b2;\"></i>"
+  pre = "<i class=\"fas fa-hat-wizard\" style=\"color: #4254a7;\"></i>"
   name = "Day 2- PM"
   url = "day2-pm/"
   weight = 30
 
-[[menu.main]]
-  name = "GitHub Repo"
+[[menu.main_right]]
+  pre = "<i class=\"fab fa-github\"></i>"
+  name = "GitHub"
   post = "<i class=\"fas fa-external-link-alt \"></i>"
   url = "https://github.com/rstudio-education/rmarkdown-extensions-conf19"
-  weight = 50
+  weight = 10
 
 
 # Search.

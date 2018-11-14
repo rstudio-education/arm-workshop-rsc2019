@@ -1,4 +1,4 @@
-[![Join the chat at https://gitter.im/advrmarkdown-conf19/Lobby](https://badges.gitter.im/advrmarkdown-conf19/Lobby.svg)](https://gitter.im/advrmarkdown-conf19/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/arm-austin/Lobby](https://badges.gitter.im/arm-austin/Lobby.svg)](https://gitter.im/arm-austin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Project Kickstart-R
 

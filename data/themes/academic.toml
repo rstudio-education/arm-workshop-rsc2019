@@ -1,0 +1,24 @@
+# Theme metadata
+name = "Academic Docs"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#00d1b2"
+primary_light = "#00f1d2"
+primary_dark = "#00c4a7"
+
+# Links
+link = "#3273dc"
+link_hover = "rgb(54, 54, 54)"
+
+# Menu
+menu_primary = "#fff"
+menu_text = "rgb(74, 74, 74)"
+menu_text_active = "#3273dc"
+menu_title = "#000"
+
+# Home sections
+home_section_odd = "rgb(255, 255, 255)"
+home_section_even = "rgb(255, 255, 255)"

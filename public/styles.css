@@ -33,7 +33,7 @@ body {
   font-size: 1rem;
   line-height: inherit;
   color: inherit;
-  background-color: #efede8;
+  background-color: #fff;
   margin-top: 71px; /* Offset body content by navbar height. */
   padding-top: 0;
   counter-reset: captions;
@@ -71,7 +71,7 @@ ul, ol, dl {
 
 /* Navigation bar text */
 .navbar-light {
-  font-family: 'PT Serif', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
@@ -79,7 +79,7 @@ ul, ol, dl {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'PT Serif', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: .5rem;
@@ -108,14 +108,14 @@ h4, h5, h6 {
 
 a,
 h3.article-title a:hover {
-  color: #ef8759;
+  color: #4254a7;
   text-decoration: none;
   transition: color 0.6s ease;
 }
 
 a:hover,
 a:focus {
-  color: #ef8759;
+  color: #A3C586;
 }
 
 img,
@@ -142,7 +142,7 @@ figcaption {
   line-height: 1.25;
   font-size: 1rem;
   margin-bottom: 1.65rem;
-  font-family: 'PT Serif', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 figcaption.numbered:before {
@@ -297,8 +297,8 @@ small,
 }
 
 .form-control:focus {
-  border-color: #ef8759;
-  box-shadow: 0 0 0 .2rem #ef8759;
+  border-color: #A3C586;
+  box-shadow: 0 0 0 .2rem #6999cd;
 }
 
 /*************************************************
@@ -306,7 +306,7 @@ small,
  **************************************************/
 
 .modal-content {
-  background: #efede8;
+  background: #fff;
 }
 
 .modal-title {
@@ -406,7 +406,7 @@ a[data-fancybox] img {
 }
 
 .home-section {
-  background-color: #efede8;
+  background-color: ;
   padding: 110px 0 110px 0;
   animation: intro 0.3s both;
   animation-delay: 0.15s;
@@ -417,7 +417,7 @@ a[data-fancybox] img {
 }
 
 .home-section:nth-of-type(even) {
-  background-color: #efede8;
+  background-color: ;
 }
 
 @media screen and (max-width: 768px) {
@@ -511,7 +511,7 @@ a[data-fancybox] img {
 .featurette-icon {
   display: block;
   width: 100%;
-  color: #ef8759;
+  color: #A3C586;
   font-size: 3rem;
   text-align: center;
 }
@@ -797,7 +797,7 @@ article .article-metadata {
 }
 
 .article-metadata a:hover {
-  color: #ef8759;
+  color: #A3C586;
 }
 
 .middot-divider {
@@ -1046,11 +1046,11 @@ article .article-metadata {
 
 .experience .m-2 .border,
 .experience .col.border-right {
-  border-color: #ef8759 !important;
+  border-color: #A3C586 !important;
 }
 
 .experience .m-2 .border.exp-fill {
-  background-color: #ef8759 !important;
+  background-color: #A3C586 !important;
 }
 
 /*************************************************
@@ -1340,13 +1340,13 @@ a.badge:hover {
  **************************************************/
 
 .btn-primary {
-  border-color: #ef8759;
-  background: #ef8759;
+  border-color: #A3C586;
+  background: #A3C586;
 }
 
 .btn-outline-primary {
-  border-color: #ef8759;
-  color: #ef8759;
+  border-color: #A3C586;
+  color: #A3C586;
 }
 
 .btn-primary:hover,
@@ -1354,7 +1354,7 @@ a.badge:hover {
 .btn-primary.active,
 .btn-primary:visited,
 .open > .dropdown-toggle.btn-primary {
-  background: #ef8759;
+  background: #A3C586;
 }
 
 .btn-outline-light:hover,
@@ -1367,8 +1367,8 @@ a.badge:hover {
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #ef8759;
-  border-color: #ef8759;
+  background-color: #A3C586;
+  border-color: #A3C586;
 }
 
 .dark .btn-outline-primary:not(:disabled):not(.disabled).active,
@@ -1379,8 +1379,8 @@ a.badge:hover {
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #ef8759;
-  border-color: #ef8759;
+  background-color: #A3C586;
+  border-color: #A3C586;
 }
 
 .dark .btn-outline-primary:hover {
@@ -1407,18 +1407,18 @@ a.badge:hover {
 
 .btn-toolbar .btn.btn-primary:hover,
 .btn-toolbar .btn.btn-primary:focus {
-  background-color: #ef8759 !important;
+  background-color: #6999cd !important;
 }
 
 .btn-toolbar .btn.btn-primary:active,
 .btn-toolbar .btn.btn-primary.active {
-  background-color: #ef8759 !important;
+  background-color: #6999cd !important;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 .2rem #ef8759;
+  box-shadow: 0 0 0 .2rem #6999cd;
 }
 
 /*************************************************
@@ -1430,7 +1430,7 @@ a.badge:hover {
 }
 
 .navbar-light {
-  background: #6999cd !important;
+  background: #A3C586 !important;
   box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.11)
 }
 
@@ -1468,14 +1468,14 @@ nav#navbar-main li.nav-item {
 }
 
 .navbar-light .navbar-nav>.nav-item>.nav-link:hover {
-  color: #343c56;
+  color: #4254a7;
   background-color: transparent;
 }
 
 .navbar-light .navbar-nav>li.nav-item>a.active,
 .navbar-light .navbar-nav>li.nav-item>a.active:focus,
 .navbar-light .navbar-nav>li.nav-item>a.active:hover {
-  color: #343c56;
+  color: #4254a7;
   font-weight: 700;
   background-color: transparent !important; /* Override Bootstrap. */
 }
@@ -1497,7 +1497,7 @@ nav#navbar-main li.nav-item {
 }
 
 .dropdown-menu {
-  background-color: #6999cd !important;
+  background-color: #A3C586 !important;
 }
 
 .dropdown-menu > li > a {
@@ -1512,17 +1512,17 @@ nav#navbar-main li.nav-item {
 
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
-  color: #343c56;
+  color: #4254a7;
   text-decoration: none;
-  background-color: #6999cd;
+  background-color: #A3C586;
 }
 
 .dropdown-menu > .active,
 .dropdown-menu > .active:focus,
 .dropdown-menu > .active:hover {
-  color: #6999cd;
+  color: #A3C586;
   text-decoration: none;
-  background-color: #343c56;
+  background-color: #4254a7;
   outline: 0;
 }
 
@@ -1531,7 +1531,7 @@ nav#navbar-main li.nav-item {
 .navbar-light .navbar-nav>.open>a:hover,
 .navbar-light .navbar-nav>.open>a:visited {
   color: #fff !important;
-  background-color: #6999cd !important;
+  background-color: #A3C586 !important;
 }
 
 .navbar-light .navbar-brand {
@@ -1612,7 +1612,7 @@ nav#navbar-main li.nav-item {
   .navbar-light .navbar-nav .open .dropdown-menu >.nav-item> .active,
   .navbar-light .navbar-nav .open .dropdown-menu >.nav-item> .active:focus,
   .navbar-light .navbar-nav .open .dropdown-menu >.nav-item> .active:hover {
-    color: #343c56;
+    color: #4254a7;
     background-color: transparent;
   }
 
@@ -1776,8 +1776,8 @@ div.alert a {
 }
 
 .docs-search .form-control:focus {
-  border-color: #ef8759;
-  box-shadow: 0 0 0 3px #ef8759;
+  border-color: #A3C586;
+  box-shadow: 0 0 0 3px #6999cd;
 }
 
 /* Docs sidebar. */
@@ -1842,7 +1842,7 @@ div.alert a {
 .docs-sidebar .nav>.active:hover>a,
 .docs-sidebar .nav>.active>a {
   font-weight: bold;
-  color: #ef8759;
+  color: #A3C586;
   background-color: transparent;
 }
 
@@ -1851,7 +1851,7 @@ div.alert a {
 .docs-toggle {
   line-height: 1;
   font-size: 1.2rem;
-  color: #ef8759;
+  color: #A3C586;
   background-color: transparent;
 }
 
@@ -1968,7 +1968,7 @@ ul.toc-top {
 
 #TableOfContents li a:hover,
 .toc-top li a:hover {
-  color: #ef8759;
+  color: #A3C586;
   text-decoration: none;
 }
 
@@ -1976,12 +1976,12 @@ ul.toc-top {
 
 .anchorjs-link {
   font-weight: 400;
-  color: #ef8759;
+  color: #6999cd;
   transition: color .16s linear;
 }
 
 .anchorjs-link:hover {
-  color: #ef8759;
+  color: #A3C586;
   text-decoration: none;
 }
 
@@ -2005,8 +2005,8 @@ body.dark,
 
 .dark .form-control:focus {
   background-color: rgb(68, 71, 90);
-  border-color: #ef8759;
-  box-shadow: 0 0 0 .2rem #ef8759;
+  border-color: #A3C586;
+  box-shadow: 0 0 0 .2rem #6999cd;
 }
 
 .dark h1,
@@ -2038,7 +2038,7 @@ body.dark,
 }
 
 .dark ul.share li a {
-  background-color: #ef8759;
+  background-color: #A3C586;
 }
 
 .dark table table {
@@ -2091,7 +2091,7 @@ body.dark,
 }
 
 .dark .card h4 a {
-  color: #ef8759;
+  color: #A3C586;
   border-bottom: solid 1px transparent;
 }
 

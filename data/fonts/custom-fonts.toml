@@ -1,13 +1,13 @@
 # Font style metadata
-name = "advr"
+name = "arm"
 
 # Optional Google font URL
-google_fonts = "Lato:400,700|PT+Serif|Roboto+Mono"
+google_fonts = "Lato:400,700|Source+Sans+Pro|Roboto+Mono"
 
 # Font families
-heading_font = "PT Serif"
+heading_font = "Source Sans Pro"
 body_font = "Lato"
-nav_font = "PT Serif"
+nav_font = "Source Sans Pro"
 mono_font = "Roboto Mono"
 
 # Font size

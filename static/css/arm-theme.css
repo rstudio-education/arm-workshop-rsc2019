@@ -30,7 +30,7 @@ figure {
   padding: 0;
 }
 
-/* change text link color for hero from white*/
+/* change text link/hover color for hero from white*/
 .hero-overlay a {
   color: #4254a7;
 }
@@ -39,7 +39,13 @@ figure {
   color: #A3C586
 }
 
-/* change button link color for hero too*/
+/* change button hover link color for hero too*/
 .hero-overlay .btn:hover {
+  color: #4254a7;
+}
+
+/* change font color from red to blue*/
+pre,
+code {
   color: #4254a7;
 }

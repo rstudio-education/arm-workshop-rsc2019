@@ -13,18 +13,18 @@
     
     
     <item>
-      <title></title>
+      <title>`rstudio::conf`</title>
       <link>/home/hero/</link>
       <pubDate>Sun, 15 Oct 2017 00:00:00 -0700</pubDate>
       
       <guid>/home/hero/</guid>
-      <description>This is the website for a two-day hands-on workshop based on the book &amp;ldquo;R Markdown: The Definitive Guide&amp;rdquo;.
+      <description>This is the website for a two-day hands-on workshop based on the book &amp;ldquo;R Markdown: The Definitive Guide.&amp;rdquo;
 This workshop will be offered January 15-16, just before rstudio::conf 2019 in Austin, TX. It is designed for those who want to take their R Markdown skills to the next level.
   </description>
     </item>
     
     <item>
-      <title></title>
+      <title>Overview for Day 2</title>
       <link>/home/features/</link>
       <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
       
@@ -33,12 +33,12 @@ This workshop will be offered January 15-16, just before rstudio::conf 2019 in A
     </item>
     
     <item>
-      <title>Features</title>
+      <title>About this workshop</title>
       <link>/home/intro/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/home/intro/</guid>
-      <description>&amp;hellip;</description>
+      <description>This workshop is designed for those who want to take their R Markdown skills to the next level. We&amp;rsquo;ll talk about many low-level details in the rmarkdown package and the whole R Markdown ecosystem. The two goals of this workshop are: 1) learn how to fully customize R Markdown output (HTML, LaTeX/PDF, Word, and PowerPoint); and 2) learn more about existing R Markdown extensions in the ecosystem, such as flexdashboard, bookdown, blogdown, pkgdown, xaringan, rticles, and learnr.</description>
     </item>
     
     <item>
