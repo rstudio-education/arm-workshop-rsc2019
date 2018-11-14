@@ -4,7 +4,7 @@ widget = "hero_img"
 active = true
 date = 2017-10-15
 
-title = "`rstudio::conf`"
+title = "Welcome"
 
 # Order that this section will appear in.
 weight = 10

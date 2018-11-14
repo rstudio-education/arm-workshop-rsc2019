@@ -12,7 +12,7 @@
     
     <url>
     
-      <loc>/docs/contibute/</loc>
+      <loc>/prework/extra/</loc>
       <lastmod>2018-09-09T00:00:00-07:00</lastmod>
     </url>
     
@@ -36,7 +36,31 @@
     
     <url>
     
-      <loc>/docs/</loc>
+      <loc>/prework/pre-requisites/</loc>
+      <lastmod>2018-09-09T00:00:00-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/prework/reading/</loc>
+      <lastmod>2018-09-09T00:00:00-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/prework/</loc>
+      <lastmod>2018-09-09T00:00:00-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/prework/system/</loc>
       <lastmod>2018-09-09T00:00:00-07:00</lastmod>
     </url>
     
@@ -53,14 +77,6 @@
     <url>
     
       <loc>/day2-pm/rmarkdown-pm/</loc>
-      <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/docs/get-started/</loc>
       <lastmod>2018-09-09T00:00:00+00:00</lastmod>
     </url>
     

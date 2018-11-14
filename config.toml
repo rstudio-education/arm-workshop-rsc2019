@@ -158,6 +158,9 @@ enableGitInfo = false
 
   # Enable native social sharing buttons?
   sharing = true
+  
+  # Default image for social sharing and search engines. Place image in `static/img/` folder and specify image name here.
+  sharing_image = "bandthree2.png"
 
   # Privacy pack
   #   Show a cookie consent message to visitors
@@ -244,7 +247,7 @@ enableGitInfo = false
 [[menu.main]]
   pre = "<i class=\"fab fa-r-project\" style=\"color: #4254a7;\"></i>"
   name = "Set-up"
-  url = "docs/"
+  url = "prework/"
   weight = 10
 
 [[menu.main]]
