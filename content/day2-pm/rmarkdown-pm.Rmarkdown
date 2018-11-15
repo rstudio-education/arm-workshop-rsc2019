@@ -23,3 +23,35 @@ y <- round(rnorm(10, x, 1), 2)
 df <- data.frame(x, y)
 df
 ```
+
+
+# Package 1 {#xaringan}
+
+## Slides {#xaringan-slides}
+
+## Exercises {#xaringan-ex}
+
+## Stretch {#xaringan-stretch}
+
+## More {#xaringan-more}
+
+# Package 2
+
+## Slides
+
+## Exercises
+
+## Stretch
+
+## More
+
+# Package 3
+
+## Slides
+
+## Exercises
+
+## Stretch
+
+## More
+

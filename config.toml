@@ -247,7 +247,7 @@ enableGitInfo = false
 [[menu.main]]
   pre = "<i class=\"fab fa-r-project\" style=\"color: #4254a7;\"></i>"
   name = "Set-up"
-  url = "prework/"
+  url = "prework/" 
   weight = 10
 
 [[menu.main]]

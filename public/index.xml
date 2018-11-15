@@ -248,26 +248,56 @@ df&lt;/code&gt;&lt;/pre&gt;
       <guid>/day2-pm/rmarkdown-pm/</guid>
       <description>
 
-&lt;div id=&#34;TOC&#34;&gt;
-true
-&lt;/div&gt;
-
 &lt;p&gt;This page provides an example of using R Markdown.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- 1:10
 y &amp;lt;- round(rnorm(10, x, 1), 2)
 df &amp;lt;- data.frame(x, y)
-df&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##     x    y
-## 1   1 0.55
-## 2   2 0.79
-## 3   3 3.09
-## 4   4 3.54
-## 5   5 6.03
-## 6   6 7.52
-## 7   7 8.03
-## 8   8 8.27
-## 9   9 8.81
-## 10 10 9.19&lt;/code&gt;&lt;/pre&gt;
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;##     x     y
+## 1   1  2.89
+## 2   2 -0.09
+## 3   3  3.18
+## 4   4  2.34
+## 5   5  4.76
+## 6   6  6.07
+## 7   7  6.58
+## 8   8  7.76
+## 9   9  8.33
+## 10 10 10.25
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;xaringan&#34;&gt;Package 1&lt;/h1&gt;
+
+&lt;h2 id=&#34;xaringan-slides&#34;&gt;Slides&lt;/h2&gt;
+
+&lt;h2 id=&#34;xaringan-ex&#34;&gt;Exercises&lt;/h2&gt;
+
+&lt;h2 id=&#34;xaringan-stretch&#34;&gt;Stretch&lt;/h2&gt;
+
+&lt;h2 id=&#34;xaringan-more&#34;&gt;More&lt;/h2&gt;
+
+&lt;h1 id=&#34;package-2&#34;&gt;Package 2&lt;/h1&gt;
+
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
+
+&lt;h2 id=&#34;exercises&#34;&gt;Exercises&lt;/h2&gt;
+
+&lt;h2 id=&#34;stretch&#34;&gt;Stretch&lt;/h2&gt;
+
+&lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
+
+&lt;h1 id=&#34;package-3&#34;&gt;Package 3&lt;/h1&gt;
+
+&lt;h2 id=&#34;slides-1&#34;&gt;Slides&lt;/h2&gt;
+
+&lt;h2 id=&#34;exercises-1&#34;&gt;Exercises&lt;/h2&gt;
+
+&lt;h2 id=&#34;stretch-1&#34;&gt;Stretch&lt;/h2&gt;
+
+&lt;h2 id=&#34;more-1&#34;&gt;More&lt;/h2&gt;
 </description>
     </item>
     
