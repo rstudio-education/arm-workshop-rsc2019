@@ -255,7 +255,7 @@ A useful workflow for presenting; if you have two screens, turn off display mirr
 
 .pull-left[
 
-`r fa(name = "desktop")`
+# `r fa(name = "desktop", fill = "white")`
 
 On the presentation screen:
 
@@ -265,7 +265,10 @@ On the presentation screen:
 ]
 
 .pull-right[
-`r fa(name = "laptop-code")`
+
+# `r fa(name = "laptop", fill = "white")`
+
+On your laptop screen:
 
 - Press `p` for presenter mode on laptop
 - Wish you had used `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes)
