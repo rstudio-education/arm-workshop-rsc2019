@@ -6,6 +6,8 @@
   --color-black: #1a1917; /* black */
 }
 
+
+
 .large { 
   font-size: 160%;
 }
@@ -203,4 +205,17 @@ pre {
   background: #f8f8f8; /* match github highlightjs */
   max-width: 100%;
   overflow-x: auto;
+}
+
+/* my title slide */
+.title-slide {
+  background-image: url(../img/brooke-lark-500141-unsplash.jpg);
+  background-size: cover;
+}
+
+img.lil {
+  width: 15%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

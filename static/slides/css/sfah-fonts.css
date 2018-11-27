@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import url(https://fonts.googleapis.com/css?family=Muli:600,700,800);
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:400');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Upright:700');
 
 body {
   font-family: 'Lato', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
@@ -19,5 +20,10 @@ h1, h2, h3 {
 
 .remark-code, .remark-inline-code {
   font-family: 'Inconsolata', 'Lucida Console', Monaco, monospace;
+}
+
+.fancy{
+  font-family: 'Cormorant Upright', serif;
+  font-weight: 700;
 }
 

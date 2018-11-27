@@ -12,9 +12,8 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
+      beforeInit: "https://platform.twitter.com/widgets.js"
     seal: false 
-    includes:
-      in_header: header.html
 ---
 
 ```{r setup, include=FALSE}
@@ -24,6 +23,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 # options(knitr.table.format = "html")
 library(tidyverse)
 library(babynames)
+library(fontawesome) # from github: https://github.com/rstudio/fontawesome
 ```
 
 layout: true
@@ -34,9 +34,7 @@ layout: true
 
 ---
 
-class: left, middle
-background-image: url(img/brooke-lark-500141-unsplash.jpg)
-background-size: cover
+class: left, middle, title-slide
 
 # Meet xaringan
 
@@ -48,44 +46,47 @@ background-size: cover
 
 <!-- this ends up being the title slide since seal = FALSE-->
 
+
+---
+
+.left-column[
+
+# `r emo::ji("confused")`
+
+]
+
+.right[
+
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Finally heard how to pronounce xaringan in <a href="https://twitter.com/kevin_ushey?ref_src=twsrc%5Etfw">@kevin_ushey</a>&#39;s talk! <a href="https://twitter.com/hashtag/rstudioconf?src=hash&amp;ref_src=twsrc%5Etfw">#rstudioconf</a><br>🗣 (something like) shar-in-gen 🙌<br>🔗 <a href="https://t.co/v9rTANw0ED">https://t.co/v9rTANw0ED</a></p>&mdash; 𝓛𝓾𝓬𝔂::maternity_leave🤱 (@LucyStats) <a href="https://twitter.com/LucyStats/status/959504698842652672?ref_src=twsrc%5Etfw">February 2, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+.left[/ʃæ.'riŋ.ɡæn/]
+
+]
+
 ---
 
 class: right, middle
+
 
 <img class="circle" src="https://github.com/apreshill.png" width="150px"/>
 
 # Find me at...
 
-<a href="http://twitter.com/apreshill"><i class="fa fa-twitter fa-fw"></i>&nbsp; @apreshill</a><br>
-<a href="http://github.com/apreshill"><i class="fa fa-github fa-fw"></i>&nbsp; @apreshill</a><br>
-<a href="https://alison.rbind.io"><i class="fa fa-link fa-fw"></i>&nbsp; alison.rbind.io</a><br>
-<a href="mailto:alison@rstudio.com"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; alison@rstudio.com</a>
+[`r fa(name = "twitter")` @apreshill](http://twitter.com/apreshill)  
+[`r fa(name = "github")` @apreshill](http://github.com/apreshill)  
+[`r fa(name = "link")` alison.rbind.io](https://alison.rbind.io)  
+[`r fa(name = "paper-plane")` alison@rstudio.com](mailto:alison@rstudio.com)
 
 
+--
+
+.footnote[
+You'll make this slide in our first hands-on activity!
+]
 
 
-???
-
-- salt: chunks
-- acid: slide
-
-This will be a choose your own adventure game. I'll provide 3 datasets:
-
-- UFO sightings https://www.kaggle.com/NUFORC/ufo-sightings/kernels
-
-- Births https://github.com/fivethirtyeight/data/tree/master/births (https://fivethirtyeight-r.netlify.com/reference/index.html)
-- note leap years 2000/2004/2008/2012
-
-- Olympics https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results
-
-- Sydney beaches data https://github.com/rladiessydney/RYouWithMe/blob/master/sydneybeaches.csv
-
-- https://github.com/Kiuzi/The-Best-and-Worst-Places-to-Grow-Up
-
-- idea do salt fat acid heat
-
-link to images, then yummly ingredient lists
-https://flowingdata.com/2018/09/18/cuisine-ingredients/
 
 ---
 name: setup
@@ -118,29 +119,15 @@ class: left
 
 .salt[you want awesome HTML5 slides]
 
----
-# Hello World
-
-The fastest way to make a xaringan slide deck is in the [RStudio IDE](https://www.rstudio.com/products/rstudio/):
-
-- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
-
---
-
-- Click the `Knit` button to compile it;
-
-.footnote[
-[1] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template in RStudio.
-]
-
 
 ---
+name: edit-this-slide
 
-# Hello Ninja
+# Hello `r fa(name = "user-ninja")`
 
 As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
 
-1. The [remark.js](https://remarkjs.com) library;
+1. The [remark.js](https://REMARK.JS.com) library;
 
 1. The **xaringan** package;
 
@@ -255,6 +242,37 @@ This is slide 2
 ]
 
 ---
+name: keyboard-demo
+class: center, inverse, middle
+
+# .fancy[Keyboard shortcuts]
+
+Press `h` or `?` to see the `remark.js` [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html). 
+
+--
+
+A useful workflow for presenting; if you have two screens, turn off display mirroring then press `c` to clone:
+
+.pull-left[
+
+`r fa(name = "desktop")`
+
+On the presentation screen:
+
+- Move cloned window to this screen
+- Then press `f` for full-screen mode
+
+]
+
+.pull-right[
+`r fa(name = "laptop-code")`
+
+- Press `p` for presenter mode on laptop
+- Wish you had used `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes)
+]
+
+
+---
 name: sfah
 class: center, middle
 
@@ -270,7 +288,7 @@ template: sfah
 
 template: sfah
 
-## .salt[REMARKJS] &nbsp; .fat[CHUNKS]
+## .salt[REMARK.JS] &nbsp; .fat[CHUNKS]
 
 ## .acid[IMAGES] &nbsp; .heat[THEMES]
 
@@ -280,16 +298,16 @@ class: inverse, middle, center
 background-image: url(img/jason-tuinstra-551608-unsplash.jpg)
 background-size: cover
 
-# SALT = REMARKJS
+# SALT = REMARK.JS
 
 ???
 
 SALT enhances flavor
 
-REMARKJS enhances your code
+REMARK.JS enhances your code
 
 ---
-# remarkjs
+# REMARK.JS
 
 What you need to know now:
 
@@ -510,21 +528,92 @@ My name is Alison
 
 .right[and babies]
 
+
+---
+
+class: inverse, center, top, title-slide 
+
+# .fancy["but you promised us pretty pictures..."]
+
+
+---
+
+name: mdimage-demo
+
+.pull-left[
+```{r eval = FALSE}
+---
+
+class: center, middle 
+
+### Hi there, take 2
+
+My name is Alison
+
+--
+
+![Image of hot toddy](http://bit.ly/wiki-toddy)  #<<
+
+--
+
+![Image of rdogladies](http://bit.ly/rdogladies-hex)  #<<
+
+--
+
+![Image of Momtocat](http://bit.ly/momtocat)  #<<
+
+---
+```
+
+]
+
+
+.pull-right[
+
+### Hi there, take 2
+
+My name is Alison
+{{content}}
+
+]
+
+--
+
+<img class="lil" src="http://bit.ly/wiki-toddy">
+{{content}}
+
+--
+
+<img class="lil" src="http://bit.ly/rdogladies-hex">
+{{content}}
+
+--
+
+<img class="lil" src="http://bit.ly/momtocat">
+
+
+--
+
+.footnote[
+In "real life", you'll often want to use straight-up HTML too:  
+`<img src="http://bit.ly/wiki-toddy" width="15%" align="right" />`
+]
+
 ---
 
 name: pull-demo
 
-# Two-column slides
-
 .left-column[
-Try this:
+# Two-column slides
 ```
 .pull-left[
-on your left
+Momtocat on your left
+![](image-link)
 ]
 
 .pull-right[
-on your right
+Poptocat on your right
+![](image-link)
 ]
 ```
 ]
@@ -535,15 +624,17 @@ on your right
 .right-column[
 
 .pull-left[
-<br>
-<br>
-on your left
+Momtocat on your left
+
+![Image of Momtocat](http://bit.ly/momtocat)
+
 ]
 
 .pull-right[
-<br>
-<br>
-on your right
+Poptocat on your right
+
+![Image of Poptocat2](https://octodex.github.com/images/poptocat_v2.png)
+
 ]
 ]
 
@@ -561,16 +652,19 @@ on your right
 
 template: sfah
 
-## .salt[REMARKJS] &nbsp; .fat[CHUNKS]
+## .salt[REMARK.JS] &nbsp; .fat[CHUNKS]
 
 ## .acid[IMAGES] &nbsp; .heat[THEMES]
 
 
 ---
+name: salt-work
 
-# Take 10 minutes `r emo::ji("clock")`
+# Take 15 minutes `r emo::ji("clock")`
 
-Season some awesome slides with `remark.js` salt. Make at least one slide that uses each of the following:
+First, make an introduction slide, using the templated code provided.
+
+Next, season some slides with `remark.js` salt. Make at least one slide that uses each of the following:
 
 1. Incremental reveals (`--`) ([demo slide](#increment-demo))
 
@@ -744,12 +838,12 @@ The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
 .right-column[
 
 ````
-```{r dpi = 180}`r ''`
+```{r dpi = 200}`r ''`
 name_plot
 ```
 ````
 
-```{r ref.label='alison-plot', dpi = 180, echo = FALSE}
+```{r ref.label='alison-plot', dpi = 200, echo = FALSE}
 ```
 ]
 
@@ -763,12 +857,12 @@ name: plot-demo
 .right-column[
 
 ````
-```{r dpi = 180, out.width = '60%'}`r ''`
+```{r dpi = 200, out.width = '60%'}`r ''`
 name_plot
 ```
 ````
 
-```{r ref.label='alison-plot', echo = FALSE, dpi = 180, out.width = '60%'}
+```{r ref.label='alison-plot', echo = FALSE, dpi = 200, out.width = '60%'}
 ```
 ]
 
@@ -782,7 +876,7 @@ You'll often want to play with individual chunk options for plots like `dpi` and
 
 ````
 ```{r setup}`r ''`
-knitr::opts_chunk$set(warning = FALSE, message = FALSE, dpi = 200)
+knitr::opts_chunk$set(dpi = 200)
 ```
 ````
 
@@ -937,6 +1031,7 @@ And last five:
 
 
 ---
+name: fat-work
 
 # Take 15 minutes `r emo::ji("clock")`
 
@@ -1050,7 +1145,7 @@ class: center, bottom, inverse
 
 As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
 
-1. The [remark.js](https://remarkjs.com) library;
+1. The [remark.js](https://REMARK.JS.com) library;
 
 1. The **xaringan** package;
 
@@ -1060,7 +1155,7 @@ Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **r
 
 # remark.js
 
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
+You can see an introduction of remark.js from [its homepage](https://REMARK.JS.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
 
 - create a new slide (Markdown syntax<sup>*</sup> and slide properties);
 
@@ -1580,4 +1675,4 @@ class: center, middle
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+The chakra comes from [remark.js](https://REMARK.JS.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
