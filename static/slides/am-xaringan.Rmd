@@ -584,7 +584,7 @@ template: sfah
 
 ---
 
-# Take 5 minutes `r emo::ji("clock")`
+# Take 10 minutes `r emo::ji("clock")`
 
 Season some awesome slides with `remark.js` salt. Make at least one slide that uses each of the following:
 
@@ -603,11 +603,11 @@ If this is easy, try:
 
 + combining the salts, and/or
 
-+ mixing with some R code chunks too.
++ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html)
 
 --
 
-But don't despair- we'll fatten up our slides with R chunks next...
+Don't despair- we'll fatten up our slides with R chunks next...
 
 ---
 name: fat
