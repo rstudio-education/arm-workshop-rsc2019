@@ -1,0 +1,204 @@
+:root {
+  --color-salt: #61acf0; /* blue */
+  --color-fat: #f0a561; /* orange */
+  --color-acid: #cbd20a; /* lime */
+  --color-heat: #e74a2f; /* red */
+  --color-black: #1a1917; /* black */
+}
+
+.large { 
+  font-size: 160%;
+}
+
+.salt {
+  color: var(--color-salt);
+  font-size: 200%; 
+  font-weight:700;
+}
+
+.fat {
+  color: var(--color-fat);
+  font-size: 200%; 
+  font-weight:700;
+}
+
+.acid {
+  color: var(--color-acid);
+  font-size: 200%;
+  font-weight:700;
+}
+
+.heat {
+  color: var(--color-heat);
+  font-size: 200%;
+  font-weight:700;
+}
+
+/* highlighted code */
+
+.remark-code-line-highlighted {
+  background-color: rgba(97, 172, 240, .5);
+}
+
+/* in line code */
+
+.remark-code, .remark-inline-code {
+  color: var(--color-heat);
+}
+
+/* from emi tanaka's ninjutsu css! */
+
+.img-fill img { object-fit: fill; height:100%; width:100%; overflow: hidden;}
+.img-contain img { object-fit: contain; height:100%; width:100%;  overflow: hidden}
+.img-cover img { object-fit: cover; height:100%; width:100%;  overflow: hidden}
+.img-none img { object-fit: none; height:100%; width:100%; }
+
+/* from lucy's css!
+
+ol {
+  max-width: 350px;
+  counter-reset: my-counter;
+  list-style: none;
+  padding-left: 40px;
+}
+ol li {
+  counter-increment: my-counter;
+  position: relative;
+  margin: 20px 0;
+}
+ol li::before {
+  content: counter(my-counter);
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  left: -60px;
+  width: 9%;
+  height: 0;
+  padding-bottom: 9%;
+  line-height: 1em;
+  margin-top: -0.5em;
+  background: var(--color-fat);
+  border-radius: 50%;
+  text-align: center;
+}
+*/
+
+.inverse {
+  background-color: var(--color-black);
+  text-shadow: 0 0 0;
+}
+
+/* links */
+					 
+a,
+a:visited {
+  color: var(--color-black);
+  border-bottom: 1px solid var(--color-salt);
+  box-shadow: inset 0 -2px 0 var(--color-salt);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-black);
+  background: rgba(97, 172, 240, .5);
+  border-bottom: none;
+}
+
+a > code {
+  color: var(--color-heat);
+  text-decoration: none;
+}
+
+.remark-inline-code {
+  color: var(--color-heat);
+  text-decoration: none;
+}
+
+/* from the hygge css! */
+
+.polaroid img {
+    display: block; 
+    width: inherit; 
+    border: 10px solid #fff;
+    border-bottom: 45px solid #fff;
+    -webkit-box-shadow: 3px 3px 3px #111;
+    -moz-box-shadow: 3px 3px 3px #111;
+    box-shadow: 3px 3px 3px #111;
+}
+
+/* footer */
+
+div.my-footer {
+    background-color: #1a1917;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 20px;
+    width: 100%;
+}
+
+div.my-footer span {
+    font-size: 10pt;
+    color: #F7F8FA;
+    position: absolute;
+    left: 15px;
+    bottom: 2px;
+}
+
+.remark-slide-number {
+  bottom: 18px;
+  opacity: 0.5;
+  position: absolute;
+  right: 20px;
+}
+
+img.circle {
+  border-radius:50%;
+}
+
+/* split rows*/
+
+
+.title-slide .remark-slide-number { 
+  display: none; 
+}
+
+.wrapper {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  place-items: center;
+  place-content: center;	
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.top-left {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  background-color: var(--color-salt);
+}
+
+.top-right {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+  background-color: var(--color-fat);
+}
+
+.bottom-left {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  background-color: var(--color-acid);
+}
+
+.bottom-right {
+  grid-row: 3 / 4;
+  grid-column: 3 / 4;
+  background-color: var(--color-heat);
+}
+
+/* https://stackoverflow.com/questions/50919104/horizontally-scrollable-output-on-xaringan-slides */
+pre {
+  max-width: 100%;
+  overflow-x: scroll;
+}

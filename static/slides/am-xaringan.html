@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Making Slides with R Markdown</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Alison Hill" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
+    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet/leaflet.js"></script>
+    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+    <script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
+    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-binding/leaflet.js"></script>
+    <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs/datatables-binding/datatables.js"></script>
+    <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
+    <script src="https://use.fontawesome.com/5235085b15.js"></script>
+    <link rel="stylesheet" href="css/sfah.css" type="text/css" />
+    <link rel="stylesheet" href="css/sfah-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+layout: true
+  
+&lt;div class="my-footer"&gt;&lt;span&gt;bit.ly/xaringan-rsconf19&lt;/span&gt;&lt;/div&gt;
+
+&lt;!-- this adds the link footer to all slides, depends on my-footer class in css--&gt;
+
+---
+
+class: left, middle
+background-image: url(img/brooke-lark-500141-unsplash.jpg)
+background-size: cover
+
+# Meet xaringan
+
+&lt;img src="https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png" alt="Sharingan" width="180" /&gt;
+
+### Making slides in R Markdown
+
+.large[Alison Hill | rstudio::conf | 2018-11-27]
+
+&lt;!-- this ends up being the title slide since seal = FALSE--&gt;
+
+---
+
+class: right, middle
+
+&lt;img class="circle" src="https://github.com/apreshill.png" width="150px"/&gt;
+
+# Find me at...
+
+&lt;a href="http://twitter.com/apreshill"&gt;&lt;i class="fa fa-twitter fa-fw"&gt;&lt;/i&gt;&amp;nbsp; @apreshill&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://github.com/apreshill"&gt;&lt;i class="fa fa-github fa-fw"&gt;&lt;/i&gt;&amp;nbsp; @apreshill&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://alison.rbind.io"&gt;&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;&amp;nbsp; alison.rbind.io&lt;/a&gt;&lt;br&gt;
+&lt;a href="mailto:alison@rstudio.com"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;&amp;nbsp; alison@rstudio.com&lt;/a&gt;
+
+
+
+
+???
+
+- salt: chunks
+- acid: slide
+
+This will be a choose your own adventure game. I'll provide 3 datasets:
+
+- UFO sightings https://www.kaggle.com/NUFORC/ufo-sightings/kernels
+
+- Births https://github.com/fivethirtyeight/data/tree/master/births (https://fivethirtyeight-r.netlify.com/reference/index.html)
+- note leap years 2000/2004/2008/2012
+
+- Olympics https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results
+
+- Sydney beaches data https://github.com/rladiessydney/RYouWithMe/blob/master/sydneybeaches.csv
+
+- https://github.com/Kiuzi/The-Best-and-Worst-Places-to-Grow-Up
+
+- idea do salt fat acid heat
+
+link to images, then yummly ingredient lists
+https://flowingdata.com/2018/09/18/cuisine-ingredients/
+
+---
+name: setup
+class: center
+background-image: url(img/paul-hanaoka-330307-unsplash.jpg)
+background-size: cover
+
+# Did you do the pre-work setup?
+
+.left[.footnote[.large[https://armextensions.netlify.com/prework/]]]
+
+---
+name: ninja
+background-image: url(img/wyron-a-615719-unsplash.jpg)
+background-size: cover
+class: left
+
+
+# We assume:
+
+--
+
+### you know Markdown 
+
+--
+
+### you know R Markdown
+
+--
+
+.salt[you want awesome HTML5 slides]
+
+---
+# Hello World
+
+The fastest way to make a xaringan slide deck is in the [RStudio IDE](https://www.rstudio.com/products/rstudio/):
+
+- Create a new R Markdown document from the menu `File -&gt; New File -&gt; R Markdown -&gt; From Template -&gt; Ninja Presentation`;&lt;sup&gt;1&lt;/sup&gt;
+
+--
+
+- Click the `Knit` button to compile it;
+
+.footnote[
+[1] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template in RStudio.
+]
+
+
+---
+
+# Hello Ninja
+
+As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+
+1. The [remark.js](https://remarkjs.com) library;
+
+1. The **xaringan** package;
+
+Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+
+---
+
+.wrapper[
+  .top-left[HEADER]
+  
+--
+
+  &lt;div class="top-right"&gt;MENU&lt;/div&gt;
+  
+--
+
+  &lt;div class="bottom-left"&gt;CONTENT&lt;/div&gt;
+  
+--
+
+  &lt;div class="bottom-right"&gt;FOOTER&lt;/div&gt;
+]
+
+
+
+---
+# Let's make this a slide deck
+
+Use the .Rmd provided to you...
+
+.pull-left[
+Where you see:
+
+```r
+---
+title: "foodie-safety"
+*output: html_document
+---
+```
+] 
+
+--
+
+.pull-right[
+Change to:
+
+```r
+---
+title: "foodie-safety"
+*output: xaringan::moon_reader
+---
+```
+] 
+
+--
+.pull-right[
+Save this!
+]
+
+---
+
+# Two ways to use `moon_reader` 👩‍🚀
+
+
+
+1. Click the `Knit` button to compile it;
+
+1. Use your console:
+
+    ```
+    rmarkdown::render('foodie.Rmd', 'xaringan::moon_reader')
+    ```
+
+
+--
+
+&lt;hr&gt;
+
+Do you see both slides?
+
+--
+
+- Title slide 😢
+
+--
+
+- Content slide 😡
+
+--
+
+Don't worry: it gets much better. But first...
+
+
+---
+# Infinite moon reader 🚀
+
+- Now use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/)&lt;sup&gt;1&lt;/sup&gt; and select _xaringan: Infinite Moon Reader._ 
+
+--
+
+- Generates live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.)
+
+.footnote[
+[1] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the addin in RStudio.
+]
+
+---
+# Making slides
+
+.pull-left[
+- Slide 1 starts where YAML ends
+- 3 dashes in a row `---` on a line by itself is a new slide 
+]
+
+.pull-right[
+```
+---
+title: "foodie-safety"
+output: xaringan::moon_reader 
+---
+
+# Slide 1
+
+This is slide 1
+
+---
+# Slide 2
+
+This is slide 2
+
+```
+]
+
+---
+name: sfah
+class: center, middle
+
+---
+
+template: sfah
+
+## .salt[SALT] .fat[FAT]
+
+## .acid[ACID] .heat[HEAT]
+
+---
+
+template: sfah
+
+## .salt[REVEALJS] &amp;nbsp; .fat[CHUNKS]
+
+## .acid[IMAGES] &amp;nbsp; .heat[THEMES]
+
+---
+name: salt
+class: inverse, middle, center
+background-image: url(img/jason-tuinstra-551608-unsplash.jpg)
+background-size: cover
+
+# SALT = REVEALJS
+
+???
+
+SALT enhances flavor
+
+REVEALJS enhances your code
+
+---
+# revealjs
+
+What you need to know now:
+
+- [Incremental reveals](#increment-demo)
+
+- [Aligning slide content](#fullalign-demo)
+
+- [Aligning text blocks](#textalign-demo)
+
+- [Making two-column slides](#pull-demo)
+
+
+---
+
+name: increment-demo
+
+# Incremental reveals
+
+.left-column[
+
+
+```
+# Hi there
+
+My name is Alison
+
+--
+
+I like hot toddies
+
+--
+
+`#rdogladies`
+
+--
+
+and babies
+```
+]
+
+--
+
+.right-column[
+
+### Hi there
+
+My name is Alison
+{{content}}
+
+]
+
+--
+
+I like hot toddies
+{{content}}
+
+--
+
+`#rdogladies`
+{{content}}
+
+--
+
+and babies
+
+
+&lt;!--https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout--&gt;
+
+---
+name: fullalign-demo
+
+# Align an entire slide
+
+.left-column[
+
+### Horizontal
+
+```
+*left,
+center, 
+right
+```
+
+&lt;hr&gt;
+
+### Vertical
+
+```
+*top, 
+middle, 
+bottom 
+```
+
+
+]
+
+--
+
+.right-column[
+
+
+```r
+---
+
+*class: center, middle
+
+# Slide with centered content in the middle
+
+My name is Alison
+
+--
+
+I like hot toddies
+
+--
+
+`#rdogladies`
+
+--
+
+and babies
+
+---
+```
+]
+
+
+
+---
+
+class: center, middle
+
+.footnote[
+```
+class: center, middle
+```
+]
+
+# Slide with centered content in the middle
+
+My name is Alison
+
+--
+
+I like hot toddies
+
+--
+
+`#rdogladies`
+    
+--
+
+and babies
+
+---
+
+name: textalign-demo
+
+# Align some text only
+
+.left-column[
+### Horizontal only
+
+```
+.left[Left-aligned]
+
+.center[Centered]
+
+.right[Right-aligned]
+```
+]
+
+--
+
+.right-column[
+
+
+```r
+---
+
+class: center, middle 
+
+# Slide with some aligned text
+
+My name is Alison
+
+--
+
+*.left[I like hot toddies]
+
+--
+
+*.center[`#rdogladies`]
+
+--
+
+*.right[and babies]
+
+---
+```
+]
+
+---
+
+class: center, middle
+
+# Slide with some aligned text
+
+My name is Alison
+
+--
+
+.left[I like hot toddies] 
+
+--
+
+.center[`#rdogladies`] 
+
+--
+
+.right[and babies]
+
+---
+
+name: pull-demo
+
+# Two-column slides
+
+.left-column[
+Try this:
+```
+.pull-left[
+on your left
+]
+
+.pull-right[
+on your right
+]
+```
+]
+
+
+--
+
+.right-column[
+
+.pull-left[
+&lt;br&gt;
+&lt;br&gt;
+on your left
+]
+
+.pull-right[
+&lt;br&gt;
+&lt;br&gt;
+on your right
+]
+]
+
+--
+
+
+.footnote[
+[1] On a full slide, these are each 47% width.
+
+[2] You can also similarly use `.left-column[ ]` (20%) and `.right-column` (75%).
+]
+
+
+---
+
+template: sfah
+
+## .salt[REVEALJS] &amp;nbsp; .fat[CHUNKS]
+
+## .acid[IMAGES] &amp;nbsp; .heat[THEMES]
+
+
+---
+
+# Take 5 minutes ⏱
+
+Season some awesome slides with `reveal.js` salt. Make at least one slide that uses each of the following:
+
+1. Incremental reveals (`--`) ([demo slide](#increment-demo))
+
+1. The `class` slide property to align all content on a slide ([demo slide](#fullalign-demo))
+
+1. CSS content classes to align some text on a slide (`.left / .center / .right`) ([demo slide](#textalign-demo))
+
+1. CSS content classes to create two column slides (`.pull-left / .pull-right / .left-column / .right-column`) ([demo slide](#pull-demo))
+
+
+--
+
+If this is easy, try:
+
++ combining the salts, and/or
+
++ mixing with some R code chunks too.
+
+--
+
+But don't despair- we'll fatten up our slides with R chunks next...
+
+---
+name: fat
+class: inverse, top, center
+background-image: url(img/bake-599521_1920.jpg)
+background-size: cover
+
+---
+template: fat
+
+# FAT
+
+---
+template: fat
+
+# FAT = CHUNKS
+
+---
+
+.left-column[
+# Hello plot
+]
+
+.right-column[
+
+
+```r
+library(babynames)
+library(tidyverse)
+alison &lt;- babynames %&gt;%
+  filter(name == "Alison" | name == "Allison") %&gt;% 
+  filter(sex == "F") 
+name_plot &lt;- ggplot(alison, 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line() 
+name_plot
+```
+
+]
+
+---
+
+.pull-left[
+# 😱
+
+## Why so ugly?
+]
+
+--
+
+.pull-right[
+
+````
+```{r}
+name_plot
+```
+````
+
+![](am-xaringan_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+
+]
+
+.footnote[
+[1] Read more about [images in R Markdown](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents)
+
+[2] The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
+]
+
+---
+
+
+.left-column[
+# 😏
+
+## Better, but bigger
+
+]
+
+.right-column[
+
+````
+```{r dpi = 180}
+name_plot
+```
+````
+
+![](am-xaringan_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+]
+
+---
+name: plot-demo
+
+.left-column[
+# 🎉
+]
+
+.right-column[
+
+````
+```{r dpi = 180, out.width = '60%'}
+name_plot
+```
+````
+
+&lt;img src="am-xaringan_files/figure-html/alison-plot-1.png" width="60%" /&gt;
+]
+
+---
+
+# Control your plots
+
+You'll often want to play with individual chunk options for plots like `dpi` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
+
+````
+```{r setup}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, dpi = 200)
+```
+````
+
+
+How your plots look *can* also depend on which CSS content classes you use too (i.e., for 2 column slides).
+
+---
+name: highlightjs-demo
+
+# Highlight your code
+
+Why? It makes it more readable 👀
+
+
+```r
+---
+title: "foodie-safety"
+subtitle: "rstudio::conf 2019"
+author: "Alison Hill"
+date: "`r Sys.Date()`"
+output: 
+  xaringan::moon_reader:
+*   nature:
+*     highlightStyle: github
+*     highlightLines: true
+---
+```
+
+--
+
+The [highlight style options are](https://github.com/gnab/remark/wiki/Configuration):
+
+  + Alternatives: `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
+
+---
+name: highlightr-demo
+
+# Highlight code input &amp; output
+
+.pull-left[
+
+````
+```{r alison-wrangle, highlight.output = 3:4}
+library(babynames)
+library(tidyverse)
+alison &lt;- babynames %&gt;%
+  filter(name == "Alison" | 
+         name == "Allison") %&gt;% 
+  filter(sex == "F") 
+*glimpse(alison) #&lt;&lt;
+```
+````
+]
+
+.pull-right[
+
+
+```r
+library(babynames)
+library(tidyverse)
+alison &lt;- babynames %&gt;%
+  filter(name == "Alison" | 
+         name == "Allison") %&gt;% 
+  filter(sex == "F") 
+*glimpse(alison)
+```
+
+```
+## Observations: 214
+## Variables: 5
+*## $ year &lt;dbl&gt; 1905, 1907, 1908, 1910, 1910, 1911, 1912, 1912, 1913, 191...
+*## $ sex  &lt;chr&gt; "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F...
+## $ name &lt;chr&gt; "Alison", "Alison", "Allison", "Alison", "Allison", "Alli...
+## $ n    &lt;int&gt; 7, 5, 6, 5, 5, 9, 12, 9, 12, 7, 22, 11, 16, 13, 24, 15, 2...
+## $ prop &lt;dbl&gt; 2.259012e-05, 1.481776e-05, 1.692367e-05, 1.191821e-05, 1...
+```
+]
+
+.footnote[
+To highlight a line of plain markdown text, use a `*` (from [remark docs](https://github.com/gnab/remark/wiki/Configuration))
+]
+
+---
+name: knitr-demo
+
+# Plain old R code
+
+Some `knitr` tricks:
+
+1. Show plot before code
+    - Chunk 1: `` {r plot-to-show, echo = FALSE} ``
+    - Chunk 2: `` {r plot-to-show, eval = FALSE} ``
+
+1. Show code and plot side-by-side
+    - Chunk 1: `` {r side-by-side, fig.show = 'hide'} ``
+    - Chunk 2: `` {r side-by-side, echo = FALSE} ``
+
+--
+
+The key here is to leave the second chunk is _empty_.
+
+.footnote[
+Read about another way to [reuse chunks](https://yihui.name/knitr/demo/reference/) with the chunk option `ref.label`.
+]
+
+
+---
+
+# Take 15 minutes 🕑
+
+First, [edit your YAML](#highlightjs-demo) to include a `highlightStyle` and set `highlightLines` to true.
+
+--
+
+Next, fatten up some slides with (mainly) `knitr` butter. Make at least one slide that uses each of the following:
+
+1. Includes a plot with decent resolution ([demo slide](#plot-demo))
+
+1. Highlights some lines of R code ([demo slide](#highlightr-demo))
+
+1. Highlights some lines of R output ([demo slide](#highlightr-demo))
+
+1. Uses some fancy code chunk options ([demo slide](#knitr-demo))
+
+
+--
+
+If this is easy, try:
+
++ combining with the salts (make code chunks incremental),
+
++ look at my CSS file to figure out how to change the code highlight color
+
+--
+
+If you are in need of less text and more pics- we'll throw some image acid on our slides next...
+
+---
+name: acid
+class: inverse, center, middle
+background-image: url(img/monika-grabkowska-1141662-unsplash.jpg)
+background-size: cover
+
+---
+template: acid
+
+# ACID
+
+---
+template: acid
+
+# ACID = IMAGES
+
+---
+name: heat
+class: inverse, center, middle
+background-image: url(img/carlos-hevia-628152-unsplash.jpg)
+background-size: cover
+
+---
+template: heat
+
+# HEAT
+
+---
+template: heat
+
+# HEAT = THEMES
+
+---
+class: inverse, center, middle
+
+# Get Started
+
+.polaroid[&lt;img src = "img/butter-1449453_1920.jpg"&gt;&lt;/i&gt;]
+
+---
+
+# Hello World
+
+Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+
+
+```r
+devtools::install_github("yihui/xaringan")
+```
+
+
+--
+
+You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
+
+- Create a new R Markdown document from the menu `File -&gt; New File -&gt; R Markdown -&gt; From Template -&gt; Ninja Presentation`;&lt;sup&gt;1&lt;/sup&gt;
+
+--
+
+- Click the `Knit` button to compile it;
+
+--
+
+- or use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/)&lt;sup&gt;2&lt;/sup&gt; "Infinite Moon Reader" to live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.
+
+.footnote[
+[1] 中文用户请看[这份教程](http://slides.yihui.name/xaringan/zh-CN.html)
+
+[2] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template or addin in RStudio.
+]
+
+---
+background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
+background-position: 50% 50%
+class: center, bottom, inverse
+
+# You only live once!
+
+---
+
+# Hello Ninja
+
+As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+
+1. The [remark.js](https://remarkjs.com) library;
+
+1. The **xaringan** package;
+
+Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+
+---
+
+# remark.js
+
+You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
+
+- create a new slide (Markdown syntax&lt;sup&gt;*&lt;/sup&gt; and slide properties);
+
+- format a slide (e.g. text alignment);
+
+- configure the slideshow;
+
+- and use the presentation (keyboard shortcuts).
+
+It is important to be familiar with remark.js before you can understand the options in **xaringan**.
+
+.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
+
+---
+background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
+background-size: cover
+class: center, bottom, inverse
+
+# I was so happy to have discovered remark.js!
+
+---
+class: inverse, middle, center
+
+# Using xaringan
+
+---
+
+# xaringan
+
+Provides an R Markdown output format `xaringan::moon_reader` as a wrapper for remark.js, and you can use it in the YAML metadata, e.g.
+
+```yaml
+---
+title: "A Cool Presentation"
+output:
+  xaringan::moon_reader:
+    yolo: true
+    nature:
+      autoplay: 30000
+---
+```
+
+See the help page `?xaringan::moon_reader` for all possible options that you can use.
+
+---
+
+# remark.js vs xaringan
+
+Some differences between using remark.js (left) and using **xaringan** (right):
+
+.pull-left[
+1. Start with a boilerplate HTML file;
+
+1. Plain Markdown;
+
+1. Write JavaScript to autoplay slides;
+
+1. Manually configure MathJax;
+
+1. Highlight code with `*`;
+
+1. Edit Markdown source and refresh browser to see updated slides;
+]
+
+.pull-right[
+1. Start with an R Markdown document;
+
+1. R Markdown (can embed R/other code chunks);
+
+1. Provide an option `autoplay`;
+
+1. MathJax just works;&lt;sup&gt;*&lt;/sup&gt;
+
+1. Highlight code with `{{}}`;
+
+1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+]
+
+.footnote[[*] Not really. See next page.]
+
+---
+
+# Math Expressions
+
+You can write LaTeX math expressions inside a pair of dollar signs, e.g. &amp;#36;\alpha+\beta$ renders `\(\alpha+\beta\)`. You can use the display style with double dollar signs:
+
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+```
+
+`$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$`
+
+Limitations:
+
+1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+
+1. There should not be spaces after the opening `$` or before the closing `$`.
+
+1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
+
+---
+
+# R Code
+
+
+```r
+# a boring regression
+fit = lm(dist ~ 1 + speed, data = cars)
+coef(summary(fit))
+```
+
+```
+#               Estimate Std. Error   t value     Pr(&gt;|t|)
+# (Intercept) -17.579095  6.7584402 -2.601058 1.231882e-02
+# speed         3.932409  0.4155128  9.463990 1.489836e-12
+```
+
+```r
+dojutsu = c('地爆天星', '天照', '加具土命', '神威', '須佐能乎', '無限月読')
+grep('天', dojutsu, value = TRUE)
+```
+
+```
+# [1] "地爆天星" "天照"
+```
+
+---
+
+# R Plots
+
+
+```r
+par(mar = c(4, 4, 1, .1))
+plot(cars, pch = 19, col = 'darkgray', las = 1)
+abline(fit, lwd = 2)
+```
+
+![](am-xaringan_files/figure-html/cars-1.svg)&lt;!-- --&gt;
+
+---
+
+# Tables
+
+If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
+
+
+```r
+knitr::kable(head(iris), format = 'html')
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Species &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# HTML Widgets
+
+I have not thoroughly tested HTML widgets against **xaringan**. Some may work well, and some may not. It is a little tricky.
+
+Similarly, the Shiny mode (`runtime: shiny`) does not work. I might get these issues fixed in the future, but these are not of high priority to me. I never turn my presentation into a Shiny app. When I need to demonstrate more complicated examples, I just launch them separately. It is convenient to share slides with other people when they are plain HTML/JS applications.
+
+See the next page for two HTML widgets.
+
+---
+
+
+```r
+library(leaflet)
+leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
+```
+
+<div id="htmlwidget-c211dede2921ad6c3dae" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c211dede2921ad6c3dae">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
+
+---
+
+
+```r
+DT::datatable(
+  head(iris, 10),
+  fillContainer = FALSE, options = list(pageLength = 8)
+)
+```
+
+<div id="htmlwidget-68fbb03f69f72c2a0f92" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-68fbb03f69f72c2a0f92">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+
+---
+
+# Some Tips
+
+- When you use the "Infinite Moon Reader" addin in RStudio, your R session will be blocked by default. You can click the red button on the right of the console to stop serving the slides, or use the _daemonized_ mode so that it does not block your R session. To do the latter, you can set the option
+
+    ```r
+    options(servr.daemon = TRUE)
+    ```
+    
+    in your current R session, or in `~/.Rprofile` so that it is applied to all future R sessions. I do the latter by myself.
+    
+    To know more about the web server, see the [**servr**](https://github.com/yihui/servr) package.
+
+--
+
+- Do not forget to try the `yolo` option of `xaringan::moon_reader`.
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        yolo: true
+    ```
+
+---
+
+# Some Tips
+
+- Slides can be automatically played if you set the `autoplay` option under `nature`, e.g. go to the next slide every 30 seconds in a lightning talk:
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        nature:
+          autoplay: 30000
+    ```
+
+--
+
+- A countdown timer can be added to every page of the slides using the `countdown` option under `nature`, e.g. if you want to spend one minute on every page when you give the talk, you can set:
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        nature:
+          countdown: 60000
+    ```
+
+    Then you will see a timer counting down from `01:00`, to `00:59`, `00:58`, ... When the time is out, the timer will continue but the time turns red.
+    
+---
+
+# Some Tips
+
+- The title slide is created automatically by **xaringan**, but it is just another remark.js slide added before your other slides.
+
+    The title slide is set to `class: center, middle, inverse, title-slide` by default. You can change the classes applied to the title slide with the `titleSlideClass` option of `nature` (`title-slide` is always applied).
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        nature:
+          titleSlideClass: [top, left, inverse]
+    ```
+    
+--
+
+- If you'd like to create your own title slide, disable **xaringan**'s title slide with the `seal = FALSE` option of `moon_reader`.
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        seal: false
+    ```
+
+---
+
+# Some Tips
+
+- There are several ways to build incremental slides. See [this presentation](https://slides.yihui.name/xaringan/incremental.html) for examples.
+
+- The option `highlightLines: true` of `nature` will highlight code lines that start with `*`, or are wrapped in `{{ }}`, or have trailing comments `#&lt;&lt;`;
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        nature:
+          highlightLines: true
+    ```
+
+    See examples on the next page.
+
+---
+
+# Some Tips
+
+
+.pull-left[
+An example using a leading `*`:
+
+    ```r
+    if (TRUE) {
+    ** message("Very important!")
+    }
+    ```
+Output:
+```r
+if (TRUE) {
+* message("Very important!")
+}
+```
+
+This is invalid R code, so it is a plain fenced code block that is not executed.
+]
+
+.pull-right[
+An example using `{{}}`:
+
+    ```{r tidy=FALSE}
+    if (TRUE) {
+    *{{ message("Very important!") }}
+    }
+    ```
+Output:
+
+```r
+if (TRUE) {
+* message("Very important!") 
+}
+```
+
+It is valid R code so you can run it. Note that `{{}}` can wrap an R expression of multiple lines.
+]
+
+---
+
+# Some Tips
+
+An example of using the trailing comment `#&lt;&lt;` to highlight lines:
+
+````markdown
+```{r tidy=FALSE}
+library(ggplot2)
+ggplot(mtcars) + 
+  aes(mpg, disp) + 
+  geom_point() +   #&lt;&lt;
+  geom_smooth()    #&lt;&lt;
+```
+````
+
+Output:
+
+
+```r
+library(ggplot2)
+ggplot(mtcars) + 
+  aes(mpg, disp) + 
+* geom_point() +
+* geom_smooth()
+```
+
+---
+
+# Some Tips
+
+When you enable line-highlighting, you can also use the chunk option `highlight.output` to highlight specific lines of the text output from a code chunk. For example, `highlight.output = TRUE` means highlighting all lines, and `highlight.output = c(1, 3)` means highlighting the first and third line.
+
+````md
+```{r, highlight.output=c(1, 3)}
+head(iris)
+```
+````
+
+
+```
+*##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+*## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+```
+
+Question: what does `highlight.output = c(TRUE, FALSE)` mean? (Hint: think about R's recycling of vectors)
+
+---
+
+# Some Tips
+
+- To make slides work offline, you need to download a copy of remark.js in advance, because **xaringan** uses the online version by default (see the help page `?xaringan::moon_reader`).
+
+- You can use `xaringan::summon_remark()` to download the latest or a specified version of remark.js. By default, it is downloaded to `libs/remark-latest.min.js`.
+
+- Then change the `chakra` option in YAML to point to this file, e.g.
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        chakra: libs/remark-latest.min.js
+    ```
+
+- If you used Google fonts in slides (the default theme uses _Yanone Kaffeesatz_, _Droid Serif_, and _Source Code Pro_), they won't work offline unless you download or install them locally. The Heroku app [google-webfonts-helper](https://google-webfonts-helper.herokuapp.com/fonts) can help you download fonts and generate the necessary CSS.
+
+---
+
+# Macros
+
+- remark.js [allows users to define custom macros](https://github.com/yihui/xaringan/issues/80) (JS functions) that can be applied to Markdown text using the syntax `![:macroName arg1, arg2, ...]` or `![:macroName arg1, arg2, ...](this)`. For example, before remark.js initializes the slides, you can define a macro named `scale`:
+
+    ```js
+    remark.macros.scale = function (percentage) {
+      var url = this;
+      return '&lt;img src="' + url + '" style="width: ' + percentage + '" /&gt;';
+    };
+    ```
+
+    Then the Markdown text
+
+    ```markdown
+    ![:scale 50%](image.jpg)
+    ```
+
+    will be translated to
+    
+    ```html
+    &lt;img src="image.jpg" style="width: 50%" /&gt;
+    ```
+
+---
+
+# Macros (continued)
+
+- To insert macros in **xaringan** slides, you can use the option `beforeInit` under the option `nature`, e.g.,
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        nature:
+          beforeInit: "macros.js"
+    ```
+
+    You save your remark.js macros in the file `macros.js`.
+
+- The `beforeInit` option can be used to insert arbitrary JS code before `remark.create()`. Inserting macros is just one of its possible applications.
+
+---
+
+# CSS
+
+Among all options in `xaringan::moon_reader`, the most challenging but perhaps also the most rewarding one is `css`, because it allows you to customize the appearance of your slides using any CSS rules or hacks you know.
+
+You can see the default CSS file [here](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/default.css). You can completely replace it with your own CSS files, or define new rules to override the default. See the help page `?xaringan::moon_reader` for more information.
+
+---
+
+# CSS
+
+For example, suppose you want to change the font for code from the default "Source Code Pro" to "Ubuntu Mono". You can create a CSS file named, say, `ubuntu-mono.css`:
+
+```css
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+```
+
+Then set the `css` option in the YAML metadata:
+
+```yaml
+output:
+  xaringan::moon_reader:
+    css: ["default", "ubuntu-mono.css"]
+```
+
+Here I assume `ubuntu-mono.css` is under the same directory as your Rmd.
+
+See [yihui/xaringan#83](https://github.com/yihui/xaringan/issues/83) for an example of using the [Fira Code](https://github.com/tonsky/FiraCode) font, which supports ligatures in program code.
+
+---
+
+# Themes
+
+Don't want to learn CSS? Okay, you can use some user-contributed themes. A theme typically consists of two CSS files `foo.css` and `foo-fonts.css`, where `foo` is the theme name. Below are some existing themes:
+
+
+```r
+names(xaringan:::list_css())
+```
+
+```
+##  [1] "chocolate-fonts"  "chocolate"        "default-fonts"   
+##  [4] "default"          "duke-blue"        "hygge-duke"      
+##  [7] "hygge"            "kunoichi"         "lucy-fonts"      
+## [10] "lucy"             "metropolis-fonts" "metropolis"      
+## [13] "middlebury-fonts" "middlebury"       "ninjutsu"        
+## [16] "rladies-fonts"    "rladies"          "robot-fonts"     
+## [19] "robot"            "rutgers-fonts"    "rutgers"         
+## [22] "shinobi"          "tamu-fonts"       "tamu"            
+## [25] "uo-fonts"         "uo"
+```
+
+---
+
+# Themes
+
+To use a theme, you can specify the `css` option as an array of CSS filenames (without the `.css` extensions), e.g.,
+
+```yaml
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts]
+```
+
+If you want to contribute a theme to **xaringan**, please read [this blog post](https://yihui.name/en/2017/10/xaringan-themes).
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
+background-size: contain
+
+# Naruto
+
+---
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
+background-size: 100px
+background-position: 90% 8%
+
+# Sharingan
+
+The R package name **xaringan** was derived&lt;sup&gt;1&lt;/sup&gt; from **Sharingan**, a dōjutsu in the Japanese anime _Naruto_ with two abilities:
+
+- the "Eye of Insight"
+
+- the "Eye of Hypnotism"
+
+I think a presentation is basically a way to communicate insights to the audience, and a great presentation may even "hypnotize" the audience.&lt;sup&gt;2,3&lt;/sup&gt;
+
+.footnote[
+[1] In Chinese, the pronounciation of _X_ is _Sh_ /ʃ/ (as in _shrimp_). Now you should have a better idea of how to pronounce my last name _Xie_.
+
+[2] By comparison, bad presentations only put the audience to sleep.
+
+[3] Personally I find that setting background images for slides is a killer feature of remark.js. It is an effective way to bring visual impact into your presentations.
+]
+
+---
+
+# Naruto terminology
+
+The **xaringan** package borrowed a few terms from Naruto, such as
+
+- [Sharingan](http://naruto.wikia.com/wiki/Sharingan) (写輪眼; the package name)
+
+- The [moon reader](http://naruto.wikia.com/wiki/Moon_Reader) (月読; an attractive R Markdown output format)
+
+- [Chakra](http://naruto.wikia.com/wiki/Chakra) (查克拉; the path to the remark.js library, which is the power to drive the presentation)
+
+- [Nature transformation](http://naruto.wikia.com/wiki/Nature_Transformation) (性質変化; transform the chakra by setting different options)
+
+- The [infinite moon reader](http://naruto.wikia.com/wiki/Infinite_Tsukuyomi) (無限月読; start a local web server to continuously serve your slides)
+
+- The [summoning technique](http://naruto.wikia.com/wiki/Summoning_Technique) (download remark.js from the web)
+
+You can click the links to know more about them if you want. The jutsu "Moon Reader" may seem a little evil, but that does not mean your slides are evil.
+
+---
+
+class: center
+
+# Hand seals (印)
+
+Press `h` or `?` to see the possible ninjutsu you can use in remark.js.
+
+![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg)
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
