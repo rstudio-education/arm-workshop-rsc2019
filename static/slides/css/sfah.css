@@ -198,7 +198,9 @@ img.circle {
 }
 
 /* https://stackoverflow.com/questions/50919104/horizontally-scrollable-output-on-xaringan-slides */
+
 pre {
+  background: #f8f8f8; /* match github highlightjs */
   max-width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
