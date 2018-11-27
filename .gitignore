@@ -3,4 +3,5 @@
 .RData
 .Ruserdata
 **/.DS_Store
-public/
+public
+blogdown
