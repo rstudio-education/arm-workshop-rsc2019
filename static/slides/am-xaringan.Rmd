@@ -570,10 +570,12 @@ My name is Alison
 
 .pull-right[
 
+.center[.middle[
 ### Hi there, take 2
 
 My name is Alison
 {{content}}
+]]
 
 ]
 

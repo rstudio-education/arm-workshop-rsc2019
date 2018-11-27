@@ -5,7 +5,7 @@ date: 2018-09-09T00:00:00.000Z
 lastmod: 2018-09-09T00:00:00.000Z
 
 draft: false
-toc: true
+toc: false
 type: docs
 
 linktitle: R Markdown Example
