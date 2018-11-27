@@ -21,7 +21,9 @@ output:
 options(htmltools.dir.version = FALSE)
 library(knitr)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+# options(knitr.table.format = "html")
 library(tidyverse)
+library(babynames)
 ```
 
 layout: true
@@ -143,24 +145,6 @@ As a presentation ninja, you certainly should not be satisfied by the "Hello Wor
 1. The **xaringan** package;
 
 Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
-
----
-
-.wrapper[
-  .top-left[HEADER]
-  
---
-
-  <div class="top-right">MENU</div>
-  
---
-
-  <div class="bottom-left">CONTENT</div>
-  
---
-
-  <div class="bottom-right">FOOTER</div>
-]
 
 
 
@@ -626,6 +610,76 @@ template: fat
 # FAT = CHUNKS
 
 ---
+name: table-demos
+
+.left-column[
+# Hello table
+]
+
+.right-column[
+
+```{r}
+head(babynames)
+```
+
+]
+
+
+---
+
+
+.left-column[
+# Hello DT
+]
+
+.right-column[
+
+```{r}
+library(DT)
+head(babynames) %>% 
+  datatable()
+```
+
+]
+
+---
+
+.left-column[
+# Hello kable?
+
+]
+
+.right-column[
+
+```{r}
+head(babynames) %>% 
+  kable()
+```
+
+]
+
+---
+
+.left-column[
+# Hello kable!
+
+]
+
+
+.right-column[
+```{r}
+head(babynames) %>% 
+  kable(format = "html")
+```
+
+]
+
+.footnote[
+You can set this as a global option for all your slides using [`options(knitr.table.format = "html")`](https://github.com/yihui/knitr/blob/cf7664894e237e71e4fd9c633df9ae6cd87ea382/R/table.R)
+]
+
+
+---
 
 .left-column[
 # Hello plot
@@ -652,7 +706,7 @@ name_plot
 
 ---
 
-.pull-left[
+.left-column[
 # `r emo::ji("scream")`
 
 ## Why so ugly?
@@ -660,7 +714,7 @@ name_plot
 
 --
 
-.pull-right[
+.right-column[
 
 ````
 ```{r}`r ''`
@@ -674,9 +728,7 @@ name_plot
 ]
 
 .footnote[
-[1] Read more about [images in R Markdown](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents)
-
-[2] The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
+The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
 ]
 
 ---
@@ -726,14 +778,25 @@ name_plot
 
 You'll often want to play with individual chunk options for plots like `dpi` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
 
+--
+
 ````
 ```{r setup}`r ''`
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, dpi = 200)
 ```
 ````
 
+--
+
 
 How your plots look *can* also depend on which CSS content classes you use too (i.e., for 2 column slides).
+
+--
+
+.footnote[
+[1] Read more about [images in R Markdown](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents)
+]
+
 
 ---
 name: highlightjs-demo
@@ -883,11 +946,11 @@ First, [edit your YAML](#highlightjs-demo) to include a `highlightStyle` and set
 
 Next, fatten up some slides with (mainly) `knitr` butter. Make at least one slide that uses each of the following:
 
+1. Includes a nice-looking table ([demo slides](#table-demos))
+
 1. Includes a plot with decent resolution ([demo slide](#plot-demo))
 
-1. Highlights some lines of R code ([demo slide](#highlightr-demo))
-
-1. Highlights some lines of R output ([demo slide](#highlightr-demo))
+1. Highlights some lines of R input/output ([demo slide](#highlightr-demo))
 
 1. Uses some fancy code chunk options ([demo slide](#knitr-demo))
 

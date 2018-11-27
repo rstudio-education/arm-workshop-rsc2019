@@ -7,13 +7,6 @@
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <script src="libs/htmlwidgets/htmlwidgets.js"></script>
     <script src="libs/jquery/jquery.min.js"></script>
-    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
-    <script src="libs/leaflet/leaflet.js"></script>
-    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
-    <script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
-    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
-    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
-    <script src="libs/leaflet-binding/leaflet.js"></script>
     <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
     <script src="libs/datatables-binding/datatables.js"></script>
     <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -21,6 +14,13 @@
     <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
     <link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
     <script src="libs/crosstalk/js/crosstalk.min.js"></script>
+    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet/leaflet.js"></script>
+    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+    <script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
+    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-binding/leaflet.js"></script>
     <script src="https://use.fontawesome.com/5235085b15.js"></script>
     <link rel="stylesheet" href="css/sfah.css" type="text/css" />
     <link rel="stylesheet" href="css/sfah-fonts.css" type="text/css" />
@@ -151,24 +151,6 @@ As a presentation ninja, you certainly should not be satisfied by the "Hello Wor
 
 Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
 
----
-
-.wrapper[
-  .top-left[HEADER]
-  
---
-
-  &lt;div class="top-right"&gt;MENU&lt;/div&gt;
-  
---
-
-  &lt;div class="bottom-left"&gt;CONTENT&lt;/div&gt;
-  
---
-
-  &lt;div class="bottom-right"&gt;FOOTER&lt;/div&gt;
-]
-
 
 
 ---
@@ -207,7 +189,7 @@ Save this!
 
 ---
 
-# Two ways to use `moon_reader` 👨‍🚀
+# Two ways to use `moon_reader` 👩‍🚀
 
 
 
@@ -595,7 +577,7 @@ template: sfah
 
 ---
 
-# Take 10 minutes 🕠
+# Take 10 minutes 🕣
 
 Season some awesome slides with `remark.js` salt. Make at least one slide that uses each of the following:
 
@@ -637,6 +619,162 @@ template: fat
 # FAT = CHUNKS
 
 ---
+name: table-demos
+
+.left-column[
+# Hello table
+]
+
+.right-column[
+
+
+```r
+head(babynames)
+```
+
+```
+## # A tibble: 6 x 5
+##    year sex   name          n   prop
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
+## 1  1880 F     Mary       7065 0.0724
+## 2  1880 F     Anna       2604 0.0267
+## 3  1880 F     Emma       2003 0.0205
+## 4  1880 F     Elizabeth  1939 0.0199
+## 5  1880 F     Minnie     1746 0.0179
+## 6  1880 F     Margaret   1578 0.0162
+```
+
+]
+
+
+---
+
+
+.left-column[
+# Hello DT
+]
+
+.right-column[
+
+
+```r
+library(DT)
+head(babynames) %&gt;% 
+  datatable()
+```
+
+<div id="htmlwidget-b9108e04f9f166234f87" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b9108e04f9f166234f87">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1880,1880,1880,1880,1880,1880],["F","F","F","F","F","F"],["Mary","Anna","Emma","Elizabeth","Minnie","Margaret"],[7065,2604,2003,1939,1746,1578],[0.0723843285111266,0.0266792344576042,0.0205216999303307,0.0198659890988074,0.017888611122495,0.0161673701897463]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
+]
+
+---
+
+.left-column[
+# Hello kable?
+
+]
+
+.right-column[
+
+
+```r
+head(babynames) %&gt;% 
+  kable()
+```
+
+
+
+ year  sex   name            n        prop
+-----  ----  ----------  -----  ----------
+ 1880  F     Mary         7065   0.0723843
+ 1880  F     Anna         2604   0.0266792
+ 1880  F     Emma         2003   0.0205217
+ 1880  F     Elizabeth    1939   0.0198660
+ 1880  F     Minnie       1746   0.0178886
+ 1880  F     Margaret     1578   0.0161674
+
+]
+
+---
+
+.left-column[
+# Hello kable!
+
+]
+
+
+.right-column[
+
+```r
+head(babynames) %&gt;% 
+  kable(format = "html")
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; year &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; sex &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; prop &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7065 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0723843 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Anna &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2604 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0266792 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Emma &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0205217 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Elizabeth &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1939 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0198660 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Minnie &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1746 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0178886 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Margaret &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1578 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0161674 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+.footnote[
+You can set this as a global option for all your slides using [`options(knitr.table.format = "html")`](https://github.com/yihui/knitr/blob/cf7664894e237e71e4fd9c633df9ae6cd87ea382/R/table.R)
+]
+
+
+---
 
 .left-column[
 # Hello plot
@@ -664,7 +802,7 @@ name_plot
 
 ---
 
-.pull-left[
+.left-column[
 # 😱
 
 ## Why so ugly?
@@ -672,7 +810,7 @@ name_plot
 
 --
 
-.pull-right[
+.right-column[
 
 ````
 ```{r}
@@ -680,14 +818,12 @@ name_plot
 ```
 ````
 
-![](am-xaringan_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+![](am-xaringan_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
 
 ]
 
 .footnote[
-[1] Read more about [images in R Markdown](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents)
-
-[2] The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
+The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
 ]
 
 ---
@@ -708,7 +844,7 @@ name_plot
 ```
 ````
 
-![](am-xaringan_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+![](am-xaringan_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -726,7 +862,7 @@ name_plot
 ```
 ````
 
-&lt;img src="am-xaringan_files/figure-html/unnamed-chunk-7-1.png" width="60%" /&gt;
+&lt;img src="am-xaringan_files/figure-html/unnamed-chunk-11-1.png" width="60%" /&gt;
 ]
 
 ---
@@ -735,14 +871,25 @@ name_plot
 
 You'll often want to play with individual chunk options for plots like `dpi` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
 
+--
+
 ````
 ```{r setup}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, dpi = 200)
 ```
 ````
 
+--
+
 
 How your plots look *can* also depend on which CSS content classes you use too (i.e., for 2 column slides).
+
+--
+
+.footnote[
+[1] Read more about [images in R Markdown](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents)
+]
+
 
 ---
 name: highlightjs-demo
@@ -905,7 +1052,7 @@ alison &lt;- babynames %&gt;%
 
 ---
 
-# Take 15 minutes 🕔
+# Take 15 minutes 🕜
 
 First, [edit your YAML](#highlightjs-demo) to include a `highlightStyle` and set `highlightLines` to true.
 
@@ -913,11 +1060,11 @@ First, [edit your YAML](#highlightjs-demo) to include a `highlightStyle` and set
 
 Next, fatten up some slides with (mainly) `knitr` butter. Make at least one slide that uses each of the following:
 
+1. Includes a nice-looking table ([demo slides](#table-demos))
+
 1. Includes a plot with decent resolution ([demo slide](#plot-demo))
 
-1. Highlights some lines of R code ([demo slide](#highlightr-demo))
-
-1. Highlights some lines of R output ([demo slide](#highlightr-demo))
+1. Highlights some lines of R input/output ([demo slide](#highlightr-demo))
 
 1. Uses some fancy code chunk options ([demo slide](#knitr-demo))
 
@@ -1253,8 +1400,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
 ```
 
-<div id="htmlwidget-fdc039c570690763050f" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fdc039c570690763050f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a54e90a5d2e350563f4b" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a54e90a5d2e350563f4b">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -1266,8 +1413,8 @@ DT::datatable(
 )
 ```
 
-<div id="htmlwidget-11c3c2186bf957ae4f33" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-11c3c2186bf957ae4f33">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-af82a3e3790c317edc6c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-af82a3e3790c317edc6c">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 
