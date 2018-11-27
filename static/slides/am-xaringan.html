@@ -295,7 +295,7 @@ template: sfah
 
 template: sfah
 
-## .salt[REVEALJS] &amp;nbsp; .fat[CHUNKS]
+## .salt[REMARKJS] &amp;nbsp; .fat[CHUNKS]
 
 ## .acid[IMAGES] &amp;nbsp; .heat[THEMES]
 
@@ -305,16 +305,16 @@ class: inverse, middle, center
 background-image: url(img/jason-tuinstra-551608-unsplash.jpg)
 background-size: cover
 
-# SALT = REVEALJS
+# SALT = REMARKJS
 
 ???
 
 SALT enhances flavor
 
-REVEALJS enhances your code
+REMARKJS enhances your code
 
 ---
-# revealjs
+# remarkjs
 
 What you need to know now:
 
@@ -588,16 +588,16 @@ on your right
 
 template: sfah
 
-## .salt[REVEALJS] &amp;nbsp; .fat[CHUNKS]
+## .salt[REMARKJS] &amp;nbsp; .fat[CHUNKS]
 
 ## .acid[IMAGES] &amp;nbsp; .heat[THEMES]
 
 
 ---
 
-# Take 5 minutes ⏱
+# Take 5 minutes 🕗
 
-Season some awesome slides with `reveal.js` salt. Make at least one slide that uses each of the following:
+Season some awesome slides with `remark.js` salt. Make at least one slide that uses each of the following:
 
 1. Incremental reveals (`--`) ([demo slide](#increment-demo))
 
@@ -726,7 +726,7 @@ name_plot
 ```
 ````
 
-&lt;img src="am-xaringan_files/figure-html/alison-plot-1.png" width="60%" /&gt;
+&lt;img src="am-xaringan_files/figure-html/unnamed-chunk-7-1.png" width="60%" /&gt;
 ]
 
 ---
@@ -834,6 +834,9 @@ Some `knitr` tricks:
 1. Show code and plot side-by-side
     - Chunk 1: `` {r side-by-side, fig.show = 'hide'} ``
     - Chunk 2: `` {r side-by-side, echo = FALSE} ``
+    
+
+
 
 --
 
@@ -843,10 +846,66 @@ The key here is to leave the second chunk is _empty_.
 Read about another way to [reuse chunks](https://yihui.name/knitr/demo/reference/) with the chunk option `ref.label`.
 ]
 
+---
+
+# More `knitr` tricks
+
+Input in single chunk:
+
+````
+```{r alison, include = FALSE}
+library(babynames)
+library(tidyverse)
+alison &lt;- babynames %&gt;%
+  filter(name == "Alison" | 
+         name == "Allison") %&gt;% 
+  filter(sex == "F") 
+glimpse(alison)
+```
+````
+
+.pull-left[
+
+Reveal first two lines:
+
+````
+```{r ref.label='alison', echo = 1:2, eval = FALSE}
+```
+````
+
+And last five:
+
+````
+```{r ref.label='alison', echo = 3:7, eval = FALSE}
+```
+````
+
+]
+
+.pull-right[
+
+
+
+```r
+library(babynames)
+library(tidyverse)
+```
+
+```r
+alison &lt;- babynames %&gt;%
+  filter(name == "Alison" | 
+         name == "Allison") %&gt;% 
+  filter(sex == "F") 
+*glimpse(alison)
+```
+
+]
+
+
 
 ---
 
-# Take 15 minutes 🕑
+# Take 15 minutes 🕕
 
 First, [edit your YAML](#highlightjs-demo) to include a `highlightStyle` and set `highlightLines` to true.
 
@@ -869,7 +928,7 @@ If this is easy, try:
 
 + combining with the salts (make code chunks incremental),
 
-+ look at my CSS file to figure out how to change the code highlight color
++ play with adding emojis using the [emo package](https://github.com/hadley/emo)
 
 --
 
@@ -1194,8 +1253,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
 ```
 
-<div id="htmlwidget-c211dede2921ad6c3dae" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c211dede2921ad6c3dae">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-db477021e518cada1bec" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-db477021e518cada1bec">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -1207,8 +1266,8 @@ DT::datatable(
 )
 ```
 
-<div id="htmlwidget-68fbb03f69f72c2a0f92" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-68fbb03f69f72c2a0f92">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7952dbecd0280c40c10a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7952dbecd0280c40c10a">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 

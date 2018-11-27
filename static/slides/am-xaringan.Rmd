@@ -286,7 +286,7 @@ template: sfah
 
 template: sfah
 
-## .salt[REVEALJS] &nbsp; .fat[CHUNKS]
+## .salt[REMARKJS] &nbsp; .fat[CHUNKS]
 
 ## .acid[IMAGES] &nbsp; .heat[THEMES]
 
@@ -296,16 +296,16 @@ class: inverse, middle, center
 background-image: url(img/jason-tuinstra-551608-unsplash.jpg)
 background-size: cover
 
-# SALT = REVEALJS
+# SALT = REMARKJS
 
 ???
 
 SALT enhances flavor
 
-REVEALJS enhances your code
+REMARKJS enhances your code
 
 ---
-# revealjs
+# remarkjs
 
 What you need to know now:
 
@@ -577,7 +577,7 @@ on your right
 
 template: sfah
 
-## .salt[REVEALJS] &nbsp; .fat[CHUNKS]
+## .salt[REMARKJS] &nbsp; .fat[CHUNKS]
 
 ## .acid[IMAGES] &nbsp; .heat[THEMES]
 
@@ -586,7 +586,7 @@ template: sfah
 
 # Take 5 minutes `r emo::ji("clock")`
 
-Season some awesome slides with `reveal.js` salt. Make at least one slide that uses each of the following:
+Season some awesome slides with `remark.js` salt. Make at least one slide that uses each of the following:
 
 1. Incremental reveals (`--`) ([demo slide](#increment-demo))
 
@@ -716,7 +716,7 @@ name_plot
 ```
 ````
 
-```{r alison-plot, echo = FALSE, dpi = 180, out.width = '60%'}
+```{r ref.label='alison-plot', echo = FALSE, dpi = 180, out.width = '60%'}
 ```
 ]
 
@@ -813,6 +813,9 @@ Some `knitr` tricks:
 1. Show code and plot side-by-side
     - Chunk 1: `` {r side-by-side, fig.show = 'hide'} ``
     - Chunk 2: `` {r side-by-side, echo = FALSE} ``
+    
+
+
 
 --
 
@@ -821,6 +824,53 @@ The key here is to leave the second chunk is _empty_.
 .footnote[
 Read about another way to [reuse chunks](https://yihui.name/knitr/demo/reference/) with the chunk option `ref.label`.
 ]
+
+---
+
+# More `knitr` tricks
+
+Input in single chunk:
+
+````
+```{r alison, include = FALSE}`r ''`
+library(babynames)
+library(tidyverse)
+alison <- babynames %>%
+  filter(name == "Alison" | 
+         name == "Allison") %>% 
+  filter(sex == "F") 
+glimpse(alison)
+```
+````
+
+.pull-left[
+
+Reveal first two lines:
+
+````
+```{r ref.label='alison', echo = 1:2, eval = FALSE}`r ''`
+```
+````
+
+And last five:
+
+````
+```{r ref.label='alison', echo = 3:7, eval = FALSE}`r ''`
+```
+````
+
+]
+
+.pull-right[
+
+
+```{r ref.label='alison-wrangle', echo = 1:2, eval = FALSE}
+```
+```{r ref.label='alison-wrangle', echo = 3:7, eval = FALSE}
+```
+
+]
+
 
 
 ---
@@ -848,7 +898,7 @@ If this is easy, try:
 
 + combining with the salts (make code chunks incremental),
 
-+ look at my CSS file to figure out how to change the code highlight color
++ play with adding emojis using the [emo package](https://github.com/hadley/emo)
 
 --
 
