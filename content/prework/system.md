@@ -34,10 +34,12 @@ In this workshop, we will use R, RStudio, and a few R packages. RStudio is not r
 Using your R console, install these R packages we'll be using (development versions of anything?; copied from [here](https://github.com/rbind/yihui/issues/30)):
 
 ```
-install.packages('bookdown', 'blogdown', 'xaringan', 'devtools',
-                 'flexdashboard', 'learnr', 'rticles')
+install.packages(c('bookdown', 'blogdown', 'devtools',
+                 'flexdashboard', 'learnr', 'rticles'))
 devtools::install_github(c('rstudio/bookdown', 'yihui/xaringan')
 ```
+
+> flag: ask Yihui why bookdown github version
 
 ## Install Hugo
 
