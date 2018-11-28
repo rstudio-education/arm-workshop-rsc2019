@@ -40,7 +40,7 @@ class: left, middle, title-slide
 
 <img src="https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png" alt="Sharingan" width="180" />
 
-### Making slides in R Markdown
+### .fancy[Making slides in R Markdown]
 
 .large[Alison Hill | rstudio::conf | `r Sys.Date()`]
 
@@ -83,7 +83,7 @@ class: right, middle
 --
 
 .footnote[
-You'll make this slide in our first hands-on activity!
+.fancy[You'll make this slide in our first hands-on activity!]
 ]
 
 
@@ -109,30 +109,149 @@ class: left
 
 --
 
-### you know Markdown 
+### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png" width="5%" style="float:left"/>&nbsp; you know Markdown 
 
 --
 
-### you know R Markdown
+### <img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/rmarkdown.png" width="5%" style="float:left"/>&nbsp; you know R Markdown 
 
 --
 
-.salt[you want awesome HTML5 slides]
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" width="5%" style="float:left"/>&nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
 
 
 ---
-name: edit-this-slide
+name: novice
+background-image: url(img/wyron-a-615719-unsplash.jpg)
+background-size: cover
+class: left
+
+
+# What you may not know:
+
+--
+
+### JavaScript
+
+--
+
+### CSS (Cascading Style Sheets)
+
+--
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" width="5%" style="float:left"/>&nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
+
+---
+name: nutshell
+class: center, middle
+
+# In a nutshell
+
+.pull-left[
+
+![nutshell-js](img/nutshell-js.png)
+
+
+]
+
+--
+
+.pull-right[
+
+![nutshell-css](img/nutshell-css.png)
+
+]
+
+---
+name: remark.js
+
+# .center[What is remark.js?]
+
+.pull-left[
+
+.center[
+<img src="https://pluralsight.imgix.net/paths/path-icons/javascript-36f5949a45.png" width="40%"/>
+
+and
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png" width="25%" />
+]
+
+]
+
+--
+
+.pull-right[
+
+To create:
+
+> .fancy["A simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS"]
+
+```{r echo = FALSE}
+knitr::include_url("https://remarkjs.com/", height = "300px")
+```
+]
+
+---
+name: but
+class: center, inverse, middle
+
+# .fancy[but, remark.js doesn't know R...]
+
+![bakeoff-gif](https://media.giphy.com/media/l41Yvum3TNt6XvN6g/giphy.gif)
+
+# .fancy[remark.js only supports Markdown]
+
+---
+name: xaringan
+
+# .center[What is xaringan?]
+
+.pull-left[
+
+.center[
+<img src="https://pluralsight.imgix.net/paths/path-icons/javascript-36f5949a45.png" width="25%"/>
+
+and
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png" width="20%" />
+
+and
+
+<img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/rmarkdown.png" width="20%" />
+]
+
+]
+
+--
+
+.pull-right[
+
+To create:
+
+> .fancy["An R package for creating HTML5 presentations with remark.js through R Markdown."]
+
+```{r echo = FALSE}
+knitr::include_url("https://armextensions.netlify.com/slides/am-xaringan", height = "300px")
+```
+]
+---
+name: diagram
 
 # Hello `r fa(name = "user-ninja")`
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+.Rmd -> .md -> HTML5
 
-1. The [remark.js](https://REMARK.JS.com) library;
+.Rmd to .md: R Markdown (**knitr**, no Pandoc)
 
-1. The **xaringan** package;
+.md to HTML5: remark.js, via `xaringan::moon_reader`
 
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
 
+want to make something like this:
+
+![](https://d33wubrfki0l68.cloudfront.net/61d189fd9cdf955058415d3e1b28dd60e1bd7c9b/b739c/lesson-images/rmarkdownflow.png)
+
+I **think** this diagram will be the same for Rmd [via `knitr`] to md, then to get from md to HTML5 go via `xaringan::moon_reader` (to "summon" remark.js)
 
 
 ---
@@ -301,7 +420,7 @@ class: inverse, middle, center
 background-image: url(img/jason-tuinstra-551608-unsplash.jpg)
 background-size: cover
 
-# SALT = REMARK.JS
+# SALT = remark.js
 
 ???
 
@@ -310,7 +429,8 @@ SALT enhances flavor
 REMARK.JS enhances your code
 
 ---
-# REMARK.JS
+name: remark.js
+# remark.js
 
 What you need to know now:
 
@@ -609,15 +729,15 @@ In "real life", you'll often want to use straight-up HTML too:
 name: pull-demo
 
 .left-column[
-# Two-column slides
+# Two-columns
 ```
 .pull-left[
-Momtocat on your left
+...
 ![](image-link)
 ]
 
 .pull-right[
-Poptocat on your right
+...
 ![](image-link)
 ]
 ```
@@ -645,12 +765,12 @@ Poptocat on your right
 
 --
 
-
 .footnote[
 [1] On a full slide, these are each 47% width.
 
 [2] You can also similarly use `.left-column[ ]` (20%) and `.right-column` (75%).
 ]
+
 
 
 ---
@@ -686,7 +806,7 @@ If this is easy, try:
 
 + combining the salts, and/or
 
-+ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html)
++ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
 
 --
 
@@ -707,195 +827,6 @@ template: fat
 template: fat
 
 # FAT = CHUNKS
-
----
-name: table-demos
-
-.left-column[
-# Hello table
-]
-
-.right-column[
-
-```{r}
-head(babynames)
-```
-
-]
-
-
----
-
-
-.left-column[
-# Hello DT
-]
-
-.right-column[
-
-```{r}
-library(DT)
-head(babynames) %>% 
-  datatable()
-```
-
-]
-
----
-
-.left-column[
-# Hello kable?
-
-]
-
-.right-column[
-
-```{r}
-head(babynames) %>% 
-  kable()
-```
-
-]
-
----
-
-.left-column[
-# Hello kable!
-
-]
-
-
-.right-column[
-```{r}
-head(babynames) %>% 
-  kable(format = "html")
-```
-
-]
-
-.footnote[
-You can set this as a global option for all your slides using [`options(knitr.table.format = "html")`](https://github.com/yihui/knitr/blob/cf7664894e237e71e4fd9c633df9ae6cd87ea382/R/table.R)
-]
-
-
----
-
-.left-column[
-# Hello plot
-]
-
-.right-column[
-
-```{r alison-plot, fig.show = 'hide'}
-library(babynames)
-library(tidyverse)
-alison <- babynames %>%
-  filter(name == "Alison" | name == "Allison") %>% 
-  filter(sex == "F") 
-name_plot <- ggplot(alison, 
-                    aes(x = year, 
-                        y = prop,  
-                        group = name, 
-                        color = name)) + 
-  geom_line() 
-name_plot
-```
-
-]
-
----
-
-.left-column[
-# `r emo::ji("scream")`
-
-## Why so ugly?
-]
-
---
-
-.right-column[
-
-````
-```{r}`r ''`
-name_plot
-```
-````
-
-```{r ref.label='alison-plot', echo = FALSE}
-```
-
-]
-
-.footnote[
-The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
-]
-
----
-
-
-.left-column[
-# `r emo::ji("smirk")`
-
-## Better, but bigger
-
-]
-
-.right-column[
-
-````
-```{r dpi = 200}`r ''`
-name_plot
-```
-````
-
-```{r ref.label='alison-plot', dpi = 200, echo = FALSE}
-```
-]
-
----
-name: plot-demo
-
-.left-column[
-# `r emo::ji("tada")`
-]
-
-.right-column[
-
-````
-```{r dpi = 200, out.width = '60%'}`r ''`
-name_plot
-```
-````
-
-```{r ref.label='alison-plot', echo = FALSE, dpi = 200, out.width = '60%'}
-```
-]
-
----
-
-# Control your plots
-
-You'll often want to play with individual chunk options for plots like `dpi` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
-
---
-
-````
-```{r setup}`r ''`
-knitr::opts_chunk$set(dpi = 200)
-```
-````
-
---
-
-
-How your plots look *can* also depend on which CSS content classes you use too (i.e., for 2 column slides).
-
---
-
-.footnote[
-[1] Read more about [images in R Markdown](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents)
-]
-
 
 ---
 name: highlightjs-demo
@@ -922,7 +853,7 @@ output:
 
 The [highlight style options are](https://github.com/gnab/remark/wiki/Configuration):
 
-  + Alternatives: `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
+  + `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
 
 ---
 name: highlightr-demo
@@ -932,28 +863,28 @@ name: highlightr-demo
 .pull-left[
 
 ````
-```{r alison-wrangle, highlight.output = 3:4}`r ''`
+```{r tx-wrangle, highlight.output = 3:4}`r ''`
 library(babynames)
 library(tidyverse)
-alison <- babynames %>%
-  filter(name == "Alison" | 
-         name == "Allison") %>% 
+tx_names <- babynames %>%
+  filter(name == "Dallas" | 
+         name == "Austin") %>%
   filter(sex == "F") 
-*glimpse(alison) #<<
+*glimpse(tx_names) #<<
 ```
 ````
 ]
 
 .pull-right[
 
-```{r alison-wrangle, highlight.output = 3:4}
+```{r tx-wrangle, highlight.output = 3:4}
 library(babynames)
 library(tidyverse)
-alison <- babynames %>%
-  filter(name == "Alison" | 
-         name == "Allison") %>% 
+tx_names <- babynames %>%
+  filter(name == "Dallas" | 
+         name == "Austin") %>%
   filter(sex == "F") 
-glimpse(alison) #<<
+glimpse(tx_names) #<<
 ```
 ]
 
@@ -961,80 +892,330 @@ glimpse(alison) #<<
 To highlight a line of plain markdown text, use a `*` (from [remark docs](https://github.com/gnab/remark/wiki/Configuration))
 ]
 
+
 ---
-name: knitr-demo
+name: table-demos
 
-# Plain old R code
+.left-column[
+# Hello table
+]
 
-Some `knitr` tricks:
+.right-column[
 
-1. Show plot before code
-    - Chunk 1: `` {r plot-to-show, echo = FALSE} ``
-    - Chunk 2: `` {r plot-to-show, eval = FALSE} ``
+```{r}
+head(tx_names)
+```
 
-1. Show code and plot side-by-side
-    - Chunk 1: `` {r side-by-side, fig.show = 'hide'} ``
-    - Chunk 2: `` {r side-by-side, echo = FALSE} ``
-    
+]
 
 
+
+---
+
+.left-column[
+# Hello kable?
+
+]
+
+.right-column[
+
+```{r}
+head(tx_names) %>% 
+  kable()
+```
+
+]
+
+---
+
+.left-column[
+# Hello kable!
+
+]
+
+
+.right-column[
+```{r}
+head(tx_names) %>% 
+  kable(format = "html")
+```
+
+]
+
+.footnote[
+You can set this as a global option for all your slides using [`options(knitr.table.format = "html")`](https://github.com/yihui/knitr/blob/cf7664894e237e71e4fd9c633df9ae6cd87ea382/R/table.R)
+]
+
+---
+
+
+.left-column[
+# Hello HTML widget
+]
+
+.right-column[
+
+```{r}
+library(DT)
+head(tx_names) %>% 
+  datatable()
+```
+
+]
+
+---
+
+.left-column[
+# Hello plot
+]
+
+.right-column[
+
+```{r txgirls-plot}
+library(babynames)
+library(tidyverse)
+tx_names <- babynames %>%
+  filter(name == "Dallas" | name == "Austin") %>% 
+  filter(sex == "F") 
+name_plot <- ggplot(tx_names , 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line() 
+```
+
+]
+
+---
+
+.left-column[
+# `r emo::ji("scream")`
+
+## Why so ugly?
+]
 
 --
 
-The key here is to leave the second chunk is _empty_.
+.right-column[
+
+````
+```{r}`r ''`
+name_plot
+```
+````
+
+```{r echo = FALSE}
+name_plot
+```
+
+]
 
 .footnote[
-Read about another way to [reuse chunks](https://yihui.name/knitr/demo/reference/) with the chunk option `ref.label`.
+The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
 ]
 
 ---
 
-# More `knitr` tricks
 
-Input in single chunk:
+.left-column[
+# `r emo::ji("smirk")`
+
+## Better, but bigger
+
+]
+
+.right-column[
 
 ````
-```{r alison, include = FALSE}`r ''`
-library(babynames)
-library(tidyverse)
-alison <- babynames %>%
-  filter(name == "Alison" | 
-         name == "Allison") %>% 
-  filter(sex == "F") 
-glimpse(alison)
+```{r dpi = 200}`r ''`
+name_plot
 ```
 ````
+
+```{r dpi = 200, echo = FALSE}
+name_plot
+```
+]
+
+---
+name: plot-demo
+
+.left-column[
+# `r emo::ji("tada")`
+]
+
+.right-column[
+
+````
+```{r dpi = 200, out.width = '60%'}`r ''`
+name_plot
+```
+````
+
+```{r dpi = 200, out.width = '60%', echo = FALSE}
+name_plot
+```
+]
+
+---
+
+# Control your plots
+
+You'll often want to play with individual chunk options for plots like `dpi` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
+
+--
+
+````
+```{r setup}`r ''`
+knitr::opts_chunk$set(dpi = 200)
+```
+````
+
+--
+
+
+How your plots look *can* also depend on which CSS content classes you use too (i.e., for 2 column slides).
+
+--
+
+.footnote[
+[1] Read more about [images in R Markdown](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents)
+
+[2] And see Hadley/Garrett's preferred `ggplot2` chunk options
+]
+
+
+
+---
+name: tldr-side-by-side
+
+# tl;dr: side-by-side plots
+
+
+1. Code first, plot second
+    - Chunk 1: `` {r plot-last, fig.show = 'hide'} ``
+    - Chunk 2: `` {r ref.label = 'plot-last', echo = FALSE} ``
+
+1. Plot first, code second
+    - Chunk 1: `` {r plot-first, echo = FALSE} ``
+    - Chunk 2: `` {r ref.label = 'plot-first', eval = FALSE} ``
+
+
+
+---
+name: code-first
 
 .pull-left[
 
-Reveal first two lines:
-
 ````
-```{r ref.label='alison', echo = 1:2, eval = FALSE}`r ''`
+.pull-left[
+```{r plot-last, fig.show = 'hide'}`r ''`
+tx_names <- babynames %>%
+  filter(name == "Dallas" | name == "Austin") %>% 
+  filter(sex == "M")
+tx_plot <- ggplot(tx_names, 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line() 
+tx_plot
 ```
+]
 ````
 
-And last five:
+.salt[Left Output]
 
-````
-```{r ref.label='alison', echo = 3:7, eval = FALSE}`r ''`
+```{r plot-last, fig.show = 'hide'}
+tx_names <- babynames %>%
+  filter(name == "Dallas" | name == "Austin") %>% 
+  filter(sex == "F")
+tx_plot <- ggplot(tx_names, 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line() 
+tx_plot
 ```
-````
 
 ]
+
+--
 
 .pull-right[
 
-
-```{r ref.label='alison-wrangle', echo = 1:2, eval = FALSE}
+````
+.pull-right[
+```{r ref.label = 'plot-last', echo = FALSE}`r ''`
 ```
-```{r ref.label='alison-wrangle', echo = 3:7, eval = FALSE}
+]
+````
+
+.acid[Right Output]
+
+```{r ref.label = 'plot-last', echo = FALSE, dpi = 200, out.width = '80%'}
 ```
 
 ]
 
+---
+name: plot-first
 
+.pull-left[
 
+````
+.pull-left[
+```{r plot-first, echo = FALSE}`r ''`
+tx_names <- babynames %>%
+  filter(name == "Dallas" | name == "Austin") %>% 
+  filter(sex == "M")
+tx_plot <- ggplot(tx_names, 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line() 
+tx_plot
+```
+]
+````
+
+.salt[Left Output]
+
+```{r plot-first, echo = FALSE, dpi = 200, out.width = '50%'}
+tx_names <- babynames %>%
+  filter(name == "Dallas" | name == "Austin") %>% 
+  filter(sex == "F")
+tx_plot <- ggplot(tx_names, 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line() 
+tx_plot
+```
+
+]
+
+--
+
+.pull-right[
+
+````
+.pull-right[
+```{r ref.label = 'plot-first', eval = FALSE}`r ''`
+```
+]
+````
+
+.acid[Right Output]
+
+```{r ref.label = 'plot-first', eval = FALSE}
+```
+
+]
 ---
 name: fat-work
 

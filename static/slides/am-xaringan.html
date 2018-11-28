@@ -44,9 +44,9 @@ class: left, middle, title-slide
 
 &lt;img src="https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png" alt="Sharingan" width="180" /&gt;
 
-### Making slides in R Markdown
+### .fancy[Making slides in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2018-11-27]
+.large[Alison Hill | rstudio::conf | 2018-11-28]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
@@ -87,7 +87,7 @@ class: right, middle
 --
 
 .footnote[
-You'll make this slide in our first hands-on activity!
+.fancy[You'll make this slide in our first hands-on activity!]
 ]
 
 
@@ -113,30 +113,145 @@ class: left
 
 --
 
-### you know Markdown 
+### &lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png" width="5%" style="float:left"/&gt;&amp;nbsp; you know Markdown 
 
 --
 
-### you know R Markdown
+### &lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/rmarkdown.png" width="5%" style="float:left"/&gt;&amp;nbsp; you know R Markdown 
 
 --
 
-.salt[you want awesome HTML5 slides]
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" width="5%" style="float:left"/&gt;&amp;nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
 
 
 ---
-name: edit-this-slide
+name: novice
+background-image: url(img/wyron-a-615719-unsplash.jpg)
+background-size: cover
+class: left
+
+
+# What you may not know:
+
+--
+
+### JavaScript
+
+--
+
+### CSS (Cascading Style Sheets)
+
+--
+
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" width="5%" style="float:left"/&gt;&amp;nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
+
+---
+name: nutshell
+class: center, middle
+
+# In a nutshell
+
+.pull-left[
+
+![nutshell-js](img/nutshell-js.png)
+
+
+]
+
+--
+
+.pull-right[
+
+![nutshell-css](img/nutshell-css.png)
+
+]
+
+---
+name: remark.js
+
+# .center[What is remark.js?]
+
+.pull-left[
+
+.center[
+&lt;img src="https://pluralsight.imgix.net/paths/path-icons/javascript-36f5949a45.png" width="40%"/&gt;
+
+and
+
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png" width="25%" /&gt;
+]
+
+]
+
+--
+
+.pull-right[
+
+To create:
+
+&gt; .fancy["A simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS"]
+
+&lt;iframe src="https://remarkjs.com/" width="100%" height="300px"&gt;&lt;/iframe&gt;
+]
+
+---
+name: but
+class: center, inverse, middle
+
+# .fancy[but, remark.js doesn't know R...]
+
+![bakeoff-gif](https://media.giphy.com/media/l41Yvum3TNt6XvN6g/giphy.gif)
+
+# .fancy[remark.js only supports Markdown]
+
+---
+name: xaringan
+
+# .center[What is xaringan?]
+
+.pull-left[
+
+.center[
+&lt;img src="https://pluralsight.imgix.net/paths/path-icons/javascript-36f5949a45.png" width="25%"/&gt;
+
+and
+
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png" width="20%" /&gt;
+
+and
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/rmarkdown.png" width="20%" /&gt;
+]
+
+]
+
+--
+
+.pull-right[
+
+To create:
+
+&gt; .fancy["An R package for creating HTML5 presentations with remark.js through R Markdown."]
+
+&lt;iframe src="https://armextensions.netlify.com/slides/am-xaringan" width="100%" height="300px"&gt;&lt;/iframe&gt;
+]
+---
+name: diagram
 
 # Hello &lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 448 512"&gt;&lt;path d="M325.4 289.2L224 390.6 122.6 289.2C54 295.3 0 352.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-70.2-54-127.1-122.6-133.2zM32 192c27.3 0 51.8-11.5 69.2-29.7 15.1 53.9 64 93.7 122.8 93.7 70.7 0 128-57.3 128-128S294.7 0 224 0c-50.4 0-93.6 29.4-114.5 71.8C92.1 47.8 64 32 32 32c0 33.4 17.1 62.8 43.1 80-26 17.2-43.1 46.6-43.1 80zm144-96h96c17.7 0 32 14.3 32 32H144c0-17.7 14.3-32 32-32z"/&gt;&lt;/svg&gt;
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+.Rmd -&gt; .md -&gt; HTML5
 
-1. The [remark.js](https://REMARK.JS.com) library;
+.Rmd to .md: R Markdown (**knitr**, no Pandoc)
 
-1. The **xaringan** package;
+.md to HTML5: remark.js, via `xaringan::moon_reader`
 
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
 
+want to make something like this:
+
+![](https://d33wubrfki0l68.cloudfront.net/61d189fd9cdf955058415d3e1b28dd60e1bd7c9b/b739c/lesson-images/rmarkdownflow.png)
+
+I **think** this diagram will be the same for Rmd [via `knitr`] to md, then to get from md to HTML5 go via `xaringan::moon_reader` (to "summon" remark.js)
 
 
 ---
@@ -307,7 +422,7 @@ class: inverse, middle, center
 background-image: url(img/jason-tuinstra-551608-unsplash.jpg)
 background-size: cover
 
-# SALT = REMARK.JS
+# SALT = remark.js
 
 ???
 
@@ -316,7 +431,8 @@ SALT enhances flavor
 REMARK.JS enhances your code
 
 ---
-# REMARK.JS
+name: remark.js
+# remark.js
 
 What you need to know now:
 
@@ -618,15 +734,15 @@ In "real life", you'll often want to use straight-up HTML too:
 name: pull-demo
 
 .left-column[
-# Two-column slides
+# Two-columns
 ```
 .pull-left[
-Momtocat on your left
+...
 ![](image-link)
 ]
 
 .pull-right[
-Poptocat on your right
+...
 ![](image-link)
 ]
 ```
@@ -654,12 +770,12 @@ Poptocat on your right
 
 --
 
-
 .footnote[
 [1] On a full slide, these are each 47% width.
 
 [2] You can also similarly use `.left-column[ ]` (20%) and `.right-column` (75%).
 ]
+
 
 
 ---
@@ -674,7 +790,7 @@ template: sfah
 ---
 name: salt-work
 
-# Take 15 minutes 🕥
+# Take 15 minutes 🕣
 
 First, make an introduction slide, using the templated code provided.
 
@@ -695,7 +811,7 @@ If this is easy, try:
 
 + combining the salts, and/or
 
-+ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html)
++ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
 
 --
 
@@ -716,279 +832,6 @@ template: fat
 template: fat
 
 # FAT = CHUNKS
-
----
-name: table-demos
-
-.left-column[
-# Hello table
-]
-
-.right-column[
-
-
-```r
-head(babynames)
-```
-
-```
-## # A tibble: 6 x 5
-##    year sex   name          n   prop
-##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
-## 1  1880 F     Mary       7065 0.0724
-## 2  1880 F     Anna       2604 0.0267
-## 3  1880 F     Emma       2003 0.0205
-## 4  1880 F     Elizabeth  1939 0.0199
-## 5  1880 F     Minnie     1746 0.0179
-## 6  1880 F     Margaret   1578 0.0162
-```
-
-]
-
-
----
-
-
-.left-column[
-# Hello DT
-]
-
-.right-column[
-
-
-```r
-library(DT)
-head(babynames) %&gt;% 
-  datatable()
-```
-
-<div id="htmlwidget-fa47090da3c971ff1d21" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fa47090da3c971ff1d21">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1880,1880,1880,1880,1880,1880],["F","F","F","F","F","F"],["Mary","Anna","Emma","Elizabeth","Minnie","Margaret"],[7065,2604,2003,1939,1746,1578],[0.0723843285111266,0.0266792344576042,0.0205216999303307,0.0198659890988074,0.017888611122495,0.0161673701897463]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-
-]
-
----
-
-.left-column[
-# Hello kable?
-
-]
-
-.right-column[
-
-
-```r
-head(babynames) %&gt;% 
-  kable()
-```
-
-
-
- year  sex   name            n        prop
------  ----  ----------  -----  ----------
- 1880  F     Mary         7065   0.0723843
- 1880  F     Anna         2604   0.0266792
- 1880  F     Emma         2003   0.0205217
- 1880  F     Elizabeth    1939   0.0198660
- 1880  F     Minnie       1746   0.0178886
- 1880  F     Margaret     1578   0.0161674
-
-]
-
----
-
-.left-column[
-# Hello kable!
-
-]
-
-
-.right-column[
-
-```r
-head(babynames) %&gt;% 
-  kable(format = "html")
-```
-
-&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:right;"&gt; year &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; sex &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; name &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; prop &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Mary &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 7065 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0723843 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Anna &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2604 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0266792 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Emma &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2003 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0205217 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Elizabeth &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1939 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0198660 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Minnie &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1746 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0178886 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 1880 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Margaret &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1578 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0161674 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-]
-
-.footnote[
-You can set this as a global option for all your slides using [`options(knitr.table.format = "html")`](https://github.com/yihui/knitr/blob/cf7664894e237e71e4fd9c633df9ae6cd87ea382/R/table.R)
-]
-
-
----
-
-.left-column[
-# Hello plot
-]
-
-.right-column[
-
-
-```r
-library(babynames)
-library(tidyverse)
-alison &lt;- babynames %&gt;%
-  filter(name == "Alison" | name == "Allison") %&gt;% 
-  filter(sex == "F") 
-name_plot &lt;- ggplot(alison, 
-                    aes(x = year, 
-                        y = prop,  
-                        group = name, 
-                        color = name)) + 
-  geom_line() 
-name_plot
-```
-
-]
-
----
-
-.left-column[
-# 😱
-
-## Why so ugly?
-]
-
---
-
-.right-column[
-
-````
-```{r}
-name_plot
-```
-````
-
-![](am-xaringan_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
-
-]
-
-.footnote[
-The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
-]
-
----
-
-
-.left-column[
-# 😏
-
-## Better, but bigger
-
-]
-
-.right-column[
-
-````
-```{r dpi = 200}
-name_plot
-```
-````
-
-![](am-xaringan_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
-]
-
----
-name: plot-demo
-
-.left-column[
-# 🎉
-]
-
-.right-column[
-
-````
-```{r dpi = 200, out.width = '60%'}
-name_plot
-```
-````
-
-&lt;img src="am-xaringan_files/figure-html/unnamed-chunk-12-1.png" width="60%" /&gt;
-]
-
----
-
-# Control your plots
-
-You'll often want to play with individual chunk options for plots like `dpi` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
-
---
-
-````
-```{r setup}
-knitr::opts_chunk$set(dpi = 200)
-```
-````
-
---
-
-
-How your plots look *can* also depend on which CSS content classes you use too (i.e., for 2 column slides).
-
---
-
-.footnote[
-[1] Read more about [images in R Markdown](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents)
-]
-
 
 ---
 name: highlightjs-demo
@@ -1016,7 +859,7 @@ output:
 
 The [highlight style options are](https://github.com/gnab/remark/wiki/Configuration):
 
-  + Alternatives: `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
+  + `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
 
 ---
 name: highlightr-demo
@@ -1026,14 +869,14 @@ name: highlightr-demo
 .pull-left[
 
 ````
-```{r alison-wrangle, highlight.output = 3:4}
+```{r tx-wrangle, highlight.output = 3:4}
 library(babynames)
 library(tidyverse)
-alison &lt;- babynames %&gt;%
-  filter(name == "Alison" | 
-         name == "Allison") %&gt;% 
+tx_names &lt;- babynames %&gt;%
+  filter(name == "Dallas" | 
+         name == "Austin") %&gt;%
   filter(sex == "F") 
-*glimpse(alison) #&lt;&lt;
+*glimpse(tx_names) #&lt;&lt;
 ```
 ````
 ]
@@ -1044,21 +887,21 @@ alison &lt;- babynames %&gt;%
 ```r
 library(babynames)
 library(tidyverse)
-alison &lt;- babynames %&gt;%
-  filter(name == "Alison" | 
-         name == "Allison") %&gt;% 
+tx_names &lt;- babynames %&gt;%
+  filter(name == "Dallas" | 
+         name == "Austin") %&gt;%
   filter(sex == "F") 
-*glimpse(alison)
+*glimpse(tx_names)
 ```
 
 ```
-## Observations: 214
+## Observations: 167
 ## Variables: 5
-*## $ year &lt;dbl&gt; 1905, 1907, 1908, 1910, 1910, 1911, 1912, 1912, 1913, 191...
+*## $ year &lt;dbl&gt; 1892, 1894, 1896, 1899, 1900, 1903, 1904, 1905, 1906, 190...
 *## $ sex  &lt;chr&gt; "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F...
-## $ name &lt;chr&gt; "Alison", "Alison", "Allison", "Alison", "Allison", "Alli...
-## $ n    &lt;int&gt; 7, 5, 6, 5, 5, 9, 12, 9, 12, 7, 22, 11, 16, 13, 24, 15, 2...
-## $ prop &lt;dbl&gt; 2.259012e-05, 1.481776e-05, 1.692367e-05, 1.191821e-05, 1...
+## $ name &lt;chr&gt; "Dallas", "Dallas", "Dallas", "Dallas", "Dallas", "Dallas...
+## $ n    &lt;int&gt; 9, 6, 7, 6, 9, 9, 9, 12, 8, 7, 14, 11, 20, 19, 24, 16, 28...
+## $ prop &lt;dbl&gt; 4.001512e-05, 2.542675e-05, 2.777855e-05, 2.424340e-05, 2...
 ```
 ]
 
@@ -1066,93 +909,415 @@ alison &lt;- babynames %&gt;%
 To highlight a line of plain markdown text, use a `*` (from [remark docs](https://github.com/gnab/remark/wiki/Configuration))
 ]
 
+
 ---
-name: knitr-demo
+name: table-demos
 
-# Plain old R code
+.left-column[
+# Hello table
+]
 
-Some `knitr` tricks:
-
-1. Show plot before code
-    - Chunk 1: `` {r plot-to-show, echo = FALSE} ``
-    - Chunk 2: `` {r plot-to-show, eval = FALSE} ``
-
-1. Show code and plot side-by-side
-    - Chunk 1: `` {r side-by-side, fig.show = 'hide'} ``
-    - Chunk 2: `` {r side-by-side, echo = FALSE} ``
-    
+.right-column[
 
 
+```r
+head(tx_names)
+```
+
+```
+## # A tibble: 6 x 5
+##    year sex   name       n      prop
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;     &lt;dbl&gt;
+## 1  1892 F     Dallas     9 0.0000400
+## 2  1894 F     Dallas     6 0.0000254
+## 3  1896 F     Dallas     7 0.0000278
+## 4  1899 F     Dallas     6 0.0000242
+## 5  1900 F     Dallas     9 0.0000283
+## 6  1903 F     Dallas     9 0.0000324
+```
+
+]
+
+
+
+---
+
+.left-column[
+# Hello kable?
+
+]
+
+.right-column[
+
+
+```r
+head(tx_names) %&gt;% 
+  kable()
+```
+
+
+
+ year  sex   name       n       prop
+-----  ----  -------  ---  ---------
+ 1892  F     Dallas     9   4.00e-05
+ 1894  F     Dallas     6   2.54e-05
+ 1896  F     Dallas     7   2.78e-05
+ 1899  F     Dallas     6   2.42e-05
+ 1900  F     Dallas     9   2.83e-05
+ 1903  F     Dallas     9   3.24e-05
+
+]
+
+---
+
+.left-column[
+# Hello kable!
+
+]
+
+
+.right-column[
+
+```r
+head(tx_names) %&gt;% 
+  kable(format = "html")
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; year &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; sex &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; prop &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1892 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.00e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1894 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.54e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1896 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.78e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1899 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.42e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1900 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.83e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1903 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.24e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+.footnote[
+You can set this as a global option for all your slides using [`options(knitr.table.format = "html")`](https://github.com/yihui/knitr/blob/cf7664894e237e71e4fd9c633df9ae6cd87ea382/R/table.R)
+]
+
+---
+
+
+.left-column[
+# Hello HTML widget
+]
+
+.right-column[
+
+
+```r
+library(DT)
+head(tx_names) %&gt;% 
+  datatable()
+```
+
+<div id="htmlwidget-a0116538061ebec1d110" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a0116538061ebec1d110">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
+]
+
+---
+
+.left-column[
+# Hello plot
+]
+
+.right-column[
+
+
+```r
+library(babynames)
+library(tidyverse)
+tx_names &lt;- babynames %&gt;%
+  filter(name == "Dallas" | name == "Austin") %&gt;% 
+  filter(sex == "F") 
+name_plot &lt;- ggplot(tx_names , 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line() 
+```
+
+]
+
+---
+
+.left-column[
+# 😱
+
+## Why so ugly?
+]
 
 --
 
-The key here is to leave the second chunk is _empty_.
+.right-column[
+
+````
+```{r}
+name_plot
+```
+````
+
+![](am-xaringan_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
+
+]
 
 .footnote[
-Read about another way to [reuse chunks](https://yihui.name/knitr/demo/reference/) with the chunk option `ref.label`.
+The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
 ]
 
 ---
 
-# More `knitr` tricks
 
-Input in single chunk:
+.left-column[
+# 😏
+
+## Better, but bigger
+
+]
+
+.right-column[
 
 ````
-```{r alison, include = FALSE}
-library(babynames)
-library(tidyverse)
-alison &lt;- babynames %&gt;%
-  filter(name == "Alison" | 
-         name == "Allison") %&gt;% 
-  filter(sex == "F") 
-glimpse(alison)
+```{r dpi = 200}
+name_plot
 ```
 ````
+
+![](am-xaringan_files/figure-html/unnamed-chunk-14-1.png)&lt;!-- --&gt;
+]
+
+---
+name: plot-demo
+
+.left-column[
+# 🎉
+]
+
+.right-column[
+
+````
+```{r dpi = 200, out.width = '60%'}
+name_plot
+```
+````
+
+&lt;img src="am-xaringan_files/figure-html/unnamed-chunk-15-1.png" width="60%" /&gt;
+]
+
+---
+
+# Control your plots
+
+You'll often want to play with individual chunk options for plots like `dpi` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
+
+--
+
+````
+```{r setup}
+knitr::opts_chunk$set(dpi = 200)
+```
+````
+
+--
+
+
+How your plots look *can* also depend on which CSS content classes you use too (i.e., for 2 column slides).
+
+--
+
+.footnote[
+[1] Read more about [images in R Markdown](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents)
+
+[2] And see Hadley/Garrett's preferred `ggplot2` chunk options
+]
+
+
+
+---
+name: tldr-side-by-side
+
+# tl;dr: side-by-side plots
+
+
+1. Code first, plot second
+    - Chunk 1: `` {r plot-last, fig.show = 'hide'} ``
+    - Chunk 2: `` {r ref.label = 'plot-last', echo = FALSE} ``
+
+1. Plot first, code second
+    - Chunk 1: `` {r plot-first, echo = FALSE} ``
+    - Chunk 2: `` {r ref.label = 'plot-first', eval = FALSE} ``
+
+
+
+---
+name: code-first
 
 .pull-left[
 
-Reveal first two lines:
-
 ````
-```{r ref.label='alison', echo = 1:2, eval = FALSE}
+.pull-left[
+```{r plot-last, fig.show = 'hide'}
+tx_names &lt;- babynames %&gt;%
+  filter(name == "Dallas" | name == "Austin") %&gt;% 
+  filter(sex == "M")
+tx_plot &lt;- ggplot(tx_names, 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line() 
+tx_plot
 ```
+]
 ````
 
-And last five:
+.salt[Left Output]
 
-````
-```{r ref.label='alison', echo = 3:7, eval = FALSE}
+
+```r
+tx_names &lt;- babynames %&gt;%
+  filter(name == "Dallas" | name == "Austin") %&gt;% 
+  filter(sex == "F")
+tx_plot &lt;- ggplot(tx_names, 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line() 
+tx_plot
 ```
-````
 
 ]
+
+--
 
 .pull-right[
 
-
-
-```r
-library(babynames)
-library(tidyverse)
+````
+.pull-right[
+```{r ref.label = 'plot-last', echo = FALSE}
 ```
+]
+````
 
-```r
-alison &lt;- babynames %&gt;%
-  filter(name == "Alison" | 
-         name == "Allison") %&gt;% 
-  filter(sex == "F") 
-*glimpse(alison)
-```
+.acid[Right Output]
+
+&lt;img src="am-xaringan_files/figure-html/unnamed-chunk-16-1.png" width="80%" /&gt;
 
 ]
 
+---
+name: plot-first
+
+.pull-left[
+
+````
+.pull-left[
+```{r plot-first, echo = FALSE}
+tx_names &lt;- babynames %&gt;%
+  filter(name == "Dallas" | name == "Austin") %&gt;% 
+  filter(sex == "M")
+tx_plot &lt;- ggplot(tx_names, 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line() 
+tx_plot
+```
+]
+````
+
+.salt[Left Output]
+
+&lt;img src="am-xaringan_files/figure-html/plot-first-1.png" width="50%" /&gt;
+
+]
+
+--
+
+.pull-right[
+
+````
+.pull-right[
+```{r ref.label = 'plot-first', eval = FALSE}
+```
+]
+````
+
+.acid[Right Output]
 
 
+```r
+tx_names &lt;- babynames %&gt;%
+  filter(name == "Dallas" | name == "Austin") %&gt;% 
+  filter(sex == "F")
+tx_plot &lt;- ggplot(tx_names, 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line() 
+tx_plot
+```
+
+]
 ---
 name: fat-work
 
-# Take 15 minutes 🕛
+# Take 15 minutes 🕟
 
 First, [edit your YAML](#highlightjs-demo) to include a `highlightStyle` and set `highlightLines` to true.
 
@@ -1500,8 +1665,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
 ```
 
-<div id="htmlwidget-16106335ac57b9f4ecaa" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-16106335ac57b9f4ecaa">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a0434def628cbdfd0ddc" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a0434def628cbdfd0ddc">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -1513,8 +1678,8 @@ DT::datatable(
 )
 ```
 
-<div id="htmlwidget-7dc33c82673987e7d19e" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7dc33c82673987e7d19e">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-529273a205afefb22d8c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-529273a205afefb22d8c">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 
