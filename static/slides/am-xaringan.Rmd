@@ -46,7 +46,6 @@ class: left, middle, title-slide
 
 <!-- this ends up being the title slide since seal = FALSE-->
 
-
 ---
 
 .left-column[
@@ -90,26 +89,43 @@ class: right, middle
 
 ---
 name: setup
-class: center
-background-image: url(img/paul-hanaoka-330307-unsplash.jpg)
-background-size: cover
+class: middle, inverse
 
-# Did you do the pre-work setup?
+# Did you do the <br> .fat[.fancy[pre-work setup?]]
 
-.left[.footnote[.large[https://armextensions.netlify.com/prework/]]]
+.large[https://armextensions.netlify.com/prework/]
+
+
+---
+name: usecourse
+class: middle, inverse
+
+# Did you download the <br> .salt[.fancy[workshop materials?]]
+
+```{r eval = FALSE, echo = FALSE}
+install.packages(usethis)
+library(usethis)
+use_course("https://github.com/rstudio-education/arm-companion-rsc2019/zipball/master/")
+http://bit.ly/arm-rsc2019
+```
+
+```{r eval = FALSE, echo = TRUE}
+install.packages(usethis)
+library(usethis)
+use_course("http://bit.ly/arm-rsc2019")
+```
+
 
 ---
 name: ninja
-background-image: url(img/wyron-a-615719-unsplash.jpg)
-background-size: cover
-class: left
+class: middle, inverse
 
 
 # We assume:
 
 --
 
-### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png" width="5%" style="float:left"/>&nbsp; you know Markdown 
+### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/416px-Markdown-mark.svg.png" width="5%" style="float:left"/>&nbsp; you know Markdown 
 
 --
 
@@ -117,14 +133,12 @@ class: left
 
 --
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" width="5%" style="float:left"/>&nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
+<img src="https://www.w3.org/html/logo/downloads/HTML5_1Color_White.png" width="5%" style="float:left"/>&nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
 
 
 ---
 name: novice
-background-image: url(img/wyron-a-615719-unsplash.jpg)
-background-size: cover
-class: left
+class: middle, inverse
 
 
 # What you may not know:
@@ -139,7 +153,7 @@ class: left
 
 --
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" width="5%" style="float:left"/>&nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
+<img src="https://www.w3.org/html/logo/downloads/HTML5_1Color_White.png" width="5%" style="float:left"/>&nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
 
 ---
 name: nutshell
@@ -338,6 +352,7 @@ Don't worry: it gets much better. But first...
 
 .pull-left[
 - Slide 1 starts where YAML ends
+
 - 3 dashes in a row `---` on a line by itself is a new slide 
 ]
 
@@ -348,14 +363,14 @@ title: "foodie-safety"
 output: xaringan::moon_reader 
 ---
 
-# Slide 1
+# Introduce yourself!
 
-This is slide 1
+> My name is Alison and I am a Data Scientist & Professional Educator at RStudio. I live in Portland, Oregon with my husband, daughter, and our sourdough starter.
 
 ---
-# Slide 2
+# Find me at...
 
-This is slide 2
+All the details...
 
 ```
 ]
@@ -413,6 +428,20 @@ template: sfah
 ## .salt[REMARK.JS] &nbsp; .fat[CHUNKS]
 
 ## .acid[IMAGES] &nbsp; .heat[THEMES]
+
+---
+
+name: cookbook
+background-image: url(img/cynthia-del-rio-88295-unsplash.jpg)
+background-size: cover
+class: center, top
+
+### .fancy[This deck is my way of sharing my most prized recipes with all of you.]
+
+.footnote[
+.fancy[There will a lot of detail in here: you may not need all of it right away, <br>
+but you'll need it eventually!]
+]
 
 ---
 name: salt
@@ -770,8 +799,6 @@ Poptocat on your right
 
 [2] You can also similarly use `.left-column[ ]` (20%) and `.right-column` (75%).
 ]
-
-
 
 ---
 
