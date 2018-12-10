@@ -242,32 +242,71 @@ enableGitInfo = false
 #   The weight parameter defines the order that the links will appear in.
 [params.menus]
   # Align the main menu to the right of the page? (true/false)
-  align_right = false
+  align_right = true
 
 [[menu.main]]
-  pre = "<i class=\"fab fa-r-project\" style=\"color: #4254a7;\"></i>"
+  pre = "<i class=\"fab fa-r-project\"></i>"
   name = "Set-up"
   url = "prework/" 
-  weight = 10
+  weight = 1
 
 [[menu.main]]
-  pre = "<i class=\"fas fa-magic\" style=\"color: #4254a7;\"></i>"
-  name = "Day 2- AM"
-  url = "day2-am/"
-  weight = 20
+  name = "Day 1"
+  weight = 2
+  identifier = "day1"
+  
+[[menu.main]]
+  name = "Day 1: Schedule"
+  pre = "<i class=\"fas fa-clock\"></i>"
+  url = "/days/day1"
+  weight = 1
+  parent = "day1"
 
 [[menu.main]]
-  pre = "<i class=\"fas fa-hat-wizard\" style=\"color: #4254a7;\"></i>"
-  name = "Day 2- PM"
-  url = "day2-pm/"
-  weight = 30
+  name = "Day 1: AM"
+  pre = "<i class=\"fas fa-sun\"></i>"
+  url = "/days/day1/day1-am"
+  weight = 2
+  parent = "day1"
+  
+[[menu.main]]
+  name = "Day 1: PM"
+  pre = "<i class=\"fas fa-moon\"></i>"
+  url = "/days/day1/day1-pm"
+  weight = 3
+  parent = "day1"
 
-[[menu.main_right]]
-  pre = "<i class=\"fab fa-github\"></i>"
-  name = "GitHub"
-  post = "<i class=\"fas fa-external-link-alt \"></i>"
+[[menu.main]]
+  name = "Day 2"
+  weight = 3
+  identifier = "day2"
+  
+[[menu.main]]
+  name = "Day 2: Schedule"
+  pre = "<i class=\"fas fa-clock\"></i>"
+  url = "/days/day2"
+  weight = 1
+  parent = "day2"
+
+[[menu.main]]
+  name = "Day 2: AM"
+  pre = "<i class=\"fas fa-sun\"></i>"
+  url = "/days/day2/day2-am"
+  weight = 2
+  parent = "day2"
+  
+[[menu.main]]
+  name = "Day 2: PM"
+  pre = "<i class=\"fas fa-moon\"></i>"
+  url = "/days/day2/day2-pm"
+  weight = 3
+  parent = "day2"
+
+[[menu.main]]
+  pre = "<i class=\"fab fa-github fa-lg\"></i>"
+  name = ""
   url = "https://github.com/rstudio-education/rmarkdown-extensions-conf19"
-  weight = 10
+  weight = 4
 
 
 # Search.

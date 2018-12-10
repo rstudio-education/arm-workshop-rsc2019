@@ -2,12 +2,12 @@
 name = "arm"
 
 # Optional Google font URL
-google_fonts = "Lato:400,700|Source+Sans+Pro|Roboto+Mono"
+google_fonts = "Lato:400,700|Slabo+13px|Roboto+Mono"
 
 # Font families
-heading_font = "Source Sans Pro"
+heading_font = "Slabo 13px"
 body_font = "Lato"
-nav_font = "Source Sans Pro"
+nav_font = "Slabo 13px"
 mono_font = "Roboto Mono"
 
 # Font size

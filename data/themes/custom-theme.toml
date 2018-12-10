@@ -5,19 +5,19 @@ name = "arm"
 light = true
 
 # Primary
-primary = "#A3C586"
-primary_light = "#6999cd"
-primary_dark = "#6999cd"
+primary = "#4c83b6"
+primary_light = "#4c83b6"
+primary_dark = "##4c83b6"
 
 # Links
-link = "#4254a7"
-link_hover = "#A3C586"
+link = "#4c83b6"
+link_hover = "#42709b"
 
 # Menu
-menu_primary = "#A3C586"
-menu_text = "#fff"
-menu_text_active = "#4254a7"
-menu_title = "#fff"
+menu_primary = "#fff"
+menu_text = "#4c83b6"
+menu_text_active = "#5a9ddb"
+menu_title = "#4c83b6"
 
 # Backgrounds
 background = ""
