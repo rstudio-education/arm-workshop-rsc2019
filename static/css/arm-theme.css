@@ -30,22 +30,47 @@ figure {
   padding: 0;
 }
 
-/* change text link/hover color for hero from white*/
+/* change text link/hover color for hero from white */
 .hero-overlay a {
-  color: #4254a7;
+  color: #4c83b6;
 }
 
 .hero-overlay a:hover {
-  color: #A3C586
+  color: #42709b
 }
 
-/* change button hover link color for hero too*/
+/* change button color for hero too */
+.hero-overlay .btn {
+  border: none;
+  color: rgba(52, 60, 86,.8);
+  background: rgba(117, 170, 219,.5);
+}
+
+
+/* change button hover link color for hero too */
 .hero-overlay .btn:hover {
-  color: #4254a7;
+  color: #fff;
+}
+
+.hero-overlay .btn[href]:hover,
+.hero-overlay .btn[href]:focus {
+  background: rgba(117, 170, 219,.9);
 }
 
 /* change font color from red to blue*/
 pre,
 code {
-  color: #4254a7;
+  color: #4c83b6;
+}
+
+/* Docs: custom TOC foot. */
+
+.connect-widget {
+  margin-top: 30px;
+  font-size: 0.7rem;
+}
+
+.connect-widget ul {
+  list-style: none;
+  padding-left: 5px;
 }
