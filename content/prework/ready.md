@@ -1,7 +1,7 @@
 +++
 title = "Is this workshop for you?"
 
-date = 2018-09-09T00:00:00
+date = 2018-12-10T00:00:00
 # lastmod = 2018-09-09T00:00:00
 
 draft = false  # Is this a draft? true/false
@@ -40,5 +40,10 @@ If you do not, we strongly recommend that you either:
 
 {{% alert note %}}
 If you do not, we strongly recommend that you read the ["Basics" chapter](https://bookdown.org/yihui/rmarkdown/basics.html) of the [**R Markdown** book](https://bookdown.org/yihui/rmarkdown/) ahead of time.
+{{% /alert %}}
+
+
+{{% alert warning %}}
+If you feel ready and have not registered yet, there are still some [spots left](https://www.cvent.com/events/rstudio-conf-austin/registration-dd6d75526f3c4554b67c4de32aeffb47.aspx?fqp=true).
 {{% /alert %}}
     
