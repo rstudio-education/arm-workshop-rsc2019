@@ -24,6 +24,7 @@ Please use the menus to the left to guide you through all the workshop set-up in
     <li><i class="fa-li fas fa-question-circle"></i><a href="https://community.rstudio.com/t/rstudio-conf-workshop-information/19670" target="_blank">Get trouble-shooting help</a></li>
     <li><i class="fa-li fas fa-comments"></i><a href="https://gitter.im/arm-austin/Lobby" target="_blank">Ask questions</a></li>
     <li><i class="fa-li fas fa-bug"></i><a href="https://github.com/rstudio-education/arm-workshop-rsc2019/issues" target="_blank">Report issues</a></li>
+    <li><i class="fa-li fas fa-edit"></i><a href="https://github.com/rstudio-education/arm-workshop-rsc2019/edit/master/content/prework/_index.md" target="_blank">Suggest an edit</a></li>
 </ul>
 
 We look forward to meeting and working with you all!
