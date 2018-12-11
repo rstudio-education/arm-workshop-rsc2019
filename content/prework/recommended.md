@@ -1,5 +1,5 @@
 +++
-title = "Extra"
+title = "Recommended"
 
 date = 2018-09-09T00:00:00
 # lastmod = 2018-09-09T00:00:00
@@ -9,19 +9,13 @@ toc = true  # Show table of contents? true/false
 type = "docs"  # Do not modify.
 
 # Add menu entry to sidebar.
-linktitle = "Extra"
+linktitle = "Recommended"
 [menu.prework]
-  parent = "Set-up"
-  weight = 4
-
-# Featured image.
-# Uncomment below lines to use.
-[header]
-  image = "cover.png"
-  caption = "Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)"
+  parent = "Please review"
+  weight = 7
 +++
 
-You’ll get the most from it if you enjoy learning how R Markdown works under the hood (which will involve reading some source code), and are seriously interested in hacking (playing) with:
+You’ll get the most from this workshop if you enjoy learning how R Markdown works under the hood (which will involve reading some source code), and are seriously interested in hacking (playing) with:
 
 * [HTML](https://bookdown.org/yihui/blogdown/html.html), 
 * [JavaScript](https://bookdown.org/yihui/blogdown/javascript.html), 

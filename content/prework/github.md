@@ -1,5 +1,5 @@
 +++
-title = "GitHub Set-up"
+title = "Git & GitHub"
 
 date = 2018-09-09T00:00:00
 # lastmod = 2018-09-09T00:00:00
@@ -9,25 +9,29 @@ toc = true  # Show table of contents? true/false
 type = "docs"  # Do not modify.
 
 # Add menu entry to sidebar.
-linktitle = "GitHub Set-up"
+linktitle = "Git & GitHub"
 [menu.prework]
-  parent = "Set-up"
-  weight = 8
+  parent = "Installs"
+  weight = 4
 +++
 
 
+To get the most out of this workshop, we will typically work within RStudio Projects (`.Rproj`) and encourage you to use Git (via GitHub using RStudio) for version control. You can use RStudio as the Git GUI, so no need to install a separate GUI unless you have your own favorite GUI. If you would like to use GitHub during the workshop, please follow the steps below from the online book [Happy Git with R](http://happygitwithr.com/):
 
+## Installation
 
+1. [Register a GitHub account](http://happygitwithr.com/github-acct.html)
+1. [Install Git](http://happygitwithr.com/install-git.html) 
+1. [Introduce yourself to Git](http://happygitwithr.com/hello-git.html)
 
-## Install Git (Optional)
+## Connect Git, GitHub, RStudio
 
-Install Git. https://git-scm.com/downloads You can use RStudio as the Git GUI, so no need to install a separate GUI unless you have your own favorite GUI. For more detailed instructions, see the installation section of [Happy Git with R](http://happygitwithr.com/install-git.html) for how to install Git on various operating systems.
+1. [Connect to GitHub](http://happygitwithr.com/push-pull-github.html)
+1. Do one of the following:
+    - [Cache credentials for HTTPS](http://happygitwithr.com/credential-caching.html)
+    - [Set up keys for SSH](http://happygitwithr.com/ssh-keys.html)
+1. [Connect RStudio to Git and GitHub](http://happygitwithr.com/rstudio-git-github.html)
 
-To get the most out of this workshop, we will provide tools and tips for using the tools covered in workflows that include RStudio Projects (`.Rproj`), Git (via GitHub using RStudio) for version control, and Netlify for deploying HTML files. 
+## New project, GitHub first
 
-If you want to take advantage of this advice, we highly recommend that you do the following ahead of the workshop:
-
-  - Work through Happy Git with R to set up a GitHub account 
-    - [Register a GitHub account](http://happygitwithr.com/github-acct.html)
-    
-  - Set up Netlify account (recommended: sign up via your GitHub account) [can provide slide deck for these steps, or embed]
+We'll encourage you to follow a ["New project, GitHub first" workflow](http://happygitwithr.com/new-github-first.html).

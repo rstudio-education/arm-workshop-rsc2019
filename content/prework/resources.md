@@ -1,5 +1,5 @@
 +++
-title = "Reading"
+title = "Resources"
 
 date = 2018-09-09T00:00:00
 # lastmod = 2018-09-09T00:00:00
@@ -9,16 +9,10 @@ toc = true  # Show table of contents? true/false
 type = "docs"  # Do not modify.
 
 # Add menu entry to sidebar.
-linktitle = "Reading"
+linktitle = "Resources"
 [menu.prework]
-  parent = "Set-up"
-  weight = 3
-
-# Featured image.
-# Uncomment below lines to use.
-[header]
-  image = "cover.png"
-  caption = "Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)"
+  parent = "Please review"
+  weight = 6
 +++
 
 This is a two-day hands-on workshop primarily based on the book ["R Markdown: The Definitive Guide."](https://bookdown.org/yihui/rmarkdown/) However, there are several other additional free and open source resources available for some of the individual packages we will cover.

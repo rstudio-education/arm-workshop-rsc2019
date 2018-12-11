@@ -11,14 +11,8 @@ type = "docs"  # Do not modify.
 # Add menu entry to sidebar.
 linktitle = "Workshop readiness"
 [menu.prework]
-  parent = "Set-up"
+  parent = "Overview"
   weight = 1
-
-# Featured image.
-# Uncomment below lines to use.
-[header]
-  image = "cover.png"
-  caption = "Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)"
 +++
 
 

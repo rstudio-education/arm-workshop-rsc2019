@@ -11,15 +11,25 @@ type = "docs"  # Do not modify.
 # Add menu entry to sidebar.
 linktitle = "Install R packages"
 [menu.prework]
-  parent = "Set-up"
+  parent = "Installs"
   weight = 3
 +++
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = "#", eval = FALSE)
+library(tidyverse)
 ```
 
-For this workshop, you'll need to install several R packages. This page will guide you through installing the packages we will use.
+For this workshop, you'll need to install several R packages. This page will guide you through installing the packages we will use. If you are very comfortable installing packages in R, then you could run this code from your R console to install all of the necessary packages:
+
+```{r}
+arm_pkgs <- c("devtools", "xaringan", "flexdashboard", 
+              "blogdown", "bookdown", "tidyverse")
+install.packages(arm_pkgs)
+```
+
+Also please review section \@ref(update-hugo) to make sure you have Hugo version `r blogdown::hugo_version()`, which you'll need for **blogdown**.
+
 
 ## devtools {#devtools}
 
@@ -35,10 +45,13 @@ You can check to make sure you are successful by running:
 library(devtools)
 ```
 
-You can also check to make sure the package is installed by running:
+You can also check to make sure an individual package is installed by running this function (see \@ref(all) for how to check for all packages):
 
 ```{r eval = TRUE}
-is.element("devtools", installed.packages()[, "Package"])
+is_installed <- function(pkg_name){
+  setNames(is.element(pkg_name, installed.packages()[, "Package"]), pkg_name)
+} 
+is_installed("devtools")
 ```
 
 
@@ -61,7 +74,7 @@ library(xaringan)
 
 Does this code return `TRUE`?
 ```{r eval = TRUE}
-is.element("xaringan", installed.packages()[, "Package"])
+is_installed("xaringan")
 ```
 
 
@@ -82,7 +95,7 @@ library(flexdashboard)
 
 Does this code return `TRUE`?
 ```{r eval = TRUE}
-is.element("flexdashboard", installed.packages()[, "Package"])
+is_installed("flexdashboard")
 ```
 
 ## blogdown {#blogdown}
@@ -102,7 +115,7 @@ library(blogdown)
 
 Does this code return `TRUE`?
 ```{r eval = TRUE}
-is.element("blogdown", installed.packages()[, "Package"])
+is_installed("blogdown")
 ```
 
 ### Install Hugo {#hugo}
@@ -115,9 +128,58 @@ blogdown::install_hugo()
 
 ### Update Hugo (if necessary) {#update-hugo}
 
-In your R Console, please do the following to make sure that you are working with the latest version of Hugo (>= 0.51): 
+In your R Console, please do the following to make sure that you are working with the latest version of Hugo (>= `r blogdown::hugo_version()`): 
     
 ```
 blogdown::hugo_version() # to check your version
 blogdown::update_hugo() # to force an update
 ```
+
+## bookdown {#bookdown}
+
+Install the [**bookdown** package](https://github.com/rstudio/bookdown) from CRAN as follows:
+
+```
+install.packages("bookdown")
+```
+
+Can you load the package?
+```{r}
+# should just work if installed
+library(bookdown)
+```
+
+
+Does this code return `TRUE`?
+```{r eval = TRUE}
+is_installed("bookdown")
+```
+
+## tidyverse {#tidyverse}
+
+For many code examples provided in the workshop activities, you'll need to install the [**tidyverse** meta-package](https://www.tidyverse.org/packages/) from CRAN as follows:
+
+```
+install.packages("tidyverse")
+```
+
+Can you load the package?
+```{r}
+# should just work if installed
+library(tidyverse)
+```
+
+
+Does this code return `TRUE`?
+```{r eval = TRUE}
+is_installed("tidyverse")
+```
+
+## Check all package installs {#all}
+
+```{r eval = TRUE}
+arm_pkgs <- c("devtools", "xaringan", "flexdashboard", 
+              "blogdown", "bookdown", "tidyverse")
+is_installed(arm_pkgs)
+```
+
