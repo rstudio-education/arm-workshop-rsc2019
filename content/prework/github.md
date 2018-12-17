@@ -16,7 +16,7 @@ linktitle = "Git & GitHub"
 +++
 
 
-To get the most out of this workshop, we will typically work within RStudio Projects (`.Rproj`) and encourage you to use Git (via GitHub using RStudio) for version control. You can use RStudio as the Git GUI, so no need to install a separate GUI unless you have your own favorite GUI. If you would like to use GitHub during the workshop, please follow the steps below from the online book [Happy Git with R](http://happygitwithr.com/):
+To get the most out of this workshop, we will typically work within RStudio Projects (`.Rproj`) and encourage you to use Git (via GitHub using RStudio) for version control. You can use RStudio as the Git GUI, so there is no need to install a separate GUI unless you have your own favorite. If you would like to use GitHub during the workshop, please follow the steps below from the online book [Happy Git with R](http://happygitwithr.com/):
 
 ## Installation
 
@@ -34,4 +34,4 @@ To get the most out of this workshop, we will typically work within RStudio Proj
 
 ## New project, GitHub first
 
-We'll encourage you to follow a ["New project, GitHub first" workflow](http://happygitwithr.com/new-github-first.html).
+We encourage you to follow a ["New project, GitHub first" workflow](http://happygitwithr.com/new-github-first.html).

@@ -23,6 +23,6 @@ You’ll get the most from this workshop if you enjoy learning how R Markdown wo
 * [LaTeX](https://yihui.name/tinytex/), and 
 * [command-line tools](https://seankross.com/the-unix-workbench/command-line-basics.html). 
 
-We will give minimal tutorials on these languages and tools in the workshop, but it may be easier for you to keep pace with the instructor if you already know them before.
+We will give minimal tutorials on these languages and tools in the workshop, but it will be easier for you to keep up if you know them beforehand.
 
 <!--{{< figure library="1" src="cover.png" title="Showcase your projects with the new  *showcase* layout for the project widget." >}}-->

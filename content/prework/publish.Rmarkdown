@@ -32,6 +32,8 @@ Unlike the other website publishing options described below, [RStudio Connect](h
 
 ## GitHub Pages {#ghpages}
 
+<!-- GVW: can the `[installs](../github)` reference be `Section \@ref(something)` instead? -->
+
 [GitHub Pages](https://pages.github.com/) is a service that lets you publish a website from any GitHub repository. To use GitHub pages, all you need is a free GitHub account (see [installs](../github)). Read the [GitHub Pages](https://pages.github.com/) documentation for additional details on creating and deploying websites with GitHub.
 
 ## Netlify {#netlify}
