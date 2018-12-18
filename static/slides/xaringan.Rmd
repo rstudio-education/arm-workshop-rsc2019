@@ -274,7 +274,7 @@ I **think** this diagram will be the same for Rmd [via `knitr`] to md, then to g
 name: diagram
 
 <center>
-```{r xaringandiagram, echo = FALSE}
+```{r xaringandiagram, eval = FALSE}
 DiagrammeR::mermaid(diagram = '
 graph LR;
     .Rmd((<center> xaringan <br> .Rmd </center>))-->knitr(knitr);
@@ -1004,12 +1004,26 @@ You can set this as a global option for all your slides using [`options(knitr.ta
 
 .right-column[
 
-```{r}
+```{r eval=require('DT'), tidy=FALSE}
 library(DT)
 head(tx_names) %>% 
   datatable()
 ```
 
+]
+
+---
+
+.left-column[
+# Hello `leaflet`
+]
+
+.right-column[
+
+```{r out.width='100%', fig.height=6, eval=require('leaflet')}
+library(leaflet)
+leaflet() %>% addTiles() %>% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
+```
 ]
 
 ---
@@ -1107,6 +1121,53 @@ name_plot
 That means the dpi is 72 x 3 = 216 <br>
 `out.width` = `fig.width` * `dpi` / `fig.retina`
 ]
+
+---
+class: inverse
+name: gg-theme
+
+.pull-left[
+# `r emo::ji("surprise")`
+
+````
+```{r dev = 'svg', dev.args = list(bg = "transparent")}`r ''`
+invthm <- theme_minimal() + 
+  theme(
+    panel.background = element_rect(fill = "transparent", colour = NA), 
+    plot.background = element_rect(fill = "transparent", colour = NA),
+    legend.background = element_rect(fill = "transparent", colour = NA),
+    legend.key = element_rect(fill = "transparent", colour = NA),
+    text = element_text(colour = "white"),
+    axis.text = element_text(colour = "white")
+  )
+```
+````
+
+]
+
+.pull-right[
+
+````
+```{r dev = 'svg', dev.args = list(bg = "transparent")}`r ''`
+name_plot + invthm
+```
+````
+
+```{r dev = 'svg', dev.args = list(bg = "transparent"), echo = FALSE}
+invthm <- theme_minimal() + 
+  theme(
+    panel.background = element_rect(fill = "transparent", colour = NA), 
+    plot.background = element_rect(fill = "transparent", colour = NA),
+    legend.background = element_rect(fill = "transparent", colour = NA),
+    legend.key = element_rect(fill = "transparent", colour = NA),
+    text = element_text(colour = "white"),
+    axis.text = element_text(colour = "white")
+  )
+#theme_set(invthm)
+name_plot + invthm
+```
+]
+
 
 ---
 
@@ -1324,6 +1385,59 @@ template: acid
 template: acid
 
 # ACID = IMAGES
+
+
+---
+
+# Background images
+
+Use the [`background-image` property](https://github.com/gnab/remark/wiki/Markdown#background-image) just like you used classes:
+
+- `background-image: url("url")`
+- `background-size:`
+    - `cover` --> rescales + crops with no empty space; best if image size < slide size
+    - `contain` --> rescales only; best if image size > slide size
+- `background-position:` play with [this](https://www.w3schools.com/cssref/pr_background-position.asp)
+
+---
+name: greens-cover
+class: center, middle, inverse
+background-image: url("http://bit.ly/arm-greens")
+background-size: cover
+class: center, middle, inverse
+
+# .fancy[Cover]
+
+
+---
+name: greens-contain
+background-image: url("http://bit.ly/arm-greens")
+background-size: contain
+class: center, middle, inverse
+
+# .fancy[Contain]
+
+---
+name: hex-cover
+class: center, middle, inverse
+background-image: url("http://bit.ly/rdogladies-hex")
+background-size: cover
+class: center, middle
+
+# .fancy[Cover]
+
+
+---
+name: hex-contain
+background-image: url("http://bit.ly/rdogladies-hex")
+background-size: contain
+class: center, middle
+
+# .fancy[Contain]
+
+---
+
+# Add a logo
 
 ---
 name: heat
@@ -1549,7 +1663,7 @@ See the next page for two HTML widgets.
 
 ```{r out.width='100%', fig.height=6, eval=require('leaflet')}
 library(leaflet)
-leaflet() %>% addTiles() %>% setView(-93.65, 42.0285, zoom = 17)
+leaflet() %>% addTiles() %>% setView(-97.65, 42.0285, zoom = 17)
 ```
 
 ---

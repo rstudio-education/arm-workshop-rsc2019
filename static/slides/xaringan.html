@@ -6,13 +6,6 @@
     <meta name="author" content="Alison Hill" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <script src="libs/htmlwidgets/htmlwidgets.js"></script>
-    <script src="libs/d3/d3.min.js"></script>
-    <script src="libs/dagre/dagre-d3.min.js"></script>
-    <link href="libs/mermaid/dist/mermaid.css" rel="stylesheet" />
-    <script src="libs/mermaid/dist/mermaid.slim.min.js"></script>
-    <link href="libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
-    <script src="libs/chromatography/chromatography.js"></script>
-    <script src="libs/DiagrammeR-binding/DiagrammeR.js"></script>
     <script src="libs/jquery/jquery.min.js"></script>
     <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
     <script src="libs/datatables-binding/datatables.js"></script>
@@ -275,8 +268,21 @@ I **think** this diagram will be the same for Rmd [via `knitr`] to md, then to g
 name: diagram
 
 &lt;center&gt;
-<div id="htmlwidget-8cac2195b397c329e8b7" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8cac2195b397c329e8b7">{"x":{"diagram":"\ngraph LR;\n    .Rmd((<center> xaringan <br> .Rmd <\/center>))-->knitr(knitr);\n    knitr-->.md((<center> .md <\/center>));\n    .md-->remark.js(<center> remark.js via <br> xaringan::moon_reader <\/center>);\n    remark.js-->.html((<center> .html <\/center>));\n    style .Rmd fill:#61acf0,stroke:#333,stroke-width:2px;\n    style knitr fill:#cbd20a,stroke:#333,stroke-width:2px;\n    style .md fill:#f0a561,stroke:#333,stroke-width:2px;\n    style remark.js fill:#cbd20a,stroke:#333,stroke-width:2px;\n    style .html fill:#e74a2f,stroke:#333,stroke-width:2px;\n"},"evals":[],"jsHooks":[]}</script>
+
+```r
+DiagrammeR::mermaid(diagram = '
+graph LR;
+    .Rmd((&lt;center&gt; xaringan &lt;br&gt; .Rmd &lt;/center&gt;))--&gt;knitr(knitr);
+    knitr--&gt;.md((&lt;center&gt; .md &lt;/center&gt;));
+    .md--&gt;remark.js(&lt;center&gt; remark.js via &lt;br&gt; xaringan::moon_reader &lt;/center&gt;);
+    remark.js--&gt;.html((&lt;center&gt; .html &lt;/center&gt;));
+    style .Rmd fill:#61acf0,stroke:#333,stroke-width:2px;
+    style knitr fill:#cbd20a,stroke:#333,stroke-width:2px;
+    style .md fill:#f0a561,stroke:#333,stroke-width:2px;
+    style remark.js fill:#cbd20a,stroke:#333,stroke-width:2px;
+    style .html fill:#e74a2f,stroke:#333,stroke-width:2px;
+')
+```
 &lt;/center&gt;
 
 ---
@@ -828,7 +834,7 @@ template: sfah
 ---
 name: salt-work
 
-# Take 15 minutes 🕠
+# Take 15 minutes 🕛
 
 First, make an introduction slide, using the templated code provided.
 
@@ -1099,9 +1105,27 @@ head(tx_names) %&gt;%
   datatable()
 ```
 
-<div id="htmlwidget-ce26a673f86869a3f223" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ce26a673f86869a3f223">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d2419df1d2e81789c68d" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d2419df1d2e81789c68d">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
+]
+
+---
+
+.left-column[
+# Hello `leaflet`
+]
+
+.right-column[
+
+
+```r
+library(leaflet)
+leaflet() %&gt;% addTiles() %&gt;% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
+```
+
+<div id="htmlwidget-6a99882049d467e91e69" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6a99882049d467e91e69">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[30.2621,-97.7382],17,[]]},"evals":[],"jsHooks":[]}</script>
 ]
 
 ---
@@ -1123,7 +1147,7 @@ head(tx_names) %&gt;%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#zhwgyrkzha .gt_table {
+#vgpyvxcouo .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1142,13 +1166,13 @@ head(tx_names) %&gt;%
   /* table.border.top.color */
 }
 
-#zhwgyrkzha .gt_heading {
+#vgpyvxcouo .gt_heading {
   background-color: #FFFFFF;
   /* heading.background.color */
   border-bottom-color: #FFFFFF;
 }
 
-#zhwgyrkzha .gt_title {
+#vgpyvxcouo .gt_title {
   color: #000000;
   font-size: 125%;
   /* heading.title.font.size */
@@ -1159,7 +1183,7 @@ head(tx_names) %&gt;%
   border-bottom-width: 0;
 }
 
-#zhwgyrkzha .gt_subtitle {
+#vgpyvxcouo .gt_subtitle {
   color: #000000;
   font-size: 85%;
   /* heading.subtitle.font.size */
@@ -1170,7 +1194,7 @@ head(tx_names) %&gt;%
   border-top-width: 0;
 }
 
-#zhwgyrkzha .gt_bottom_border {
+#vgpyvxcouo .gt_bottom_border {
   border-bottom-style: solid;
   /* heading.border.bottom.style */
   border-bottom-width: 2px;
@@ -1179,7 +1203,7 @@ head(tx_names) %&gt;%
   /* heading.border.bottom.color */
 }
 
-#zhwgyrkzha .gt_column_spanner {
+#vgpyvxcouo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #A8A8A8;
@@ -1187,7 +1211,7 @@ head(tx_names) %&gt;%
   padding-bottom: 4px;
 }
 
-#zhwgyrkzha .gt_col_heading {
+#vgpyvxcouo .gt_col_heading {
   color: #000000;
   background-color: #FFFFFF;
   /* column_labels.background.color */
@@ -1200,11 +1224,11 @@ head(tx_names) %&gt;%
   margin: 10px;
 }
 
-#zhwgyrkzha .gt_sep_right {
+#vgpyvxcouo .gt_sep_right {
   border-right: 5px solid #FFFFFF;
 }
 
-#zhwgyrkzha .gt_group_heading {
+#vgpyvxcouo .gt_group_heading {
   padding: 8px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1228,7 +1252,7 @@ head(tx_names) %&gt;%
   vertical-align: middle;
 }
 
-#zhwgyrkzha .gt_empty_group_heading {
+#vgpyvxcouo .gt_empty_group_heading {
   padding: 0.5px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1252,29 +1276,29 @@ head(tx_names) %&gt;%
   vertical-align: middle;
 }
 
-#zhwgyrkzha .gt_striped tr:nth-child(even) {
+#vgpyvxcouo .gt_striped tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#zhwgyrkzha .gt_row {
+#vgpyvxcouo .gt_row {
   padding: 10px;
   /* row.padding */
   margin: 10px;
   vertical-align: middle;
 }
 
-#zhwgyrkzha .gt_stub {
+#vgpyvxcouo .gt_stub {
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #A8A8A8;
   padding-left: 12px;
 }
 
-#zhwgyrkzha .gt_stub.gt_row {
+#vgpyvxcouo .gt_stub.gt_row {
   background-color: #FFFFFF;
 }
 
-#zhwgyrkzha .gt_summary_row {
+#vgpyvxcouo .gt_summary_row {
   background-color: #FFFFFF;
   /* summary_row.background.color */
   padding: 6px;
@@ -1283,13 +1307,13 @@ head(tx_names) %&gt;%
   /* summary_row.text_transform */
 }
 
-#zhwgyrkzha .gt_first_summary_row {
+#vgpyvxcouo .gt_first_summary_row {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
 }
 
-#zhwgyrkzha .gt_table_body {
+#vgpyvxcouo .gt_table_body {
   border-top-style: solid;
   /* field.border.top.style */
   border-top-width: 2px;
@@ -1304,55 +1328,55 @@ head(tx_names) %&gt;%
   /* field.border.bottom.color */
 }
 
-#zhwgyrkzha .gt_footnote {
+#vgpyvxcouo .gt_footnote {
   font-size: 90%;
   /* footnote.font.size */
   padding: 4px;
   /* footnote.padding */
 }
 
-#zhwgyrkzha .gt_sourcenote {
+#vgpyvxcouo .gt_sourcenote {
   font-size: 90%;
   /* sourcenote.font.size */
   padding: 4px;
   /* sourcenote.padding */
 }
 
-#zhwgyrkzha .gt_center {
+#vgpyvxcouo .gt_center {
   text-align: center;
 }
 
-#zhwgyrkzha .gt_left {
+#vgpyvxcouo .gt_left {
   text-align: left;
 }
 
-#zhwgyrkzha .gt_right {
+#vgpyvxcouo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zhwgyrkzha .gt_font_normal {
+#vgpyvxcouo .gt_font_normal {
   font-weight: normal;
 }
 
-#zhwgyrkzha .gt_font_bold {
+#vgpyvxcouo .gt_font_bold {
   font-weight: bold;
 }
 
-#zhwgyrkzha .gt_font_italic {
+#vgpyvxcouo .gt_font_italic {
   font-style: italic;
 }
 
-#zhwgyrkzha .gt_super {
+#vgpyvxcouo .gt_super {
   font-size: 65%;
 }
 
-#zhwgyrkzha .gt_footnote_glyph {
+#vgpyvxcouo .gt_footnote_glyph {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="zhwgyrkzha" style="overflow-x:auto;"><!--gt table start-->
+<div id="vgpyvxcouo" style="overflow-x:auto;"><!--gt table start-->
 <table class='gt_table'>
 <tr>
 <th class='gt_col_heading gt_right' rowspan='1' colspan='1'>year</th>
@@ -1454,7 +1478,7 @@ name_plot
 ```
 ````
 
-![](xaringan_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
+![](xaringan_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
 
 ]
 
@@ -1480,13 +1504,48 @@ name_plot
 ```
 ````
 
-&lt;img src="xaringan_files/figure-html/unnamed-chunk-17-1.png" width="504" /&gt;
+&lt;img src="xaringan_files/figure-html/unnamed-chunk-18-1.png" width="504" /&gt;
 ]
 
 .footnote[
 That means the dpi is 72 x 3 = 216 &lt;br&gt;
 `out.width` = `fig.width` * `dpi` / `fig.retina`
 ]
+
+---
+class: inverse
+name: gg-theme
+
+.pull-left[
+# 😮
+
+````
+```{r dev = 'svg', dev.args = list(bg = "transparent")}
+invthm &lt;- theme_minimal() + 
+  theme(
+    panel.background = element_rect(fill = "transparent", colour = NA), 
+    plot.background = element_rect(fill = "transparent", colour = NA),
+    legend.background = element_rect(fill = "transparent", colour = NA),
+    legend.key = element_rect(fill = "transparent", colour = NA),
+    text = element_text(colour = "white"),
+    axis.text = element_text(colour = "white")
+  )
+```
+````
+
+]
+
+.pull-right[
+
+````
+```{r dev = 'svg', dev.args = list(bg = "transparent")}
+name_plot + invthm
+```
+````
+
+![](xaringan_files/figure-html/unnamed-chunk-19-1.svg)&lt;!-- --&gt;
+]
+
 
 ---
 
@@ -1588,7 +1647,7 @@ tx_plot
 ]
 
 .pull-right[
-&lt;img src="xaringan_files/figure-html/unnamed-chunk-19-1.png" width="504" /&gt;
+&lt;img src="xaringan_files/figure-html/unnamed-chunk-21-1.png" width="504" /&gt;
 ]
 
 
@@ -1656,7 +1715,7 @@ tx_plot
 ---
 name: fat-work
 
-# Take 15 minutes 🕖
+# Take 15 minutes 🕕
 
 First, [edit your YAML](#highlightjs-demo) to include a `highlightStyle` and set `highlightLines` to true.
 
@@ -1700,6 +1759,59 @@ template: acid
 template: acid
 
 # ACID = IMAGES
+
+
+---
+
+# Background images
+
+Use the [`background-image` property](https://github.com/gnab/remark/wiki/Markdown#background-image) just like you used classes:
+
+- `background-image: url("url")`
+- `background-size:`
+    - `cover` --&gt; rescales + crops with no empty space; best if image size &lt; slide size
+    - `contain` --&gt; rescales only; best if image size &gt; slide size
+- `background-position:` play with [this](https://www.w3schools.com/cssref/pr_background-position.asp)
+
+---
+name: greens-cover
+class: center, middle, inverse
+background-image: url("http://bit.ly/arm-greens")
+background-size: cover
+class: center, middle, inverse
+
+# .fancy[Cover]
+
+
+---
+name: greens-contain
+background-image: url("http://bit.ly/arm-greens")
+background-size: contain
+class: center, middle, inverse
+
+# .fancy[Contain]
+
+---
+name: hex-cover
+class: center, middle, inverse
+background-image: url("http://bit.ly/rdogladies-hex")
+background-size: cover
+class: center, middle
+
+# .fancy[Cover]
+
+
+---
+name: hex-contain
+background-image: url("http://bit.ly/rdogladies-hex")
+background-size: contain
+class: center, middle
+
+# .fancy[Contain]
+
+---
+
+# Add a logo
 
 ---
 name: heat
@@ -2001,11 +2113,11 @@ See the next page for two HTML widgets.
 
 ```r
 library(leaflet)
-leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
+leaflet() %&gt;% addTiles() %&gt;% setView(-97.65, 42.0285, zoom = 17)
 ```
 
-<div id="htmlwidget-608468785b625d54bc90" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-608468785b625d54bc90">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-256e4294e9c802b8c984" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-256e4294e9c802b8c984">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-97.65],17,[]]},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -2017,8 +2129,8 @@ DT::datatable(
 )
 ```
 
-<div id="htmlwidget-8b46b9a9513b561e2404" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8b46b9a9513b561e2404">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-466f2ae6197695f35ba1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-466f2ae6197695f35ba1">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 
