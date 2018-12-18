@@ -34,6 +34,23 @@
   font-weight:700;
 }
 
+.saltinline {
+  color: var(--color-salt);
+}
+
+.fatinline {
+  color: var(--color-fat);
+}
+
+.acidinline {
+  color: var(--color-acid);
+}
+
+.heatinline {
+  color: var(--color-heat);
+}
+
+
 /* highlighted code */
 
 .remark-code-line-highlighted {
@@ -223,5 +240,4 @@ img.lil {
   margin-left: auto;
   margin-right: auto;
 }
-
 

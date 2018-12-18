@@ -6,6 +6,13 @@
     <meta name="author" content="Alison Hill" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/d3/d3.min.js"></script>
+    <script src="libs/dagre/dagre-d3.min.js"></script>
+    <link href="libs/mermaid/dist/mermaid.css" rel="stylesheet" />
+    <script src="libs/mermaid/dist/mermaid.slim.min.js"></script>
+    <link href="libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+    <script src="libs/chromatography/chromatography.js"></script>
+    <script src="libs/DiagrammeR-binding/DiagrammeR.js"></script>
     <script src="libs/jquery/jquery.min.js"></script>
     <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
     <script src="libs/datatables-binding/datatables.js"></script>
@@ -21,6 +28,7 @@
     <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
     <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
     <script src="libs/leaflet-binding/leaflet.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js" integrity="sha384-R5JkiUweZpJjELPWqttAYmYM1P3SNEJRM6ecTQF05pFFtxmCO+Y1CiUhvuDzgSVZ" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/sfah.css" type="text/css" />
     <link rel="stylesheet" href="css/sfah-fonts.css" type="text/css" />
   </head>
@@ -46,7 +54,7 @@ class: left, middle, title-slide
 
 ### .fancy[Making slides in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2018-12-17]
+.large[Alison Hill | rstudio::conf | 2018-12-18]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
@@ -125,7 +133,7 @@ class: middle, inverse
 
 --
 
-### &lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/416px-Markdown-mark.svg.png" width="5%" style="float:left"/&gt;&amp;nbsp; you know Markdown 
+### &lt;i class="fab fa-markdown fa-lg fa-fw" style="float:left"/&gt;&lt;/i&gt;&amp;nbsp; you know Markdown 
 
 --
 
@@ -133,7 +141,7 @@ class: middle, inverse
 
 --
 
-&lt;img src="https://www.w3.org/html/logo/downloads/HTML5_1Color_White.png" width="5%" style="float:left"/&gt;&amp;nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
+### &lt;i class="fab fa-html5 fa-lg fa-fw" style="float:left"&gt;&lt;/i&gt;&amp;nbsp; .saltinline[.fancy[you want awesome HTML5 slides]] 
 
 
 ---
@@ -145,15 +153,15 @@ class: middle, inverse
 
 --
 
-### JavaScript
+### &lt;i class="fab fa-js fa-lg fa-fw"&gt;&lt;/i&gt;&amp;nbsp; JavaScript
 
 --
 
-### CSS (Cascading Style Sheets)
+### &lt;i class="fab fa-css3-alt fa-lg fa-fw"&gt;&lt;/i&gt;&amp;nbsp; CSS (Cascading Style Sheets)
 
 --
 
-&lt;img src="https://www.w3.org/html/logo/downloads/HTML5_1Color_White.png" width="5%" style="float:left"/&gt;&amp;nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
+### &lt;i class="fab fa-html5 fa-lg fa-fw" style="float:left"&gt;&lt;/i&gt;&amp;nbsp; .saltinline[.fancy[you want awesome HTML5 slides]] 
 
 ---
 name: nutshell
@@ -243,7 +251,7 @@ To create:
 
 &gt; .fancy["An R package for creating HTML5 presentations with remark.js through R Markdown."]
 
-&lt;iframe src="https://armextensions.netlify.com/slides/am-xaringan" width="100%" height="300px"&gt;&lt;/iframe&gt;
+&lt;iframe src="https://arm.rbind.io/slides/xaringan.html" width="100%" height="300px"&gt;&lt;/iframe&gt;
 ]
 ---
 name: diagram
@@ -263,6 +271,13 @@ want to make something like this:
 
 I **think** this diagram will be the same for Rmd [via `knitr`] to md, then to get from md to HTML5 go via `xaringan::moon_reader` (to "summon" remark.js)
 
+---
+name: diagram
+
+&lt;center&gt;
+<div id="htmlwidget-d6bfaf38e81674eb01e9" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d6bfaf38e81674eb01e9">{"x":{"diagram":"\ngraph LR;\n    .Rmd((<center> xaringan <br> .Rmd <\/center>))-->knitr;\n    knitr-->.md((<center> .md <\/center>));\n    .md-->remark.js[<center> remark.js via <br> xaringan::moon_reader <\/center>];\n    remark.js-->.html((<center> .html <\/center>));\n    style .Rmd fill:#61acf0,stroke:#333,stroke-width:2px;\n    style knitr fill:#cbd20a,stroke:#333,stroke-width:2px;\n    style .md fill:#f0a561,stroke:#333,stroke-width:2px;\n    style remark.js fill:#cbd20a,stroke:#333,stroke-width:2px;\n    style .html fill:#e74a2f,stroke:#333,stroke-width:2px;\n"},"evals":[],"jsHooks":[]}</script>
+&lt;/center&gt;
 
 ---
 # Let's make this a slide deck
@@ -813,7 +828,7 @@ template: sfah
 ---
 name: salt-work
 
-# Take 15 minutes 🕠
+# Take 15 minutes 🕗
 
 First, make an introduction slide, using the templated code provided.
 
@@ -1084,8 +1099,8 @@ head(tx_names) %&gt;%
   datatable()
 ```
 
-<div id="htmlwidget-4d1be84d528c07cd847f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4d1be84d528c07cd847f">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-56a76236c1a16368e524" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-56a76236c1a16368e524">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 ]
 
@@ -1137,7 +1152,9 @@ name_plot
 ]
 
 .footnote[
-The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
+The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72. &lt;br&gt;
+The [default fig.retina](https://github.com/rstudio/rmarkdown/blob/master/R/html_document.R) for `knitr` is 2. &lt;br&gt;
+That means the dpi is 72 x 2 = 144
 ]
 
 ---
@@ -1146,19 +1163,19 @@ The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
 .left-column[
 # 😏
 
-## Better, but bigger
+## Better!
 
 ]
 
 .right-column[
 
 ````
-```{r dpi = 200}
+```{r fig.retina = 3}
 name_plot
 ```
 ````
 
-![](xaringan_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
+&lt;img src="xaringan_files/figure-html/unnamed-chunk-16-1.png" width="504" /&gt;
 ]
 
 ---
@@ -1340,7 +1357,7 @@ tx_plot
 ---
 name: fat-work
 
-# Take 15 minutes 🕜
+# Take 15 minutes 🕖
 
 First, [edit your YAML](#highlightjs-demo) to include a `highlightStyle` and set `highlightLines` to true.
 
@@ -1688,8 +1705,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
 ```
 
-<div id="htmlwidget-a7bffbe0018fd515973e" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a7bffbe0018fd515973e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bc2b5898cd0835aff9fc" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bc2b5898cd0835aff9fc">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -1701,8 +1718,8 @@ DT::datatable(
 )
 ```
 
-<div id="htmlwidget-d80669ce0b471c0b7360" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d80669ce0b471c0b7360">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c3fb44ad9843f2617e6a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c3fb44ad9843f2617e6a">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 

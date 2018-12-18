@@ -14,6 +14,8 @@ output:
       ratio: "16:9"
       beforeInit: "https://platform.twitter.com/widgets.js"
     seal: false 
+    includes:
+      in_header: header.html
 ---
 
 ```{r setup, include=FALSE}
@@ -24,6 +26,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(tidyverse)
 library(babynames)
 library(fontawesome) # from github: https://github.com/rstudio/fontawesome
+library(DiagrammeR)
 ```
 
 layout: true
@@ -125,7 +128,7 @@ class: middle, inverse
 
 --
 
-### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/416px-Markdown-mark.svg.png" width="5%" style="float:left"/>&nbsp; you know Markdown 
+### <i class="fab fa-markdown fa-lg fa-fw" style="float:left"/></i>&nbsp; you know Markdown 
 
 --
 
@@ -133,7 +136,7 @@ class: middle, inverse
 
 --
 
-<img src="https://www.w3.org/html/logo/downloads/HTML5_1Color_White.png" width="5%" style="float:left"/>&nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
+### <i class="fab fa-html5 fa-lg fa-fw" style="float:left"></i>&nbsp; .saltinline[.fancy[you want awesome HTML5 slides]] 
 
 
 ---
@@ -145,15 +148,15 @@ class: middle, inverse
 
 --
 
-### JavaScript
+### <i class="fab fa-js fa-lg fa-fw"></i>&nbsp; JavaScript
 
 --
 
-### CSS (Cascading Style Sheets)
+### <i class="fab fa-css3-alt fa-lg fa-fw"></i>&nbsp; CSS (Cascading Style Sheets)
 
 --
 
-<img src="https://www.w3.org/html/logo/downloads/HTML5_1Color_White.png" width="5%" style="float:left"/>&nbsp; .salt[.fancy[you want awesome HTML5 slides]] 
+### <i class="fab fa-html5 fa-lg fa-fw" style="float:left"></i>&nbsp; .saltinline[.fancy[you want awesome HTML5 slides]] 
 
 ---
 name: nutshell
@@ -246,7 +249,7 @@ To create:
 > .fancy["An R package for creating HTML5 presentations with remark.js through R Markdown."]
 
 ```{r echo = FALSE}
-knitr::include_url("https://armextensions.netlify.com/slides/am-xaringan", height = "300px")
+knitr::include_url("https://arm.rbind.io/slides/xaringan.html", height = "300px")
 ```
 ]
 ---
@@ -267,6 +270,25 @@ want to make something like this:
 
 I **think** this diagram will be the same for Rmd [via `knitr`] to md, then to get from md to HTML5 go via `xaringan::moon_reader` (to "summon" remark.js)
 
+---
+name: diagram
+
+<center>
+```{r xaringandiagram, echo = FALSE}
+DiagrammeR::mermaid(diagram = '
+graph LR;
+    .Rmd((<center> xaringan <br> .Rmd </center>))-->knitr;
+    knitr-->.md((<center> .md </center>));
+    .md-->remark.js[<center> remark.js via <br> xaringan::moon_reader </center>];
+    remark.js-->.html((<center> .html </center>));
+    style .Rmd fill:#61acf0,stroke:#333,stroke-width:2px;
+    style knitr fill:#cbd20a,stroke:#333,stroke-width:2px;
+    style .md fill:#f0a561,stroke:#333,stroke-width:2px;
+    style remark.js fill:#cbd20a,stroke:#333,stroke-width:2px;
+    style .html fill:#e74a2f,stroke:#333,stroke-width:2px;
+')
+```
+</center>
 
 ---
 # Let's make this a slide deck
@@ -1039,7 +1061,9 @@ name_plot
 ]
 
 .footnote[
-The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
+The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72. <br>
+The [default fig.retina](https://github.com/rstudio/rmarkdown/blob/master/R/html_document.R) for `knitr` is 2. <br>
+That means the dpi is 72 x 2 = 144
 ]
 
 ---
@@ -1048,19 +1072,19 @@ The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72.
 .left-column[
 # `r emo::ji("smirk")`
 
-## Better, but bigger
+## Better!
 
 ]
 
 .right-column[
 
 ````
-```{r dpi = 200}`r ''`
+```{r fig.retina = 3}`r ''`
 name_plot
 ```
 ````
 
-```{r dpi = 200, echo = FALSE}
+```{r fig.retina = 3, echo = FALSE}
 name_plot
 ```
 ]
