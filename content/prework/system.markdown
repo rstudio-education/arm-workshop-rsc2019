@@ -40,6 +40,6 @@ getRversion()
 
 For more help installing or upgrading R and RStudio, please read through these links:
 
-1. [Chapter 6 in **Happy Git with R** book](http://happygitwithr.com/install-r-rstudio.html)
+1. [Chapter 6 in **Happy Git with R**](http://happygitwithr.com/install-r-rstudio.html)
 1. [Maintaining R from **What They Forgot to Teach You About R**](https://whattheyforgot.org/maintaining-r.html)
     - See ["How to transfer your library when updating R"](https://whattheyforgot.org/maintaining-r.html#how-to-transfer-your-library-when-updating-r)

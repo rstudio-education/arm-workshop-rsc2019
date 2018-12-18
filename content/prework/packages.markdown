@@ -45,7 +45,7 @@ You can check to make sure you are successful by running:
 library(devtools)
 ```
 
-You can also check to make sure an individual package is installed by running this function (see <a href="#all">1.7</a> for how to check for all packages):
+You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">1.7</a> for how to check for all packages):
 
 
 ```r
@@ -61,7 +61,7 @@ is_installed("devtools")
 ```
 
 
-Now that you have the devtools package installed, you can use your R console to install the following packages:
+Now that you have the devtools package installed, you can use your R console to install the packages below.
 
 ## xaringan {#xaringan}
 
