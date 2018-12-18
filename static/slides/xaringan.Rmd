@@ -266,7 +266,7 @@ name: diagram
 
 want to make something like this:
 
-![](https://d33wubrfki0l68.cloudfront.net/61d189fd9cdf955058415d3e1b28dd60e1bd7c9b/b739c/lesson-images/rmarkdownflow.png)
+![](https://d33wubrfki0l68.cloudfront.net/61d189fd9cdf955058415d3e1b28dd60e1bd7c9b/9791d/images/rmarkdownflow.png)
 
 I **think** this diagram will be the same for Rmd [via `knitr`] to md, then to get from md to HTML5 go via `xaringan::moon_reader` (to "summon" remark.js)
 
@@ -999,7 +999,7 @@ You can set this as a global option for all your slides using [`options(knitr.ta
 
 
 .left-column[
-# Hello HTML widget
+# Hello `DT`
 ]
 
 .right-column[
@@ -1008,6 +1008,22 @@ You can set this as a global option for all your slides using [`options(knitr.ta
 library(DT)
 head(tx_names) %>% 
   datatable()
+```
+
+]
+
+---
+
+.left-column[
+# Hello `gt`
+]
+
+.right-column[
+
+```{r}
+library(gt)
+head(tx_names) %>% 
+  gt()
 ```
 
 ]
@@ -1038,7 +1054,7 @@ name_plot <- ggplot(tx_names ,
 
 ---
 
-.left-column[
+.pull-left[
 # `r emo::ji("scream")`
 
 ## Why so ugly?
@@ -1046,7 +1062,7 @@ name_plot <- ggplot(tx_names ,
 
 --
 
-.right-column[
+.pull-right[
 
 ````
 ```{r}`r ''`
@@ -1061,22 +1077,20 @@ name_plot
 ]
 
 .footnote[
-The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72. <br>
-The [default fig.retina](https://github.com/rstudio/rmarkdown/blob/master/R/html_document.R) for `knitr` is 2. <br>
+The [default dpi](https://yihui.name/knitr/options/#plots) = 72. <br>
+The [default fig.retina](https://github.com/rstudio/rmarkdown/blob/master/R/html_document.R)  = 2. <br>
 That means the dpi is 72 x 2 = 144
 ]
 
 ---
+name: plot-demo
 
-
-.left-column[
-# `r emo::ji("smirk")`
-
-## Better!
+.pull-left[
+# `r emo::ji("tada")`
 
 ]
 
-.right-column[
+.pull-right[
 
 ````
 ```{r fig.retina = 3}`r ''`
@@ -1089,37 +1103,22 @@ name_plot
 ```
 ]
 
----
-name: plot-demo
-
-.left-column[
-# `r emo::ji("tada")`
-]
-
-.right-column[
-
-````
-```{r dpi = 200, out.width = '60%'}`r ''`
-name_plot
-```
-````
-
-```{r dpi = 200, out.width = '60%', echo = FALSE}
-name_plot
-```
+.footnote[
+That means the dpi is 72 x 3 = 216 <br>
+`out.width` = `fig.width` * `dpi` / `fig.retina`
 ]
 
 ---
 
 # Control your plots
 
-You'll often want to play with individual chunk options for plots like `dpi` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
+You'll often want to play with individual chunk options for plots like `fig.retina` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
 
 --
 
 ````
 ```{r setup}`r ''`
-knitr::opts_chunk$set(dpi = 200)
+knitr::opts_chunk$set(fig.retina = 3)
 ```
 ````
 
@@ -1133,7 +1132,7 @@ How your plots look *can* also depend on which CSS content classes you use too (
 .footnote[
 [1] Read more about [images in R Markdown](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents)
 
-[2] And see Hadley/Garrett's preferred `ggplot2` chunk options
+[2] And see Hadley/Garrett's preferred [`ggplot2` chunk options](https://r4ds.had.co.nz/graphics-for-communication.html#figure-sizing)
 ]
 
 
@@ -1155,12 +1154,14 @@ name: tldr-side-by-side
 
 
 ---
-name: code-first
 
 .pull-left[
+
+.salt[Code]
 
 ````
 .pull-left[
+
 ```{r plot-last, fig.show = 'hide'}`r ''`
 tx_names <- babynames %>%
   filter(name == "Dallas" | name == "Austin") %>% 
@@ -1176,8 +1177,32 @@ tx_plot
 ]
 ````
 
-.salt[Left Output]
+````
+.pull-right[
+```{r ref.label = 'plot-last', echo = FALSE}`r ''`
+```
+]
+````
 
+]
+
+--
+
+.pull-right[
+
+.acid[Output]
+
+```{r echo = FALSE}
+knitr::include_url("https://arm.rbind.io/slides/xaringan.html#plot-last")
+```
+
+
+]
+
+---
+name: plot-last
+
+.pull-left[
 ```{r plot-last, fig.show = 'hide'}
 tx_names <- babynames %>%
   filter(name == "Dallas" | name == "Austin") %>% 
@@ -1190,26 +1215,13 @@ tx_plot <- ggplot(tx_names,
   geom_line() 
 tx_plot
 ```
-
 ]
-
---
 
 .pull-right[
-
-````
-.pull-right[
-```{r ref.label = 'plot-last', echo = FALSE}`r ''`
+```{r ref.label = 'plot-last', echo = FALSE, fig.retina = 3}
 ```
 ]
-````
 
-.acid[Right Output]
-
-```{r ref.label = 'plot-last', echo = FALSE, dpi = 200, out.width = '80%'}
-```
-
-]
 
 ---
 name: plot-first

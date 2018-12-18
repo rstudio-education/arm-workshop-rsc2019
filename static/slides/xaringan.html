@@ -267,7 +267,7 @@ name: diagram
 
 want to make something like this:
 
-![](https://d33wubrfki0l68.cloudfront.net/61d189fd9cdf955058415d3e1b28dd60e1bd7c9b/b739c/lesson-images/rmarkdownflow.png)
+![](https://d33wubrfki0l68.cloudfront.net/61d189fd9cdf955058415d3e1b28dd60e1bd7c9b/9791d/images/rmarkdownflow.png)
 
 I **think** this diagram will be the same for Rmd [via `knitr`] to md, then to get from md to HTML5 go via `xaringan::moon_reader` (to "summon" remark.js)
 
@@ -275,8 +275,8 @@ I **think** this diagram will be the same for Rmd [via `knitr`] to md, then to g
 name: diagram
 
 &lt;center&gt;
-<div id="htmlwidget-ff8dada59d02a44d2bd3" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ff8dada59d02a44d2bd3">{"x":{"diagram":"\ngraph LR;\n    .Rmd((<center> xaringan <br> .Rmd <\/center>))-->knitr(knitr);\n    knitr-->.md((<center> .md <\/center>));\n    .md-->remark.js(<center> remark.js via <br> xaringan::moon_reader <\/center>);\n    remark.js-->.html((<center> .html <\/center>));\n    style .Rmd fill:#61acf0,stroke:#333,stroke-width:2px;\n    style knitr fill:#cbd20a,stroke:#333,stroke-width:2px;\n    style .md fill:#f0a561,stroke:#333,stroke-width:2px;\n    style remark.js fill:#cbd20a,stroke:#333,stroke-width:2px;\n    style .html fill:#e74a2f,stroke:#333,stroke-width:2px;\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-04cdd18b4fd7b5f01a7f" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-04cdd18b4fd7b5f01a7f">{"x":{"diagram":"\ngraph LR;\n    .Rmd((<center> xaringan <br> .Rmd <\/center>))-->knitr(knitr);\n    knitr-->.md((<center> .md <\/center>));\n    .md-->remark.js(<center> remark.js via <br> xaringan::moon_reader <\/center>);\n    remark.js-->.html((<center> .html <\/center>));\n    style .Rmd fill:#61acf0,stroke:#333,stroke-width:2px;\n    style knitr fill:#cbd20a,stroke:#333,stroke-width:2px;\n    style .md fill:#f0a561,stroke:#333,stroke-width:2px;\n    style remark.js fill:#cbd20a,stroke:#333,stroke-width:2px;\n    style .html fill:#e74a2f,stroke:#333,stroke-width:2px;\n"},"evals":[],"jsHooks":[]}</script>
 &lt;/center&gt;
 
 ---
@@ -828,7 +828,7 @@ template: sfah
 ---
 name: salt-work
 
-# Take 15 minutes 🕕
+# Take 15 minutes 🕰
 
 First, make an introduction slide, using the templated code provided.
 
@@ -1087,7 +1087,7 @@ You can set this as a global option for all your slides using [`options(knitr.ta
 
 
 .left-column[
-# Hello HTML widget
+# Hello `DT`
 ]
 
 .right-column[
@@ -1099,8 +1099,315 @@ head(tx_names) %&gt;%
   datatable()
 ```
 
-<div id="htmlwidget-8dae22a508312b5a068a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8dae22a508312b5a068a">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f0d5aab9a43b095c6b28" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f0d5aab9a43b095c6b28">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
+]
+
+---
+
+.left-column[
+# Hello `gt`
+]
+
+.right-column[
+
+
+```r
+library(gt)
+head(tx_names) %&gt;% 
+  gt()
+```
+
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#msnyztgngt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #000000;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  /* table.background.color */
+  width: auto;
+  /* table.width */
+  border-top-style: solid;
+  /* table.border.top.style */
+  border-top-width: 2px;
+  /* table.border.top.width */
+  border-top-color: #A8A8A8;
+  /* table.border.top.color */
+}
+
+#msnyztgngt .gt_heading {
+  background-color: #FFFFFF;
+  /* heading.background.color */
+  border-bottom-color: #FFFFFF;
+}
+
+#msnyztgngt .gt_title {
+  color: #000000;
+  font-size: 125%;
+  /* heading.title.font.size */
+  padding-top: 4px;
+  /* heading.top.padding */
+  padding-bottom: 1px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#msnyztgngt .gt_subtitle {
+  color: #000000;
+  font-size: 85%;
+  /* heading.subtitle.font.size */
+  padding-top: 1px;
+  padding-bottom: 4px;
+  /* heading.bottom.padding */
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#msnyztgngt .gt_bottom_border {
+  border-bottom-style: solid;
+  /* heading.border.bottom.style */
+  border-bottom-width: 2px;
+  /* heading.border.bottom.width */
+  border-bottom-color: #A8A8A8;
+  /* heading.border.bottom.color */
+}
+
+#msnyztgngt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#msnyztgngt .gt_col_heading {
+  color: #000000;
+  background-color: #FFFFFF;
+  /* column_labels.background.color */
+  font-size: 16px;
+  /* column_labels.font.size */
+  font-weight: initial;
+  /* column_labels.font.weight */
+  vertical-align: middle;
+  padding: 10px;
+  margin: 10px;
+}
+
+#msnyztgngt .gt_sep_right {
+  border-right: 5px solid #FFFFFF;
+}
+
+#msnyztgngt .gt_group_heading {
+  padding: 8px;
+  color: #000000;
+  background-color: #FFFFFF;
+  /* stub_group.background.color */
+  font-size: 16px;
+  /* stub_group.font.size */
+  font-weight: initial;
+  /* stub_group.font.weight */
+  border-top-style: solid;
+  /* stub_group.border.top.style */
+  border-top-width: 2px;
+  /* stub_group.border.top.width */
+  border-top-color: #A8A8A8;
+  /* stub_group.border.top.color */
+  border-bottom-style: solid;
+  /* stub_group.border.bottom.style */
+  border-bottom-width: 2px;
+  /* stub_group.border.bottom.width */
+  border-bottom-color: #A8A8A8;
+  /* stub_group.border.bottom.color */
+  vertical-align: middle;
+}
+
+#msnyztgngt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #000000;
+  background-color: #FFFFFF;
+  /* stub_group.background.color */
+  font-size: 16px;
+  /* stub_group.font.size */
+  font-weight: initial;
+  /* stub_group.font.weight */
+  border-top-style: solid;
+  /* stub_group.border.top.style */
+  border-top-width: 2px;
+  /* stub_group.border.top.width */
+  border-top-color: #A8A8A8;
+  /* stub_group.border.top.color */
+  border-bottom-style: solid;
+  /* stub_group.border.bottom.style */
+  border-bottom-width: 2px;
+  /* stub_group.border.bottom.width */
+  border-bottom-color: #A8A8A8;
+  /* stub_group.border.bottom.color */
+  vertical-align: middle;
+}
+
+#msnyztgngt .gt_striped tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#msnyztgngt .gt_row {
+  padding: 10px;
+  /* row.padding */
+  margin: 10px;
+  vertical-align: middle;
+}
+
+#msnyztgngt .gt_stub {
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #A8A8A8;
+  padding-left: 12px;
+}
+
+#msnyztgngt .gt_stub.gt_row {
+  background-color: #FFFFFF;
+}
+
+#msnyztgngt .gt_summary_row {
+  background-color: #FFFFFF;
+  /* summary_row.background.color */
+  padding: 6px;
+  /* summary_row.padding */
+  text-transform: inherit;
+  /* summary_row.text_transform */
+}
+
+#msnyztgngt .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+}
+
+#msnyztgngt .gt_table_body {
+  border-top-style: solid;
+  /* field.border.top.style */
+  border-top-width: 2px;
+  /* field.border.top.width */
+  border-top-color: #A8A8A8;
+  /* field.border.top.color */
+  border-bottom-style: solid;
+  /* field.border.bottom.style */
+  border-bottom-width: 2px;
+  /* field.border.bottom.width */
+  border-bottom-color: #A8A8A8;
+  /* field.border.bottom.color */
+}
+
+#msnyztgngt .gt_footnote {
+  font-size: 90%;
+  /* footnote.font.size */
+  padding: 4px;
+  /* footnote.padding */
+}
+
+#msnyztgngt .gt_sourcenote {
+  font-size: 90%;
+  /* sourcenote.font.size */
+  padding: 4px;
+  /* sourcenote.padding */
+}
+
+#msnyztgngt .gt_center {
+  text-align: center;
+}
+
+#msnyztgngt .gt_left {
+  text-align: left;
+}
+
+#msnyztgngt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#msnyztgngt .gt_font_normal {
+  font-weight: normal;
+}
+
+#msnyztgngt .gt_font_bold {
+  font-weight: bold;
+}
+
+#msnyztgngt .gt_font_italic {
+  font-style: italic;
+}
+
+#msnyztgngt .gt_super {
+  font-size: 65%;
+}
+
+#msnyztgngt .gt_footnote_glyph {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="msnyztgngt" style="overflow-x:auto;"><!--gt table start-->
+<table class='gt_table'>
+<tr>
+<th class='gt_col_heading gt_right' rowspan='1' colspan='1'>year</th>
+<th class='gt_col_heading gt_left' rowspan='1' colspan='1'>sex</th>
+<th class='gt_col_heading gt_left' rowspan='1' colspan='1'>name</th>
+<th class='gt_col_heading gt_right' rowspan='1' colspan='1'>n</th>
+<th class='gt_col_heading gt_right' rowspan='1' colspan='1'>prop</th>
+</tr>
+<tbody class='gt_table_body gt_striped'>
+<tr>
+<td class='gt_row gt_right'>1892</td>
+<td class='gt_row gt_left'>F</td>
+<td class='gt_row gt_left'>Dallas</td>
+<td class='gt_row gt_right'>9</td>
+<td class='gt_row gt_right'>4.001512e-05</td>
+</tr>
+<tr>
+<td class='gt_row gt_right'>1894</td>
+<td class='gt_row gt_left'>F</td>
+<td class='gt_row gt_left'>Dallas</td>
+<td class='gt_row gt_right'>6</td>
+<td class='gt_row gt_right'>2.542675e-05</td>
+</tr>
+<tr>
+<td class='gt_row gt_right'>1896</td>
+<td class='gt_row gt_left'>F</td>
+<td class='gt_row gt_left'>Dallas</td>
+<td class='gt_row gt_right'>7</td>
+<td class='gt_row gt_right'>2.777855e-05</td>
+</tr>
+<tr>
+<td class='gt_row gt_right'>1899</td>
+<td class='gt_row gt_left'>F</td>
+<td class='gt_row gt_left'>Dallas</td>
+<td class='gt_row gt_right'>6</td>
+<td class='gt_row gt_right'>2.424340e-05</td>
+</tr>
+<tr>
+<td class='gt_row gt_right'>1900</td>
+<td class='gt_row gt_left'>F</td>
+<td class='gt_row gt_left'>Dallas</td>
+<td class='gt_row gt_right'>9</td>
+<td class='gt_row gt_right'>2.832193e-05</td>
+</tr>
+<tr>
+<td class='gt_row gt_right'>1903</td>
+<td class='gt_row gt_left'>F</td>
+<td class='gt_row gt_left'>Dallas</td>
+<td class='gt_row gt_right'>9</td>
+<td class='gt_row gt_right'>3.235106e-05</td>
+</tr>
+</tbody>
+</table>
+<!--gt table end-->
+</div>
 
 ]
 
@@ -1131,7 +1438,7 @@ name_plot &lt;- ggplot(tx_names ,
 
 ---
 
-.left-column[
+.pull-left[
 # 😱
 
 ## Why so ugly?
@@ -1139,7 +1446,7 @@ name_plot &lt;- ggplot(tx_names ,
 
 --
 
-.right-column[
+.pull-right[
 
 ````
 ```{r}
@@ -1147,27 +1454,25 @@ name_plot
 ```
 ````
 
-![](xaringan_files/figure-html/unnamed-chunk-15-1.png)&lt;!-- --&gt;
+![](xaringan_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
 
 ]
 
 .footnote[
-The [default dpi](https://yihui.name/knitr/options/#plots) for `knitr` is 72. &lt;br&gt;
-The [default fig.retina](https://github.com/rstudio/rmarkdown/blob/master/R/html_document.R) for `knitr` is 2. &lt;br&gt;
+The [default dpi](https://yihui.name/knitr/options/#plots) = 72. &lt;br&gt;
+The [default fig.retina](https://github.com/rstudio/rmarkdown/blob/master/R/html_document.R)  = 2. &lt;br&gt;
 That means the dpi is 72 x 2 = 144
 ]
 
 ---
+name: plot-demo
 
-
-.left-column[
-# 😏
-
-## Better!
+.pull-left[
+# 🎉
 
 ]
 
-.right-column[
+.pull-right[
 
 ````
 ```{r fig.retina = 3}
@@ -1175,38 +1480,25 @@ name_plot
 ```
 ````
 
-&lt;img src="xaringan_files/figure-html/unnamed-chunk-16-1.png" width="504" /&gt;
+&lt;img src="xaringan_files/figure-html/unnamed-chunk-17-1.png" width="504" /&gt;
 ]
 
----
-name: plot-demo
-
-.left-column[
-# 🎉
-]
-
-.right-column[
-
-````
-```{r dpi = 200, out.width = '60%'}
-name_plot
-```
-````
-
-&lt;img src="xaringan_files/figure-html/unnamed-chunk-17-1.png" width="60%" /&gt;
+.footnote[
+That means the dpi is 72 x 3 = 216 &lt;br&gt;
+`out.width` = `fig.width` * `dpi` / `fig.retina`
 ]
 
 ---
 
 # Control your plots
 
-You'll often want to play with individual chunk options for plots like `dpi` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
+You'll often want to play with individual chunk options for plots like `fig.retina` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
 
 --
 
 ````
 ```{r setup}
-knitr::opts_chunk$set(dpi = 200)
+knitr::opts_chunk$set(fig.retina = 3)
 ```
 ````
 
@@ -1220,7 +1512,7 @@ How your plots look *can* also depend on which CSS content classes you use too (
 .footnote[
 [1] Read more about [images in R Markdown](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents)
 
-[2] And see Hadley/Garrett's preferred `ggplot2` chunk options
+[2] And see Hadley/Garrett's preferred [`ggplot2` chunk options](https://r4ds.had.co.nz/graphics-for-communication.html#figure-sizing)
 ]
 
 
@@ -1242,12 +1534,14 @@ name: tldr-side-by-side
 
 
 ---
-name: code-first
 
 .pull-left[
+
+.salt[Code]
 
 ````
 .pull-left[
+
 ```{r plot-last, fig.show = 'hide'}
 tx_names &lt;- babynames %&gt;%
   filter(name == "Dallas" | name == "Austin") %&gt;% 
@@ -1263,8 +1557,30 @@ tx_plot
 ]
 ````
 
-.salt[Left Output]
+````
+.pull-right[
+```{r ref.label = 'plot-last', echo = FALSE}
+```
+]
+````
 
+]
+
+--
+
+.pull-right[
+
+.acid[Output]
+
+&lt;iframe src="https://arm.rbind.io/slides/xaringan.html#plot-last" width="100%" height="400px"&gt;&lt;/iframe&gt;
+
+
+]
+
+---
+name: plot-last
+
+.pull-left[
 
 ```r
 tx_names &lt;- babynames %&gt;%
@@ -1278,25 +1594,12 @@ tx_plot &lt;- ggplot(tx_names,
   geom_line() 
 tx_plot
 ```
-
 ]
-
---
 
 .pull-right[
-
-````
-.pull-right[
-```{r ref.label = 'plot-last', echo = FALSE}
-```
+&lt;img src="xaringan_files/figure-html/unnamed-chunk-19-1.png" width="504" /&gt;
 ]
-````
 
-.acid[Right Output]
-
-&lt;img src="xaringan_files/figure-html/unnamed-chunk-18-1.png" width="80%" /&gt;
-
-]
 
 ---
 name: plot-first
@@ -1357,7 +1660,7 @@ tx_plot
 ---
 name: fat-work
 
-# Take 15 minutes 🕔
+# Take 15 minutes 🕚
 
 First, [edit your YAML](#highlightjs-demo) to include a `highlightStyle` and set `highlightLines` to true.
 
@@ -1705,8 +2008,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
 ```
 
-<div id="htmlwidget-60197c2dff44a40d6ebd" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-60197c2dff44a40d6ebd">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-269fdcc956257a8e71bc" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-269fdcc956257a8e71bc">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -1718,8 +2021,8 @@ DT::datatable(
 )
 ```
 
-<div id="htmlwidget-ae7d189fd7f5487be8f0" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ae7d189fd7f5487be8f0">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fbea81378f6bbf3e8191" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fbea81378f6bbf3e8191">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 
