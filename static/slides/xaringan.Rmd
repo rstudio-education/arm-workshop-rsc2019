@@ -277,9 +277,9 @@ name: diagram
 ```{r xaringandiagram, echo = FALSE}
 DiagrammeR::mermaid(diagram = '
 graph LR;
-    .Rmd((<center> xaringan <br> .Rmd </center>))-->knitr;
+    .Rmd((<center> xaringan <br> .Rmd </center>))-->knitr(knitr);
     knitr-->.md((<center> .md </center>));
-    .md-->remark.js[<center> remark.js via <br> xaringan::moon_reader </center>];
+    .md-->remark.js(<center> remark.js via <br> xaringan::moon_reader </center>);
     remark.js-->.html((<center> .html </center>));
     style .Rmd fill:#61acf0,stroke:#333,stroke-width:2px;
     style knitr fill:#cbd20a,stroke:#333,stroke-width:2px;
