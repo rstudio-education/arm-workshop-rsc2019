@@ -1143,11 +1143,11 @@ name: tldr-side-by-side
 # tl;dr: side-by-side plots
 
 
-1. Code first, plot second
+1. [Code first, plot second](#plot-last)
     - Chunk 1: `` {r plot-last, fig.show = 'hide'} ``
     - Chunk 2: `` {r ref.label = 'plot-last', echo = FALSE} ``
 
-1. Plot first, code second
+1. [Plot first, code second](#plot-first)
     - Chunk 1: `` {r plot-first, echo = FALSE} ``
     - Chunk 2: `` {r ref.label = 'plot-first', eval = FALSE} ``
 
@@ -1163,21 +1163,10 @@ name: tldr-side-by-side
 .pull-left[
 
 ```{r plot-last, fig.show = 'hide'}`r ''`
-tx_names <- babynames %>%
-  filter(name == "Dallas" | name == "Austin") %>% 
-  filter(sex == "M")
-tx_plot <- ggplot(tx_names, 
-                    aes(x = year, 
-                        y = prop,  
-                        group = name, 
-                        color = name)) + 
-  geom_line() 
-tx_plot
+code goes here
 ```
 ]
-````
 
-````
 .pull-right[
 ```{r ref.label = 'plot-last', echo = FALSE}`r ''`
 ```
@@ -1202,6 +1191,8 @@ knitr::include_url("https://arm.rbind.io/slides/xaringan.html#plot-last")
 ---
 name: plot-last
 
+# Code first, plot second
+
 .pull-left[
 ```{r plot-last, fig.show = 'hide'}
 tx_names <- babynames %>%
@@ -1224,30 +1215,48 @@ tx_plot
 
 
 ---
-name: plot-first
+
 
 .pull-left[
+
+.salt[Code]
 
 ````
 .pull-left[
+
 ```{r plot-first, echo = FALSE}`r ''`
-tx_names <- babynames %>%
-  filter(name == "Dallas" | name == "Austin") %>% 
-  filter(sex == "M")
-tx_plot <- ggplot(tx_names, 
-                    aes(x = year, 
-                        y = prop,  
-                        group = name, 
-                        color = name)) + 
-  geom_line() 
-tx_plot
+code goes here
+```
+]
+
+.pull-right[
+```{r ref.label = 'plot-first', eval = FALSE}`r ''`
 ```
 ]
 ````
 
-.salt[Left Output]
+]
 
-```{r plot-first, echo = FALSE, dpi = 200, out.width = '50%'}
+--
+
+.pull-right[
+
+.acid[Output]
+
+```{r echo = FALSE}
+knitr::include_url("https://arm.rbind.io/slides/xaringan.html#plot-first")
+```
+
+]
+
+---
+name: plot-first
+
+# Plot first, code second
+
+.pull-left[
+
+```{r plot-first, echo = FALSE, fig.retina = 3}
 tx_names <- babynames %>%
   filter(name == "Dallas" | name == "Austin") %>% 
   filter(sex == "F")
@@ -1262,18 +1271,7 @@ tx_plot
 
 ]
 
---
-
 .pull-right[
-
-````
-.pull-right[
-```{r ref.label = 'plot-first', eval = FALSE}`r ''`
-```
-]
-````
-
-.acid[Right Output]
 
 ```{r ref.label = 'plot-first', eval = FALSE}
 ```
