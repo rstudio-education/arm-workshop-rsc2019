@@ -15,58 +15,14 @@ menu:
     weight: 2
 ---
 
-This page provides an example of using R Markdown.
+## Slides {#slides}
+
+<!--[Link](../../../slides/blogdown.html)-->
 
 
-```r
-x <- 1:10
-y <- round(rnorm(10, x, 1), 2)
-df <- data.frame(x, y)
-df
-```
 
-```
-##     x     y
-## 1   1  0.86
-## 2   2  1.89
-## 3   3  3.57
-## 4   4  4.21
-## 5   5  5.06
-## 6   6  5.61
-## 7   7  7.86
-## 8   8  8.32
-## 9   9 10.07
-## 10 10 10.10
-```
+## Activity {#activity}
 
+## Stretch {#stretch}
 
-# Package 1 {#xaringan}
-
-## Slides {#xaringan-slides}
-
-## Exercises {#xaringan-ex}
-
-## Stretch {#xaringan-stretch}
-
-## More {#xaringan-more}
-
-# Package 2
-
-## Slides
-
-## Exercises
-
-## Stretch
-
-## More
-
-# Package 3
-
-## Slides
-
-## Exercises
-
-## Stretch
-
-## More
-
+## More {#more}
