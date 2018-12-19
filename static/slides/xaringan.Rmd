@@ -257,38 +257,43 @@ name: diagram
 
 # Hello `r fa(name = "user-ninja")`
 
-.Rmd -> .md -> HTML5
-
-.Rmd to .md: R Markdown (**knitr**, no Pandoc)
-
-.md to HTML5: remark.js, via `xaringan::moon_reader`
-
-
-want to make something like this:
+With R Markdown, you are used to this:
 
 ![](https://d33wubrfki0l68.cloudfront.net/61d189fd9cdf955058415d3e1b28dd60e1bd7c9b/9791d/images/rmarkdownflow.png)
 
-I **think** this diagram will be the same for Rmd [via `knitr`] to md, then to get from md to HTML5 go via `xaringan::moon_reader` (to "summon" remark.js)
+--
 
----
-name: diagram
+With **xaringan** (no `pandoc`!):
 
-<center>
-```{r xaringandiagram, eval = FALSE}
-DiagrammeR::mermaid(diagram = '
-graph LR;
-    .Rmd((<center> xaringan <br> .Rmd </center>))-->knitr(knitr);
-    knitr-->.md((<center> .md </center>));
-    .md-->remark.js(<center> remark.js via <br> xaringan::moon_reader </center>);
-    remark.js-->.html((<center> .html </center>));
-    style .Rmd fill:#61acf0,stroke:#333,stroke-width:2px;
-    style knitr fill:#cbd20a,stroke:#333,stroke-width:2px;
-    style .md fill:#f0a561,stroke:#333,stroke-width:2px;
-    style remark.js fill:#cbd20a,stroke:#333,stroke-width:2px;
-    style .html fill:#e74a2f,stroke:#333,stroke-width:2px;
-')
+````{r echo = FALSE, out.width = '75%', out.height = "50%"}
+# Create a graph as a left-to-right path
+graph <-
+  create_graph() %>%
+  add_path(
+    n = 5, 
+    type = "step",
+    label = c(
+      "xaringan\\n .Rmd", "knitr", ".md",
+      "remark.js via\\n xaringan::moon_reader", "html"),
+    node_aes = node_aes(  # set node aesthetics
+      shape = c("circle", "square", "circle", "rectangle", "circle"),
+      width = c(0.75, 0.5, 0.5, 2, 0.5),
+      color = "#3C3C3C",
+      fontcolor = "black",
+      fillcolor = c("#61acf0", "#f0a561", "#cbd20a", "#f0a561", "#e74a2f"),
+      fontname = "Lato"
+    ),
+    edge_aes = edge_aes(  # set edge aesthetics
+      color = "#3C3C3C"
+    )
+  ) %>%
+  add_global_graph_attrs(attr = "layout", value = "dot", attr_type = "graph") %>%
+  add_global_graph_attrs(attr = "rankdir", value = "LR", attr_type = "graph")
+
+# View the graph in the Viewer
+graph %>% render_graph()
 ```
-</center>
+
 
 ---
 # Let's make this a slide deck
