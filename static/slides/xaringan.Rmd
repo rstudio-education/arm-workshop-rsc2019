@@ -36,7 +36,7 @@ layout: true
 <!-- this adds the link footer to all slides, depends on my-footer class in css-->
 
 ---
-
+name: xaringan-title
 class: left, middle, title-slide
 
 # Meet xaringan
@@ -162,7 +162,7 @@ class: middle, inverse
 name: nutshell
 class: center, middle
 
-# In a nutshell
+# In a nutshell `r emo::ji("squirrel")`
 
 .pull-left[
 
@@ -858,9 +858,9 @@ Next, season some slides with `remark.js` salt. Make at least one slide that use
 
 If this is easy, try:
 
-+ combining the salts, and/or
-
 + using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
+
++ [name a single slide](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to it: `[back to the beginning](#xaringan-title)` -> [back to the beginning](#xaringan-title)
 
 --
 
@@ -1175,10 +1175,11 @@ name_plot + invthm
 
 
 ---
+name: setup-chunk
 
 # Control your plots
 
-You'll often want to play with individual chunk options for plots like `fig.retina` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
+You'll often want to play with individual chunk options for plots like `fig.retina` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options** in a setup chunk (your first R code chunk): 
 
 --
 
@@ -1190,8 +1191,14 @@ knitr::opts_chunk$set(fig.retina = 3)
 
 --
 
+While we are at it, these options are good too:
 
-How your plots look *can* also depend on which CSS content classes you use too (i.e., for 2 column slides).
+````
+```{r setup}`r ''`
+knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
+```
+````
+
 
 --
 
@@ -1206,7 +1213,7 @@ How your plots look *can* also depend on which CSS content classes you use too (
 ---
 name: tldr-side-by-side
 
-# tl;dr: side-by-side plots
+# tl;dr: side-by-side code + plot
 
 
 1. [Code first, plot second](#plot-last)
@@ -1404,12 +1411,23 @@ Use the [`background-image` property](https://github.com/gnab/remark/wiki/Markdo
     - `contain` --> rescales only; best if image size > slide size
 - `background-position:` play with [this](https://www.w3schools.com/cssref/pr_background-position.asp)
 
+
+---
+name: greens-none
+class: center, middle, inverse
+background-size: initial
+background-image: url("http://bit.ly/arm-greens")
+
+
+# .fancy[No background size]
+
+Image size: 6016 × 4016
+
 ---
 name: greens-cover
 class: center, middle, inverse
 background-image: url("http://bit.ly/arm-greens")
 background-size: cover
-class: center, middle, inverse
 
 # .fancy[Cover]
 
@@ -1422,27 +1440,278 @@ class: center, middle, inverse
 
 # .fancy[Contain]
 
+
 ---
-name: hex-cover
-class: center, middle, inverse
-background-image: url("http://bit.ly/rdogladies-hex")
+class: middle, center
+
+# .fancy[Let's talk <br> .acid[title slides] ]
+
+
+
+
+---
+name: title-yaml
+
+## Use your YAML .fancy[(mixed with HTML)]
+
+.pull-left[
+
+```{r echo = FALSE}
+knitr::include_url("https://ismayc.github.io/talks/infer-useR/slide_deck.html#1")
+```
+
+.footnote[
+Source: [Chester Ismay](http://bit.ly/infer-useR)
+]
+
+]
+
+.pull-right[
+
+From [.Rmd](https://github.com/ismayc/talks/blob/master/infer-useR/slide_deck.Rmd)
+
+```{r eval = FALSE}
+---
+title: "Statistical Inference: A Tidy Approach"
+subtitle: The <code><font color="black">infer</font></code> R package
+author: 'Dr. Chester Ismay <br> Senior Curriculum Lead at 
+<a href="https://www.datacamp.com/">DataCamp</a> <br> 
+<a href="http://github.com/ismayc"><i class="fa fa-github fa-fw"></i>&nbsp; ismayc</a><br> 
+<a href="http://twitter.com/old_man_chester"> <i class="fa fa-twitter fa-fw"></i>
+&nbsp; @old_man_chester</a><br> <a href="mailto:chester@datacamp.com">
+<i class="fa fa-paper-plane fa-fw"></i>&nbsp; chester@datacamp.com</a><br>'
+date: 2018-07-12 &ensp; `r knitr::include_graphics("figure/user_au_logo_small.png")` 
+<br><br> Slides available at <http://bit.ly/infer-useR> 
+<br> Package webpage at <https://infer.netlify.com>
+---
+```
+
+default class properties:
+
+`class: center, middle, inverse, title-slide`
+
+
+]
+
+---
+
+## Use your YAML .fancy[(mixed with HTML)]
+
+.pull-left[
+
+```{r echo = FALSE}
+knitr::include_url("https://jenthompson.me/slides/rmedicine2018/rmedicine2018#1")
+```
+
+.footnote[
+Source: [Jennifer Thompson](https://github.com/jenniferthompson/RMedicine2018)
+]
+
+]
+
+.pull-right[
+
+From [.Rmd](https://github.com/jenniferthompson/RMedicine2018/blob/master/rmedicine2018.Rmd)
+
+```{r eval = FALSE}
+---
+title: "The Life & Times of a Reproducible Clinical Project in R"
+author: "Jennifer L Thompson, MPH<br>
+<span style = 'font-size: 50%;'>
+Vanderbilt University Medical Center<br>
+Department of Biostatistics + Center for Critical Illness, 
+Brain Dysfunction & Survivorship</span>"
+date: 'R/Medicine 2018<br><br>
+`r icon::fa("link")` [bit.ly/jlt-rmed2018](https://bit.ly/jlt-rmed2018)
+<br>`r icon::fa("twitter")` [jent103](https://twitter.com/jent103)'
+output:
+  xaringan::moon_reader:
+    nature:
+      titleSlideClass: ["left", "middle", "inverse"] #<<
+---
+```
+
+.heatinline[.fancy[Override]] the default class properties!
+
+
+]
+---
+name: title-seal
+
+## Create your own .fancy[(*recommend!)]
+
+.pull-left[
+
+```{r echo = FALSE}
+knitr::include_url("https://juliasilge.github.io/deming2018/intro.html#1")
+```
+
+.footnote[
+Source: [Julia Silge](https://github.com/juliasilge/deming2018)
+]
+
+]
+
+.pull-right[
+
+From [.Rmd](https://github.com/juliasilge/deming2018/blob/master/intro.Rmd)
+```{r eval = FALSE}
+output:
+  xaringan::moon_reader:
+    seal: false #<<
+
+---
+
+class: inverse, center, middle
+
+background-image: url(figs/p_and_p_cover.png)
 background-size: cover
-class: center, middle
 
-# .fancy[Cover]
+
+# Text Mining
+
+<img src="figs/blue_jane.png" width="150px"/>
+
+### USING TIDY PRINCIPLES
+
+.large[Julia Silge | Deming Conference | 4 Dec 2018]
+
+---
+```
+
+]
+
+
+???
+
+seal disables 
+
+---
+
+## Create your own .fancy[(*recommend!)]
+
+.pull-left[
+```{r echo = FALSE}
+knitr::include_url("http://arm.rbind.io/slides/xaringan.html#1")
+```
+
+]
+
+.pull-right[
+
+From [.Rmd](https://github.com/rstudio-education/arm-workshop-rsc2019/blob/master/static/slides/xaringan.Rmd)
+
+```{r eval = FALSE}
+output:
+  xaringan::moon_reader:
+    seal: false #<<
+
+---
+  
+name: xaringan-title
+class: left, middle, title-slide
+
+# Meet xaringan
+
+<img src="https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png" alt="Sharingan" width="180" />
+
+### .fancy[Making slides in R Markdown]
+
+.large[Alison Hill | rstudio::conf | `r Sys.Date()`]
+
+<!-- this ends up being the title slide since seal = FALSE-->
+---
+```
+
+]
+
+---
+name: logos
+class: middle, center
+
+# .fancy[Let's talk <br> .acid[logos] ]
+
+tl;dr: treat like slide-specific background images!
+
+---
+
+layout: true
+
+background-image: url("img/RStudio-Logo-Flat.png")
+background-position: 0% 100%
+background-size: 10%
+
+---
+name: logo-layout
+
+# Layouts
+
+```{r eval = FALSE}
+---
+YAML goes here
+---
+  
+layout: true #<<
+
+background-image: url("img/RStudio-Logo-Flat.png")
+background-position: 0% 100%;
+background-size: 10%
+
+---
+
+```
+
+This will apply layout to _all_ slides. To cancel it, insert a blank slide:
+
+```{r eval = FALSE}
+---
+  
+layout: false
+
+---
+```
+
+---
+
+
+layout: true
+
+background-image: url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png")
+background-position: 0% 100%, 100% 0%, 50% 100%
+background-size: 10%, 10%, 10%
+
+---
+name: lots-of-logos
+
+# Logos galore
+
+```{r eval = FALSE}
+---
+YAML goes here
+---
+  
+layout: true #<<
+
+background-image: url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png")
+background-position: 0% 100%, 100% 0%, 50% 100%
+background-size: 10%, 10%, 10%
+
+---
+```
+
+
+Positioning:
+
++ bottom left: `0% 100%`
++ top right: `100% 0%`
++ bottom center: `50% 100%`
 
 
 ---
-name: hex-contain
-background-image: url("http://bit.ly/rdogladies-hex")
-background-size: contain
-class: center, middle
 
-# .fancy[Contain]
-
----
-
-# Add a logo
+layout: true
+  
+<div class="my-footer"><span>rstd.io/arm-xaringan</span></div>
 
 ---
 name: heat
@@ -1460,3 +1729,33 @@ template: heat
 
 # HEAT = THEMES
 
+---
+
+# Built-in themes
+
+
+For each, theme and fonts are separate files:
+
+```{r}
+names(xaringan:::list_css())
+```
+
+--
+
+
+To use, edit your YAML (no file extensions):
+```{r eval = FALSE}
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts] #<<
+```
+
+
+
+
+---
+
+# Now we need to use CSS to:
+
+- edit or create a new theme
+- add a custom layout, like a footer

@@ -41,7 +41,7 @@ layout: true
 &lt;!-- this adds the link footer to all slides, depends on my-footer class in css--&gt;
 
 ---
-
+name: xaringan-title
 class: left, middle, title-slide
 
 # Meet xaringan
@@ -50,7 +50,7 @@ class: left, middle, title-slide
 
 ### .fancy[Making slides in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2018-12-18]
+.large[Alison Hill | rstudio::conf | 2018-12-19]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
@@ -163,7 +163,7 @@ class: middle, inverse
 name: nutshell
 class: center, middle
 
-# In a nutshell
+# In a nutshell 🐿
 
 .pull-left[
 
@@ -262,8 +262,8 @@ With R Markdown, you are used to this:
 
 With **xaringan** (no `pandoc`!):
 
-<div id="htmlwidget-0beb89f03aae3ddce734" style="width:75%;height:50%;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0beb89f03aae3ddce734">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       rankdir = \"LR\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"xaringan\\n .Rmd\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.75\", fillcolor = \"#61acf0\"] \n  \"2\" [label = \"knitr\", shape = \"square\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#f0a561\"] \n  \"3\" [label = \".md\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#cbd20a\"] \n  \"4\" [label = \"remark.js via\\n xaringan::moon_reader\", shape = \"rectangle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"2\", fillcolor = \"#f0a561\"] \n  \"5\" [label = \"html\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#e74a2f\"] \n\"1\"->\"2\" [color = \"#3C3C3C\"] \n\"2\"->\"3\" [color = \"#3C3C3C\"] \n\"3\"->\"4\" [color = \"#3C3C3C\"] \n\"4\"->\"5\" [color = \"#3C3C3C\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8dbdcc66c7b74691aaa3" style="width:75%;height:50%;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8dbdcc66c7b74691aaa3">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       rankdir = \"LR\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"xaringan\\n .Rmd\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.75\", fillcolor = \"#61acf0\"] \n  \"2\" [label = \"knitr\", shape = \"square\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#f0a561\"] \n  \"3\" [label = \".md\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#cbd20a\"] \n  \"4\" [label = \"remark.js via\\n xaringan::moon_reader\", shape = \"rectangle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"2\", fillcolor = \"#f0a561\"] \n  \"5\" [label = \"html\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#e74a2f\"] \n\"1\"->\"2\" [color = \"#3C3C3C\"] \n\"2\"->\"3\" [color = \"#3C3C3C\"] \n\"3\"->\"4\" [color = \"#3C3C3C\"] \n\"4\"->\"5\" [color = \"#3C3C3C\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 ---
@@ -815,7 +815,7 @@ template: sfah
 ---
 name: salt-work
 
-# Take 15 minutes 🕥
+# Take 15 minutes 🕒
 
 First, make an introduction slide, using the templated code provided.
 
@@ -834,9 +834,9 @@ Next, season some slides with `remark.js` salt. Make at least one slide that use
 
 If this is easy, try:
 
-+ combining the salts, and/or
-
 + using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
+
++ [name a single slide](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to it: `[back to the beginning](#xaringan-title)` -&gt; [back to the beginning](#xaringan-title)
 
 --
 
@@ -1086,8 +1086,8 @@ head(tx_names) %&gt;%
   datatable()
 ```
 
-<div id="htmlwidget-1c848681bb239a1c3478" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1c848681bb239a1c3478">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-499ddac3d22f6dfe29b3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-499ddac3d22f6dfe29b3">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 ]
 
@@ -1105,8 +1105,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
 ```
 
-<div id="htmlwidget-d01e43cc9a0480505fab" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d01e43cc9a0480505fab">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[30.2621,-97.7382],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ffce44dcd73bb83d8685" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ffce44dcd73bb83d8685">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[30.2621,-97.7382],17,[]]},"evals":[],"jsHooks":[]}</script>
 ]
 
 ---
@@ -1128,7 +1128,7 @@ head(tx_names) %&gt;%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#nyfrgwxfcn .gt_table {
+#tsdkehlifz .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1147,13 +1147,13 @@ head(tx_names) %&gt;%
   /* table.border.top.color */
 }
 
-#nyfrgwxfcn .gt_heading {
+#tsdkehlifz .gt_heading {
   background-color: #FFFFFF;
   /* heading.background.color */
   border-bottom-color: #FFFFFF;
 }
 
-#nyfrgwxfcn .gt_title {
+#tsdkehlifz .gt_title {
   color: #000000;
   font-size: 125%;
   /* heading.title.font.size */
@@ -1164,7 +1164,7 @@ head(tx_names) %&gt;%
   border-bottom-width: 0;
 }
 
-#nyfrgwxfcn .gt_subtitle {
+#tsdkehlifz .gt_subtitle {
   color: #000000;
   font-size: 85%;
   /* heading.subtitle.font.size */
@@ -1175,7 +1175,7 @@ head(tx_names) %&gt;%
   border-top-width: 0;
 }
 
-#nyfrgwxfcn .gt_bottom_border {
+#tsdkehlifz .gt_bottom_border {
   border-bottom-style: solid;
   /* heading.border.bottom.style */
   border-bottom-width: 2px;
@@ -1184,7 +1184,7 @@ head(tx_names) %&gt;%
   /* heading.border.bottom.color */
 }
 
-#nyfrgwxfcn .gt_column_spanner {
+#tsdkehlifz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #A8A8A8;
@@ -1192,7 +1192,7 @@ head(tx_names) %&gt;%
   padding-bottom: 4px;
 }
 
-#nyfrgwxfcn .gt_col_heading {
+#tsdkehlifz .gt_col_heading {
   color: #000000;
   background-color: #FFFFFF;
   /* column_labels.background.color */
@@ -1205,11 +1205,11 @@ head(tx_names) %&gt;%
   margin: 10px;
 }
 
-#nyfrgwxfcn .gt_sep_right {
+#tsdkehlifz .gt_sep_right {
   border-right: 5px solid #FFFFFF;
 }
 
-#nyfrgwxfcn .gt_group_heading {
+#tsdkehlifz .gt_group_heading {
   padding: 8px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1233,7 +1233,7 @@ head(tx_names) %&gt;%
   vertical-align: middle;
 }
 
-#nyfrgwxfcn .gt_empty_group_heading {
+#tsdkehlifz .gt_empty_group_heading {
   padding: 0.5px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1257,29 +1257,29 @@ head(tx_names) %&gt;%
   vertical-align: middle;
 }
 
-#nyfrgwxfcn .gt_striped tr:nth-child(even) {
+#tsdkehlifz .gt_striped tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#nyfrgwxfcn .gt_row {
+#tsdkehlifz .gt_row {
   padding: 10px;
   /* row.padding */
   margin: 10px;
   vertical-align: middle;
 }
 
-#nyfrgwxfcn .gt_stub {
+#tsdkehlifz .gt_stub {
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #A8A8A8;
   padding-left: 12px;
 }
 
-#nyfrgwxfcn .gt_stub.gt_row {
+#tsdkehlifz .gt_stub.gt_row {
   background-color: #FFFFFF;
 }
 
-#nyfrgwxfcn .gt_summary_row {
+#tsdkehlifz .gt_summary_row {
   background-color: #FFFFFF;
   /* summary_row.background.color */
   padding: 6px;
@@ -1288,13 +1288,13 @@ head(tx_names) %&gt;%
   /* summary_row.text_transform */
 }
 
-#nyfrgwxfcn .gt_first_summary_row {
+#tsdkehlifz .gt_first_summary_row {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
 }
 
-#nyfrgwxfcn .gt_table_body {
+#tsdkehlifz .gt_table_body {
   border-top-style: solid;
   /* field.border.top.style */
   border-top-width: 2px;
@@ -1309,55 +1309,55 @@ head(tx_names) %&gt;%
   /* field.border.bottom.color */
 }
 
-#nyfrgwxfcn .gt_footnote {
+#tsdkehlifz .gt_footnote {
   font-size: 90%;
   /* footnote.font.size */
   padding: 4px;
   /* footnote.padding */
 }
 
-#nyfrgwxfcn .gt_sourcenote {
+#tsdkehlifz .gt_sourcenote {
   font-size: 90%;
   /* sourcenote.font.size */
   padding: 4px;
   /* sourcenote.padding */
 }
 
-#nyfrgwxfcn .gt_center {
+#tsdkehlifz .gt_center {
   text-align: center;
 }
 
-#nyfrgwxfcn .gt_left {
+#tsdkehlifz .gt_left {
   text-align: left;
 }
 
-#nyfrgwxfcn .gt_right {
+#tsdkehlifz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nyfrgwxfcn .gt_font_normal {
+#tsdkehlifz .gt_font_normal {
   font-weight: normal;
 }
 
-#nyfrgwxfcn .gt_font_bold {
+#tsdkehlifz .gt_font_bold {
   font-weight: bold;
 }
 
-#nyfrgwxfcn .gt_font_italic {
+#tsdkehlifz .gt_font_italic {
   font-style: italic;
 }
 
-#nyfrgwxfcn .gt_super {
+#tsdkehlifz .gt_super {
   font-size: 65%;
 }
 
-#nyfrgwxfcn .gt_footnote_glyph {
+#tsdkehlifz .gt_footnote_glyph {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="nyfrgwxfcn" style="overflow-x:auto;"><!--gt table start-->
+<div id="tsdkehlifz" style="overflow-x:auto;"><!--gt table start-->
 <table class='gt_table'>
 <tr>
 <th class='gt_col_heading gt_right' rowspan='1' colspan='1'>year</th>
@@ -1498,7 +1498,7 @@ class: inverse
 name: gg-theme
 
 .pull-left[
-# 🤭
+# 😮
 
 ````
 ```{r dev = 'svg', dev.args = list(bg = "transparent")}
@@ -1529,10 +1529,11 @@ name_plot + invthm
 
 
 ---
+name: setup-chunk
 
 # Control your plots
 
-You'll often want to play with individual chunk options for plots like `fig.retina` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options**: 
+You'll often want to play with individual chunk options for plots like `fig.retina` and `out.width` (plus `fig.width` and `fig.height`), but you can also set your **global chunk options** in a setup chunk (your first R code chunk): 
 
 --
 
@@ -1544,8 +1545,14 @@ knitr::opts_chunk$set(fig.retina = 3)
 
 --
 
+While we are at it, these options are good too:
 
-How your plots look *can* also depend on which CSS content classes you use too (i.e., for 2 column slides).
+````
+```{r setup}
+knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
+```
+````
+
 
 --
 
@@ -1560,7 +1567,7 @@ How your plots look *can* also depend on which CSS content classes you use too (
 ---
 name: tldr-side-by-side
 
-# tl;dr: side-by-side plots
+# tl;dr: side-by-side code + plot
 
 
 1. [Code first, plot second](#plot-last)
@@ -1696,7 +1703,7 @@ tx_plot
 ---
 name: fat-work
 
-# Take 15 minutes 🕟
+# Take 15 minutes 🕰
 
 First, [edit your YAML](#highlightjs-demo) to include a `highlightStyle` and set `highlightLines` to true.
 
@@ -1754,12 +1761,23 @@ Use the [`background-image` property](https://github.com/gnab/remark/wiki/Markdo
     - `contain` --&gt; rescales only; best if image size &gt; slide size
 - `background-position:` play with [this](https://www.w3schools.com/cssref/pr_background-position.asp)
 
+
+---
+name: greens-none
+class: center, middle, inverse
+background-size: initial
+background-image: url("http://bit.ly/arm-greens")
+
+
+# .fancy[No background size]
+
+Image size: 6016 × 4016
+
 ---
 name: greens-cover
 class: center, middle, inverse
 background-image: url("http://bit.ly/arm-greens")
 background-size: cover
-class: center, middle, inverse
 
 # .fancy[Cover]
 
@@ -1772,27 +1790,276 @@ class: center, middle, inverse
 
 # .fancy[Contain]
 
+
 ---
-name: hex-cover
-class: center, middle, inverse
-background-image: url("http://bit.ly/rdogladies-hex")
+class: middle, center
+
+# .fancy[Let's talk &lt;br&gt; .acid[title slides] ]
+
+
+
+
+---
+name: title-yaml
+
+## Use your YAML .fancy[(mixed with HTML)]
+
+.pull-left[
+
+&lt;iframe src="https://ismayc.github.io/talks/infer-useR/slide_deck.html#1" width="100%" height="400px"&gt;&lt;/iframe&gt;
+
+.footnote[
+Source: [Chester Ismay](http://bit.ly/infer-useR)
+]
+
+]
+
+.pull-right[
+
+From [.Rmd](https://github.com/ismayc/talks/blob/master/infer-useR/slide_deck.Rmd)
+
+
+```r
+---
+title: "Statistical Inference: A Tidy Approach"
+subtitle: The &lt;code&gt;&lt;font color="black"&gt;infer&lt;/font&gt;&lt;/code&gt; R package
+author: 'Dr. Chester Ismay &lt;br&gt; Senior Curriculum Lead at 
+&lt;a href="https://www.datacamp.com/"&gt;DataCamp&lt;/a&gt; &lt;br&gt; 
+&lt;a href="http://github.com/ismayc"&gt;&lt;i class="fa fa-github fa-fw"&gt;&lt;/i&gt;&amp;nbsp; ismayc&lt;/a&gt;&lt;br&gt; 
+&lt;a href="http://twitter.com/old_man_chester"&gt; &lt;i class="fa fa-twitter fa-fw"&gt;&lt;/i&gt;
+&amp;nbsp; @old_man_chester&lt;/a&gt;&lt;br&gt; &lt;a href="mailto:chester@datacamp.com"&gt;
+&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;&amp;nbsp; chester@datacamp.com&lt;/a&gt;&lt;br&gt;'
+date: 2018-07-12 &amp;ensp; `r knitr::include_graphics("figure/user_au_logo_small.png")` 
+&lt;br&gt;&lt;br&gt; Slides available at &lt;http://bit.ly/infer-useR&gt; 
+&lt;br&gt; Package webpage at &lt;https://infer.netlify.com&gt;
+---
+```
+
+default class properties:
+
+`class: center, middle, inverse, title-slide`
+
+
+]
+
+---
+
+## Use your YAML .fancy[(mixed with HTML)]
+
+.pull-left[
+
+&lt;iframe src="https://jenthompson.me/slides/rmedicine2018/rmedicine2018#1" width="100%" height="400px"&gt;&lt;/iframe&gt;
+
+.footnote[
+Source: [Jennifer Thompson](https://github.com/jenniferthompson/RMedicine2018)
+]
+
+]
+
+.pull-right[
+
+From [.Rmd](https://github.com/jenniferthompson/RMedicine2018/blob/master/rmedicine2018.Rmd)
+
+
+```r
+---
+title: "The Life &amp; Times of a Reproducible Clinical Project in R"
+author: "Jennifer L Thompson, MPH&lt;br&gt;
+&lt;span style = 'font-size: 50%;'&gt;
+Vanderbilt University Medical Center&lt;br&gt;
+Department of Biostatistics + Center for Critical Illness, 
+Brain Dysfunction &amp; Survivorship&lt;/span&gt;"
+date: 'R/Medicine 2018&lt;br&gt;&lt;br&gt;
+`r icon::fa("link")` [bit.ly/jlt-rmed2018](https://bit.ly/jlt-rmed2018)
+&lt;br&gt;`r icon::fa("twitter")` [jent103](https://twitter.com/jent103)'
+output:
+  xaringan::moon_reader:
+    nature:
+*     titleSlideClass: ["left", "middle", "inverse"]
+---
+```
+
+.heatinline[.fancy[Override]] the default class properties!
+
+
+]
+---
+name: title-seal
+
+## Create your own .fancy[(*recommend!)]
+
+.pull-left[
+
+&lt;iframe src="https://juliasilge.github.io/deming2018/intro.html#1" width="100%" height="400px"&gt;&lt;/iframe&gt;
+
+.footnote[
+Source: [Julia Silge](https://github.com/juliasilge/deming2018)
+]
+
+]
+
+.pull-right[
+
+From [.Rmd](https://github.com/juliasilge/deming2018/blob/master/intro.Rmd)
+
+```r
+output:
+  xaringan::moon_reader:
+*   seal: false
+
+---
+
+class: inverse, center, middle
+
+background-image: url(figs/p_and_p_cover.png)
 background-size: cover
-class: center, middle
 
-# .fancy[Cover]
+
+# Text Mining
+
+&lt;img src="figs/blue_jane.png" width="150px"/&gt;
+
+### USING TIDY PRINCIPLES
+
+.large[Julia Silge | Deming Conference | 4 Dec 2018]
+
+---
+```
+
+]
+
+
+???
+
+seal disables 
+
+---
+
+## Create your own .fancy[(*recommend!)]
+
+.pull-left[
+&lt;iframe src="http://arm.rbind.io/slides/xaringan.html#1" width="100%" height="400px"&gt;&lt;/iframe&gt;
+
+]
+
+.pull-right[
+
+From [.Rmd](https://github.com/rstudio-education/arm-workshop-rsc2019/blob/master/static/slides/xaringan.Rmd)
+
+
+```r
+output:
+  xaringan::moon_reader:
+*   seal: false
+
+---
+  
+name: xaringan-title
+class: left, middle, title-slide
+
+# Meet xaringan
+
+&lt;img src="https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png" alt="Sharingan" width="180" /&gt;
+
+### .fancy[Making slides in R Markdown]
+
+.large[Alison Hill | rstudio::conf | `r Sys.Date()`]
+
+&lt;!-- this ends up being the title slide since seal = FALSE--&gt;
+---
+```
+
+]
+
+---
+name: logos
+class: middle, center
+
+# .fancy[Let's talk &lt;br&gt; .acid[logos] ]
+
+tl;dr: treat like slide-specific background images!
+
+---
+
+layout: true
+
+background-image: url("img/RStudio-Logo-Flat.png")
+background-position: 0% 100%
+background-size: 10%
+
+---
+name: logo-layout
+
+# Layouts
+
+
+```r
+---
+YAML goes here
+---
+  
+*layout: true
+
+background-image: url("img/RStudio-Logo-Flat.png")
+background-position: 0% 100%;
+background-size: 10%
+
+---
+```
+
+This will apply layout to _all_ slides. To cancel it, insert a blank slide:
+
+
+```r
+---
+  
+layout: false
+
+---
+```
+
+---
+
+
+layout: true
+
+background-image: url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png")
+background-position: 0% 100%, 100% 0%, 50% 100%
+background-size: 10%, 10%, 10%
+
+---
+name: lots-of-logos
+
+# Logos galore
+
+
+```r
+---
+YAML goes here
+---
+  
+*layout: true
+
+background-image: url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png")
+background-position: 0% 100%, 100% 0%, 50% 100%
+background-size: 10%, 10%, 10%
+
+---
+```
+
+
+Positioning:
+
++ bottom left: `0% 100%`
++ top right: `100% 0%`
++ bottom center: `50% 100%`
 
 
 ---
-name: hex-contain
-background-image: url("http://bit.ly/rdogladies-hex")
-background-size: contain
-class: center, middle
 
-# .fancy[Contain]
-
----
-
-# Add a logo
+layout: true
+  
+&lt;div class="my-footer"&gt;&lt;span&gt;rstd.io/arm-xaringan&lt;/span&gt;&lt;/div&gt;
 
 ---
 name: heat
@@ -1809,6 +2076,51 @@ template: heat
 template: heat
 
 # HEAT = THEMES
+
+---
+
+# Built-in themes
+
+
+For each, theme and fonts are separate files:
+
+
+```r
+names(xaringan:::list_css())
+```
+
+```
+##  [1] "chocolate-fonts"  "chocolate"        "default-fonts"   
+##  [4] "default"          "duke-blue"        "hygge-duke"      
+##  [7] "hygge"            "kunoichi"         "lucy-fonts"      
+## [10] "lucy"             "metropolis-fonts" "metropolis"      
+## [13] "middlebury-fonts" "middlebury"       "ninjutsu"        
+## [16] "rladies-fonts"    "rladies"          "robot-fonts"     
+## [19] "robot"            "rutgers-fonts"    "rutgers"         
+## [22] "shinobi"          "tamu-fonts"       "tamu"            
+## [25] "uo-fonts"         "uo"
+```
+
+--
+
+
+To use, edit your YAML (no file extensions):
+
+```r
+output:
+  xaringan::moon_reader:
+*   css: [default, metropolis, metropolis-fonts]
+```
+
+
+
+
+---
+
+# Now we need to use CSS to:
+
+- edit or create a new theme
+- add a custom layout, like a footer
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="https://platform.twitter.com/widgets.js"></script>
