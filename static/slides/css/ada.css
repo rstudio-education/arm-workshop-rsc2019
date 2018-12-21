@@ -1,0 +1,124 @@
+.large { 
+  font-size: 160%;
+}
+
+/* highlighted code */
+
+.remark-code-line-highlighted {
+  background-color: rgba(127, 140, 180, .5);
+}
+
+/* in line code */
+
+.remark-code, .remark-inline-code {
+  color: #F9388C;
+}
+
+.inverse .remark-inline-code {
+  color: #fb82b7;
+  text-decoration: none;
+}
+
+
+/* from emi tanaka's ninjutsu css! */
+
+.img-fill img { object-fit: fill; height:100%; width:100%; overflow: hidden;}
+.img-contain img { object-fit: contain; height:100%; width:100%;  overflow: hidden}
+.img-cover img { object-fit: cover; height:100%; width:100%;  overflow: hidden}
+.img-none img { object-fit: none; height:100%; width:100%; }
+
+.inverse {
+  background-color: #343c56;
+  text-shadow: 0 0 0;
+}
+
+
+
+/* links */
+					 
+a,
+a:visited {
+  color: #343c56;
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: #fb82b7;
+}
+
+a > code {
+  color: #F9388C;
+  text-decoration: none;
+}
+
+.inverse a {
+  color: #fb82b7;
+}
+
+.inverse a:hover,
+.inverse a:focus {
+  color: #F9388C;
+}
+
+/* footer */
+
+div.my-footer {
+    background-color: #1a1917;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 20px;
+    width: 100%;
+}
+
+div.my-footer span {
+    font-size: 10pt;
+    color: #F7F8FA;
+    position: absolute;
+    left: 15px;
+    bottom: 2px;
+}
+
+.remark-slide-number {
+  bottom: 18px;
+  opacity: 0.5;
+  position: absolute;
+  right: 20px;
+}
+
+img.circle {
+  border-radius:50%;
+}
+
+/* split rows*/
+
+
+.title-slide .remark-slide-number { 
+  display: none; 
+}
+
+/* https://stackoverflow.com/questions/50919104/horizontally-scrollable-output-on-xaringan-slides */
+
+pre {
+  background: #f8f8f8; /* match github highlightjs */
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* my title slide */
+.title-slide {
+  background-image: url(../img/ada_lovelace_cropped.png);
+  background-size: cover;
+  background-position: right top; 
+  color: #FFF;
+}
+
+img.lil {
+  width: 15%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+

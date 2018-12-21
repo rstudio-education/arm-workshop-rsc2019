@@ -228,12 +228,6 @@ pre {
   overflow-x: auto;
 }
 
-/* my title slide */
-.title-slide {
-  background-image: url(../img/brooke-lark-500141-unsplash.jpg);
-  background-size: cover;
-}
-
 img.lil {
   width: 15%;
   display: block;
