@@ -11,7 +11,7 @@ type = "docs"  # Do not modify.
 # Add menu entry to sidebar.
 linktitle = "Resources"
 [menu.prework]
-  parent = "Please review"
+  parent = "Publishing & beyond"
   weight = 6
 +++
 

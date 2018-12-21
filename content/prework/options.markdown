@@ -29,7 +29,7 @@ Below is more information about each option.
 
 ## Work in the :cloud: {#cloud}
 
-This option uses RStudio's Pro products, which are subscription-based products that organizations can purchase access to. You'll have access to both [RStudio Server Pro (RSP)](https://www.rstudio.com/products/rstudio-server-pro/) and [RStudio Connect](https://www.rstudio.com/products/connect/) for the day prior to and the two full days of the workshop.
+This option uses RStudio's Professional software. These are paid products designed for use within the Enterprise. Access to both [RStudio Server Pro (RSP)](https://www.rstudio.com/products/rstudio-server-pro/) and [RStudio Connect](https://www.rstudio.com/products/connect/) are included in your workshop registration. Your access will be for the day prior to and the two full days of the workshop.
 
 *Why would I need this option?*
 
@@ -45,7 +45,7 @@ Not much! We will provide servers with all the software (R, RStudio IDE) and R p
 
 *Will I be able to publish my work?*
 
-Yes- that is where [RStudio Connect](https://www.rstudio.com/products/connect/) comes in- if you choose this option, you'll be able to publish your work. However, the link will no longer be active after the workshop has ended.
+Yes! That is where [RStudio Connect](https://www.rstudio.com/products/connect/) comes in. If you choose this option, you'll be able to publish your work. However, the link that you publish to will no longer be active after the workshop has ended.
 
 *How will I save my work?*
 
@@ -55,15 +55,21 @@ If you choose this option, there is a simple method for exporting your work with
 
 This option will require more setup time before the workshop, but will allow you to be able to work from your own workspace using R and RStudio.
 
+*Why would I need this option?*
+
+You may not want to use a server, and would strongly prefer to use your machine. Note that while we will have TAs for this workshop, there is a limit to how much we can help with issues arising from running outdated versions of R, RStudio, or packages.
+
 *What do I need to do before the workshop?*
 
-If you don’t want to use a server (i.e. you will only run on your machine), you'll need to follow these setup instructions:
+You'll need to follow these setup instructions:
 
 1. [Install/upgrade software](../system/)
 1. [Install R packages](../packages/)
 1. [Install Git & GitHub](../github)
 
-Additionally, if you want to publish your work online, you will also need to look at our [publishing options](../publish) and either:
+*Will I be able to publish my work?*
 
-1. Setup RStudio Connect locally by installing the [`rsconnect` package](https://github.com/rstudio/rsconnect) or 
-1. Sign up for a [Netlify account](https://www.netlify.com/) (we recommend to sign up through your existing [GitHub account](https://github.com/).
+Yes! You will also need to look at our [publishing options](../publish) and either:
+
+1. Use an RStudio Connect account we provide (included in your workshop registration) to publish to RSC from your local IDE
+1. Sign up for a [Netlify account](https://www.netlify.com/) (we recommend to sign up through your existing [GitHub account](https://github.com/)).

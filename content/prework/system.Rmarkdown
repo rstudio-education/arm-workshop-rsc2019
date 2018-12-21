@@ -1,5 +1,5 @@
 +++
-title = "Software installations"
+title = "Install/upgrade software"
 
 date = 2018-12-10T00:00:00
 # lastmod = 2018-09-09T00:00:00
@@ -31,7 +31,7 @@ getRversion()
 * [RStudio](https://www.rstudio.com/products/rstudio/download/#download) (>= 1.1.463)  is recommended.
 
 
-## Resources
+## Upgrading your system
 
 For more help installing or upgrading R and RStudio, please read through these links:
 

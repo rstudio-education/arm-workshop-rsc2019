@@ -11,7 +11,7 @@ type = "docs"  # Do not modify.
 # Add menu entry to sidebar.
 linktitle = "Publishing"
 [menu.prework]
-  parent = "Please review"
+  parent = "Publishing & beyond"
   weight = 5
 +++
 
@@ -19,9 +19,9 @@ In this workshop, we'll develop static sites, so publishing is a matter of conne
 
 ## RStudio Connect (RSC) {#rsc}
 
-[RSC](https://www.rstudio.com/products/connect/) is a server product from RStudio for secure sharing of websites, applications, reports, and plots. [RSC](https://www.rstudio.com/products/connect/) is a server that you run inside an organization, so is suitable for publishing content that you only want visible within your organization's network as opposed to visible to the entire internet. Note that RSC is a paid, subscription-based product. 
+[RSC](https://www.rstudio.com/products/connect/) is a server product from RStudio for secure sharing of websites, applications, reports, and plots. It is a paid product designed for use within the Enterprise. [RSC](https://www.rstudio.com/products/connect/) is a server that you run inside an organization, so is suitable for publishing content that you only want visible within your organization's network as opposed to visible to the entire internet. 
 
-To use RSC locally, even if your organization doesn't have an account and you only want to use it for this workshop, you'll need to install the [`rsconnect` R package](https://github.com/rstudio/rsconnect) from CRAN:
+To use RSC locally (i.e., you chose [option 2](../options#computer)), even if you only want to use it for this workshop, you'll need to install the [`rsconnect` R package](https://github.com/rstudio/rsconnect) from CRAN:
 
 ```{r eval = FALSE}
 install.packages("rsconnect")

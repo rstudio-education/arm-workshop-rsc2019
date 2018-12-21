@@ -1,5 +1,5 @@
 +++
-title = "Git & GitHub"
+title = "Install Git & GitHub"
 
 date = 2018-12-10T00:00:00
 # lastmod = 2018-09-09T00:00:00
@@ -32,7 +32,7 @@ To get the most out of this workshop, we will typically work within [RStudio Pro
     - [Set up keys for SSH](http://happygitwithr.com/ssh-keys.html)
 1. [Connect RStudio to Git and GitHub](http://happygitwithr.com/rstudio-git-github.html)
 
-## New project, GitHub first
+## Test-drive
 
 We encourage you to follow a ["New project, GitHub first" workflow](http://happygitwithr.com/new-github-first.html). This means that if you want to work locally, you'll want to be comfortable doing the following steps:
 
