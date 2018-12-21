@@ -1,19 +1,18 @@
-+++
-title = "Install Git & GitHub"
-
-date = 2018-12-10T00:00:00
-# lastmod = 2018-09-09T00:00:00
-
-draft = false  # Is this a draft? true/false
-toc = true  # Show table of contents? true/false
-type = "docs"  # Do not modify.
-
-# Add menu entry to sidebar.
-linktitle = "Install Git & GitHub"
-[menu.prework]
-  parent = "Local setup"
-  weight = 4
-+++
+---
+title: Install Git & GitHub
+author: ''
+date: '2018-12-21'
+slug: github
+categories: []
+tags: []
+linktitle: "Install Git & GitHub"
+menu:
+  prework:
+    parent: "Local setup"
+    weight: 4
+toc: yes
+type: docs
+---
 
 
 To get the most out of this workshop, we will typically work within [RStudio Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) (`.Rproj`) and encourage you to use Git (via GitHub using RStudio) for version control. You can use RStudio as the Git GUI, so there is no need to install a separate GUI unless you have your own favorite. If you would like to use GitHub during the workshop, please follow the steps below from the online book [Happy Git with R](http://happygitwithr.com/):

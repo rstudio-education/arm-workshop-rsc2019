@@ -1,19 +1,19 @@
-+++
-title = "Choose a setup"
+---
+title: Choose a setup
+author: ''
+date: '2018-12-21'
+slug: options
+categories: []
+tags: []
+linktitle: "Choose a setup"
+menu:
+  prework:
+    parent: "Welcome"
+    weight: 2
+toc: yes
+type: docs
+---
 
-date = 2018-12-10T00:00:00
-# lastmod = 2018-09-09T00:00:00
-
-draft = false  # Is this a draft? true/false
-toc = true  # Show table of contents? true/false
-type = "docs"  # Do not modify.
-
-# Add menu entry to sidebar.
-linktitle = "Choose a setup"
-[menu.prework]
-  parent = "Welcome"
-  weight = 2
-+++
 
 
 There are two options for participating in this workshop:

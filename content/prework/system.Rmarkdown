@@ -1,19 +1,18 @@
-+++
-title = "Install/upgrade software"
-
-date = 2018-12-10T00:00:00
-# lastmod = 2018-09-09T00:00:00
-
-draft = false  # Is this a draft? true/false
-toc = true  # Show table of contents? true/false
-type = "docs"  # Do not modify.
-
-# Add menu entry to sidebar.
-linktitle = "Install/upgrade software"
-[menu.prework]
-  parent = "Local setup"
-  weight = 2
-+++
+---
+title: Install/upgrade software
+author: ''
+date: '2018-12-21'
+slug: system
+categories: []
+tags: []
+linktitle: "Install/upgrade software"
+menu:
+  prework:
+    parent: "Local setup"
+    weight: 2
+toc: yes
+type: docs
+---
 
 In this workshop, we will use R and [RStudio](https://www.rstudio.com/products/rstudio/). RStudio is not required but recommended, because it makes it easier for an average user to work with R Markdown. If you do not have RStudio IDE installed, you will have to install Pandoc (http://pandoc.org), otherwise there is no need to install Pandoc separately because RStudio has bundled it. 
 

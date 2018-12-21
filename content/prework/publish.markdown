@@ -1,19 +1,18 @@
-+++
-title = "Publishing"
-
-date = 2018-12-10T00:00:00
-# lastmod = 2018-09-09T00:00:00
-
-draft = false  # Is this a draft? true/false
-toc = true  # Show table of contents? true/false
-type = "docs"  # Do not modify.
-
-# Add menu entry to sidebar.
-linktitle = "Publishing"
-[menu.prework]
-  name = "Publishing"
-  weight = 7
-+++
+---
+title: Publishing
+author: ''
+date: '2018-12-21'
+slug: publish
+categories: []
+tags: []
+linktitle: "Publishing"
+menu:
+  prework:
+    name: "Publishing"
+    weight: 7
+toc: yes
+type: docs
+---
 
 In this workshop, we'll develop static sites, so publishing is a matter of connecting or copying the output directory to a web server or web hosting service. We'll give you two convenient options for publishing (there are lots more!): 
 

@@ -1,19 +1,18 @@
-+++
-title = "Install R packages"
-
-date = 2018-12-10T00:00:00
-# lastmod = 2018-09-09T00:00:00
-
-draft = false  # Is this a draft? true/false
-toc = true  # Show table of contents? true/false
-type = "docs"  # Do not modify.
-
-# Add menu entry to sidebar.
-linktitle = "Install R packages"
-[menu.prework]
-  parent = "Local setup"
-  weight = 3
-+++
+---
+title: Install R packages
+author: ''
+date: '2018-12-21'
+slug: packages
+categories: []
+tags: []
+linktitle: "Install R packages"
+menu:
+  prework:
+    parent: "Local setup"
+    weight: 3
+toc: yes
+type: docs
+---
 
 
 
@@ -32,7 +31,7 @@ install.packages(arm_pkgs, dependencies = TRUE)
 ```
 
 
-Also please review section <a href="#update-hugo">1.4.2</a> to make sure you have Hugo version 0.52, which you'll need for **blogdown**.
+Also please review section <a href="#update-hugo">0.4.2</a> to make sure you have Hugo version 0.52, which you'll need for **blogdown**.
 
 ## Download script {#script}
 
@@ -57,7 +56,7 @@ Can you load the package?
 library(xaringan)
 ```
 
-You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">1.7</a> for how to check for all packages):
+You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">0.7</a> for how to check for all packages):
 
 
 
