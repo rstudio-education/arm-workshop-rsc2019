@@ -1,0 +1,130 @@
+:root {
+  --color-blue: #44c8c4; 
+  --color-green: #367b51; 
+  --color-salmon: #eb6a60; 
+  --color-turquoise: #4d8984;
+}
+
+.large { 
+  font-size: 160%;
+}
+
+.blue { 
+  color: var(--color-blue);
+}
+
+.salmon { 
+  color: var(--color-salmon);
+}
+
+/* highlighted code */
+
+.remark-code-line-highlighted {
+  background-color: rgba(163, 203, 200, .5);
+}
+
+/* in line code */
+
+.remark-code, .remark-inline-code {
+  color: var(--color-turquoise);
+}
+
+.inverse .remark-inline-code {
+  color: var(--color-salmon);
+  text-decoration: none;
+}
+
+.inverse {
+  text-shadow: 0 0 0;
+}
+
+/*.inverse h1, h2, h3 {
+  color: var(--color-turquoise);
+  position: relative;
+  left: 200px;
+}*/
+
+
+
+/* links */
+					 
+a,
+a:visited {
+  color: var(--color-green);
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-salmon);
+}
+
+a > code {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+.inverse a {
+  color: var(--color-salmon);
+}
+
+.inverse a:hover,
+.inverse a:focus {
+  color: var(--color-turquoise);
+}
+
+/* footer */
+
+div.my-footer {
+    background-color: #1a1917;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 20px;
+    width: 100%;
+}
+
+div.my-footer span {
+    font-size: 10pt;
+    color: #F7F8FA;
+    position: absolute;
+    left: 15px;
+    bottom: 2px;
+}
+
+.remark-slide-number {
+  bottom: 18px;
+  opacity: 0.5;
+  position: absolute;
+  right: 20px;
+}
+
+img.circle {
+  border-radius:50%;
+}
+
+/* split rows*/
+
+
+.title-slide .remark-slide-number { 
+  display: none; 
+}
+
+/* https://stackoverflow.com/questions/50919104/horizontally-scrollable-output-on-xaringan-slides */
+
+pre {
+  background: #fdf6e3; /* match solarized highlightjs */
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+img.lil {
+  width: 15%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.green {
+  color: #00666B;
+}

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Making Books with R Markdown</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Alison Hill" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js" integrity="sha384-R5JkiUweZpJjELPWqttAYmYM1P3SNEJRM6ecTQF05pFFtxmCO+Y1CiUhvuDzgSVZ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/penguin.css" type="text/css" />
+    <link rel="stylesheet" href="css/fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+layout: true
+  
+&lt;div class="my-footer"&gt;&lt;span&gt;rstd.io/arm-bookdown&lt;/span&gt;&lt;/div&gt;
+
+&lt;!-- this adds the link footer to all slides, depends on my-footer class in css--&gt;
+
+---
+name: bookdown-title
+background-image: url(img/karim-ghantous-333364-unsplash.jpg)
+background-size: cover
+
+# Meet bookdown
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/bookdown.png" alt="bookdown" width="180" /&gt;
+
+### .fancy[Making Books in R Markdown]
+
+.large[Alison Hill | rstudio::conf | 2018-12-20]
+
+&lt;!-- this ends up being the title slide since seal = FALSE--&gt;
+
+
+---
+background-image: url(img/art-lasovsky-559569-unsplash.jpg)
+background-size: cover
+
+# Hello 📖
+
+
++ Multiple R Markdown documents
+
++ Multiple output formats
+
++ Markdown extensions (figure/table numbers, equations, theorems, ...)
+
+---
+
+.left-column[
+# Hello 📖
+]
+
+.right-column[
+&lt;iframe src="https://bookdown.org/yihui/bookdown/" width="100%" height="500px"&gt;&lt;/iframe&gt;
+]
+
+
+
+---
+
+# [New project, &lt;i class="fab fa-github fa-lg fa-fw"&gt;&lt;/i&gt; first](http://happygitwithr.com/new-github-first.html)
+
+
+1. [Make a repo on GitHub](http://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
+1. [Make a new RStudio project via git clone](http://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
+
+---
+
+# Everyone
+
+In your new project:
+
+
+```r
+bookdown:::bookdown_skeleton(getwd())
+```
+
+--
+
+In RStudio, click on the .fancy[.blue["Preview Book"]] add-in:
+
+&lt;img src="img/bookdown-preview.png" width="70%" /&gt;
+
+
+
+---
+
+## Project structure
+
+
+```r
+directory/
+├── .Rproj.user
+├── book.Rproj
+├── 01-intro.Rmd
+├── 02-literature.Rmd
+├── 03-method.Rmd
+├── 04-application.Rmd
+├── 05-summary.Rmd
+├── 06-references.Rmd
+├──  README.md
+├── _bookdown.yml
+├── _output.yml
+├──  book.bib
+├──  index.Rmd
+├──  preamble.tex
+└──  style.css
+```
+
+--
+
+.footnote[
+If in a Git project, you'll also see `.gitignore`- add these files:
+```
+_book
+_bookdown_files
+```
+]
+
+---
+
+## Chapter = `.Rmd`
+
+
+```r
+directory/
+├── .Rproj.user
+├── book.Rproj
+*├── 01-intro.Rmd
+*├── 02-literature.Rmd
+*├── 03-method.Rmd
+*├── 04-application.Rmd
+*├── 05-summary.Rmd
+*├── 06-references.Rmd
+├──  README.md
+├── _bookdown.yml
+├── _output.yml
+├──  book.bib
+*├──  index.Rmd
+├──  preamble.tex
+└──  style.css
+```
+
+---
+name: outline
+
+# Outline
+
++ [Title, authors, and other metadata](#index-YAML) with `index.Rmd` &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#index-file"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
+
++ [Configuration](#bookdown-YAML) with `_bookdown.yml` &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#bookdown.yml"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
+
++ [Content]() with chapters &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#rmd-files"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
+
++ [Output formats](#output-YAML) with `_output.yml` &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#output.yml"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
+
+---
+
+
+## Chapter One = `index.Rmd`
+
+
+```r
+directory/
+├── .Rproj.user
+├── book.Rproj
+├── 01-intro.Rmd
+├── 02-literature.Rmd
+├── 03-method.Rmd
+├── 04-application.Rmd
+├── 05-summary.Rmd
+├── 06-references.Rmd
+├──  README.md
+├── _bookdown.yml
+├── _output.yml
+├──  book.bib
+*├──  index.Rmd
+├──  preamble.tex
+└──  style.css
+```
+
+---
+name: section
+class: middle, inverse
+background-image: url(img/kelly-sikkema-450720-unsplash.jpg)
+background-size: cover
+
+---
+name: index-YAML
+template: section
+
+.right-column[
+
+# &lt;i class="fas fa-feather-alt"&gt;&lt;/i&gt;.fancy[Prologue: &lt;br&gt;the `index.Rmd` file]
+
+]
+
+
+---
+
+# Inside the `index.Rmd` YAML
+
+
+
+```r
+--- 
+title: "A Minimal Book Example"
+author: "Yihui Xie"
+date: "`r Sys.Date()`"
+*site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is a minimal example..."
+---
+```
+
+The `site` is **required**
+
+
+---
+
+# What you see
+
+.pull-left[
+
+```r
+--- 
+*title: "A Minimal Book Example"
+*author: "Yihui Xie"
+*date: "`r Sys.Date()`"
+site: bookdown::bookdown_site 
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is a minimal example..."
+---
+```
+]
+
+.pull-right[
+the books' title, author, date
+]
+
+--
+
+.pull-right[
+Most other YAML content is "invisible"
+]
+
+---
+
+# Opinionated advice
+
+.fancy[.blue[Problem:]] I want Chapter One = `01-intro.Rmd`
+
+--
+
+.fancy[.blue[Solution:]] Use an unnumbered header by appending `{-}` to it
+
+--
+
+Open `index.Rmd` and edit:
+
+```r
+# Prerequisites {-}
+```
+
+
+
+.footnote[
+1. https://github.com/rstudio/bookdown/issues/218
+1. https://bookdown.org/yihui/bookdown/markdown-syntax.html#block-level-elements
+]
+
+---
+
+# From `index.Rmd` of .fancy[[Happy Git with R](http://happygitwithr.com/)]
+
+.left-column[
+
+
+```r
+# A living book {-}
+```
+
+]
+
+.right-column[
+&lt;iframe src="http://happygitwithr.com/index.html" width="100%" height="400px"&gt;&lt;/iframe&gt;
+
+]
+
+---
+
+# Use Pandoc here
+
+Besides these configurations, you can also specify some Pandoc-related configurations in the YAML metarmta of the first Rmd file of the book, such as the title, author, and date of the book, etc. 
+
+Recommended:
+
+
+```r
+cover-image: images/books.jpg # relative to index
+url: 'https\://rstd.io/arm-book/' #
+```
+
+
+.footnote[
+https://bookdown.org/yihui/bookdown/usage.html
+]
+
+
+---
+name: pandoc-meta
+
+```
+&lt;meta property="og:image" content="images/books.jpg"&gt;
+&lt;meta name="twitter:image" content="images/books.jpg"&gt;
+&lt;meta name="twitter:site" content="@hadley"&gt; # from twitter-handle
+```
+
+For example:
+
+https://cards-dev.twitter.com/validator
+
+&lt;i class="fas fa-link fa-lg fa-fw"&gt;&lt;/i&gt; https://r4ds.had.co.nz/
+
+&lt;i class="fas fa-link fa-lg fa-fw"&gt;&lt;/i&gt; https://moderndive.com/
+
+&lt;i class="fas fa-link fa-lg fa-fw"&gt;&lt;/i&gt; https://bookdown.org/yihui/rmarkdown/
+
+---
+name: bookdown-YAML
+template: section
+
+.right-column[
+
+# &lt;i class="fas fa-feather-alt"&gt;&lt;/i&gt;.fancy[Intro: &lt;br&gt;the `_bookdown.yml` file]
+
+]
+
+
+---
+
+# Inside the `_bookdown.yml`
+
+
+```r
+book_filename: "arm"
+*delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+```
+
+
+
+---
+
+# Configure **bookdown**
+
+.pull-left[
+
+
+```r
+book_filename: "arm"
+delete_merged_file: true 
+language:
+  ui:
+    chapter_name: "Chapter "
+*edit: https://github.com/apreshill/arm/edit/master/%s
+*new_session: yes
+output_dir: "docs" # maybe?
+```
+]
+
+--
+
+.pull-right[
++ `edit`: add GitHub edit link?
+
++ `new_session`: render each chapter in its own R session?
+
++ `output_dir`: default = "_book"; "docs" if you want to publish to [GitHub Pages](https://blog.github.com/2016-08-17-simpler-github-pages-publishing/)
+]
+
+.footnote[
+https://bookdown.org/yihui/bookdown/configuration.html
+]
+
+
+---
+name: chapters
+template: section
+
+.right-column[
+
+# &lt;i class="fas fa-feather-alt"&gt;&lt;/i&gt;.fancy[Story: &lt;br&gt;the chapter `.Rmd` files]
+
+]
+
+---
+name: output-YAML
+template: section
+
+.right-column[
+
+# &lt;i class="fas fa-feather-alt"&gt;&lt;/i&gt;.fancy[Epilogue: &lt;br&gt;the `_output.yml` file]
+
+]
+
+---
+
+
+- go to https://github.com/mine-cetinkaya-rundel/thesisdowndss to view the README
+- install package and load
+- start new book using the RStudio GUI, making sure to name it index
+- knit, and voila!
+- observe how math text works, make changes, re-observe
+- ex: add image, where should you save it? (a bit on using an external CDN like google images)
+- how to do referencing
+- how to do citations
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "solarized-light",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
