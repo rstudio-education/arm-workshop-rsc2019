@@ -21,18 +21,16 @@ Basic schedule:
 - Lunch will be served from 12:30pm - 1:15pm.
 - We also offer mid-morning and mid-afternoon breaks.
 
-
+Here is a tentative timetable for Day 1:
 
 | Unit          | When          | What   |
 |---------------|---------------|--------|
-| Session #1, AM  | 9-10:30am     |[xaringan](xaringan)|
-|               | 10:30-10:45am |_break_   |
-| Session #2, AM  | 10:45-12:00pm |[flexdashboard](flexdashboard)|
-| Session #3, AM  | 12:00-12:30pm |cohorts |
-|               | 12:30-1:15pm  |_lunch_ |
-| Session #4, PM  | 1:15-2:45pm   |[bookdown](bookdown) |
-|              | 2:45-3:00pm   |_break_ |
-| Session #5, PM   | 3:00-4:30pm   |[blogdown](blogdown) |
-| Session #6, PM  | 4:30-5:00pm   |cohorts |
-
-
+|                | 08:00-09:00   |:doughnut: BREAKFAST|
+| Session #1, AM  | 09:00-10:30   |[xaringan](xaringan)|
+|               | 10:30-11:00 |:coffee: BREAK   |
+| Session #2, AM  | 11:00-12:30 |[flexdashboard](flexdashboard) & learnr|
+|               | 12:30-02:00  |:fork_and_knife: LUNCH |
+| Session #3, PM  | 02:00-03:30   |[bookdown](bookdown) |
+|              | 03:30-04:00   |:coffee: BREAK   |
+| Session #4, PM   | 04:00-05:00   |[blogdown](blogdown) |
+| Session #5, PM  | 05:00-05:30  |officer |
