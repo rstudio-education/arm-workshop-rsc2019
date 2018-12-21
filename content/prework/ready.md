@@ -9,9 +9,9 @@ toc = true  # Show table of contents? true/false
 type = "docs"  # Do not modify.
 
 # Add menu entry to sidebar.
-linktitle = "Workshop readiness"
+linktitle = "Is this workshop for you?"
 [menu.prework]
-  parent = "Overview"
+  parent = "Welcome"
   weight = 1
 +++
 

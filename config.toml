@@ -62,7 +62,7 @@ enableGitInfo = false
   name = "Advanced R Markdown Workshop"
 
   # Project description.
-  role = "Extending R Markdown, Day 2"
+  role = ""
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
@@ -247,7 +247,7 @@ enableGitInfo = false
 
 [[menu.main]]
   pre = "<i class=\"fab fa-r-project\"></i>"
-  name = "Set-up"
+  name = "Pre-Workshop"
   url = "prework/" 
   weight = 1
 

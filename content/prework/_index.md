@@ -1,5 +1,5 @@
 +++
-title = "Overview"
+title = "Welcome"
 
 date = 2018-12-10T00:00:00
 # lastmod = 2018-09-09T00:00:00
@@ -10,11 +10,11 @@ type = "docs"  # Do not modify.
 
 # Add menu entry to sidebar.
 [menu.prework]
-  name = "Overview"
+  name = "Welcome"
   weight = 1
 +++
 
-Welcome! This site is the official home for all information related to the 2019 Advanced R Markdown workshop in Austin, Texas (January 15-16). This is the place to find all the information you'll need to get the most out of this workshop, including software, R packages, and additional resources. 
+This site is the official home for all information related to the 2019 Advanced R Markdown workshop in Austin, Texas (January 15-16). This is the place to find all the information you'll need to get the most out of this workshop, including software, R packages, and additional resources. 
 
 ## Orientation
 

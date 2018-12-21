@@ -17,23 +17,37 @@ linktitle = "Install R packages"
 
 
 
+
 For this workshop, you'll need to install several R packages. This page will guide you through installing the packages we will use. If you are comfortable installing packages in R, then you could run this code from your R console to install all of the necessary packages:
 
 
 ```r
 arm_pkgs <- c("xaringan", "flexdashboard", 
               "blogdown", "bookdown", "tidyverse")
-install.packages(arm_pkgs)
 ```
 
-Also please review section <a href="#update-hugo">1.3.2</a> to make sure you have Hugo version 0.52, which you'll need for **blogdown**.
+
+```r
+install.packages(arm_pkgs, dependencies = TRUE)
+```
+
+
+Also please review section <a href="#update-hugo">1.4.2</a> to make sure you have Hugo version 0.52, which you'll need for **blogdown**.
+
+## Download script {#script}
+
+
+
+
+Click <a href="../arm-installs.R" download>here</a> to download an R script for installing all the necessary packages.
 
 ## xaringan {#xaringan}
 
 Install the [**xaringan** package](https://github.com/yihui/xaringan) from CRAN as follows:
 
-```
-install.packages("xaringan")
+
+```r
+install.packages("xaringan", dependencies = TRUE)
 ```
 
 Can you load the package?
@@ -43,7 +57,10 @@ Can you load the package?
 library(xaringan)
 ```
 
-You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">1.6</a> for how to check for all packages):
+You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">1.7</a> for how to check for all packages):
+
+
+
 
 
 ```r
@@ -66,8 +83,9 @@ Does this code return `TRUE`?
 
 Install the [**flexdashboard** package](https://rmarkdown.rstudio.com/flexdashboard/) from CRAN as follows:
 
-```
-install.packages("flexdashboard")
+
+```r
+install.packages("flexdashboard", dependencies = TRUE)
 ```
 
 Can you load the package?
@@ -93,8 +111,9 @@ is_installed("flexdashboard")
 
 Install the [**blogdown** package](https://github.com/rstudio/blogdown) from CRAN as follows:
 
-```
-install.packages("blogdown")
+
+```r
+install.packages("blogdown", dependencies = TRUE)
 ```
 
 Can you load the package?
@@ -120,7 +139,8 @@ is_installed("blogdown")
 
 Hugo (https://gohugo.io) is the static site generator on which **blogdown** is based. You must install Hugo in order to build a site using the **blogdown** package. You may install Hugo using the **blogdown** package helper function in your R Console:
 
-```
+
+```r
 blogdown::install_hugo()
 ```
 
@@ -128,7 +148,8 @@ blogdown::install_hugo()
 
 In your R Console, please do the following to make sure that you are working with the latest version of Hugo (>= 0.52): 
     
-```
+
+```r
 blogdown::hugo_version() # to check your version
 blogdown::update_hugo() # to force an update
 ```
@@ -137,8 +158,9 @@ blogdown::update_hugo() # to force an update
 
 Install the [**bookdown** package](https://github.com/rstudio/bookdown) from CRAN as follows:
 
-```
-install.packages("bookdown")
+
+```r
+install.packages("bookdown", dependencies = TRUE)
 ```
 
 Can you load the package?
@@ -164,8 +186,9 @@ is_installed("bookdown")
 
 For many code examples provided in the workshop activities, you'll need to install the [**tidyverse** meta-package](https://www.tidyverse.org/packages/) from CRAN as follows:
 
-```
-install.packages("tidyverse")
+
+```r
+install.packages("tidyverse", dependencies = TRUE)
 ```
 
 Can you load the package?
@@ -191,8 +214,6 @@ is_installed("tidyverse")
 
 
 ```r
-arm_pkgs <- c("xaringan", "flexdashboard", 
-              "blogdown", "bookdown", "tidyverse")
 is_installed(arm_pkgs)
 ```
 
@@ -200,4 +221,5 @@ is_installed(arm_pkgs)
 #      xaringan flexdashboard      blogdown      bookdown     tidyverse 
 #          TRUE          TRUE          TRUE          TRUE          TRUE
 ```
+
 
