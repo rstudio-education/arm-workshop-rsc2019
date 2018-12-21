@@ -11,8 +11,8 @@ type = "docs"  # Do not modify.
 # Add menu entry to sidebar.
 linktitle = "Resources"
 [menu.prework]
-  parent = "Publishing & beyond"
-  weight = 6
+  parent = "Going further"
+  weight = 8
 +++
 
 This two-day hands-on workshop is primarily based on the book [*R Markdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/). However, there are several other additional free and open source resources available for some of the individual packages we will cover.

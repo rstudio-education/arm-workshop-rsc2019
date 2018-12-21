@@ -11,8 +11,8 @@ type = "docs"  # Do not modify.
 # Add menu entry to sidebar.
 linktitle = "Recommended"
 [menu.prework]
-  parent = "Publishing & beyond"
-  weight = 7
+  parent = "Going further"
+  weight = 9
 +++
 
 You’ll get the most from this workshop if you enjoy learning how R Markdown works under the hood (which will involve reading some source code), and are seriously interested in hacking (playing) with:
