@@ -1,0 +1,69 @@
++++
+title = "Choose one"
+
+date = 2018-12-10T00:00:00
+# lastmod = 2018-09-09T00:00:00
+
+draft = false  # Is this a draft? true/false
+toc = true  # Show table of contents? true/false
+type = "docs"  # Do not modify.
+
+# Add menu entry to sidebar.
+linktitle = "Preparing for the workshop"
+[menu.prework]
+  parent = "Overview"
+  weight = 2
++++
+
+
+For this workshop, we provide two options for participating:
+
+1. [Work in the :cloud:](#cloud)
+    - Build your R Markdown documents via a pre-configured, web-based RStudio IDE instance provided by [RStudio Server Pro](https://www.rstudio.com/products/rstudio-server-pro/)
+    - Deploy your work via [RStudio Connect](https://www.rstudio.com/products/connect/)
+1. [Work on your own :computer:](#computer)
+    - Build your R Markdown documents locally on your laptop using the RStudio IDE
+    - Deploy your work via [RStudio Connect](https://www.rstudio.com/products/connect/), or a combination of [GitHub](https://github.com/) and [Netlify](https://www.netlify.com/)
+
+Below is more information about each option. 
+
+## Work in the :cloud: {#cloud}
+
+This option uses RStudio's Pro products, which are subscription-based products that organizations can purchase access to. You'll have access to both [RStudio Server Pro (RSP)](https://www.rstudio.com/products/rstudio-server-pro/) and [RStudio Connect](https://www.rstudio.com/products/connect/) for the day prior to and the two full days of the workshop.
+
+*Why would I need this option?*
+
+You may not have time to do all the [local installation setup](../system), or you may not wish to modify your local install to upgrade right now.
+
+*What do I need to do before the workshop?*
+
+Not much! We will provide servers with all the software (R, RStudio IDE) and R packages you will need pre-installed and configured. You will need to:
+
+- bring a laptop with the ability to access the internet
+- bring your laptop charger
+- check your email ahead of the workshop to find the login information.
+
+*Will I be able to publish my work?*
+
+Yes- that is where [RStudio Connect](https://www.rstudio.com/products/connect/) comes in- if you choose this option, you'll be able to publish your work. However, the link will no longer be active after the workshop has ended.
+
+*How will I save my work?*
+
+If you choose this option, there is a simple method for exporting your work within an R project created with RSP to your desktop in a single zip file. We'll show you how. Don't worry- if you choose this option, you'll be able to grab a local copy before your :cloud: access disappears.
+
+## Work on your own :computer: {#computer}
+
+This option will require more setup time before the workshop, but will allow you to be able to work from your own workspace using R and RStudio.
+
+*What do I need to do before the workshop?*
+
+If you don’t want to use a server (i.e. you will only run on your machine), you'll need to follow these setup instructions:
+
+1. [Install/upgrade software](../system/)
+1. [Install R packages](../packages/)
+1. [Install Git & GitHub](../github)
+
+Additionally, if you want to publish your work online, you will also need to look at our [publishing options](../publish) and either:
+
+1. Setup RStudio Connect locally by installing the [`rsconnect` package](https://github.com/rstudio/rsconnect) or 
+1. Sign up for a [Netlify account](https://www.netlify.com/) (we recommend to sign up through your existing [GitHub account](https://github.com/).

@@ -15,15 +15,19 @@ linktitle = "Publishing"
   weight = 5
 +++
 
-In this workshop, we'll develop static sites, so publishing is a matter of connecting or copying the output directory to a web server or web hosting service.
+In this workshop, we'll develop static sites, so publishing is a matter of connecting or copying the output directory to a web server or web hosting service. We'll give you two convenient options for publishing (there are lots more!): [RStudio Connect](#rsc) and [Netlify](#netlify).
 
-Here, we give you an overview of two convenient options for publishing: RStudio Connect and Netlify.
+## RStudio Connect (RSC) {#rsc}
 
-## RStudio Connect {#rsc}
+[RSC](https://www.rstudio.com/products/connect/) is a server product from RStudio for secure sharing of websites, applications, reports, and plots. [RSC](https://www.rstudio.com/products/connect/) is a server that you run inside an organization, so is suitable for publishing content that you only want visible within your organization's network as opposed to visible to the entire internet. Note that RSC is a paid, subscription-based product. 
 
-[RStudio Connect](https://www.rstudio.com/products/connect/) is a server product from RStudio for secure sharing of websites, applications, reports, and plots.  
+To use RSC locally, even if your organization doesn't have an account and you only want to use it for this workshop, you'll need to install the [`rsconnect` R package](https://github.com/rstudio/rsconnect) from CRAN:
 
-Unlike the other website publishing options described below, [RStudio Connect](https://www.rstudio.com/products/connect/) is a server that you run inside an organization, so is suitable for publishing content that you only want visible within your organization's network as opposed to visible to the entire internet. Note that RStudio Connect is a paid product.
+```{r eval = FALSE}
+install.packages("rsconnect")
+```
+
+You'll receive an email from us before the workshop with your login information. With that, to publish, you will:
 
 1. Click publish and elect RStudio Connect
 1. Enter `beta.rstudioconnect.com`

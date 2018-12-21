@@ -11,64 +11,29 @@ type = "docs"  # Do not modify.
 # Add menu entry to sidebar.
 linktitle = "Install R packages"
 [menu.prework]
-  parent = "Installs"
+  parent = "Local setup"
   weight = 3
 +++
 
 
 
-For this workshop, you'll need to install several R packages. This page will guide you through installing the packages we will use. If you are very comfortable installing packages in R, then you could run this code from your R console to install all of the necessary packages:
+For this workshop, you'll need to install several R packages. This page will guide you through installing the packages we will use. If you are comfortable installing packages in R, then you could run this code from your R console to install all of the necessary packages:
 
 
 ```r
-arm_pkgs <- c("devtools", "xaringan", "flexdashboard", 
+arm_pkgs <- c("xaringan", "flexdashboard", 
               "blogdown", "bookdown", "tidyverse")
 install.packages(arm_pkgs)
 ```
 
-Also please review section <a href="#update-hugo">1.4.2</a> to make sure you have Hugo version 0.52, which you'll need for **blogdown**.
-
-
-## devtools {#devtools}
-
-First, install the devtools package, so that you may download the development versions of the pacakges we'll use from GitHub:
-
-
-```r
-install.packages("devtools")
-```
-
-You can check to make sure you are successful by running:
-
-```r
-# should just work if installed
-library(devtools)
-```
-
-You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">1.7</a> for how to check for all packages):
-
-
-```r
-is_installed <- function(pkg_name){
-  setNames(is.element(pkg_name, installed.packages()[, "Package"]), pkg_name)
-} 
-is_installed("devtools")
-```
-
-```
-# devtools 
-#     TRUE
-```
-
-
-Now that you have the devtools package installed, you can use your R console to install the packages below.
+Also please review section <a href="#update-hugo">1.3.2</a> to make sure you have Hugo version 0.52, which you'll need for **blogdown**.
 
 ## xaringan {#xaringan}
 
-Install the [**xaringan** package](https://github.com/yihui/xaringan) from GitHub as follows:
+Install the [**xaringan** package](https://github.com/yihui/xaringan) from CRAN as follows:
 
 ```
-devtools::install_github('yihui/xaringan')
+install.packages("xaringan")
 ```
 
 Can you load the package?
@@ -78,10 +43,13 @@ Can you load the package?
 library(xaringan)
 ```
 
+You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">1.6</a> for how to check for all packages):
 
-Does this code return `TRUE`?
 
 ```r
+is_installed <- function(pkg_name){
+  setNames(is.element(pkg_name, installed.packages()[, "Package"]), pkg_name)
+} 
 is_installed("xaringan")
 ```
 
@@ -89,6 +57,9 @@ is_installed("xaringan")
 # xaringan 
 #     TRUE
 ```
+
+Does this code return `TRUE`?
+
 
 
 ## flexdashboard {#flexdashboard}
@@ -220,15 +191,13 @@ is_installed("tidyverse")
 
 
 ```r
-arm_pkgs <- c("devtools", "xaringan", "flexdashboard", 
+arm_pkgs <- c("xaringan", "flexdashboard", 
               "blogdown", "bookdown", "tidyverse")
 is_installed(arm_pkgs)
 ```
 
 ```
-#      devtools      xaringan flexdashboard      blogdown      bookdown 
-#          TRUE          TRUE          TRUE          TRUE          TRUE 
-#     tidyverse 
-#          TRUE
+#      xaringan flexdashboard      blogdown      bookdown     tidyverse 
+#          TRUE          TRUE          TRUE          TRUE          TRUE
 ```
 

@@ -9,9 +9,9 @@ toc = true  # Show table of contents? true/false
 type = "docs"  # Do not modify.
 
 # Add menu entry to sidebar.
-linktitle = "Git & GitHub"
+linktitle = "Install Git & GitHub"
 [menu.prework]
-  parent = "Installs"
+  parent = "Local setup"
   weight = 4
 +++
 
