@@ -5,7 +5,7 @@ author: "Alison Hill"
 date: "2019/01/15 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
-    css: ["default", "css/sfah.css", "css/sfah-fonts.css"]
+    css: ["default", "css/sfah.css", "css/fonts.css"]
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -37,7 +37,9 @@ layout: true
 
 ---
 name: xaringan-title
-class: left, middle, title-slide
+class: left, middle
+background-image: url(img/brooke-lark-500141-unsplash.jpg)
+background-size: cover
 
 # Meet xaringan
 
@@ -710,7 +712,9 @@ My name is Alison
 
 ---
 
-class: inverse, center, top, title-slide 
+class: inverse, center, top
+background-image: url(img/brooke-lark-500141-unsplash.jpg)
+background-size: cover
 
 # .fancy["but you promised us pretty pictures..."]
 
@@ -1350,6 +1354,8 @@ tx_plot
 ```
 
 ]
+
+
 ---
 name: fat-work
 
