@@ -12,7 +12,7 @@ linktitle: blogdown
 menu:
   day1:
     parent: PM session
-    weight: 2
+    weight: 7
 ---
 
 ## Slides {#slides}

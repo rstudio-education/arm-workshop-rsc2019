@@ -12,7 +12,7 @@ linktitle: bookdown
 menu:
   day1:
     parent: PM session
-    weight: 3
+    weight: 6
 ---
 
 ## Slides {#slides}
