@@ -13,6 +13,10 @@
   color: var(--color-blue);
 }
 
+.turquoise { 
+  color: var(--color-turquoise);
+}
+
 .salmon { 
   color: var(--color-salmon);
 }
@@ -66,11 +70,13 @@ a > code {
 
 .inverse a {
   color: var(--color-salmon);
+  text-decoration: none;
 }
 
 .inverse a:hover,
 .inverse a:focus {
   color: var(--color-turquoise);
+  text-decoration: underline;
 }
 
 /* footer */

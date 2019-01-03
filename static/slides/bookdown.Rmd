@@ -52,6 +52,19 @@ background-size: cover
 
 
 ---
+name: lifecycle
+
+individual files:
+
+.Rmd to .md (via knitr)
+
+.md to HTML (via pandoc)
+
+
+
+HTML to lots of HTML --> BOOK (via bookdown)
+
+---
 background-image: url(img/art-lasovsky-559569-unsplash.jpg)
 background-size: cover
 
@@ -60,9 +73,13 @@ background-size: cover
 
 + Multiple R Markdown documents
 
-+ Multiple output formats
++ Multiple output formats (E-books, PDF, HTML websites...)
 
-+ Markdown extensions (figure/table numbers, equations, theorems, ...)
++ Formatting features like cross-referencing, numbering of figures, equations, and tables.
+
+???
+
+We'll focus on the `gitbook` output format today, which renders your book to an HTML website.
 
 ---
 
@@ -74,41 +91,125 @@ background-size: cover
 ```{r echo = FALSE}
 knitr::include_url("https://bookdown.org/yihui/bookdown/", height = "500px")
 ```
+https://bookdown.org/yihui/bookdown/
 ]
 
 
+???
+
+Show TOC here in window
 
 ---
 
-# [New project, <i class="fab fa-github fa-lg fa-fw"></i> first](http://happygitwithr.com/new-github-first.html)
+.left-column[
+# [The simplest book](https://minimal-bookdown.netlify.com/)
 
 
-1. [Make a repo on GitHub](http://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
-1. [Make a new RStudio project via git clone](http://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
+]
+
+.right-column[
+```{r echo = FALSE}
+knitr::include_url("https://minimal-bookdown.netlify.com/", height = "500px")
+```
+https://minimal-bookdown.netlify.com/
+
+]
+
+???
+
+This book was built from a single file, the index.Rmd file
+
+It has a title, and author, and a single (very short) chapter called "Hello World"
 
 ---
 
-# Everyone
+# [The simplest book](https://minimal-bookdown.netlify.com/)
 
-In your new project:
+```yaml
+---
+title: "A Book"
+author: "Frida Gomam"
+site: bookdown::bookdown_site 
+documentclass: book
+output:
+  bookdown::gitbook: default
+  #bookdown::pdf_book: default
+---
+# Hello World
+
+Hi.
+
+Bye.
+```
+
+.footnote[
+https://github.com/yihui/bookdown-minimal
+]
+
+???
+
+The index.Rmd is the only file required to build a book. 
+
+The site parameter is the only required one here, it must be bookdown::bookdown_site.
+
+The first and only chapter is called "Hello World"
+
+But it is unlikely you want to write a book this simple...
+
+You'll probably want a few chapters, and some nice extra goodies.
+
+---
+class: inverse, middle, center
+
+# `r emo::ji("book")`
+
+# .fancy[Let's build a book right now]
+
+
+
+
+---
+class: inverse, middle
+
+# Choose a workflow
+
+--
+
+.pull-left[
+
+# .fancy[[New project, <i class="fab fa-github fa-lg fa-fw"></i> first](http://happygitwithr.com/new-github-first.html)]
+
+
+1. Make a [repo on GitHub](http://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
+
+1. Make a [new RStudio project via git clone](http://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
+
+1. Run:
 
 ```{r eval = FALSE}
 bookdown:::bookdown_skeleton(getwd())
 ```
 
+]
+
 --
 
-In RStudio, click on the .fancy[.blue["Preview Book"]] add-in:
+.pull-right[
 
-```{r echo = FALSE, out.width = '70%'}
-knitr::include_graphics("img/bookdown-preview.png")
-```
+# .fancy[.blue[New project only]]
 
 
+1. Make a new RStudio project via wizard
+
+    *File > New Project > New Directory > <br> Book Project using bookdown*
+
+]
 
 ---
 
-## Project structure
+
+### Project structure
+
 
 ```{r eval = FALSE}
 directory/
@@ -124,24 +225,23 @@ directory/
 ├── _bookdown.yml
 ├── _output.yml
 ├──  book.bib
-├──  index.Rmd
+├──  index.Rmd #<<
 ├──  preamble.tex
 └──  style.css
 ```
 
---
+???
 
-.footnote[
-If in a Git project, you'll also see `.gitignore`- add these files:
-```
-_book
-_bookdown_files
-```
-]
+You should all be looking at this directory structure. The index.Rmd again is the only required file here, with some specific YAML parameters set within it.
+
+We'll walk through these elements as we go, and what they all do.
+
+
 
 ---
 
-## Chapter = `.Rmd`
+### Project structure
+
 
 ```{r eval = FALSE}
 directory/
@@ -162,23 +262,82 @@ directory/
 └──  style.css
 ```
 
----
-name: outline
 
-# Outline
+???
 
-+ [Title, authors, and other metadata](#index-YAML) with `index.Rmd` <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#index-file"><i class="fas fa-book"></i></a>
+each chapter = an .Rmd file
 
-+ [Configuration](#bookdown-YAML) with `_bookdown.yml` <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#bookdown.yml"><i class="fas fa-book"></i></a>
-
-+ [Content]() with chapters <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#rmd-files"><i class="fas fa-book"></i></a>
-
-+ [Output formats](#output-YAML) with `_output.yml` <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#output.yml"><i class="fas fa-book"></i></a>
 
 ---
+class: inverse, middle, center
+
+# `r emo::ji("book")`
+
+# .fancy[Let's render our book right now]
 
 
-## Chapter One = `index.Rmd`
+---
+
+# Choose a workflow
+
+### Option 1: 
+```{r eval = FALSE}
+bookdown::render_book('index.Rmd')
+```
+
+--
+
+### Option 2: 
+
+```{r eval = FALSE}
+bookdown::serve_book()
+```
+
+--
+
+### Option 3: 
+
+.fancy[.blue["Preview Book"]] Add-in (calls `bookdown::serve_book()`)
+
+
+---
+
+# Use Add-in
+
+
+```{r echo = FALSE, out.width = '70%'}
+knitr::include_graphics("img/bookdown-preview.png")
+```
+
+
+---
+name: first-preview
+
+.left-column[
+# Hello `r emo::ji("book")`
+]
+
+.right-column[
+
+
+```{r echo = FALSE}
+knitr::include_url("https://skeleton-bookdown.netlify.com/", height = "500px")
+```
+https://skeleton-bookdown.netlify.com/
+
+
+]
+
+???
+
+Also the index.Rmd technically contains the first "chapter". Notice that in your rendered book, the second chapter is called "Introduction"- but the filename was 01-intro.Rmd. The prerequisites chapter, which is the first level-one heading in the index.Rmd became chapter 1.
+
+I'll show you later how to change this if you want to.
+
+---
+
+### New files created
+
 
 ```{r eval = FALSE}
 directory/
@@ -194,10 +353,72 @@ directory/
 ├── _bookdown.yml
 ├── _output.yml
 ├──  book.bib
-├──  index.Rmd  #<<
+├──  index.Rmd  
 ├──  preamble.tex
-└──  style.css
+├──  style.css
+├──  _book #<<
+├──  _bookdown_files #<<
+└──  packages.bib  #<<
 ```
+
+
+???
+
+_book contains the generated book files- each .Rmd is saved as HTML files
+
+_bookdown_files contains figure and cache files that were generated automatically from knitr
+
+You could delete any of these and re-render your book to re-create them.
+
+
+---
+name: clean
+exclude: true
+
+# Cleaning up
+
+
+```{r eval = FALSE}
+bookdown::clean_book()
+```
+
+```
+These files/dirs can probably be removed: 
+
+_book/
+
+You can set options(bookdown.clean_book = TRUE) to allow 
+this function to always clean up the book directory for you.
+```
+
+
+
+To do this:
+
+```{r eval = FALSE}
+bookdown::clean_book(TRUE)
+```
+
+
+
+.footnote[
+this is the default setting (clean = TRUE) for `render_book`
+]
+
+
+
+---
+name: outline
+
+# Our bookdown plan
+
++ Preface: the [`index.Rmd`](#index-YAML) <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#index-file"><i class="fas fa-book"></i></a>
+
++ [The `_bookdown.yml`](#bookdown-YAML) <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#bookdown.yml"><i class="fas fa-book"></i></a>
+
++ [The chapters]() <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#rmd-files"><i class="fas fa-book"></i></a>
+
++ Postscript: the [`_output.yml`](#output-YAML) <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#output.yml"><i class="fas fa-book"></i></a>
 
 ---
 name: section
@@ -211,22 +432,26 @@ template: section
 
 .right-column[
 
-# <i class="fas fa-feather-alt"></i>.fancy[Prologue: <br>the `index.Rmd` file]
-
+# <i class="fas fa-feather-alt"></i>.fancy[Preface: <br>the `index.Rmd` file]
+<br>
+<br>
+<br>
+### .fancy["made before" (prae + factum)] 
+[-wikipedia](https://en.wikipedia.org/wiki/Preface)
 ]
 
 
 ---
 
-# Inside the `index.Rmd` YAML
+# `index.Rmd` = YAML
 
 
-```{r eval = FALSE}
+```yaml
 --- 
 title: "A Minimal Book Example"
 author: "Yihui Xie"
 date: "`r Sys.Date()`"
-site: bookdown::bookdown_site #<<
+site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
@@ -235,19 +460,21 @@ description: "This is a minimal example..."
 ---
 ```
 
+???
+
 The `site` is **required**
 
 
 ---
 
-# What you see
+# `index.Rmd` = YAML
 
 .pull-left[
-```{r eval = FALSE}
+```yaml
 --- 
-title: "A Minimal Book Example" #<<
-author: "Yihui Xie" #<<
-date: "`r Sys.Date()`" #<<
+title: "A Minimal Book Example" 
+author: "Yihui Xie" 
+date: "`r Sys.Date()`" 
 site: bookdown::bookdown_site 
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -259,14 +486,101 @@ description: "This is a minimal example..."
 ]
 
 .pull-right[
-the books' title, author, date
+
+```{r echo = FALSE}
+knitr::include_graphics("img/index-YAML-annotated.png")
+```
+
 ]
 
 --
 
-.pull-right[
-Most other YAML content is "invisible"
+.pull-left[
+*Most other YAML content is "invisible"*
 ]
+
+.footnote[
+https://github.com/rstudio/bookdown/blob/dda5f5a220058271a43ba8b81c6e6859ae3b9815/inst/templates/default.html
+]
+
+
+---
+
+# Edit your `index.Rmd` YAML
+
+.pull-left[
+Use [this link](https://github.com/rstudio/bookdown/blob/dda5f5a220058271a43ba8b81c6e6859ae3b9815/inst/templates/default.html) and find the title start/end (line 125):
+
+```html
+<!--bookdown:title:start-->
+$if(title)$
+<div id="$idprefix$header">
+<h1 class="title">$title$</h1>
+$if(subtitle)$
+<h3 class="subtitle"><em>$subtitle$</em></h3>
+...
+<!--bookdown:title:end-->
+```
+]
+
+.pull-right[
+
+Edit your YAML to include something here!
+
+
+Hint:
+```html
+$for(author)$
+$if(author.name)$
+<h4 class="author"><em>$author.name$</em></h4>
+$if(author.affiliation)$
+```
+
+in YAML form is:
+
+```yaml
+author: 
+  name: Yihui Xie
+  affiliation: RStudio
+```
+
+
+]
+
+---
+
+# YAML = `<meta />` <i class="fas fa-tags"></i>
+
+via Pandoc, see all possible YAML parameters [here](https://pandoc.org/MANUAL.html#epub-metadata)
+
+```html
+$if(url)$<meta property="og:url" content="$url$" />$endif$
+$if(cover-image)$<meta property="og:image" content="$url$$cover-image$" />$endif$
+$if(description)$<meta property="og:description" content="$description$" />$endif$
+$if(github-repo)$<meta name="github-repo" content="$github-repo$" />$endif$
+```
+
+--
+
+I recommend adding all of these!
+
+```{r eval = FALSE}
+cover-image: images/books.jpg # relative to index
+url: 'https\://alison-bookdown.netlify.com' #
+github-repo: rstudio-education/arm-companion-rsc2019
+```
+
+
+.footnote[
+https://bookdown.org/yihui/bookdown/usage.html
+]
+
+???
+
+This explains why you won't see any changes when you add some YAML parameters to index.Rmd
+
+The changes are fed to Pandoc to generate meta-data for your book website, but cover-image for example does not actually add a cover-image to your repo (try it!)
+
 
 ---
 
@@ -292,42 +606,7 @@ Open `index.Rmd` and edit:
 1. https://bookdown.org/yihui/bookdown/markdown-syntax.html#block-level-elements
 ]
 
----
 
-# From `index.Rmd` of .fancy[[Happy Git with R](http://happygitwithr.com/)]
-
-.left-column[
-
-```{r eval = FALSE}
-# A living book {-}
-```
-
-]
-
-.right-column[
-```{r echo = FALSE}
-knitr::include_url("http://happygitwithr.com/index.html")
-```
-
-]
-
----
-
-# Use Pandoc here
-
-Besides these configurations, you can also specify some Pandoc-related configurations in the YAML metarmta of the first Rmd file of the book, such as the title, author, and date of the book, etc. 
-
-Recommended:
-
-```{r eval = FALSE}
-cover-image: images/books.jpg # relative to index
-url: 'https\://rstd.io/arm-book/' #
-```
-
-
-.footnote[
-https://bookdown.org/yihui/bookdown/usage.html
-]
 
 
 ---
@@ -406,6 +685,20 @@ output_dir: "docs" # maybe?
 https://bookdown.org/yihui/bookdown/configuration.html
 ]
 
+---
+
+# this yaml gets fed to the `render_book` function
+
+```{r eval = FALSE}
+render_book = function(
+  input, output_format = NULL, ..., clean = TRUE, envir = parent.frame(),
+  clean_envir = !interactive(), output_dir = NULL, new_session = NA,
+  preview = FALSE, encoding = 'UTF-8', config_file = '_bookdown.yml'
+)
+```
+
+
+the default config file for the `bookdown::render_book()` function is `_bookdown.yml`
 
 ---
 name: chapters
@@ -423,8 +716,37 @@ template: section
 
 .right-column[
 
-# <i class="fas fa-feather-alt"></i>.fancy[Epilogue: <br>the `_output.yml` file]
+# <i class="fas fa-feather-alt"></i>.fancy[Postscript: <br>the `_output.yml` file]
+<br>
+<br>
+<br>
+### .fancy["written after"]
+[Wikipedia](https://en.wikipedia.org/wiki/Postscript)
+]
 
+---
+
+# GitBook configurations
+
+```{r eval = FALSE}
+gitbook_config = function(config = list()) {
+  default = list(
+    sharing = list(
+      github = FALSE, facebook = TRUE, twitter = TRUE, google = FALSE,
+      linkedin = FALSE, weibo = FALSE, instapaper = FALSE, vk = FALSE,
+      all = c('facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper')
+    ),
+    fontsettings = list(theme = 'white', family = 'sans', size = 2),
+    edit = list(link = NULL, text = NULL),
+    history = list(link = NULL, text = NULL),
+    download = NULL,
+    # toolbar = list(position = 'static'),
+    toc = list(collapse = 'subsection')
+)
+```
+
+.footnote[
+https://github.com/rstudio/bookdown/blob/master/R/gitbook.R
 ]
 
 ---
@@ -438,3 +760,60 @@ template: section
 - ex: add image, where should you save it? (a bit on using an external CDN like google images)
 - how to do referencing
 - how to do citations
+
+---
+notes to self:
+
+to get twitter cards, in index.rmd need url and cover-image (pandoc)
+to get github edit link, do edit in _bookdown.yml
+to github repo link, do _output.yml, sharing github: yes; also need github-repo defined in index.Rmd
+
+---
+
+all the same
+
+in the `index.Rmd`
+```yaml
+---
+output:
+  bookdown::gitbook:
+    css: style.css
+    highlight: kate
+---
+```
+
+in the `_output.yml`
+```yaml
+bookdown::gitbook:
+  css: style.css
+  highlight: kate
+```
+
+---
+
+all the same
+
+
+
+all configurations for your output format go in the `_bookdown.yml`...
+
+```yaml
+edit:
+  link: https://github.com/rstudio-education/arm-companion-rsc2019/edit/master/bookdown/alison-bookdown/%s
+  text: "Edit"
+download: ["pdf", "epub"]
+```
+
+but they can equally go in the `_output.yml`, 
+
+```yaml
+bookdown::gitbook:
+  config:
+    edit:
+      link: https://github.com/rstudio-education/arm-companion-rsc2019/edit/master/bookdown/alison-bookdown/%s
+      text: "Edit"
+    download: ["pdf", "epub"]
+```
+
+
+
