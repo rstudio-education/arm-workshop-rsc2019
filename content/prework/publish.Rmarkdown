@@ -21,7 +21,7 @@ In this workshop, we'll develop static sites, so publishing is a matter of conne
 
 ## RStudio Connect (RSC) {#rsc}
 
-[RSC](https://www.rstudio.com/products/connect/) is a publishing platform from RStudio for secure sharing of websites, applications, reports, and plots. It is a paid product designed for use within the Enterprise. [RSC](https://www.rstudio.com/products/connect/) is a server that you run inside an organization, so is suitable for publishing content that you only want visible within your organization's network as opposed to visible to the entire internet. 
+[RSC](https://www.rstudio.com/products/connect/) is a publishing platform from RStudio for secure sharing of websites, applications, reports, and plots. It is a paid product designed for use within the Enterprise. [RSC](https://www.rstudio.com/products/connect/) is a server that you run inside an organization, so is suitable for publishing content that you only want visible within your organization's network as opposed to visible to the entire internet. Access to [RSC](https://www.rstudio.com/products/connect/) is included in your workshop registration for the days of the workshop. 
 
 To use RSC from an RStudio Server Pro instance (i.e., you chose [cloud setup :cloud:](../cloud)), you don't need to do anything ahead of time.
 
