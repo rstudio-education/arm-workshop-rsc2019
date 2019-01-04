@@ -21,13 +21,22 @@ For this workshop, you'll need to install several R packages. This page will gui
 
 
 ```r
-arm_pkgs <- c("xaringan", "flexdashboard", 
-              "blogdown", "bookdown", "tidyverse")
+arm_from_cran <- c("flexdashboard", "bookdown", "tidyverse", "remotes")
 ```
 
 
 ```r
-install.packages(arm_pkgs, dependencies = TRUE)
+install.packages(arm_from_cran, dependencies = TRUE)
+```
+
+
+```r
+arm_from_gh <- c('yihui/xaringan', 'rstudio/blogdown')
+```
+
+
+```r
+remotes::install_github(arm_from_gh, dependencies = TRUE)
 ```
 
 
@@ -42,11 +51,11 @@ Click <a href="../arm-installs.R" download>here</a> to download an R script for 
 
 ## xaringan {#xaringan}
 
-Install the [**xaringan** package](https://github.com/yihui/xaringan) from CRAN as follows:
+Install the [**xaringan** package](https://github.com/yihui/xaringan) from GitHub as follows:
 
 
 ```r
-install.packages("xaringan", dependencies = TRUE)
+remotes::install_github('yihui/xaringan', dependencies = TRUE)
 ```
 
 Can you load the package?
@@ -108,11 +117,11 @@ is_installed("flexdashboard")
 
 ## blogdown {#blogdown}
 
-Install the [**blogdown** package](https://github.com/rstudio/blogdown) from CRAN as follows:
+Install the [**blogdown** package](https://github.com/rstudio/blogdown) from GitHub as follows:
 
 
 ```r
-install.packages("blogdown", dependencies = TRUE)
+remotes::install_github('rstudio/blogdown', dependencies = TRUE)
 ```
 
 Can you load the package?
@@ -213,12 +222,14 @@ is_installed("tidyverse")
 
 
 ```r
-is_installed(arm_pkgs)
+is_installed(c(arm_from_cran, 'xaringan', 'blogdown'))
 ```
 
 ```
-#      xaringan flexdashboard      blogdown      bookdown     tidyverse 
-#          TRUE          TRUE          TRUE          TRUE          TRUE
+# flexdashboard      bookdown     tidyverse       remotes      xaringan 
+#          TRUE          TRUE          TRUE          TRUE          TRUE 
+#      blogdown 
+#          TRUE
 ```
 
 

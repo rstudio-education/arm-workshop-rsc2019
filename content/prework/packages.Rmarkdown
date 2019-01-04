@@ -21,13 +21,20 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = "#", eval = FA
 
 For this workshop, you'll need to install several R packages. This page will guide you through installing the packages we will use. If you are comfortable installing packages in R, then you could run this code from your R console to install all of the necessary packages:
 
-```{r all_pkgs, purl = TRUE, eval = TRUE}
-arm_pkgs <- c("xaringan", "flexdashboard", 
-              "blogdown", "bookdown", "tidyverse")
+```{r cran_pkgs, purl = TRUE, eval = TRUE}
+arm_from_cran <- c("flexdashboard", "bookdown", "tidyverse", "remotes")
 ```
 
-```{r install_all, purl = TRUE}
-install.packages(arm_pkgs, dependencies = TRUE)
+```{r install_cran, purl = TRUE}
+install.packages(arm_from_cran, dependencies = TRUE)
+```
+
+```{r gh_pkgs, purl = TRUE, eval = TRUE}
+arm_from_gh <- c('yihui/xaringan', 'rstudio/blogdown')
+```
+
+```{r install_gh, purl = TRUE}
+remotes::install_github(arm_from_gh, dependencies = TRUE)
 ```
 
 
@@ -46,10 +53,10 @@ Click <a href="../arm-installs.R" download>here</a> to download an R script for 
 
 ## xaringan {#xaringan}
 
-Install the [**xaringan** package](https://github.com/yihui/xaringan) from CRAN as follows:
+Install the [**xaringan** package](https://github.com/yihui/xaringan) from GitHub as follows:
 
 ```{r}
-install.packages("xaringan", dependencies = TRUE)
+remotes::install_github('yihui/xaringan', dependencies = TRUE)
 ```
 
 Can you load the package?
@@ -100,10 +107,10 @@ is_installed("flexdashboard")
 
 ## blogdown {#blogdown}
 
-Install the [**blogdown** package](https://github.com/rstudio/blogdown) from CRAN as follows:
+Install the [**blogdown** package](https://github.com/rstudio/blogdown) from GitHub as follows:
 
 ```{r}
-install.packages("blogdown", dependencies = TRUE)
+remotes::install_github('rstudio/blogdown', dependencies = TRUE)
 ```
 
 Can you load the package?
@@ -178,7 +185,7 @@ is_installed("tidyverse")
 ## Check all package installs {#all}
 
 ```{r check_all_installs, eval = TRUE, purl = TRUE}
-is_installed(arm_pkgs)
+is_installed(c(arm_from_cran, 'xaringan', 'blogdown'))
 ```
 
 
