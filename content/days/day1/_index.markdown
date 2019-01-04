@@ -16,8 +16,8 @@ type: docs
 Basic schedule:
 
 - Breakfast will be served from 8am - 9am. 
-- Both workshop days start at 9am and end at 5pm.
-- Lunch will be served from 12:30pm - 1:15pm.
+- The workshop starts at 9am and ends at 5:30pm.
+- Lunch will be served from 12:30pm - 2:00pm.
 - We also offer mid-morning and mid-afternoon breaks.
 
 Here is a tentative timetable for Day 1:
