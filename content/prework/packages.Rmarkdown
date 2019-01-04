@@ -22,7 +22,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = "#", eval = FA
 For this workshop, you'll need to install several R packages. This page will guide you through installing the packages we will use. If you are comfortable installing packages in R, then you could run this code from your R console to install all of the necessary packages:
 
 ```{r cran_pkgs, purl = TRUE, eval = TRUE}
-arm_from_cran <- c("flexdashboard", "bookdown", "tidyverse", "remotes")
+arm_from_cran <- c("flexdashboard", "bookdown", "tidyverse", "remotes", "babynames")
 ```
 
 ```{r install_cran, purl = TRUE}
@@ -162,24 +162,25 @@ Does this code return `TRUE`?
 is_installed("bookdown")
 ```
 
-## tidyverse {#tidyverse}
+## tidyverse & data packages {#tidyverse}
 
-For many code examples provided in the workshop activities, you'll need to install the [**tidyverse** meta-package](https://www.tidyverse.org/packages/) from CRAN as follows:
+For many code examples provided in the workshop activities, you'll need to install the [**tidyverse** meta-package](https://www.tidyverse.org/packages/) and some data packages from CRAN as follows:
 
 ```{r}
-install.packages("tidyverse", dependencies = TRUE)
+install.packages(c("tidyverse", "babynames"), dependencies = TRUE)
 ```
 
 Can you load the package?
 ```{r}
 # should just work if installed
 library(tidyverse)
+library(babynames)
 ```
 
 
 Does this code return `TRUE`?
 ```{r eval = TRUE}
-is_installed("tidyverse")
+is_installed(c("tidyverse", "babynames"))
 ```
 
 ## Check all package installs {#all}

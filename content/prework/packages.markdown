@@ -21,7 +21,7 @@ For this workshop, you'll need to install several R packages. This page will gui
 
 
 ```r
-arm_from_cran <- c("flexdashboard", "bookdown", "tidyverse", "remotes")
+arm_from_cran <- c("flexdashboard", "bookdown", "tidyverse", "remotes", "babynames")
 ```
 
 
@@ -190,13 +190,13 @@ is_installed("bookdown")
 #     TRUE
 ```
 
-## tidyverse {#tidyverse}
+## tidyverse & data packages {#tidyverse}
 
-For many code examples provided in the workshop activities, you'll need to install the [**tidyverse** meta-package](https://www.tidyverse.org/packages/) from CRAN as follows:
+For many code examples provided in the workshop activities, you'll need to install the [**tidyverse** meta-package](https://www.tidyverse.org/packages/) and some data packages from CRAN as follows:
 
 
 ```r
-install.packages("tidyverse", dependencies = TRUE)
+install.packages(c("tidyverse", "babynames"), dependencies = TRUE)
 ```
 
 Can you load the package?
@@ -204,18 +204,19 @@ Can you load the package?
 ```r
 # should just work if installed
 library(tidyverse)
+library(babynames)
 ```
 
 
 Does this code return `TRUE`?
 
 ```r
-is_installed("tidyverse")
+is_installed(c("tidyverse", "babynames"))
 ```
 
 ```
-# tidyverse 
-#      TRUE
+# tidyverse babynames 
+#      TRUE      TRUE
 ```
 
 ## Check all package installs {#all}
@@ -226,10 +227,10 @@ is_installed(c(arm_from_cran, 'xaringan', 'blogdown'))
 ```
 
 ```
-# flexdashboard      bookdown     tidyverse       remotes      xaringan 
+# flexdashboard      bookdown     tidyverse       remotes     babynames 
 #          TRUE          TRUE          TRUE          TRUE          TRUE 
-#      blogdown 
-#          TRUE
+#      xaringan      blogdown 
+#          TRUE          TRUE
 ```
 
 
