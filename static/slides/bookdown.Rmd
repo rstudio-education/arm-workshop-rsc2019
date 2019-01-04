@@ -182,12 +182,12 @@ class: inverse, middle
 
 .pull-left[
 
-# .fancy[[New project, <i class="fab fa-github fa-lg fa-fw"></i> first](http://happygitwithr.com/new-github-first.html)]
+# .fancy[[New project, <i class="fab fa-github fa-lg fa-fw"></i> first](https://happygitwithr.com/new-github-first.html)]
 
 
-1. Make a [repo on GitHub](http://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
+1. Make a [repo on GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
 
-1. Make a [new RStudio project via git clone](http://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
+1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
 
 1. Run:
 
@@ -614,7 +614,7 @@ class: inverse, middle, center
 
 # `r emo::ji("clock")` 3 min
 
-## .fancy[Edit your `index.Rmd` YAML meta-data tags, <br>and re-render your book]
+## .fancy[Add new YAML meta-data tags to your `index.Rmd`, <br>and re-render your book]
 
 ---
 
