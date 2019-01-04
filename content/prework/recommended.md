@@ -1,19 +1,15 @@
-+++
-title = "Recommended"
-
-date = 2018-12-10T00:00:00
-# lastmod = 2018-09-09T00:00:00
-
-draft = false  # Is this a draft? true/false
-toc = true  # Show table of contents? true/false
-type = "docs"  # Do not modify.
-
-# Add menu entry to sidebar.
-linktitle = "Recommended"
-[menu.prework]
-  parent = "Going further"
-  weight = 9
-+++
+---
+date: "2018-12-10T00:00:00-08:00"
+draft: false
+linktitle: Recommended
+menu:
+  prework:
+    parent: Going further
+    weight: 9
+title: Recommended
+toc: true
+type: docs
+---
 
 You’ll get the most from this workshop if you enjoy learning how R Markdown works under the hood (which will involve reading some source code), and are seriously interested in hacking (playing) with:
 

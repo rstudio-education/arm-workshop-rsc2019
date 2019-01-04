@@ -1,15 +1,15 @@
 ---
-title: Welcome
-author: ''
-date: '2018-12-21'
-slug: welcome
+author: ""
 categories: []
-tags: []
+date: "2019-01-04"
 menu:
   prework:
     name: Welcome
     weight: 1
-toc: yes
+slug: welcome
+tags: []
+title: Welcome
+toc: true
 type: docs
 ---
 

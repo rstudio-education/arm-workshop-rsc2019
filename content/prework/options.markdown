@@ -1,16 +1,16 @@
 ---
-title: Choose a setup
-author: ''
-date: '2018-12-21'
-slug: options
+author: ""
 categories: []
-tags: []
-linktitle: "Choose a setup"
+date: "2018-12-21"
+linktitle: Choose a setup
 menu:
   prework:
-    parent: "Welcome"
+    parent: Welcome
     weight: 2
-toc: yes
+slug: options
+tags: []
+title: Choose a setup
+toc: true
 type: docs
 ---
 

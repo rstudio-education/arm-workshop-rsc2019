@@ -1,17 +1,10 @@
-+++
-# Contact widget.
-widget = "contact"
-active = true
-date = 2016-04-20T00:00:00
-
-title = "Contact"
-subtitle = ""
-
-# Order that this section will appear in.
-weight = 70
-
-# Automatically link email and phone?
-autolink = true
-
-+++
+---
+active: true
+autolink: true
+date: "2017-10-15T00:00:00-07:00"
+subtitle: ""
+title: Contact
+weight: 70
+widget: contact
+---
 

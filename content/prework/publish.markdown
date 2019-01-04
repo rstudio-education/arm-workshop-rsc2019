@@ -1,16 +1,16 @@
 ---
-title: Publishing
-author: ''
-date: '2018-12-21'
-slug: publish
+author: ""
 categories: []
-tags: []
-linktitle: "Publishing"
+date: "2018-12-21"
+linktitle: Publishing
 menu:
   prework:
-    name: "Publishing"
+    name: Publishing
     weight: 7
-toc: yes
+slug: publish
+tags: []
+title: Publishing
+toc: true
 type: docs
 ---
 

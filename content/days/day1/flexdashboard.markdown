@@ -1,8 +1,7 @@
 ---
 title: flexdashboard
 
-date: 2018-09-09T00:00:00.000Z
-lastmod: 2018-09-09T00:00:00.000Z
+date: "2019-01-04"
 
 draft: false
 toc: true

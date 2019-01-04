@@ -1,16 +1,16 @@
 ---
-title: Install Git & GitHub
-author: ''
-date: '2018-12-21'
-slug: github
+author: ""
 categories: []
-tags: []
-linktitle: "Install Git & GitHub"
+date: "2018-12-21"
+linktitle: Install Git & GitHub
 menu:
   prework:
-    parent: "Local setup"
+    parent: Local setup
     weight: 4
-toc: yes
+slug: github
+tags: []
+title: Install Git & GitHub
+toc: true
 type: docs
 ---
 

@@ -1,16 +1,16 @@
 ---
-title: Install R packages
-author: ''
-date: '2018-12-21'
-slug: packages
+author: ""
 categories: []
-tags: []
-linktitle: "Install R packages"
+date: "2018-12-21"
+linktitle: Install R packages
 menu:
   prework:
-    parent: "Local setup"
+    parent: Local setup
     weight: 3
-toc: yes
+slug: packages
+tags: []
+title: Install R packages
+toc: true
 type: docs
 ---
 

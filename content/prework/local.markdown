@@ -1,16 +1,16 @@
 ---
-title: Local setup
-author: ''
-date: '2018-12-21'
-slug: local
+author: ""
 categories: []
-tags: []
-linktitle: "Local setup"
+date: "2018-12-21"
+linktitle: Local setup
 menu:
   prework:
-    name: "Local setup"
+    name: Local setup
     weight: 3
-toc: yes
+slug: local
+tags: []
+title: Local setup
+toc: true
 type: docs
 ---
 

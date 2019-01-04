@@ -1,15 +1,15 @@
 ---
-title: Day 2 schedule
-author: ''
-date: '2018-12-21'
-slug: day2
+author: ""
 categories: []
-tags: []
+date: "2018-12-21"
 menu:
   day2:
-    name: "Day 2 schedule"
+    name: Day 2 schedule
     weight: 1
-toc: yes
+slug: day2
+tags: []
+title: Day 2 schedule
+toc: true
 type: docs
 ---
 

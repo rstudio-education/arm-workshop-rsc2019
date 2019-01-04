@@ -1,7 +1,7 @@
 ---
 title: Day 1 schedule
 author: ''
-date: '2018-12-21'
+date: "2019-01-04"
 slug: day1
 categories: []
 tags: []

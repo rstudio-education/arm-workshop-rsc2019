@@ -1,19 +1,15 @@
-+++
-title = "Resources"
-
-date = 2018-12-10T00:00:00
-# lastmod = 2018-09-09T00:00:00
-
-draft = false  # Is this a draft? true/false
-toc = true  # Show table of contents? true/false
-type = "docs"  # Do not modify.
-
-# Add menu entry to sidebar.
-linktitle = "Resources"
-[menu.prework]
-  parent = "Going further"
-  weight = 8
-+++
+---
+date: "2018-12-10T00:00:00-08:00"
+draft: false
+linktitle: Resources
+menu:
+  prework:
+    parent: Going further
+    weight: 8
+title: Resources
+toc: true
+type: docs
+---
 
 This two-day hands-on workshop is primarily based on the book [*R Markdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/). However, there are several other additional free and open source resources available for some of the individual packages we will cover.
 

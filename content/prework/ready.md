@@ -1,19 +1,15 @@
-+++
-title = "Is this workshop for you?"
-
-date = 2018-12-10T00:00:00
-# lastmod = 2018-09-09T00:00:00
-
-draft = false  # Is this a draft? true/false
-toc = true  # Show table of contents? true/false
-type = "docs"  # Do not modify.
-
-# Add menu entry to sidebar.
-linktitle = "Is this workshop for you?"
-[menu.prework]
-  parent = "Welcome"
-  weight = 1
-+++
+---
+date: "2018-12-10T00:00:00-08:00"
+draft: false
+linktitle: Is this workshop for you?
+menu:
+  prework:
+    parent: Welcome
+    weight: 1
+title: Is this workshop for you?
+toc: true
+type: docs
+---
 
 
 You should take this workshop if you have experience programming in R and want to learn how to take advantage of the amazing breadth and depth of R Markdown. If you are unsure if this workshop is right for you, take a look at the following questions and see how comfortable you feel answering "yes" to them:
