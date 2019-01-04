@@ -63,9 +63,7 @@ background-size: cover
 
 + Formatting features like cross-referencing, numbering of figures, equations, and tables.
 
-???
 
-We'll focus on the `gitbook` output format today, which renders your book to an HTML website.
 
 ---
 
@@ -81,7 +79,11 @@ https://bookdown.org/yihui/bookdown/
 
 ???
 
-Show TOC here in window
+We'll focus on the `gitbook` output format today, which renders your book to an HTML website.
+
+Here is an example of what one looks like- from the bookdown book!
+
+-&gt; Show TOC here in window
 
 ---
 
@@ -102,6 +104,9 @@ https://minimal-bookdown.netlify.com/
 This book was built from a single file, the index.Rmd file
 
 It has a title, and author, and a single (very short) chapter called "Hello World"
+
+You can also see it has one and only one output format: gitbook
+
 
 ---
 
@@ -184,7 +189,7 @@ bookdown:::bookdown_skeleton(getwd())
 
 1. Make a new RStudio project via wizard
 
-    *File &gt; New Project &gt; New Directory &gt; &lt;br&gt; Book Project using bookdown*
+    *File &gt; New Project &gt; New Directory &gt; &lt;br&gt; 📖 Book Project using bookdown*
 
 ]
 
@@ -356,6 +361,22 @@ You could delete any of these and re-render your book to re-create them.
 
 
 ---
+
+# `packages.bib`
+
+This is a code chunk in `index.Rmd`
+
+````
+```{r include = FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+````
+
+
+---
 name: clean
 exclude: true
 
@@ -477,20 +498,9 @@ description: "This is a minimal example..."
 
 ]
 
---
-
-.pull-left[
-*Most other YAML content is "invisible"*
-]
-
-.footnote[
-https://github.com/rstudio/bookdown/blob/dda5f5a220058271a43ba8b81c6e6859ae3b9815/inst/templates/default.html
-]
-
-
 ---
 
-# Edit your `index.Rmd` YAML
+# Additional `index.Rmd` YAML parameters
 
 .pull-left[
 Use [this link](https://github.com/rstudio/bookdown/blob/dda5f5a220058271a43ba8b81c6e6859ae3b9815/inst/templates/default.html) and find the title start/end (line 125):
@@ -502,6 +512,15 @@ $if(title)$
 &lt;h1 class="title"&gt;$title$&lt;/h1&gt;
 $if(subtitle)$
 &lt;h3 class="subtitle"&gt;&lt;em&gt;$subtitle$&lt;/em&gt;&lt;/h3&gt;
+$endif$
+$for(author)$
+$if(author.name)$
+&lt;h4 class="author"&gt;&lt;em&gt;$author.name$&lt;/em&gt;&lt;/h4&gt;
+$if(author.affiliation)$
+&lt;address class="author_afil"&gt;
+$author.affiliation$&lt;br&gt;$endif$
+$if(author.email)$
+&lt;a class="author_email" href="mailto:#"&gt;$author.email$&lt;/a&gt;
 ...
 &lt;!--bookdown:title:end--&gt;
 ```
@@ -509,27 +528,32 @@ $if(subtitle)$
 
 .pull-right[
 
-Edit your YAML to include something here!
-
-
-Hint:
-```html
-$for(author)$
-$if(author.name)$
-&lt;h4 class="author"&gt;&lt;em&gt;$author.name$&lt;/em&gt;&lt;/h4&gt;
-$if(author.affiliation)$
-```
-
-in YAML form is:
+All of these are YAML parameters, for example:
 
 ```yaml
+title: "A Minimal Book Example"
+subtitle: "ARM workshop"
 author: 
   name: Yihui Xie
   affiliation: RStudio
+  email: xie@yihui.name
 ```
 
 
 ]
+
+---
+name: yourturn1
+class: inverse, middle, center
+
+# Your turn 
+
+# 🕢 3 min
+
+## .fancy[Edit your `index.Rmd` YAML, &lt;br&gt;and re-render your book]
+
+
+
 
 ---
 
@@ -566,6 +590,16 @@ This explains why you won't see any changes when you add some YAML parameters to
 
 The changes are fed to Pandoc to generate meta-data for your book website, but cover-image for example does not actually add a cover-image to your repo (try it!)
 
+
+---
+name: yourturn2
+class: inverse, middle, center
+
+# Your turn 
+
+# 🕠 3 min
+
+## .fancy[Edit your `index.Rmd` YAML meta-data tags, &lt;br&gt;and re-render your book]
 
 ---
 
