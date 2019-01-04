@@ -18,7 +18,7 @@ In this workshop, we will use R and [RStudio](https://www.rstudio.com/products/r
 
 ## Install R
 
-* The [latest version of R](https://cran.rstudio.com/) (3.5.1 "Feather Spray") is recommended. You can check your version from the R Console:
+* A [recent version of R](https://cran.rstudio.com/) (>= 3.5.1 "Feather Spray") is recommended. You can check your version from the R Console:
 
 
 ```r
