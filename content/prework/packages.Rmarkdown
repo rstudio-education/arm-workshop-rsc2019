@@ -22,7 +22,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = "#", eval = FA
 For this workshop, you'll need to install several R packages. This page will guide you through installing the packages we will use. If you are comfortable installing packages in R, then you could run this code from your R console to install all of the necessary packages:
 
 ```{r cran_pkgs, purl = TRUE, eval = TRUE}
-arm_from_cran <- c("flexdashboard", "bookdown", "tidyverse", "remotes", "babynames")
+arm_from_cran <- c("flexdashboard", "learnr", "bookdown", "tidyverse", "remotes", "babynames")
 ```
 
 ```{r install_cran, purl = TRUE}
@@ -103,6 +103,26 @@ library(flexdashboard)
 Does this code return `TRUE`?
 ```{r eval = TRUE}
 is_installed("flexdashboard")
+```
+
+## learnr {#learnr}
+
+Install the [**learnr** package](https://github.com/rstudio/learnr) from CRAN as follows:
+
+```{r}
+install.packages("learnr", dependencies = TRUE)
+```
+
+Can you load the package?
+```{r}
+# should just work if installed
+library(learnr)
+```
+
+
+Does this code return `TRUE`?
+```{r eval = TRUE}
+is_installed("learnr")
 ```
 
 ## blogdown {#blogdown}

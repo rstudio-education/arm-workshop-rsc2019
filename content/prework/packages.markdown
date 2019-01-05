@@ -1,16 +1,16 @@
 ---
-author: ""
+title: Install R packages
+author: ''
+date: "2019-01-04"
+slug: packages
 categories: []
-date: "2018-12-21"
-linktitle: Install R packages
+tags: []
+linktitle: "Install R packages"
 menu:
   prework:
-    parent: Local setup
+    parent: "Local setup"
     weight: 3
-slug: packages
-tags: []
-title: Install R packages
-toc: true
+toc: yes
 type: docs
 ---
 
@@ -21,7 +21,7 @@ For this workshop, you'll need to install several R packages. This page will gui
 
 
 ```r
-arm_from_cran <- c("flexdashboard", "bookdown", "tidyverse", "remotes", "babynames")
+arm_from_cran <- c("flexdashboard", "learnr", "bookdown", "tidyverse", "remotes", "babynames")
 ```
 
 
@@ -40,7 +40,7 @@ remotes::install_github(arm_from_gh, dependencies = TRUE)
 ```
 
 
-Also please review section <a href="#update-hugo">0.4.2</a> to make sure you have Hugo version 0.52, which you'll need for **blogdown**.
+Also please review section <a href="#update-hugo">0.5.2</a> to make sure you have Hugo version 0.52, which you'll need for **blogdown**.
 
 ## Download script {#script}
 
@@ -65,7 +65,7 @@ Can you load the package?
 library(xaringan)
 ```
 
-You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">0.7</a> for how to check for all packages):
+You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">0.8</a> for how to check for all packages):
 
 
 
@@ -113,6 +113,34 @@ is_installed("flexdashboard")
 ```
 # flexdashboard 
 #          TRUE
+```
+
+## learnr {#learnr}
+
+Install the [**learnr** package](https://github.com/rstudio/learnr) from CRAN as follows:
+
+
+```r
+install.packages("learnr", dependencies = TRUE)
+```
+
+Can you load the package?
+
+```r
+# should just work if installed
+library(learnr)
+```
+
+
+Does this code return `TRUE`?
+
+```r
+is_installed("learnr")
+```
+
+```
+# learnr 
+#   TRUE
 ```
 
 ## blogdown {#blogdown}
@@ -227,10 +255,10 @@ is_installed(c(arm_from_cran, 'xaringan', 'blogdown'))
 ```
 
 ```
-# flexdashboard      bookdown     tidyverse       remotes     babynames 
+# flexdashboard        learnr      bookdown     tidyverse       remotes 
 #          TRUE          TRUE          TRUE          TRUE          TRUE 
-#      xaringan      blogdown 
-#          TRUE          TRUE
+#     babynames      xaringan      blogdown 
+#          TRUE          TRUE          TRUE
 ```
 
 
