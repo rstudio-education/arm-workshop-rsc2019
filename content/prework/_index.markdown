@@ -1,15 +1,15 @@
 ---
-author: ""
+title: Welcome
+author: ''
+date: "2019-01-05"
+slug: welcome
 categories: []
-date: "2019-01-04"
+tags: []
 menu:
   prework:
     name: Welcome
     weight: 1
-slug: welcome
-tags: []
-title: Welcome
-toc: true
+toc: yes
 type: docs
 ---
 
@@ -20,7 +20,7 @@ This site is the official home for all information related to the 2019 Advanced 
 Please use the menus to the left to guide you through all the workshop set-up instructions, and notice the menu on the right with links for:
  
 <ul class="fa-ul">
-    <li><i class="fa-li fas fa-question-circle"></i><a href="https://community.rstudio.com/t/rstudio-conf-workshop-information/19670" target="_blank">Get trouble-shooting help</a></li>
+    <li><i class="fa-li fas fa-question-circle"></i><a href="https://community.rstudio.com/t/information-for-the-advanced-r-markdown-workshop-2019/20859" target="_blank">Get trouble-shooting help</a></li>
     <li><i class="fa-li fas fa-comments"></i><a href="https://gitter.im/arm-austin/Lobby" target="_blank">Ask questions</a></li>
     <li><i class="fa-li fas fa-bug"></i><a href="https://github.com/rstudio-education/arm-workshop-rsc2019/issues" target="_blank">Report issues</a></li>
     <li><i class="fa-li fas fa-edit"></i><a href="https://github.com/rstudio-education/arm-workshop-rsc2019/edit/master/content/prework/_index.md" target="_blank">Suggest an edit</a></li>
