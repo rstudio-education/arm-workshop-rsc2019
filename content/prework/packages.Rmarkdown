@@ -22,7 +22,8 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = "#", eval = FA
 For this workshop, you'll need to install several R packages. This page will guide you through installing the packages we will use. If you are comfortable installing packages in R, then you could run this code from your R console to install all of the necessary packages:
 
 ```{r cran_pkgs, purl = TRUE, eval = TRUE}
-arm_from_cran <- c("flexdashboard", "learnr", "bookdown", "tidyverse", "remotes", "babynames")
+arm_from_cran <- c("flexdashboard", "learnr", "bookdown", 
+                   "tidyverse", "remotes", "babynames")
 ```
 
 ```{r install_cran, purl = TRUE}

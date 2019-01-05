@@ -21,7 +21,8 @@ For this workshop, you'll need to install several R packages. This page will gui
 
 
 ```r
-arm_from_cran <- c("flexdashboard", "learnr", "bookdown", "tidyverse", "remotes", "babynames")
+arm_from_cran <- c("flexdashboard", "learnr", "bookdown", 
+                   "tidyverse", "remotes", "babynames")
 ```
 
 
