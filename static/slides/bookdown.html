@@ -32,7 +32,7 @@ background-size: cover
 
 ### .fancy[Making Books in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2019-01-04]
+.large[Alison Hill | rstudio::conf | 2019-01-06]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
@@ -72,7 +72,7 @@ background-size: cover
 ]
 
 .right-column[
-&lt;iframe src="https://bookdown.org/yihui/bookdown/" width="100%" height="500px"&gt;&lt;/iframe&gt;
+&lt;iframe src="https://bookdown.org/yihui/bookdown/" width="504" height="500px"&gt;&lt;/iframe&gt;
 https://bookdown.org/yihui/bookdown/
 ]
 
@@ -94,7 +94,7 @@ Here is an example of what one looks like- from the bookdown book!
 ]
 
 .right-column[
-&lt;iframe src="https://minimal-bookdown.netlify.com/" width="100%" height="500px"&gt;&lt;/iframe&gt;
+&lt;iframe src="https://minimal-bookdown.netlify.com/" width="504" height="500px"&gt;&lt;/iframe&gt;
 https://minimal-bookdown.netlify.com/
 
 ]
@@ -196,7 +196,7 @@ bookdown:::bookdown_skeleton(getwd())
 ---
 
 
-### Project structure
+# Project structure
 
 
 
@@ -229,7 +229,7 @@ We'll walk through these elements as we go, and what they all do.
 
 ---
 
-### Project structure
+# Project structure
 
 
 
@@ -268,9 +268,7 @@ class: inverse, middle, center
 
 ---
 
-# Choose a workflow
-
-### Option 1: 
+## .fancy[Option 1:]
 
 ```r
 bookdown::render_book('index.Rmd')
@@ -278,7 +276,7 @@ bookdown::render_book('index.Rmd')
 
 --
 
-### Option 2: 
+## .fancy[Option 2:] 
 
 
 ```r
@@ -287,12 +285,13 @@ bookdown::serve_book()
 
 --
 
-### Option 3: 
+## .fancy[Option 3:]
 
-.fancy[.blue["Preview Book"]] Add-in (calls `bookdown::serve_book()`)
+.blue["Preview Book"] Add-in (calls `bookdown::serve_book()`)
 
 
 ---
+class: center, middle, inverse
 
 # Use Add-in
 
@@ -310,7 +309,7 @@ name: first-preview
 .right-column[
 
 
-&lt;iframe src="https://skeleton-bookdown.netlify.com/" width="100%" height="500px"&gt;&lt;/iframe&gt;
+&lt;iframe src="https://skeleton-bookdown.netlify.com/" width="504" height="500px"&gt;&lt;/iframe&gt;
 https://skeleton-bookdown.netlify.com/
 
 
@@ -318,13 +317,13 @@ https://skeleton-bookdown.netlify.com/
 
 ???
 
-Also the index.Rmd technically contains the first "chapter". Notice that in your rendered book, the second chapter is called "Introduction"- but the filename was 01-intro.Rmd. The prerequisites chapter, which is the first level-one heading in the index.Rmd became chapter 1.
+Also the index.Rmd technically contains the first "chapter". Notice that in your rendered book, the second chapter is called "Introduction"- but the filename was 01-intro.Rmd. Prerequisites, which is the first level-one heading in the index.Rmd became chapter 1.
 
 I'll show you later how to change this if you want to.
 
 ---
 
-### New files created
+# New files created
 
 
 
@@ -413,11 +412,18 @@ this is the default setting (clean = TRUE) for `render_book`
 ]
 
 
+---
+name: section
+class: middle, inverse
+background-image: url(img/kelly-sikkema-450720-unsplash.jpg)
+background-size: cover
 
 ---
 name: outline
+template: section
 
-# Our bookdown plan
+.right-column[
+# &lt;i class="fas fa-feather-alt"&gt;&lt;/i&gt;.fancy[Outline]
 
 + Preface: the [`index.Rmd`](#index-YAML) &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#index-file"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
 
@@ -426,12 +432,8 @@ name: outline
 + [The chapters]() &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#rmd-files"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
 
 + Postscript: the [`_output.yml`](#output-YAML) &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#output.yml"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
+]
 
----
-name: section
-class: middle, inverse
-background-image: url(img/kelly-sikkema-450720-unsplash.jpg)
-background-size: cover
 
 ---
 name: index-YAML
@@ -457,7 +459,7 @@ template: section
 --- 
 title: "A Minimal Book Example"
 author: "Yihui Xie"
-date: "2019-01-04"
+date: "2019-01-06"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -481,7 +483,7 @@ The `site` is **required**
 --- 
 title: "A Minimal Book Example" 
 author: "Yihui Xie" 
-date: "2019-01-04" 
+date: "2019-01-06" 
 site: bookdown::bookdown_site 
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -494,16 +496,15 @@ description: "This is a minimal example..."
 
 .pull-right[
 
-&lt;img src="img/index-YAML-annotated.png" width="2235" /&gt;
+&lt;img src="img/index-YAML-annotated.png" width="745" /&gt;
 
 ]
 
 ---
 
-# Additional `index.Rmd` YAML parameters
+# The `default.html` template
 
 .pull-left[
-Use [this link](https://github.com/rstudio/bookdown/blob/dda5f5a220058271a43ba8b81c6e6859ae3b9815/inst/templates/default.html) and find the title start/end (line 125):
 
 ```html
 &lt;!--bookdown:title:start--&gt;
@@ -528,7 +529,7 @@ $if(author.email)$
 
 .pull-right[
 
-All of these are YAML parameters, for example:
+
 
 ```yaml
 title: "A Minimal Book Example"
@@ -542,42 +543,85 @@ author:
 
 ]
 
----
-name: yourturn1
-class: inverse, middle, center
-
-# Your turn 
-
-# 🕐 3 min
-
-## .fancy[Edit your `index.Rmd` YAML, &lt;br&gt;and re-render your book]
-
-
-
+.footnote[
+[default.html](https://github.com/rstudio/bookdown/blob/dda5f5a220058271a43ba8b81c6e6859ae3b9815/inst/templates/default.html)
+]
 
 ---
+name: yourturn
+template: section
 
-# YAML = `&lt;meta /&gt;` &lt;i class="fas fa-tags"&gt;&lt;/i&gt;
+.right-column[
+# &lt;i class="fas fa-edit"&gt;&lt;/i&gt; .fancy[Your turn]
+]
 
-via Pandoc, see all possible YAML parameters [here](https://pandoc.org/MANUAL.html#epub-metadata)
+---
+name: yourturn-1
+template: yourturn
+
+.right-column[
+# .fancy[03:00 minutes]
+&lt;br&gt;
+### Edit your `index.Rmd` YAML to add new title section elements, and re-render your book.
+
+
+.blue[.fancy[Hint:] Use [this link](https://github.com/rstudio/bookdown/blob/dda5f5a220058271a43ba8b81c6e6859ae3b9815/inst/templates/default.html) and find the `bookdown` title start/end (line 125).]
+
+]
+
+
+???
+
+At end of time:
+
+So those are the YAML parameters that change things you see
+
+But most YAML parameters change things you never see
+
+---
+
+# Meta &lt;i class="fas fa-tags"&gt;&lt;/i&gt;
+
+
 
 ```html
+&lt;head&gt;
+
+&lt;meta charset="utf-8"&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;meta name="generator" content="pandoc" /&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;meta property="og:title" content="$pagetitle$" /&gt;
+&lt;meta property="og:type" content="book" /&gt;
 $if(url)$&lt;meta property="og:url" content="$url$" /&gt;$endif$
 $if(cover-image)$&lt;meta property="og:image" content="$url$$cover-image$" /&gt;$endif$
 $if(description)$&lt;meta property="og:description" content="$description$" /&gt;$endif$
 $if(github-repo)$&lt;meta name="github-repo" content="$github-repo$" /&gt;$endif$
 ```
 
---
+.footnote[
+[default.html](https://github.com/rstudio/bookdown/blob/dda5f5a220058271a43ba8b81c6e6859ae3b9815/inst/templates/default.html)
+]
 
-I recommend adding all of these!
+???
+
+This is the default.html template for our book's metadata. Some are static, like the character set. But others, like the last 4 here, are actually pulling values from our index YAML. 
+
+So you can see that if there is a url specified, it is saved as a meta tag; same with cover-image. In fact, the cover-image YAML parameter, combined with url, is needed for any kind of social sharing of your site.
 
 
-```r
+---
+
+Enable twitter cards
+
+```yaml
 cover-image: images/books.jpg # relative to index
 url: 'https\://alison-bookdown.netlify.com/' 
 github-repo: rstudio-education/arm-companion-rsc2019
 ```
+
+
+&lt;img src="img/bookdown-twitter-card.png" width="884" /&gt;
 
 
 .footnote[
@@ -590,44 +634,21 @@ This explains why you won't see any changes when you add some YAML parameters to
 
 The changes are fed to Pandoc to generate meta-data for your book website, but cover-image for example does not actually add a cover-image to your repo (try it!)
 
+I'll explain github-repo a bit later, but if you have one you may as well add it here.
 
 ---
-name: yourturn2
-class: inverse, middle, center
+name: yourturn-2
+template: yourturn
 
-# Your turn 
-
-# 🕡 3 min
-
-## .fancy[Add new YAML meta-data tags to your `index.Rmd`, &lt;br&gt;and re-render your book]
-
----
-
-# Opinionated advice
-
-.fancy[.blue[Problem:]] I want Chapter One = `01-intro.Rmd`
-
---
-
-.fancy[.blue[Solution:]] Use an unnumbered header by appending `{-}` to it
-
---
-
-Open `index.Rmd` and edit:
-
-```r
-# Prerequisites {-}
-```
+.right-column[
+# .fancy[03:00 minutes]
+&lt;br&gt;
+### Add new YAML metadata tags to your `index.Rmd`, and re-render your book.
 
 
+.blue[.fancy[Hint:] see all possible Pandoc EPUB metadata parameters [here](https://pandoc.org/MANUAL.html#epub-metadata).]
 
-.footnote[
-1. https://github.com/rstudio/bookdown/issues/218
-1. https://bookdown.org/yihui/bookdown/markdown-syntax.html#block-level-elements
 ]
-
-
-
 
 ---
 name: pandoc-meta
@@ -647,6 +668,491 @@ https://cards-dev.twitter.com/validator
 &lt;i class="fas fa-link fa-lg fa-fw"&gt;&lt;/i&gt; https://moderndive.com/
 
 &lt;i class="fas fa-link fa-lg fa-fw"&gt;&lt;/i&gt; https://bookdown.org/yihui/rmarkdown/
+
+
+
+
+---
+name: chapters
+template: section
+
+.right-column[
+
+# &lt;i class="fas fa-feather-alt"&gt;&lt;/i&gt;.fancy[Story: &lt;br&gt;the chapter `.Rmd` files]
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+## .fancy[Examples:] 
+1. `index.Rmd`, 
+1. `01_*.Rmd`, 
+1. `02_*.Rmd`,
+1. `99_*.Rmd`
+
+]
+
+???
+
+Each chapter is an R markdown file. 
+
+None of the .Rmd files, other than index, have a YAML. 
+
+Each file should begin with a level-one header, like # Chapter Title.
+
+A chapter can be made up of sections, indicated by lower-level headers, e.g., ## A section within the chapter.
+
+The numbered chapter names are a naming convention- you don't have to use them. Any .Rmd files with begin with an underscore are skipped.
+
+
+---
+name: block
+class: middle
+
+.pull-left[
+`index.Rmd`
+
+```r
+# Prerequisites
+
+This is a _sample_ book written in **Markdown**. 
+```
+&lt;hr&gt;
+`01-intro.Rmd`
+
+```r
+# Introduction
+
+Blah blah blah.
+```
+&lt;hr&gt;
+`02-literature.Rmd`
+
+```r
+# Literature
+
+Here is a review of existing methods.
+```
+
+]
+
+.pull-right[
+### Chapter 1  Prerequisites
+
+This is a _sample_ book written in **Markdown**. 
+&lt;hr&gt;
+### Chapter 2  Introduction
+
+Blah blah blah.
+&lt;hr&gt;
+### Chapter 3  Literature
+
+Here is a review of existing methods.
+]
+
+
+---
+class: middle
+name: cross
+
+.pull-left[
+`index.Rmd`
+
+```r
+# Prerequisites {-}
+
+This is a _sample_ book written in **Markdown**. 
+```
+&lt;hr&gt;
+`01-intro.Rmd`
+
+```r
+# Introduction {#intro}
+
+Next we review the [literature](lit)...
+```
+&lt;hr&gt;
+`02-literature.Rmd`
+
+```r
+# Literature {#lit}
+
+Following Chapter \@ref(intro),...
+```
+
+]
+
+.pull-right[
+### Prerequisites
+
+This is a _sample_ book written in **Markdown**. 
+&lt;hr&gt;
+### Chapter 1  Introduction
+
+Next we review the [literature](lit)...
+&lt;hr&gt;
+### Chapter 2  Literature
+
+Following Chapter [1](link),...
+]
+
+---
+name: figure-caption
+
+# Caption a figure
+
+.pull-left[
+
+````
+```{r pressure-plot, fig.cap='Look!'}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19)
+```
+````
+
+]
+
+.pull-right[
+.center[
+
+&lt;img src="bookdown_files/figure-html/pressure-plot-1.png" width="75%" /&gt;
+
+**Fig. 1:** Look!]
+
+]
+
+---
+name: figure-cross
+
+# Add a cross-reference
+
+.pull-left[
+
+See Figure `\@ref(fig:pressure-plot)`.
+
+````
+```{r pressure-plot, fig.cap='Look!'}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19)
+```
+````
+
+
+]
+
+.pull-right[
+See Figure [1](figure-cross).
+.center[
+
+&lt;img src="bookdown_files/figure-html/unnamed-chunk-21-1.png" width="75%" /&gt;
+
+**Fig. 1:** Look!]
+
+]
+
+---
+name: table-caption
+
+# Caption a table
+
+.pull-left[
+
+````
+```{r iris-tab}
+knitr::kable(
+  head(iris[,1:4], 3), caption = 'Look!',
+  booktabs = TRUE
+)
+```
+````
+
+]
+
+.pull-right[
+.center[
+**Table 1:** Look!
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+]
+
+---
+name: table-cross
+
+# Add a cross-reference
+
+.pull-left[
+
+See Table `\@ref(tab:iris-tab)`.
+
+````
+```{r iris-tab}
+knitr::kable(
+  head(iris[,1:4], 3), caption = 'Look!',
+  booktabs = TRUE
+)
+```
+````
+
+
+]
+
+.pull-right[
+See Table [1](table-cross).
+.center[
+
+**Table 1:** Look!
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+]
+
+
+---
+
+Also cover:
+citations
+link to theorems etc.
+
+---
+name: yourturn-3
+template: yourturn
+
+.right-column[
+# .fancy[10:00 minutes]
+&lt;br&gt;
+### Add or edit chapters in your book. Try adding some of these elements:
+
++ [Block-level elements](#block) like `#, ##, ###` headers .fancy[(to un-number use `{-}`)]
++ [Cross-references](#cross) to headers like `\@ref(id)`
++ [Figures](#figure-caption) and [tables](#table-caption) with captions
++ [Figures](#figure-cross) and [tables](#table-cross) with cross-references like `\@ref(fig:my-plot)` &amp; `\@ref(tab:my-table)`
+
+]
+
+
+---
+name: chapters
+template: section
+
+.right-column[
+
+# &lt;i class="fas fa-feather-alt"&gt;&lt;/i&gt;.fancy[Table of Contents]
+
+]
+
+???
+
+
+---
+
+# Chapters Only
+
+.pull-left[
+`01-intro.Rmd`
+
+```r
+# Introduction
+
+Blah blah blah.
+```
+
+`02-literature.Rmd`
+
+```r
+# Literature
+
+Here is a review of existing methods.
+```
+
+`03-methods.Rmd`
+
+```r
+# Methods
+
+We describe our methods in this chapter.
+```
+
+]
+
+.pull-right[
+&lt;img src="img/bookdown-skeleton-toc.png" width="65%" /&gt;
+
+]
+
+???
+
+On the left, we'll have parts with roman numerals.
+
+On the right, we'll have unnumbered parts.
+
+---
+# Parts
+
+.pull-left[
+`01-intro.Rmd`
+
+```r
+# (PART) Section A {-} 
+
+# Introduction
+
+Blah blah blah.
+```
+
+`02-literature.Rmd`
+
+```r
+# Literature
+
+Here is a review of existing methods.
+```
+
+`03-methods.Rmd`
+
+```r
+# (PART) Section B {-} 
+
+# Methods
+
+We describe our methods in this chapter.
+```
+
+]
+
+.pull-right[
+&lt;img src="img/bookdown-skeleton-toc_numsections.png" width="55%" /&gt;
+
+]
+
+???
+
+On the left, we'll have parts with roman numerals.
+
+On the right, we'll have unnumbered parts.
+
+
+---
+# Unnumbered Parts
+
+.pull-left[
+`01-intro.Rmd`
+
+```r
+# (PART\*) Section A {-} 
+
+# Introduction
+
+Blah blah blah.
+```
+
+`02-literature.Rmd`
+
+```r
+# Literature
+
+Here is a review of existing methods.
+```
+
+`03-methods.Rmd`
+
+```r
+# (PART\*) Section B {-} 
+
+# Methods
+
+We describe our methods in this chapter.
+```
+
+]
+
+.pull-right[
+&lt;img src="img/bookdown-skeleton-toc_sections.png" width="55%" /&gt;
+
+]
+
+???
+
+On the left, we'll have parts with roman numerals.
+
+On the right, we'll have unnumbered parts.
+---
+
++ `# (PART) Part A {-}` = I Part A 
+  + `# (PART\*) Part A {-}` = Part A
+  + `# (APPENDIX) Appendix {-}` = Appendix *(next: A/B/C)*
+  
+---
+
+# Add R Code
+
+
+```r
+rmarkdown::find_external_resources(here::here("index.Rmd"))
+rmarkdown::yaml_front_matter(here::here("index.Rmd"))
+rmarkdown::metadata$title
+rmarkdown::resolve_output_format("index.Rmd", output_format = "bookdown::gitbook")$pandoc
+```
+
+
 
 ---
 name: bookdown-YAML
@@ -723,15 +1229,6 @@ render_book = function(
 
 the default config file for the `bookdown::render_book()` function is `_bookdown.yml`
 
----
-name: chapters
-template: section
-
-.right-column[
-
-# &lt;i class="fas fa-feather-alt"&gt;&lt;/i&gt;.fancy[Story: &lt;br&gt;the chapter `.Rmd` files]
-
-]
 
 ---
 name: output-YAML
