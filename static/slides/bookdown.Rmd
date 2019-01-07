@@ -21,7 +21,7 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 library(knitr)
-knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.retina = 3)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 # options(knitr.table.format = "html")
 library(tidyverse)
 library(babynames)
@@ -322,19 +322,17 @@ name: first-preview
 ]
 
 .right-column[
-
-
 ```{r echo = FALSE}
 knitr::include_url("https://skeleton-bookdown.netlify.com/", height = "500px")
 ```
-https://skeleton-bookdown.netlify.com/
 
+https://skeleton-bookdown.netlify.com/
 
 ]
 
 ???
 
-Also the index.Rmd technically contains the first "chapter". Notice that in your rendered book, the second chapter is called "Introduction"- but the filename was 01-intro.Rmd. Prerequisites, which is the first level-one heading in the index.Rmd became chapter 1.
+The index.Rmd technically contains the first "chapter". Notice that in your rendered book, the second chapter is called "Introduction"- but the filename was 01-intro.Rmd. Prerequisites, which is the first level-one heading in the index.Rmd became Chapter 1. And Introduction became Chapter 2.
 
 I'll show you later how to change this if you want to.
 
@@ -441,11 +439,11 @@ template: section
 
 + Preface: the [`index.Rmd`](#index-YAML) <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#index-file"><i class="fas fa-book"></i></a>
 
-+ [The `_bookdown.yml`](#bookdown-YAML) <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#bookdown.yml"><i class="fas fa-book"></i></a>
++ Story: [the chapter `.Rmd` files](#chapters) <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#rmd-files"><i class="fas fa-book"></i></a>
 
-+ [The chapters]() <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#rmd-files"><i class="fas fa-book"></i></a>
++ Table of Contents: [The `_bookdown.yml`](#bookdown-YAML) <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#bookdown.yml"><i class="fas fa-book"></i></a>
 
-+ Postscript: the [`_output.yml`](#output-YAML) <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#output.yml"><i class="fas fa-book"></i></a>
++ Off to Press: the [`_bookdown.yml` and `_output.yml` files](#press) <a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#output.yml"><i class="fas fa-book"></i></a>
 ]
 
 
@@ -716,14 +714,16 @@ None of the .Rmd files, other than index, have a YAML.
 
 Each file should begin with a level-one header, like # Chapter Title.
 
-A chapter can be made up of sections, indicated by lower-level headers, e.g., ## A section within the chapter.
+Each chapter has a dedicated page and is split into subchapters, indicated by lower-level headers, e.g., ## A subchapter within the chapter.
 
 The numbered chapter names are a naming convention- you don't have to use them. Any .Rmd files with begin with an underscore are skipped.
 
 
 ---
-name: block
+name: headers
 class: middle
+
+## .center[.fancy[Chapters]]
 
 .pull-left[
 `index.Rmd`
@@ -766,7 +766,64 @@ Here is a review of existing methods.
 
 ---
 class: middle
-name: cross
+name: headers-manip
+
+## .center[.fancy[Un-numbering & Labelling Chapters]]
+
+.pull-left[
+`index.Rmd`
+```{r eval = FALSE}
+# Prerequisites {-} #<<
+
+This is a _sample_ book written in **Markdown**. 
+```
+<hr>
+`01-intro.Rmd`
+```{r eval = FALSE}
+# Introduction {#intro} #<<
+
+Blah blah blah.
+```
+<hr>
+`02-literature.Rmd`
+```{r eval = FALSE}
+# Literature {#lit} #<<
+
+Here is a review of existing methods.
+```
+
+]
+
+.pull-right[
+### Prerequisites
+
+This is a _sample_ book written in **Markdown**. 
+<hr>
+### Chapter 1  Introduction
+
+Blah blah blah.
+<hr>
+### Chapter 2  Literature
+
+Here is a review of existing methods.
+]
+
+???
+
+You can un-number a chapter by following the header text with curly brackets, with a dash inside, like I did for "Prerequisites" here.
+
+bookdown supports a nice way for explicitly setting the header ID label. If you follow the header text with an opening curly bracket (separated from the text with a least one space), a hash, the ID label and a closing curly bracket, the ID label is set on the header. 
+
+Why would you want to do that? You would want to set ID labels so you can more easily:
+
+a) link to specific chapters/subchapters
+b) cross-reference within the book to chapters/subchapters
+
+---
+class: middle
+name: headers-cross
+
+## .center[.fancy[Cross-References to Chapters/Subchapters]]
 
 .pull-left[
 `index.Rmd`
@@ -780,14 +837,14 @@ This is a _sample_ book written in **Markdown**.
 ```{r eval = FALSE}
 # Introduction {#intro}
 
-Next we review the [literature](lit)...
+Next we review the [literature](lit)... #<<
 ```
 <hr>
 `02-literature.Rmd`
 ```{r eval = FALSE}
 # Literature {#lit}
 
-Following Chapter \@ref(intro),...
+Following Chapter \@ref(intro),... #<<
 ```
 
 ]
@@ -806,10 +863,12 @@ Next we review the [literature](lit)...
 Following Chapter [1](link),...
 ]
 
+
 ---
 name: figure-caption
 
-# Caption a figure
+## .center[.fancy[Caption a figure]]
+
 
 .pull-left[
 
@@ -825,7 +884,7 @@ plot(pressure, type = 'b', pch = 19)
 .pull-right[
 .center[
 
-```{r pressure-plot, out.width='75%', echo = FALSE}
+```{r pressure-plot, out.width='75%', echo = FALSE, fig.retina = 3}
 par(mar = c(4, 4, .1, .1))
 plot(pressure, type = 'b', pch = 19)
 ```
@@ -834,40 +893,12 @@ plot(pressure, type = 'b', pch = 19)
 
 ]
 
----
-name: figure-cross
-
-# Add a cross-reference
-
-.pull-left[
-
-See Figure `\@ref(fig:pressure-plot)`.
-
-````
-```{r pressure-plot, fig.cap='Look!'}`r ''`
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
-````
-
-
-]
-
-.pull-right[
-See Figure [1](figure-cross).
-.center[
-
-```{r ref.label='pressure-plot', out.width='75%', echo = FALSE}
-```
-
-**Fig. 1:** Look!]
-
-]
 
 ---
 name: table-caption
 
-# Caption a table
+## .center[.fancy[Caption a table]]
+
 
 .pull-left[
 
@@ -897,6 +928,46 @@ knitr::kable(
 ]
 
 ---
+name: figs-tabs-cross
+
+## .center[.fancy[Cross-reference Figures & Tables]]
+
+.pull-left[
+
+See Figure `\@ref(fig:pressure-plot)`.
+
+````
+```{r pressure-plot, fig.cap='Look!'}`r ''`
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19)
+```
+````
+
+Don't miss Table `\@ref(tab:iris-tab)`.
+
+````
+```{r iris-tab}`r ''`
+knitr::kable(
+  head(iris[,1:4], 3), caption = 'Look!',
+  booktabs = TRUE
+)
+```
+````
+
+
+]
+
+.pull-right[
+See Figure [1](figure-cross).
+.center[
+
+```{r ref.label='pressure-plot', out.width='75%', echo = FALSE, fig.retina = 3}
+```
+
+**Fig. 1:** Look!]
+
+]
+
 name: table-cross
 
 # Add a cross-reference
@@ -933,9 +1004,17 @@ See Table [1](table-cross).
 
 ---
 
-Also cover:
-citations
-link to theorems etc.
+# More
+
+<i class="fas fa-external-link-alt"></i> [Equations](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations)
+
+<i class="fas fa-external-link-alt"></i> [Citations](https://bookdown.org/yihui/bookdown/citations.html)
+
+<i class="fas fa-external-link-alt"></i> [Theorems and proofs](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#theorems)
+
+.footnote[
+[All components](https://bookdown.org/yihui/bookdown/components.html)
+]
 
 ---
 name: yourturn-3
@@ -944,34 +1023,49 @@ template: yourturn
 .right-column[
 # .fancy[10:00 minutes]
 <br>
-### Add or edit chapters in your book. Try adding some of these elements:
+### Add/edit chapters in your book. Try using some of these elements:
 
-+ [Block-level elements](#block) like `#, ##, ###` headers .fancy[(to un-number use `{-}`)]
-+ [Cross-references](#cross) to headers like `\@ref(id)`
++ [Markdown headers](#headers) like `#, ##, ###` .fancy[(to un-number: `{-}`, to label: `{#label}`)]
++ [Cross-references](#headers-cross) to chapters/sub-sections like `\@ref(id)`
 + [Figures](#figure-caption) and [tables](#table-caption) with captions
-+ [Figures](#figure-cross) and [tables](#table-cross) with cross-references like `\@ref(fig:my-plot)` & `\@ref(tab:my-table)`
++ [Figures](#figure-cross) and [tables](#table-cross) cross-references like `\@ref(fig:my-plot)` & `\@ref(tab:my-tab)`
 
 ]
 
 
 ---
-name: chapters
+name: toc
 template: section
 
 .right-column[
 
 # <i class="fas fa-feather-alt"></i>.fancy[Table of Contents]
 
+<br>
+<br>
+<br>
+Examples: 
+
+<i class="fas fa-link"></i> https://skeleton-bookdown.netlify.com/
+
+<i class="fas fa-link"></i> https://alison-bookdown.netlify.com/
 ]
 
 ???
 
 
 ---
+name: toc-default
 
-# Chapters Only
+# Chapters/Subchapters Only
 
 .pull-left[
+`index.Rmd`
+```{r eval = FALSE}
+# Prerequisites
+
+This is a _sample_ book written in **Markdown**. 
+```
 `01-intro.Rmd`
 ```{r eval = FALSE}
 # Introduction
@@ -986,123 +1080,202 @@ Blah blah blah.
 Here is a review of existing methods.
 ```
 
-`03-methods.Rmd`
-```{r eval = FALSE}
-# Methods
-
-We describe our methods in this chapter.
-```
-
 ]
 
 .pull-right[
+.center[
 ```{r echo = FALSE, out.width='65%'}
 knitr::include_graphics("img/bookdown-skeleton-toc.png")
 ```
-
+]
 ]
 
-???
-
-On the left, we'll have parts with roman numerals.
-
-On the right, we'll have unnumbered parts.
 
 ---
+name: toc-num-parts
+
 # Parts
 
 .pull-left[
+`index.Rmd`
+```{r eval = FALSE}
+# Prerequisites {-}
+```
 `01-intro.Rmd`
 ```{r eval = FALSE}
-# (PART) Section A {-} 
+# (PART) Part I {-}  #<<
 
 # Introduction
-
-Blah blah blah.
 ```
 
 `02-literature.Rmd`
 ```{r eval = FALSE}
 # Literature
-
-Here is a review of existing methods.
 ```
 
 `03-methods.Rmd`
 ```{r eval = FALSE}
-# (PART) Section B {-} 
+# (PART) Part II {-}  #<<
 
 # Methods
-
-We describe our methods in this chapter.
 ```
 
 ]
 
 .pull-right[
+.center[
 ```{r echo = FALSE, out.width='55%'}
 knitr::include_graphics("img/bookdown-skeleton-toc_numsections.png")
 ```
-
+]
 ]
 
 ???
 
-On the left, we'll have parts with roman numerals.
+Parts are just groups of chapters and do not have dedicated pages, but according to the gitbook::theme, it will show in the navigation.
 
-On the right, we'll have unnumbered parts.
+You add them with a first-level header followed by PART in all caps within parentheses. You 
 
 
 ---
+name: toc-parts
+
 # Unnumbered Parts
 
 .pull-left[
+`index.Rmd`
+```{r eval = FALSE}
+# Prerequisites {-}
+```
 `01-intro.Rmd`
 ```{r eval = FALSE}
-# (PART\*) Section A {-} 
+# (PART\*) Part I {-} #<<
 
 # Introduction
-
-Blah blah blah.
 ```
 
 `02-literature.Rmd`
 ```{r eval = FALSE}
 # Literature
-
-Here is a review of existing methods.
 ```
 
 `03-methods.Rmd`
 ```{r eval = FALSE}
-# (PART\*) Section B {-} 
+# (PART\*) Part II {-}  #<<
 
 # Methods
-
-We describe our methods in this chapter.
 ```
 
 ]
 
 .pull-right[
+.center[
 ```{r echo = FALSE, out.width='55%'}
 knitr::include_graphics("img/bookdown-skeleton-toc_sections.png")
 ```
-
+]
 ]
 
 ???
 
-On the left, we'll have parts with roman numerals.
+Parts already need to have the dash inside the curly braces, which was how we previously removed the numbering from individual chapters like Prerequisites.
 
-On the right, we'll have unnumbered parts.
+To create unnumbered parts, you need to add a forward slash and asterisk after PART, within the parentheses.
+
 ---
+name: toc-appendix
 
-+ `# (PART) Part A {-}` = I Part A 
-  + `# (PART\*) Part A {-}` = Part A
-  + `# (APPENDIX) Appendix {-}` = Appendix *(next: A/B/C)*
+# Appendix
+
+.pull-left[
+`index.Rmd`
+```{r eval = FALSE}
+# Prerequisites {-}
+```
+`01-intro.Rmd`
+```{r eval = FALSE}
+# (PART\*) Part I {-}
+
+# Introduction
+```
+
+
+...
+
+`05-summary.Rmd`
+```{r eval = FALSE}
+# (APPENDIX) Appendix {-} #<<
+
+# Final Words
+```
+
+]
+
+.pull-right[
+.center[
+```{r echo = FALSE, out.width='50%'}
+knitr::include_graphics("img/bookdown-skeleton-toc_appendix.png")
+```
+]
+]
+
+??? 
+
+We can also add an appendix, which by default is an unnumbered part.
+
+The numbering style of appendices will be automatically changed in LaTeX/PDF and HTML output (usually in the form A, A.1, A.2, B, B.1, …).
+
+---
+name: toc-collapse
+
+# TOC Sidebar
+
+New file: `_output.yml`
+
+.pull-left[
+
+```yaml
+bookdown::gitbook:
+  config:
+    toc:
+      collapse: none 
+      scroll_highlight: yes
+      before: |
+        <li><a href="./">A Minimal Book Example</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+```
+]
+
+.pull-right[
+`collapse`:
+
++ `section` (`#`, ~~`##`, `###`~~)
+
++ `subsection` (`#`, `##`, `###`)
+
++ `none` (`#`, `##`, `###`, ad infinitum)
+
+]
+
+---
+name: yourturn-4
+template: yourturn
+
+.right-column[
+# .fancy[05:00 minutes]
+<br>
+### Change how your sidebar TOC looks & works. Try using some of these elements:
+
++ [Parts](#toc-num-parts) with  `# (PART) My unique part {-}`
++ [Un-numbered parts](#toc-parts) to with  `# (PART\*) My unique part {-}`
++ [Appendix](#toc-appendix) with  `# (APPENDIX) My appendix {-}`
++ [Collapsing TOC](#toc-collapse) with the `_output.yml`
+
+]
   
 ---
+exclude: true
 
 # Add R Code
 
@@ -1116,96 +1289,94 @@ rmarkdown::resolve_output_format("index.Rmd", output_format = "bookdown::gitbook
 
 
 ---
-name: bookdown-YAML
+name: press
 template: section
 
 .right-column[
 
-# <i class="fas fa-feather-alt"></i>.fancy[Intro: <br>the `_bookdown.yml` file]
+# <i class="fas fa-scroll"></i>.fancy[Off to press:]
+
+## .fancy[the `_bookdown.yml` and `_output.yml` files]
 
 ]
 
 
 ---
+name: render
 
-# Inside the `_bookdown.yml`
+# `_bookdown.yml`
 
-```{r eval = FALSE}
-book_filename: "arm"
-delete_merged_file: true #<<
-language:
-  ui:
-    chapter_name: "Chapter "
+This yaml gets fed to the `bookdown::render_book` function:
+
+```{r gitbook-args, code=formatR::usage(bookdown::render_book, output=FALSE, fail='none'), eval=FALSE, R.options=list(width=50)}
 ```
 
-
-
----
-
-# Configure **bookdown**
-
-.pull-left[
-
-```{r eval = FALSE}
-book_filename: "arm"
-delete_merged_file: true 
-language:
-  ui:
-    chapter_name: "Chapter "
-edit: https://github.com/apreshill/arm/edit/master/%s #<<
-new_session: yes #<<
-output_dir: "docs" # maybe?
-```
-]
 
 --
 
-.pull-right[
-+ `edit`: add GitHub edit link?
-
-+ `new_session`: render each chapter in its own R session?
-
-+ `output_dir`: default = "_book"; "docs" if you want to publish to [GitHub Pages](https://blog.github.com/2016-08-17-simpler-github-pages-publishing/)
-]
-
-.footnote[
-https://bookdown.org/yihui/bookdown/configuration.html
-]
-
----
-
-# this yaml gets fed to the `render_book` function
+Worth mentioning:
 
 ```{r eval = FALSE}
-render_book = function(
-  input, output_format = NULL, ..., clean = TRUE, envir = parent.frame(),
-  clean_envir = !interactive(), output_dir = NULL, new_session = NA,
-  preview = FALSE, encoding = 'UTF-8', config_file = '_bookdown.yml'
-)
+new_session: yes 
+output_dir: "docs" # for gh-pages
+rmd_files: ["index.Rmd", "02-literature.Rmd", "01-intro.Rmd"]
 ```
 
+--
+
+.footnote[
+Read more:
++ https://bookdown.org/yihui/rmarkdown/bookdown-project.html#bookdown.yml
++ https://bookdown.org/yihui/bookdown/configuration.html
++ https://blog.github.com/2016-08-17-simpler-github-pages-publishing/
+]
+
+???
+
+This file has no dash delimiters.
 
 the default config file for the `bookdown::render_book()` function is `_bookdown.yml`
 
+`new_session`: render each chapter in its own R session?
 
----
-name: output-YAML
-template: section
-
-.right-column[
-
-# <i class="fas fa-feather-alt"></i>.fancy[Postscript: <br>the `_output.yml` file]
-<br>
-<br>
-<br>
-### .fancy["written after"]
-[Wikipedia](https://en.wikipedia.org/wiki/Postscript)
+`output_dir`: default = "_book"; "docs" if you want to publish to GH Pages
 ]
 
 ---
+name: output
 
-# GitBook configurations
+# `_output.yml`
 
+For each output format, different configurations are possible, for example:
+
+```{r gitbook-args, code=formatR::usage(bookdown::gitbook, output=FALSE, fail='none'), eval=FALSE, R.options=list(width=50)}
+```
+
+--
+
+Most arguments are passed to [`rmarkdown::html_document()`](https://github.com/rstudio/rmarkdown/blob/master/R/html_document.R):
+
+```yaml
+bookdown::gitbook:
+  css: [css/arm.css]
+  highlight: kate
+  config = ???
+```
+
+--
+
+.footnote[
++ [css: use Hao Zhu's `bookdownThemeEditor`!](https://github.com/hebrewseniorlife/bookdownThemeEditor)
++ [highlight](https://bookdown.org/yihui/bookdown/yaml-options.html): `r knitr::combine_words(rmarkdown:::highlighters(), before = '\x60')`
+]
+
+---
+name: output-config
+
+
+
+.pull-left[
+### .center[.fancy[Gitbook configurations]]
 ```{r eval = FALSE}
 gitbook_config = function(config = list()) {
   default = list(
@@ -1222,13 +1393,48 @@ gitbook_config = function(config = list()) {
     toc = list(collapse = 'subsection')
 )
 ```
+]
+
+.pull-right[
+### .center[.fancy[Sample `_output.yml`]]
+```yaml
+bookdown::gitbook:
+  css: [css/arm.css]
+  highlight: kate
+  config:
+    download: ["rmd"]
+    edit:
+      link: https://github.com/username/repo/edit/master/%s
+    toc: <!--covered earlier!-->
+    sharing:
+      github: yes
+      facebook: no
+      twitter: yes
+```
+]
+
 
 .footnote[
 https://github.com/rstudio/bookdown/blob/master/R/gitbook.R
 ]
 
 ---
+name: yourturn-5
+template: yourturn
 
+.right-column[
+# .fancy[05:00 minutes]
+<br>
+### Tune your `gitbook` output by editing these 2 YAML files:
+
++ [`_bookdown.yml`](#render)
++ [`_output.yml`](#output) (.fancy[don't forget about [`config`!](#output-config)])
+  + Try adding the GitHub edit button, link to a repo, change the highlight
+
+]
+
+---
+exclude: true 
 
 - go to https://github.com/mine-cetinkaya-rundel/thesisdowndss to view the README
 - install package and load
@@ -1246,52 +1452,6 @@ to get twitter cards, in index.rmd need url and cover-image (pandoc)
 to get github edit link, do edit in _bookdown.yml
 to github repo link, do _output.yml, sharing github: yes; also need github-repo defined in index.Rmd
 
----
-
-all the same
-
-in the `index.Rmd`
-```yaml
----
-output:
-  bookdown::gitbook:
-    css: style.css
-    highlight: kate
----
-```
-
-in the `_output.yml`
-```yaml
-bookdown::gitbook:
-  css: style.css
-  highlight: kate
-```
-
----
-
-all the same
-
-
-
-all configurations for your output format go in the `_bookdown.yml`...
-
-```yaml
-edit:
-  link: https://github.com/rstudio-education/arm-companion-rsc2019/edit/master/bookdown/alison-bookdown/%s
-  text: "Edit"
-download: ["pdf", "epub"]
-```
-
-but they can equally go in the `_output.yml`, 
-
-```yaml
-bookdown::gitbook:
-  config:
-    edit:
-      link: https://github.com/rstudio-education/arm-companion-rsc2019/edit/master/bookdown/alison-bookdown/%s
-      text: "Edit"
-    download: ["pdf", "epub"]
-```
 
 
 
