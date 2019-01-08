@@ -1,5 +1,7 @@
 ## ----cran_pkgs, purl = TRUE, eval = TRUE---------------------------------
-arm_from_cran <- c("flexdashboard", "learnr", "bookdown", "tidyverse", "remotes")
+arm_from_cran <- c("flexdashboard", "learnr", "bookdown", 
+                   "officer", "kableExtra", "rticles", "memor",
+                   "tidyverse", "remotes", "babynames")
 
 ## ----install_cran, purl = TRUE-------------------------------------------
 install.packages(arm_from_cran, dependencies = TRUE)
