@@ -23,6 +23,7 @@ For this workshop, you'll need to install several R packages. This page will gui
 
 ```{r cran_pkgs, purl = TRUE, eval = TRUE}
 arm_from_cran <- c("flexdashboard", "learnr", "bookdown", 
+                   "officer", "kableExtra", "rticles", "memor",
                    "tidyverse", "remotes", "babynames")
 ```
 
@@ -181,6 +182,86 @@ library(bookdown)
 Does this code return `TRUE`?
 ```{r eval = TRUE}
 is_installed("bookdown")
+```
+
+## officer {#officer}
+
+Install the [**officer** package](https://davidgohel.github.io/officer/) from CRAN as follows:
+
+```{r}
+install.packages("officer", dependencies = TRUE)
+```
+
+Can you load the package?
+```{r}
+# should just work if installed
+library(officer)
+```
+
+
+Does this code return `TRUE`?
+```{r eval = TRUE}
+is_installed("officer")
+```
+
+## rticles {#rticles}
+
+Install the [**rticles** package](https://github.com/rstudio/rticles) from CRAN as follows:
+
+```{r}
+install.packages("rticles", dependencies = TRUE)
+```
+
+Can you load the package?
+```{r}
+# should just work if installed
+library(rticles)
+```
+
+
+Does this code return `TRUE`?
+```{r eval = TRUE}
+is_installed("rticles")
+```
+
+## kableExtra {#kableExtra}
+
+Install the [**kableExtra** package](https://haozhu233.github.io/kableExtra/) from CRAN as follows:
+
+```{r}
+install.packages("kableExtra", dependencies = TRUE)
+```
+
+Can you load the package?
+```{r}
+# should just work if installed
+library(kableExtra)
+```
+
+
+Does this code return `TRUE`?
+```{r eval = TRUE}
+is_installed("kableExtra")
+```
+
+## memor {#memor}
+
+Install the [**memor** package](https://github.com/hebrewseniorlife/memor) from CRAN as follows:
+
+```{r}
+install.packages("memor", dependencies = TRUE)
+```
+
+Can you load the package?
+```{r}
+# should just work if installed
+library(memor)
+```
+
+
+Does this code return `TRUE`?
+```{r eval = TRUE}
+is_installed("memor")
 ```
 
 ## tidyverse & data packages {#tidyverse}

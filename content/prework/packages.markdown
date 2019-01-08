@@ -1,7 +1,7 @@
 ---
 title: Install R packages
 author: ''
-date: "2019-01-04"
+date: "2019-01-08"
 slug: packages
 categories: []
 tags: []
@@ -22,6 +22,7 @@ For this workshop, you'll need to install several R packages. This page will gui
 
 ```r
 arm_from_cran <- c("flexdashboard", "learnr", "bookdown", 
+                   "officer", "kableExtra", "rticles", "memor",
                    "tidyverse", "remotes", "babynames")
 ```
 
@@ -66,7 +67,7 @@ Can you load the package?
 library(xaringan)
 ```
 
-You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">0.8</a> for how to check for all packages):
+You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">0.12</a> for how to check for all packages):
 
 
 
@@ -219,6 +220,118 @@ is_installed("bookdown")
 #     TRUE
 ```
 
+## officer {#officer}
+
+Install the [**officer** package](https://davidgohel.github.io/officer/) from CRAN as follows:
+
+
+```r
+install.packages("officer", dependencies = TRUE)
+```
+
+Can you load the package?
+
+```r
+# should just work if installed
+library(officer)
+```
+
+
+Does this code return `TRUE`?
+
+```r
+is_installed("officer")
+```
+
+```
+# officer 
+#    TRUE
+```
+
+## rticles {#rticles}
+
+Install the [**rticles** package](https://github.com/rstudio/rticles) from CRAN as follows:
+
+
+```r
+install.packages("rticles", dependencies = TRUE)
+```
+
+Can you load the package?
+
+```r
+# should just work if installed
+library(rticles)
+```
+
+
+Does this code return `TRUE`?
+
+```r
+is_installed("rticles")
+```
+
+```
+# rticles 
+#    TRUE
+```
+
+## kableExtra {#kableExtra}
+
+Install the [**kableExtra** package](https://haozhu233.github.io/kableExtra/) from CRAN as follows:
+
+
+```r
+install.packages("kableExtra", dependencies = TRUE)
+```
+
+Can you load the package?
+
+```r
+# should just work if installed
+library(kableExtra)
+```
+
+
+Does this code return `TRUE`?
+
+```r
+is_installed("kableExtra")
+```
+
+```
+# kableExtra 
+#       TRUE
+```
+
+## memor {#memor}
+
+Install the [**memor** package](https://github.com/hebrewseniorlife/memor) from CRAN as follows:
+
+
+```r
+install.packages("memor", dependencies = TRUE)
+```
+
+Can you load the package?
+
+```r
+# should just work if installed
+library(memor)
+```
+
+
+Does this code return `TRUE`?
+
+```r
+is_installed("memor")
+```
+
+```
+# memor 
+#  TRUE
+```
+
 ## tidyverse & data packages {#tidyverse}
 
 For many code examples provided in the workshop activities, you'll need to install the [**tidyverse** meta-package](https://www.tidyverse.org/packages/) and some data packages from CRAN as follows:
@@ -256,10 +369,12 @@ is_installed(c(arm_from_cran, 'xaringan', 'blogdown'))
 ```
 
 ```
-# flexdashboard        learnr      bookdown     tidyverse       remotes 
+# flexdashboard        learnr      bookdown       officer    kableExtra 
 #          TRUE          TRUE          TRUE          TRUE          TRUE 
-#     babynames      xaringan      blogdown 
-#          TRUE          TRUE          TRUE
+#       rticles         memor     tidyverse       remotes     babynames 
+#          TRUE          TRUE          TRUE          TRUE          TRUE 
+#      xaringan      blogdown 
+#          TRUE          TRUE
 ```
 
 
