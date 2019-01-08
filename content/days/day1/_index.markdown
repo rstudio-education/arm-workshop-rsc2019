@@ -1,7 +1,7 @@
 ---
 title: Day 1 schedule
 author: ''
-date: "2019-01-04"
+date: "2019-01-08"
 slug: day1
 categories: []
 tags: []
@@ -33,3 +33,4 @@ Here is a tentative timetable for Day 1:
 |              | 03:30-04:00   |:coffee: BREAK   |
 | Session #4, PM   | 04:00-05:00   |[blogdown](blogdown) |
 | Session #5, PM  | 05:00-05:30  |officer |
+|                 | 05:30-07:30   |:cocktail: `rstudio::conf` happy hour + :book: signing|

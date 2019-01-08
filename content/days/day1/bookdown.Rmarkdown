@@ -33,5 +33,33 @@ Make this whole thing into a better-looking table
   <li><span class="fa-li"><i class="fas fa-hand-point-right fa-fw"></i></span>&nbsp;[Your-turn #5](../../../slides/bookdown.html#yourturn-5): Tune the book output & publish (<i class="far fa-clock"></i> 15:00 minutes)</li>
 
 
+```{r eval = FALSE}
+library(tidyverse)
+library(gt)
+
+activities <- tribble(~link, ~label, ~time,
+                      "../../../slides/bookdown.html#yourturn-1", "Edit your `index.Rmd` YAML", "03:00 minutes",
+                      "../../../slides/bookdown.html#yourturn-2", "Add new YAML metadata tags to your `index.Rmd`", "03:00 minutes",
+                      "../../../slides/bookdown.html#yourturn-3", "Add/edit chapters in your book", "10:00 minutes",
+                      "../../../slides/bookdown.html#yourturn-4", "Change how your sidebar TOC looks & works", "05:00 minutes",
+                      "../../../slides/bookdown.html#yourturn-5", "Tune the book output & publish", "15:00 minutes")
+
+addLink <- function(df = activities, column_name = link) {
+  quoted_link <- enquo(column_name)
+  links <- df %>% 
+    mutate(safe_url = htmltools::htmlEscape(!!quoted_link, attribute = TRUE),
+           link_cells = glue::glue('<a href="{safe_url}">Your turn #{stringr::str_sub(safe_url, start = -1)}:)</a>'))
+  return(links)
+}
+
+dat <- addLink(activities)
+
+dat %>%
+  gt() %>%
+  text_transform(
+    locations = cells_data(columns = vars(link_cells)),
+    fn = function (x) glue::glue('<a href="{x}">{x}</a>"')
+  )
+```
 
 

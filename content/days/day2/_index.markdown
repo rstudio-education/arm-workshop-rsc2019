@@ -33,3 +33,4 @@ Here is a tentative timetable for Day 2:
 |              | 03:30-04:00   |:coffee: BREAK   |
 | Session #4, PM   | 04:00-05:00   | HTML widgets and Shiny |
 | Session #5, PM  | 05:00-05:30  | I don't believe you still want to learn anything |
+|               |05:30-07:30 | :tropical_drink: `rstudio::conf` reception |
