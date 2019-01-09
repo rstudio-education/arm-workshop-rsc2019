@@ -886,36 +886,48 @@ template: sfah
 
 ## .acid[IMAGES] &nbsp; .heat[THEMES]
 
+---
+name: section
+class: top, inverse
+background-image: url(img/jason-tuinstra-551608-unsplash.jpg)
+background-size: cover
 
 ---
-name: salt-work
+name: yourturn
+template: section
 
-# Take 15 minutes `r emo::ji("clock")`
+.left-column[
+# <i class="fas fa-edit"></i> <br>.fancy[Your turn]
+]
 
-First, make an introduction slide, using the templated code provided.
-
-Next, season some slides with `remark.js` salt. Make at least one slide that uses each of the following:
-
-1. Incremental reveals (`--`) ([demo slide](#increment-demo))
-
-1. The `class` slide property to align all content on a slide ([demo slide](#fullalign-demo))
-
-1. CSS content classes to align some text on a slide (`.left / .center / .right`) ([demo slide](#textalign-demo))
-
-1. CSS content classes to create two column slides (`.pull-left / .pull-right / .left-column / .right-column`) ([demo slide](#pull-demo))
+---
+name: yourturn-1
+template: yourturn
 
 
---
+.right-column[
+[Season](#salt) some slides with `remark.js` salt! Consider:
 
-If this is easy, try:
+1. Edit the introduction slide
 
-+ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
+1. Incremental reveals with `--` ([demo slide](#increment-demo))
 
-+ [name a single slide](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to it: `[back to the beginning](#xaringan-title)` -> [back to the beginning](#xaringan-title)
+1. Aligning all content with the `class` slide property ([demo slide](#fullalign-demo))
 
---
+1. Align some text on a slide with `.left / .center / .right` ([demo slide](#textalign-demo))
 
+1. Create two-column slides with `.pull-left / .pull-right / .left-column / .right-column` ([demo slide](#pull-demo))
+
+]
+
+.left-column[
+## .fancy[.saltinline[05:00 minutes]]
+]
+
+
+.footnote[
 Don't despair- we'll fatten up our slides with R chunks next...
+]
 
 ---
 name: fat
@@ -1404,36 +1416,34 @@ tx_plot
 
 
 ---
-name: fat-work
+name: yourturn-2
+template: yourturn
 
-# Take 15 minutes `r emo::ji("clock")`
+.right-column[
 
-First, [edit your YAML](#highlightjs-demo) to include a `highlightStyle` and set `highlightLines` to true.
+[Fatten](#fat) up your slides with some R code chunks (+ `knitr` butter). Consider:
 
---
+1. [Edit your YAML](#highlightjs-demo) to include a `highlightStyle`, and set `highlightLines` to true.
 
-Next, fatten up some slides with (mainly) `knitr` butter. Make at least one slide that uses each of the following:
+1. Add a table ([demo slides](#table-demos))
 
-1. Includes a nice-looking table ([demo slides](#table-demos))
+1. Add a plot with decent resolution ([demo slide](#plot-demo))
 
-1. Includes a plot with decent resolution ([demo slide](#plot-demo))
-
-1. Highlights some lines of R input/output ([demo slide](#highlightr-demo))
+1. Highlight some lines of R input/output ([demo slide](#highlightr-demo))
 
 1. Uses some fancy code chunk options ([demo slide](#knitr-demo))
 
+]
 
---
+.left-column[
+## .fancy[.fatinline[05:00 minutes]]
+]
 
-If this is easy, try:
 
-+ combining with the salts (make code chunks incremental),
 
-+ play with adding emojis using the [emo package](https://github.com/hadley/emo)
-
---
-
-If you are in need of less text and more pics- we'll throw some image acid on our slides next...
+.footnote[
+If you are in need of less text and more pics,<br> we'll throw some image acid on our slides next...
+]
 
 ---
 name: acid
@@ -1453,6 +1463,7 @@ template: acid
 
 
 ---
+name: background-image
 
 # Background images
 
@@ -1495,6 +1506,7 @@ class: center, middle, inverse
 
 
 ---
+name: title-slides
 class: middle, center
 
 # .fancy[Let's talk <br> .acid[title slides] ]
@@ -1510,7 +1522,7 @@ name: title-yaml
 .pull-left[
 
 ```{r echo = FALSE}
-knitr::include_url("https://ismayc.github.io/talks/infer-useR/slide_deck.html#1")
+knitr::include_graphics("img/xaringan-title-chester.png")
 ```
 
 .footnote[
@@ -1553,11 +1565,11 @@ default class properties:
 .pull-left[
 
 ```{r echo = FALSE}
-knitr::include_url("https://jenthompson.me/slides/rmedicine2018/rmedicine2018#1")
+knitr::include_graphics("img/xaringan-title-jen.png")
 ```
 
 .footnote[
-Source: [Jennifer Thompson](https://github.com/jenniferthompson/RMedicine2018)
+Source: [Jennifer Thompson](https://github.com/jenniferthompson/RMedicine2018); [full slide deck](https://jenthompson.me/slides/rmedicine2018/rmedicine2018#1)
 ]
 
 ]
@@ -1596,7 +1608,7 @@ name: title-seal
 .pull-left[
 
 ```{r echo = FALSE}
-knitr::include_url("https://juliasilge.github.io/deming2018/intro.html#1")
+knitr::include_graphics("img/xaringan-title-julia.png")
 ```
 
 .footnote[
@@ -1645,7 +1657,7 @@ seal disables
 
 .pull-left[
 ```{r echo = FALSE}
-knitr::include_url("http://arm.rbind.io/slides/xaringan.html#1")
+knitr::include_graphics("img/xaringan-title-arm.png")
 ```
 
 ]
@@ -1767,6 +1779,31 @@ layout: true
 <div class="my-footer"><span>rstd.io/arm-xaringan</span></div>
 
 ---
+name: yourturn-3
+template: yourturn
+
+.right-column[
+
+Throw some [acid](#acid) on your slides with images. Consider:
+
+1. Adding a background image to a slide ([demo slides](#background-image))
+
+1. Updating your title slide ([demo slides](#title-slides))
+
+  + Option 1: Use your YAML ([demo slides](#title-yaml))
+  
+  + Option 2: Set `seal: FALSE` ([demo slides](#title-seal))
+
+1. Adding a logo ([demo slide](#logos))
+
+]
+
+.left-column[
+## .fancy[.acidinline[08:00 minutes]]
+]
+
+
+---
 name: heat
 class: inverse, center, middle
 background-image: url(img/carlos-hevia-628152-unsplash.jpg)
@@ -1783,6 +1820,7 @@ template: heat
 # HEAT = THEMES
 
 ---
+name: themes
 
 # Built-in themes
 
@@ -1807,13 +1845,47 @@ output:
 
 
 ---
+name: css-theme
 
 # Now we need to use CSS to:
 
 - edit or create a new theme
+- throw at xaringan-themer package
+
+---
+name: css-footer
+
+# Now we need to use CSS to:
+
 - add a custom layout, like a footer
 
 ---
+name: yourturn-4
+template: yourturn
+
+.right-column[
+
+Raise the [heat](#heat) on your slides by changing themes. Consider:
+
+1. Using a built-in theme ([demo slides](#themes))
+
+1. Creating your own theme ([demo slides](#css-theme))
+
+  + *Requires CSS*
+
+1. Adding a footer ([demo slide](#css-footer))
+
+  + *Requires CSS*
+
+]
+
+.left-column[
+## .fancy[.heatinline[08:00 minutes]]
+]
+
+---
+name: publish
+
 publishing from cloud setup
 
 workflow
@@ -1821,3 +1893,63 @@ workflow
 new project --> new directory --> new project
 
 in the new project, file --> new file --> rmarkdown --> from template (maybe) (for xaringan, learnr, flexdashboard)
+
+---
+name: rsconnect
+
+# RStudio Connect `r emo::ji("cloud")` + `r emo::ji("computer")`
+
+
++ `account =`
++ `server =` (defaults to `beta.rstudioconnect.com`)
+
+```{r publish-args, code=formatR::usage(bookdown::publish_book, output=FALSE, fail='none'), eval=FALSE, R.options=list(width=50)}
+```
+
+---
+name: netlify
+
+# GitHub + Netlify `r emo::ji("computer")`
+
+1. Add/commit/push your edits to your remote repository
+1. Go to [Netlify.com](https://www.netlify.com/)
+  + Login
+  + Select "New Site from Git"
+  + Select "GitHub"
+  + Find & select your repository with your bookdown project
+  + Leave "Build" empty
+  + Set "Publish Directory" to...
+  
+---
+name: yourturn-5
+template: yourturn
+
+.right-column[
+
+Serve your slides by publishing on either:
+
+1. RStudio Connect ([demo slides](#rsconnect))
+
+1. Github + Netlify ([demo slides](#netlify))
+]
+
+
+.left-column[
+## .fancy[.heatinline[05:00 minutes]]
+]
+
+---
+exclude: true
+
+If this is easy, try:
+
++ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
+
++ [name a single slide](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to it: `[back to the beginning](#xaringan-title)` -> [back to the beginning](#xaringan-title)
+
+
+If this is easy, try:
+
++ combining with the salts (make code chunks incremental),
+
++ play with adding emojis using the [emo package](https://github.com/hadley/emo)
