@@ -1965,8 +1965,8 @@ name: netlify
   + Set "Publish Directory" to...
   
 ---
-name: yourturn-5
 template: yourturn
+name: yourturn-5
 
 .right-column[
 
@@ -1975,12 +1975,16 @@ Serve your slides by publishing on either:
 1. RStudio Connect ([demo slides](#rsconnect))
 
 1. Github + Netlify ([demo slides](#netlify))
-]
 
+<br>
+
+]
 
 .left-column[
 ## .fancy[.heatinline[05:00 minutes]]
 ]
+
+
 
 ---
 exclude: true
