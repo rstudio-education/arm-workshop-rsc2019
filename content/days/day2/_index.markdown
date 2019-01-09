@@ -1,7 +1,7 @@
 ---
 author: ""
 categories: []
-date: "2018-12-21"
+date: "2019-01-09"
 menu:
   day2:
     name: Day 2 schedule
@@ -36,3 +36,5 @@ Here is a tentative timetable for Day 2:
 | Session #4, PM   | 04:00-05:00   | HTML widgets and Shiny |
 | Session #5, PM  | 05:00-05:30  | More advanced stuff, or Q & A if we are all tired |
 |               |05:30-07:30 | :tropical_drink: `rstudio::conf` reception |
+
+Slides are available at https://bit.ly/arm-xie.
