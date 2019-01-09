@@ -32,7 +32,7 @@ background-size: cover
 
 ### .fancy[Making Books in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2019-01-08]
+.large[Alison Hill | rstudio::conf | 2019-01-09]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
@@ -171,6 +171,8 @@ class: inverse, middle
 1. Make a [repo on &lt;i class="fab fa-github fa-lg fa-fw"&gt;&lt;/i&gt;GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
 
 1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
+
+    *File &gt; New Project &gt; Version Control &gt; Git*
 
 1. Run:
 
@@ -458,7 +460,7 @@ template: section
 --- 
 title: "A Minimal Book Example"
 author: "Yihui Xie"
-date: "2019-01-08"
+date: "2019-01-09"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -482,7 +484,7 @@ The `site` is **required**
 --- 
 title: "A Minimal Book Example" 
 author: "Yihui Xie" 
-date: "2019-01-08" 
+date: "2019-01-09" 
 site: bookdown::bookdown_site 
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -606,21 +608,28 @@ $if(github-repo)$&lt;meta name="github-repo" content="$github-repo$" /&gt;$endif
 
 This is the default.html template for our book's metadata. Some are static, like the character set. But others, like the last 4 here, are actually pulling values from our index YAML. 
 
-So you can see that if there is a url specified, it is saved as a meta tag; same with cover-image. In fact, the cover-image YAML parameter, combined with url, is needed for any kind of social sharing of your site.
+So you can see that if there is a url specified, it is saved as a meta tag; same with cover-image. In fact, the cover-image YAML parameter, combined with url, is needed for any kind of social sharing of your site. The description will also show up.
 
 
 ---
+name: meta
 
-Enable twitter cards
+
+# Viewing Meta &lt;i class="fas fa-tags"&gt;&lt;/i&gt;
 
 ```yaml
-cover-image: images/books.jpg # relative to index
 url: 'https\://alison-bookdown.netlify.com/' 
+cover-image: images/books.jpg # relative to index
+description: "This is a minimal example using the bookdown package for the rstudio::conf Advanced R Markdown Workshop."
 github-repo: rstudio-education/arm-companion-rsc2019
 ```
 
+---
+template: meta
+name: meta-twitter
 
-&lt;img src="img/bookdown-twitter-card.png" width="2651" /&gt;
+
+&lt;img src="img/bookdown-meta-twitter.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 
 .footnote[
@@ -631,9 +640,50 @@ https://bookdown.org/yihui/bookdown/usage.html
 
 This explains why you won't see any changes when you add some YAML parameters to index.Rmd
 
-The changes are fed to Pandoc to generate meta-data for your book website, but cover-image for example does not actually add a cover-image to your repo (try it!)
+The changes are fed to Pandoc to generate meta-data for your book website, but cover-image for example does not actually add a cover-image to your repo (try it!).
+
+Demo within browser --&gt; inspect element --&gt; search
 
 I'll explain github-repo a bit later, but if you have one you may as well add it here.
+
+---
+template: meta
+name: meta-community
+
+
+&lt;img src="img/bookdown-meta-community.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+
+.footnote[
+https://bookdown.org/yihui/bookdown/usage.html
+]
+
+---
+name: pandoc-meta
+
+# Viewing Meta &lt;i class="fas fa-tags"&gt;&lt;/i&gt;
+
+```
+&lt;meta property="og:url" content="https://alison-bookdown.netlify.com/"&gt;
+&lt;meta property="og:image" content="https://alison-bookdown.netlify.com/images/books.jpg"&gt;
+&lt;meta name="twitter:card" content="summary"&gt;
+&lt;meta name="twitter:title" content="Notes from the Advanced R Markdown Workshop"&gt;
+&lt;meta name="twitter:description" content="This is a minimal example using the bookdown package for the rstudio::conf Advanced R Markdown Workshop."&gt;
+&lt;meta name="twitter:image" content="https://alison-bookdown.netlify.com/images/books.jpg"&gt;
+```
+
+Test this out:
+
+https://cards-dev.twitter.com/validator
+
+Use this link:
+
+https://alison-bookdown.netlify.com/
+
+
+
+
+
 
 ---
 name: yourturn-2
@@ -648,27 +698,6 @@ template: yourturn
 .blue[.fancy[Hint:] see all possible Pandoc EPUB metadata parameters [here](https://pandoc.org/MANUAL.html#epub-metadata).]
 
 ]
-
----
-name: pandoc-meta
-
-```
-&lt;meta property="og:image" content="images/books.jpg"&gt;
-&lt;meta name="twitter:image" content="images/books.jpg"&gt;
-&lt;meta name="twitter:site" content="@hadley"&gt; # from twitter-handle
-```
-
-For example:
-
-https://cards-dev.twitter.com/validator
-
-&lt;i class="fas fa-link fa-lg fa-fw"&gt;&lt;/i&gt; https://r4ds.had.co.nz/
-
-&lt;i class="fas fa-link fa-lg fa-fw"&gt;&lt;/i&gt; https://moderndive.com/
-
-&lt;i class="fas fa-link fa-lg fa-fw"&gt;&lt;/i&gt; https://bookdown.org/yihui/rmarkdown/
-
-
 
 
 ---
@@ -973,7 +1002,7 @@ knitr::kable(
 See Figure [1](figure-cross).
 .center[
 
-&lt;img src="bookdown_files/figure-html/unnamed-chunk-24-1.png" width="75%" /&gt;
+&lt;img src="bookdown_files/figure-html/unnamed-chunk-25-1.png" width="75%" /&gt;
 
 **Fig. 1:** Look!]
 
@@ -1366,7 +1395,7 @@ render_book(input, output_format = NULL, ..., clean = TRUE,
 
 --
 
-Worth mentioning:
+Arguments worth mentioning:
 
 
 ```r

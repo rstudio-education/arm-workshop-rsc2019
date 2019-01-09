@@ -190,6 +190,8 @@ class: inverse, middle
 
 1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
 
+    *File > New Project > Version Control > Git*
+
 1. Run:
 
 ```{r eval = FALSE}
@@ -622,22 +624,29 @@ $if(github-repo)$<meta name="github-repo" content="$github-repo$" />$endif$
 
 This is the default.html template for our book's metadata. Some are static, like the character set. But others, like the last 4 here, are actually pulling values from our index YAML. 
 
-So you can see that if there is a url specified, it is saved as a meta tag; same with cover-image. In fact, the cover-image YAML parameter, combined with url, is needed for any kind of social sharing of your site.
+So you can see that if there is a url specified, it is saved as a meta tag; same with cover-image. In fact, the cover-image YAML parameter, combined with url, is needed for any kind of social sharing of your site. The description will also show up.
 
 
 ---
+name: meta
 
-Enable twitter cards
+
+# Viewing Meta <i class="fas fa-tags"></i>
 
 ```yaml
-cover-image: images/books.jpg # relative to index
 url: 'https\://alison-bookdown.netlify.com/' 
+cover-image: images/books.jpg # relative to index
+description: "This is a minimal example using the bookdown package for the rstudio::conf Advanced R Markdown Workshop."
 github-repo: rstudio-education/arm-companion-rsc2019
 ```
 
+---
+template: meta
+name: meta-twitter
 
-```{r echo = FALSE}
-knitr::include_graphics("img/bookdown-twitter-card.png")
+
+```{r echo = FALSE, out.width = "70%", fig.align='center'}
+knitr::include_graphics("img/bookdown-meta-twitter.png")
 ```
 
 
@@ -649,9 +658,52 @@ https://bookdown.org/yihui/bookdown/usage.html
 
 This explains why you won't see any changes when you add some YAML parameters to index.Rmd
 
-The changes are fed to Pandoc to generate meta-data for your book website, but cover-image for example does not actually add a cover-image to your repo (try it!)
+The changes are fed to Pandoc to generate meta-data for your book website, but cover-image for example does not actually add a cover-image to your repo (try it!).
+
+Demo within browser --> inspect element --> search
 
 I'll explain github-repo a bit later, but if you have one you may as well add it here.
+
+---
+template: meta
+name: meta-community
+
+
+```{r echo = FALSE, out.width = "40%", fig.align='center'}
+knitr::include_graphics("img/bookdown-meta-community.png")
+```
+
+
+.footnote[
+https://bookdown.org/yihui/bookdown/usage.html
+]
+
+---
+name: pandoc-meta
+
+# Viewing Meta <i class="fas fa-tags"></i>
+
+```
+<meta property="og:url" content="https://alison-bookdown.netlify.com/">
+<meta property="og:image" content="https://alison-bookdown.netlify.com/images/books.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Notes from the Advanced R Markdown Workshop">
+<meta name="twitter:description" content="This is a minimal example using the bookdown package for the rstudio::conf Advanced R Markdown Workshop.">
+<meta name="twitter:image" content="https://alison-bookdown.netlify.com/images/books.jpg">
+```
+
+Test this out:
+
+https://cards-dev.twitter.com/validator
+
+Use this link:
+
+https://alison-bookdown.netlify.com/
+
+
+
+
+
 
 ---
 name: yourturn-2
@@ -666,27 +718,6 @@ template: yourturn
 .blue[.fancy[Hint:] see all possible Pandoc EPUB metadata parameters [here](https://pandoc.org/MANUAL.html#epub-metadata).]
 
 ]
-
----
-name: pandoc-meta
-
-```
-<meta property="og:image" content="images/books.jpg">
-<meta name="twitter:image" content="images/books.jpg">
-<meta name="twitter:site" content="@hadley"> # from twitter-handle
-```
-
-For example:
-
-https://cards-dev.twitter.com/validator
-
-<i class="fas fa-link fa-lg fa-fw"></i> https://r4ds.had.co.nz/
-
-<i class="fas fa-link fa-lg fa-fw"></i> https://moderndive.com/
-
-<i class="fas fa-link fa-lg fa-fw"></i> https://bookdown.org/yihui/rmarkdown/
-
-
 
 
 ---
@@ -1316,7 +1347,7 @@ This yaml gets fed to the `bookdown::render_book` function:
 
 --
 
-Worth mentioning:
+Arguments worth mentioning:
 
 ```{r eval = FALSE}
 new_session: yes 
