@@ -298,6 +298,53 @@ graph %>% render_graph()
 
 
 ---
+class: inverse, middle, center
+
+# `r fa(name = "user-ninja")`
+
+# .fancy[Let's make a slide deck right now]
+
+---
+name: workflow
+class: inverse, middle
+
+# Do one
+
+--
+
+.pull-left[
+
+## .fancy[Your laptop `r emo::ji("computer")`]
+
+
+1. Make a [repo on <i class="fab fa-github fa-lg fa-fw"></i>GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
+
+1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
+
+    *File > New Project > Version Control > Git*
+
+1. Run:
+
+```{r eval = FALSE}
+bookdown:::bookdown_skeleton(getwd())
+```
+
+]
+
+--
+
+.pull-right[
+
+## .fancy[RStudio Server Pro `r emo::ji("cloud")`]
+
+
+1. Make a new RStudio project via wizard
+
+    *File > New Project > New Project > <br> call it: xxx*
+
+]
+
+---
 # Let's make this a slide deck
 
 Use the .Rmd provided to you...
@@ -451,7 +498,7 @@ template: sfah
 ## .acid[ACID] .heat[HEAT]
 
 ---
-
+name: outline
 template: sfah
 
 ## .salt[REMARK.JS] &nbsp; .fat[CHUNKS]
@@ -1765,3 +1812,12 @@ output:
 
 - edit or create a new theme
 - add a custom layout, like a footer
+
+---
+publishing from cloud setup
+
+workflow
+
+new project --> new directory --> new project
+
+in the new project, file --> new file --> rmarkdown --> from template (maybe) (for xaringan, learnr, flexdashboard)
