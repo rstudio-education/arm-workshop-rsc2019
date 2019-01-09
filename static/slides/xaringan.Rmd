@@ -257,7 +257,7 @@ knitr::include_url("https://arm.rbind.io/slides/xaringan.html", height = "300px"
 ---
 name: diagram
 
-# Hello `r fa(name = "user-ninja")`
+# Hello `r fa(name = "user-ninja", fill = "white")`
 
 With R Markdown, you are used to this:
 
@@ -699,11 +699,11 @@ name: textalign-demo
 ### Horizontal only
 
 ```
-.left[Left-aligned]
+.left[words]
 
-.center[Centered]
+.center[words]
 
-.right[Right-aligned]
+.right[words]
 ```
 ]
 
@@ -912,7 +912,7 @@ template: yourturn
 
 1. Incremental reveals with `--` ([demo slide](#increment-demo))
 
-1. Aligning all content with the `class` slide property ([demo slide](#fullalign-demo))
+1. Align all content with the `class` slide property ([demo slide](#fullalign-demo))
 
 1. Align some text on a slide with `.left / .center / .right` ([demo slide](#textalign-demo))
 
@@ -973,14 +973,14 @@ The [highlight style options are](https://github.com/gnab/remark/wiki/Configurat
   + `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
 
 ---
-name: highlightr-demo
+name: highlight-input
 
-# Highlight code input & output
+# Highlight code input
 
 .pull-left[
 
 ````
-```{r tx-wrangle, highlight.output = 3:4}`r ''`
+```{r tx-wrangle}`r ''`
 library(babynames)
 library(tidyverse)
 tx_names <- babynames %>%
@@ -994,7 +994,7 @@ tx_names <- babynames %>%
 
 .pull-right[
 
-```{r tx-wrangle, highlight.output = 3:4}
+```{r tx-wrangle-input, eval = FALSE}
 library(babynames)
 library(tidyverse)
 tx_names <- babynames %>%
@@ -1006,9 +1006,53 @@ glimpse(tx_names) #<<
 ]
 
 .footnote[
-To highlight a line of plain markdown text, use a `*` (from [remark docs](https://github.com/gnab/remark/wiki/Configuration))
+See https://slides.yihui.name/xaringan/#31
+
+Note that to highlight a line of plain markdown text, use a `*` (from [remark docs](https://github.com/gnab/remark/wiki/Configuration))
 ]
 
+---
+name: highlight-output
+
+# Highlight code output
+
+.pull-left[
+
+````
+```{r tx-wrangle, highlight.output = 3:4}`r ''`
+library(babynames)
+library(tidyverse)
+tx_names <- babynames %>%
+  filter(name == "Dallas" | 
+         name == "Austin") %>%
+  filter(sex == "F") 
+glimpse(tx_names) 
+```
+````
+
+Other options:
+
++ `highlight.output = TRUE`
++ `highlight.output = c(1, 3)`
+]
+
+.pull-right[
+
+```{r tx-wrangle-output, highlight.output = 3:4}
+library(babynames)
+library(tidyverse)
+tx_names <- babynames %>%
+  filter(name == "Dallas" | 
+         name == "Austin") %>%
+  filter(sex == "F") 
+glimpse(tx_names) 
+```
+]
+
+
+.footnote[
+See https://slides.yihui.name/xaringan/#32
+]
 
 ---
 name: table-demos
@@ -1423,15 +1467,15 @@ template: yourturn
 
 [Fatten](#fat) up your slides with some R code chunks (+ `knitr` butter). Consider:
 
-1. [Edit your YAML](#highlightjs-demo) to include a `highlightStyle`, and set `highlightLines` to true.
-
 1. Add a table ([demo slides](#table-demos))
 
-1. Add a plot with decent resolution ([demo slide](#plot-demo))
+1. Add a plot ([demo slide](#plot-demo))
 
-1. Highlight some lines of R input/output ([demo slide](#highlightr-demo))
+1. Enable code highlighting ([demo slide](#highlightjs-demo))
+  + Highlight R input ([demo slide](#highlight-input))
+  + Highlight R output ([demo slide](#highlight-output))
 
-1. Uses some fancy code chunk options ([demo slide](#knitr-demo))
+1. Make some side-by-side code/plot slides ([demo slide](#tldr-side-by-side))
 
 ]
 
