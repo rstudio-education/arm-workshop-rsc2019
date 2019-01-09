@@ -32,7 +32,7 @@ background-size: cover
 
 ### .fancy[Making Books in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2019-01-07]
+.large[Alison Hill | rstudio::conf | 2019-01-08]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
@@ -156,18 +156,19 @@ class: inverse, middle, center
 
 
 ---
+name: workflow
 class: inverse, middle
 
-# Choose a workflow
+# Do one
 
 --
 
 .pull-left[
 
-# .fancy[[New project, &lt;i class="fab fa-github fa-lg fa-fw"&gt;&lt;/i&gt; first](https://happygitwithr.com/new-github-first.html)]
+## .fancy[Your laptop 💻]
 
 
-1. Make a [repo on GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
+1. Make a [repo on &lt;i class="fab fa-github fa-lg fa-fw"&gt;&lt;/i&gt;GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
 
 1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
 
@@ -184,7 +185,7 @@ bookdown:::bookdown_skeleton(getwd())
 
 .pull-right[
 
-# .fancy[.blue[New project only]]
+## .fancy[RStudio Server Pro ☁️]
 
 
 1. Make a new RStudio project via wizard
@@ -423,13 +424,13 @@ template: section
 .right-column[
 # &lt;i class="fas fa-feather-alt"&gt;&lt;/i&gt;.fancy[Outline]
 
-+ Preface: the [`index.Rmd`](#index-YAML) &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#index-file"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
++ Preface: [the `index.Rmd`](#index-YAML) &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#index-file"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
 
 + Story: [the chapter `.Rmd` files](#chapters) &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#rmd-files"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
 
-+ Table of Contents: [The `_bookdown.yml`](#bookdown-YAML) &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#bookdown.yml"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
++ Table of Contents: [the `_bookdown.yml`](#bookdown-YAML) &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#bookdown.yml"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
 
-+ Off to Press: the [`_bookdown.yml` and `_output.yml` files](#press) &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#output.yml"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
++ Off to Press: [the `_bookdown.yml` and `_output.yml` files, &amp; publishing](#press) &lt;a href="https://bookdown.org/yihui/rmarkdown/bookdown-project.html#output.yml"&gt;&lt;i class="fas fa-book"&gt;&lt;/i&gt;&lt;/a&gt;
 ]
 
 
@@ -457,7 +458,7 @@ template: section
 --- 
 title: "A Minimal Book Example"
 author: "Yihui Xie"
-date: "2019-01-07"
+date: "2019-01-08"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -481,7 +482,7 @@ The `site` is **required**
 --- 
 title: "A Minimal Book Example" 
 author: "Yihui Xie" 
-date: "2019-01-07" 
+date: "2019-01-08" 
 site: bookdown::bookdown_site 
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -1342,6 +1343,7 @@ template: section
 # &lt;i class="fas fa-scroll"&gt;&lt;/i&gt;.fancy[Off to press:]
 
 ## .fancy[the `_bookdown.yml` and `_output.yml` files]
+## .fancy[&amp; publishing]
 
 ]
 
@@ -1416,7 +1418,7 @@ Most arguments are passed to [`rmarkdown::html_document()`](https://github.com/r
 bookdown::gitbook:
   css: [css/arm.css]
   highlight: kate
-  config = ???
+  config: ???
 ```
 
 --
@@ -1459,21 +1461,36 @@ bookdown::gitbook:
   css: [css/arm.css]
   highlight: kate
   config:
+    toc: &lt;!--covered earlier!--&gt;
     download: ["rmd"]
     edit:
-      link: https://github.com/username/repo/edit/master/%s
-    toc: &lt;!--covered earlier!--&gt;
+      link: https://github.com/username/repo/edit/branch/%s
+      text: "Suggest an edit"
     sharing:
       github: yes
       facebook: no
       twitter: yes
 ```
+
+Very important!
+1. `https://github.com/apreshill/armed/edit/master/%s`
+1. For GitHub sharing, you must include in `index.Rmd` YAML: 
+`github-repo: apreshill/armed`
 ]
 
 
 .footnote[
 https://github.com/rstudio/bookdown/blob/master/R/gitbook.R
 ]
+
+---
+name: publish
+
+Options:
+
+1. RStudio Connect ☁️ + 💻
+1. Netlify 💻
+1. GitHub Pages
 
 ---
 name: yourturn-5
@@ -1490,24 +1507,51 @@ template: yourturn
 
 ]
 
----
-exclude: true 
 
-- go to https://github.com/mine-cetinkaya-rundel/thesisdowndss to view the README
-- install package and load
-- start new book using the RStudio GUI, making sure to name it index
-- knit, and voila!
-- observe how math text works, make changes, re-observe
-- ex: add image, where should you save it? (a bit on using an external CDN like google images)
-- how to do referencing
-- how to do citations
 
 ---
-notes to self:
+name: publish
+class: inverse, middle, center
 
-to get twitter cards, in index.rmd need url and cover-image (pandoc)
-to get github edit link, do edit in _bookdown.yml
-to github repo link, do _output.yml, sharing github: yes; also need github-repo defined in index.Rmd
+![](https://media.giphy.com/media/atcqQ5PuX41J6/giphy.gif)&lt;!-- --&gt;
+
+
+# .fancy[Let's publish a book right now]
+
+Options:
+
+1. RStudio Connect ☁️ + 💻
+1. GitHub + Netlify 💻
+
+
+---
+name: rsconnect
+
+# RStudio Connect ☁️ + 💻
+
+
++ `account =`
++ `server =` (defaults to `beta.rstudioconnect.com`)
+
+
+```r
+publish_book(name = NULL, account = NULL, server = NULL,
+    render = c("none", "local", "server"))
+```
+
+---
+name: netlify
+
+# GitHub + Netlify 💻
+
+1. Add/commit/push your edits to your remote repository
+1. Go to [Netlify.com](https://www.netlify.com/)
+  + Login
+  + Select "New Site from Git"
+  + Select "GitHub"
+  + Find &amp; select your repository with your bookdown project
+  + Leave "Build" empty
+  + Set "Publish Directory" to `_book` (unless you set the `output_dir` in your [`_bookdown.yml`](#render) to something else!)
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="https://platform.twitter.com/widgets.js"></script>
