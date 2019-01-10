@@ -1,7 +1,7 @@
 ---
 title: AM Session Overview
 
-date: "2019-01-04"
+date: "2019-01-09"
 
 draft: false
 toc: true
@@ -13,3 +13,10 @@ menu: day2
 
 The AM sessions will cover:
 
+- Using R Markdown through the command line
+
+- Understanding Pandoc's Markdown
+
+- Some lesser-known features of **knitr**
+
+- R Markdown output formats
