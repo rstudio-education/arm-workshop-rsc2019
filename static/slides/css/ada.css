@@ -110,13 +110,6 @@ pre {
   overflow-x: auto;
 }
 
-/* my title slide */
-.title-slide {
-  background-image: url(../img/ada_lovelace_cropped.png);
-  background-size: cover;
-  background-position: right top; 
-  color: #FFF;
-}
 
 img.lil {
   width: 15%;
