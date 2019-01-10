@@ -2,6 +2,10 @@
   font-size: 160%;
 }
 
+.bright {
+  color: #F9388C;
+}
+
 /* highlighted code */
 
 .remark-code-line-highlighted {
