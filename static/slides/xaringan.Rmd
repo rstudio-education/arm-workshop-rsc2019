@@ -1828,7 +1828,7 @@ template: yourturn
 
 .right-column[
 
-Throw some [acid](#acid) on your slides with images. Consider:
+Add some [acid](#acid) to your slides with images. Consider:
 
 1. Adding a background image to a slide ([demo slides](#background-image))
 

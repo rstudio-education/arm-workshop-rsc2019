@@ -52,9 +52,9 @@ slides %>%
 
 ```{r}
 activities <- tribble(~link, ~description, ~time,
-                      "../../../slides/xaringan.html#yourturn-1", "Season some slides with `remark.js` salt", "05:00 minutes",
-                      "../../../slides/xaringan.html#yourturn-2", "Fatten up your slides with some R code chunks (+ `knitr` butter)", "05:00 minutes",
-                      "../../../slides/xaringan.html#yourturn-3", "Throw some acid on your slides with images", "08:00 minutes",
+                      "../../../slides/xaringan.html#yourturn-1", "Season some slides with remark.js salt", "05:00 minutes",
+                      "../../../slides/xaringan.html#yourturn-2", "Fatten up your slides with some R code chunks (+ knitr butter)", "05:00 minutes",
+                      "../../../slides/xaringan.html#yourturn-3", "Add some acid to your slides with images", "08:00 minutes",
                       "../../../slides/xaringan.html#yourturn-4", "Raise the heat on your slides by changing themes", "08:00 minutes",
                       "../../../slides/xaringan.html#yourturn-5", "Serve your slides by publishing them online", "05:00 minutes")
 
