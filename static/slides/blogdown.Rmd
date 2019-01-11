@@ -116,22 +116,21 @@ class: middle, center, inverse
 ![](https://lh3.googleusercontent.com/iXmJ9aWblkGDpg-_jpcqaY10KmA8HthjZ7F15U7mJ9PQK6vZEStMlathz1FfQQWV5XeeF-A1tZ0UpDjx3q6vEm2BWZn5k1btVSuBk9ad=s660)
 
 ---
-name: workflow
+name: start
 class: inverse, middle
 
-# Do one
+## Do one
 
 --
 
 .pull-left[
 
-### .fancy[.center[Local setup `r emo::ji("computer")`]]
+### .fancy[.center[`r emo::ji("computer")` Local]]
 
 
 1. Make a [repo on <i class="fab fa-github fa-lg fa-fw"></i>GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
 
-1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
-
+1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone) <br>
     *File > New Project > Version Control > Git*
 
 1. Run:
@@ -151,12 +150,14 @@ new_site(theme = "jpescador/hugo-future-imperfect",
 
 .pull-right[
 
-### .fancy[.center[Cloud setup `r emo::ji("cloud")`]]
+### .fancy[.center[`r emo::ji("cloud")` Cloud or `r emo::ji("computer")` Local]]
 
 
-1. Make a new RStudio project via wizard
+1. Make a new RStudio project via wizard <br> 
+    *File > New Project > New Directory*
 
-    *File > New Project > New Directory > <br> <img src="https://discourse-cdn-sjc2.com/standard10/uploads/gohugo/original/2X/c/c2d3414c64e766d814100b32063948e604298a70.png" width="5%"> Website using blogdown*
+1. Scroll down to select: <br>
+    *<img src="https://discourse-cdn-sjc2.com/standard10/uploads/gohugo/original/2X/c/c2d3414c64e766d814100b32063948e604298a70.png" width="4%"> Website using blogdown*
 
 ```{r echo = FALSE, out.width='80%'}
 knitr::include_graphics("img/blogdown-workflow-wizard.png")
@@ -184,7 +185,7 @@ finally, to_yaml converts all the exampleSite content to YAML instead of TOML fi
 ---
 name: dir-structure
 
-# Directory Structure
+# `r emo::ji("closed_lock_with_key")` Directory Structure
 
 ```{r eval = FALSE}
 .
@@ -209,8 +210,9 @@ https://gohugo.io/getting-started/directory-structure/
 ]
 
 ---
+name: hugo-index
 
-# Directory Structure
+# `r emo::ji("closed_lock_with_key")` Directory Structure
 
 ```{r eval = FALSE}
 .
@@ -220,9 +222,44 @@ https://gohugo.io/getting-started/directory-structure/
 ├── config.toml
 ├── content/
 ├── data/
-├── index.Rmd #<<
+├── index.Rmd # DO NOT TOUCH #<<
 ├── layouts/ 
-├── public/ #<<
+├── public/ 
+├── resources/
+├── static/
+├── staticman.yml
+└── themes/
+```
+
+--
+
+```{yaml}
+---
+site: blogdown:::blogdown_site
+---
+```
+
+???
+
+index.Rmd does one thing- let's open it up- it is your only R markdown YAML. It specifies your output format as a blogdown site. This is specific to using Hugo via blogdown.
+
+
+---
+name: hugo-public
+
+# `r emo::ji("closed_lock_with_key")` Directory Structure
+
+```{r eval = FALSE}
+.
+├── .Rproj.user/
+├── ada-blog.Rproj
+├── archetypes/ 
+├── config.toml
+├── content/
+├── data/
+├── index.Rmd 
+├── layouts/ 
+├── public/ # DO NOT TOUCH #<<
 ├── resources/
 ├── static/
 ├── staticman.yml
@@ -231,15 +268,332 @@ https://gohugo.io/getting-started/directory-structure/
 
 ???
 
-index.Rmd does one thing- let's open it up- it is your only R markdown YAML. It specifies your output format as a blogdown site.
 
 public is where your final rendered site files will go
 
 You never touch this folder- it re-generates every time we serve our site
 
 ---
+name: noknit
+class: middle, inverse, center
 
-# Directory Structure
+# DON'T `r emo::ji("knit")` KNIT!
+
+![](https://media.giphy.com/media/Vg6vGMxVs9Sve/giphy.gif)
+
+---
+name: serve
+
+class: center, inverse, middle
+
+# `r emo::ji("bellhop_bell")`
+
+# .fancy[Serve site!]
+
+Mouse up to "Addins" `r emo::ji("arrow_right")` "Serve site"
+
+![](img/addin-serve-site.png)
+
+
+
+
+---
+class: center, inverse, top
+
+# `r emo::ji("peacock")` Success?
+
+
+```{r echo = FALSE, out.width='75%'}
+include_graphics("img/blogdown-exampleSite.png")
+```
+
+
+.footnote[
+.fancy[.bright["Show in new window"]] to see in local browser
+]
+
+???
+
+What are we seeing here? Everything that is the public folder. 
+
+---
+class: middle, inverse, center
+
+
+```{r echo = FALSE}
+library(fs)
+library(magick)
+library(tidyverse)
+
+list_png <- c(here::here("static/slides/img/blogdown-lifecycle-01.png"),
+              here::here("static/slides/img/blogdown-lifecycle-02.png"),
+              here::here("static/slides/img/blogdown-lifecycle-03.png"))
+
+list_png %>% 
+  map(image_read) %>% # reads each path file
+  image_join() %>% # joins image
+  image_scale("1500") %>% 
+  image_animate(fps = .5)  # animates, can opt for number of loops
+```
+
+
+---
+name: yourturn
+class: middle, inverse
+
+.left-column[
+<br>
+<br>
+<br>
+<br>
+```{r echo = FALSE, out.width='75%'}
+knitr::include_graphics("img/Ada_Lovelace_color.svg")
+```
+
+<!--![](img/Ada_Lovelace_color.svg)-->
+]
+
+.right-column[
+# <i class="fas fa-edit"></i> .fancy[Your turn]
+]
+
+---
+name: yourturn-1
+template: yourturn
+
+.right-column[
+# .fancy[05:00 minutes]
+### Orient yourself to your site, and the files in it!
+
+Ideas:
+
++ Where is the `.md` file for the blog post .bright["Creating A New Theme"]?
++ Where is the `.jpg` file you see in the .bright[hex image] stored? What about the featured images for each blog post?
++ Where is the `.md` file you see under .bright[About]? (i.e., "Hugo is a static site engine written in Go.")
++ Where are the `.md` files you see under .bright[Itemized]? (i.e., fancy apps 1-4)
+
+]
+
+---
+name: outline
+class: middle, inverse
+
+
+# .fancy[Outline]
+
++ ~~Orient ourselves to our site and its files~~ [`r emo::ji("key")`](#yourturn-1)
+
++ Edit the `config.toml` [`r emo::ji("key")`](#block1)
+
++ Add content [`r emo::ji("key")`](#block2)
+
++ Deploy
+
+
+
+---
+name: block1
+class: middle, inverse, center
+
+# `r emo::ji("house")`
+
+## Edit the configuration file
+
+.footnote[
+https://bookdown.org/yihui/blogdown/configuration.html
+]
+
+---
+
+# Edit `config.toml`
+
+```{r eval = FALSE}
+baseurl = "/" #<<
+languageCode = "en-us"
+title = "Ada Lovelace" #<<
+theme = "hugo-future-imperfect"
+preserveTaxonomyNames = true
+paginate = 3
+disqusShortname = "shortname"
+googleAnalytics = ""
+pluralizeListTitles = false
+# Set the followings to true as part of your site SEO
+enableRobotsTXT = true
+canonifyURLs = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"] #<<
+relativeURLS = true #<<
+```
+
+- `<title>Ada Lovelace</title>`
+
+- `ignoreFiles`: copy and paste this from your R console when you first served your site
+
+- *.bright[Very important!]* Setting `relativeURLS` is critical for `r emo::ji("cloud")` setup
+
+???
+
+The first thing I do with any new Hugo theme is make sure the baseurl is just a forward slash. That will always work. This theme has that already, but some don't
+
+Do not change theme here- but it refers to the theme folder you want.
+
+You could have multiple Hugo themes in your themes/ directory.
+
+So the theme name should match the name of the folder that holds the theme you want to use.
+
+
+
+---
+class: middle, inverse, center
+
+## `r emo::ji("new")` A full `public` folder
+
+
+
+```{r out.width='35%', echo = FALSE}
+knitr::include_graphics("img/blogdown-public.png")
+```
+
+---
+
+# Back to `config.toml`
+
+
+
+```{r eval = FALSE}
+baseurl = "/" 
+languageCode = "en-us"
+title = "Ada Lovelace" 
+theme = "hugo-future-imperfect"
+preserveTaxonomyNames = true
+paginate = 3
+disqusShortname = "shortname"
+googleAnalytics = ""
+pluralizeListTitles = false
+# Set the followings to true as part of your site SEO
+enableRobotsTXT = true
+canonifyURLs = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+relativeURLS = true 
+enableEmoji = true #<<
+
+[params]
+  # Sets the meta tag description
+  description          = "Ada's blog" #<<
+  # Sets the navbarTitle that appears in the top left of the navigation bar
+  navbarTitle          = "Ada Lovelace" #<<
+  # Sets where "View More Posts" links
+  viewMorePostLink     = "/blog/"
+```
+
+???
+
+There are some standard parameters in hugo config.toml files- just because it isn't in the site's example config doesn't mean you can use them!
+
+---
+name: livereload
+
+class: center, inverse, middle
+
+# `r emo::ji("bellhop_bell")`
+
+# .fancy[Click save!]
+
+Through the magic of .fancy[.bright[LiveReload]], 
+you don't need to serve your site again.
+
+
+???
+
+What are we seeing here? Everything that is the public folder. 
+
+---
+
+# Add image
+
+Mouse over the `static/img/main/` and see `logo.jpg`? We can replace that file, or make new file. I'll replace mine with [this picture](https://en.wikipedia.org/wiki/Ada_Lovelace).
+
+```{r eval = FALSE}
+[params.intro]
+  header    = "Ada Lovelace" #<<
+  paragraph = "A fine place to share my thoughts" #<<
+  about     = "" #<<
+
+  # This appears at the top of the sidebar above params.intro.header.
+  # A width of less than 100px is recommended from a design perspective.
+  [params.intro.pic]
+    src       = "/img/main/ada_square.jpg" #<<
+    # Sets Image to be a cirlce
+    circle    = false
+    # Sets Image to be Future Imperfect's hexagon
+    imperfect = true
+    width     = ""
+    alt       = "Ada portrait from Wikipedia" #<<
+```
+
+
+???
+
+In the Hugo framework, static things are images, CSS, JavaScript, etc.
+
+So you can assume that any image files are expected to be somewhere in the static directory.
+
+Here, it looks like the exampleSite used the path static/img/main. So mouse over there and see if you see logo.jpg. 
+
+You could save over that image, or you can add another image and update the file name in the config file.
+
+
+When Hugo builds your site, all assets inside your static directory are copied over as-is. 
+
+---
+class: center, inverse, top
+
+# `r emo::ji("peacock")` Success?
+
+
+```{r echo = FALSE, out.width='70%'}
+include_graphics("img/blogdown-configs.png")
+```
+
+
+.footnote[
+.fancy[.bright["Show in new window"]] to see in local browser
+]
+
+---
+name: yourturn-2
+template: yourturn
+
+.right-column[
+# .fancy[05:00 minutes]
+### Edit the `config.toml` to customize your site.
+
+Ideas:
+
++ Update your `[[menu.main]]` text, Font Awesome icons (or remove!), or switch weights (the order).
++ Set up your `[social]` media icons.
++ Change the `highlightjs` theme.
++ Switch some of the "Optional Params"- see what they do.
+
+.bright[.fancy[Stretch:]] All possible Hugo configuration variables are [listed here](https://gohugo.io/getting-started/configuration/).
+
+]
+
+---
+name: block2
+class: middle, inverse, center
+
+# `r emo::ji("gift")`
+
+## Add content
+
+.footnote[
+https://bookdown.org/yihui/blogdown/content.html
+]
+
+---
+name: hugo-themes
+
+# `r emo::ji("closed_lock_with_key")` Directory Structure
 
 ```{r eval = FALSE}
 .
@@ -255,12 +609,16 @@ You never touch this folder- it re-generates every time we serve our site
 ├── resources/
 ├── static/
 ├── staticman.yml
-└── themes/ #<<
+└── themes/ # DO NOT TOUCH #<< 
 ```
 
 ???
 
-themes is where all the Hugo theme files go
+themes is where all the Hugo theme files go.
+
+This determines the look and layout of your site, as well as the bells and whistles that each individual Hugo theme developer employs. It also may leave out some Hugo bells and whistles that you DO want. 
+
+IT ALL DEPENDS ON YOUR THEME
 
 You also never touch this folder!
 
@@ -271,14 +629,17 @@ class: middle, inverse
 
 # `r emo::ji("key")` Overriding vs editing
 
-> *When you use a theme cloned from its git repository, do not edit the theme’s files directly. Instead, theme customization in Hugo is a matter of overriding the templates made available to you in a theme. This provides the added flexibility of tweaking a theme to meet your needs while staying current with a theme’s upstream.* https://gohugo.io/themes/customizing/
+> *When you use a theme cloned from its git repository, do not edit the theme’s files directly. Instead, theme customization in Hugo is a matter of overriding the templates made available to you in a theme. This provides the added flexibility of tweaking a theme to meet your needs while staying current with a theme’s upstream.* 
+
+.footnote[https://gohugo.io/themes/customizing/]
 
 
 
 
---
+---
+class: middle, inverse
 
-Note which folders are *empty* at the top level of your project:
+# `r emo::ji("hole")` `empty_dirs = TRUE`
 
 ```{r eval = FALSE}
 .
@@ -320,12 +681,12 @@ include_graphics("img/blogdown-theme-dir.png")
 .pull-left[
 your .fancy[.bright[theme]] directory...
 ```{r eval = FALSE}
-.
-├── archetypes/ #<<
-├── exampleSite/
-├── images/
-├── layouts/ #<<
-└── static/ #<<
+└── themes/
+|   └──  archetypes/ #<<
+|   └──  exampleSite/
+|   └──  images/
+|   └──  layouts/ #<<
+|   └──  static/ #<<
 ```
 ]
 
@@ -350,504 +711,231 @@ your .fancy[.bright[theme]] directory...
 ]
 
 ---
+name: hugo-archetypes
 
-class: center, inverse, middle
+# Hugo Archetypes
 
-# `r emo::ji("bellhop_bell")`
-
-# Serve site!
-
-Mouse up to "Addins" ➡️ "Serve site"
-
-![](img/addin-serve-site.png)
-
----
-class: center, inverse, top
-
-# `r emo::ji("tada")` Success?
-
-
-```{r echo = FALSE, out.width='75%'}
-include_graphics("img/blogdown-exampleSite.png")
+```{r eval = FALSE}
+.
+├── .Rproj.user/
+├── ada-blog.Rproj
+├── archetypes/ 
+|   └──  blog.md #<<
+|   └──  default.md #<<
+|   └──  itemized.md #<<
+├── config.toml
+├── content/
+├── data/
+├── index.Rmd
+├── layouts/
+├── public/
+├── resources/
+├── static/ 
+├── staticman.yml
+└── themes/
 ```
 
 
-.footnote[
-.fancy[.bright["Show in new window"]] to see in local browser
-]
+???
+
+You can create new content files in Hugo using the hugo new command. By default, Hugo will create new content files with at least date, title (inferred from the file name), and draft = true. This saves time and promotes consistency for sites using multiple content types. 
 
 ---
-class: middle, inverse, center
+name: hugo-blog
 
-# `r emo::ji("house")`
-
-## Edit the configuration file
-
----
-
-# Open `config.toml`
-
-- TOML<sup>*</sup> is like YAML, but not 
+# The blog archetype
 
 .pull-left[
-```{r eval = FALSE}
+`themes/hugo-future-imperfect/archetypes/blog.md`
+```js
 +++
-title = "Lab 06: CS631"
-tags = ["toml","yaml"]
-
-type = "article"
-
-[amp]
-elements = []
-    
-[article]
-lead = "Lorem ipsum."
-category = "frontmatter"
-related = []
+author = ""
+categories = [""]
+date = ""
+description = ""
+featured = ""
+featuredalt = ""
+featuredpath = ""
+linktitle = ""
+title = ""
+type = "post" 
 +++
 ```
+
 ]
 
 .pull-right[
-```{r eval = FALSE}
+`./content/blog/goisforlovers.md`
+```js
 ---
-title: "Lab 06: CS631"
-tags:
-- toml
-- yaml
-type: article
-amp:
-  elements: []
-article:
-  lead: Lorem ipsum.
-  category: frontmatter
-  related: []
+author: Unknown Author
+categories:
+- Go
+date: "2014-04-02"
+description: ""
+featured: pic02.jpg
+featuredalt: Pic 2
+featuredpath: date
+linktitle: ""
+title: (Hu)go Template Primer
+type: post
 ---
 ```
 ]
 
-.footnote[
-[\*] https://gohugohq.com/howto/toml-json-yaml-comparison/
-]
 
 ---
 
-# Open `config.toml`
+# TOML vs. YAML
 
-- blocks wrapped by `+++` vs `---` <sup>*</sup> 
+- TOML is like YAML, but not 
+- blocks wrapped by `+++` vs `---` 
 - Your `config.toml` file doesn't show this explicitly but it is there!
+- key-value pairs are separated by a `=` vs `:` 
+- YAML uses indentation with one or more spaces to describe nested collections 
 
-.pull-left[
+
+--
+
+This is why we used `new_site(to_yaml = TRUE)`!
+
+--
+
+If you end up with TOML in your content, try (after backing up your files):
 ```{r eval = FALSE}
-+++ #<<
-title = "Lab 06: CS631"
-tags = ["toml","yaml"]
-
-type = "article"
-
-[amp]
-elements = []
-    
-[article]
-lead = "Lorem ipsum."
-category = "frontmatter"
-related = []
-+++ #<<
+hugo_convert(to = "YAML", unsafe = TRUE)
 ```
-]
 
-.pull-right[
-```{r eval = FALSE}
---- #<<
-title: "Lab 06: CS631"
-tags:
-- toml
-- yaml
-type: article
-amp:
-  elements: []
-article:
-  lead: Lorem ipsum.
-  category: frontmatter
-  related: []
---- #<<
-```
-]
+
+
+--
 
 .footnote[
-[\*] https://gohugohq.com/howto/toml-json-yaml-comparison/
+https://gohugohq.com/howto/toml-json-yaml-comparison/
+
+https://learnxinyminutes.com/docs/yaml/
+
+https://learnxinyminutes.com/docs/toml/
 ]
 
 ---
+class: inverse, middle, center
 
-# Open `config.toml`
-
-- key-value pairs are separated by a `=` vs `:` <sup>*</sup> 
-
-.pull-left[
-```{r eval = FALSE}
-+++ 
-title = "Lab 06: CS631" #<<
-tags = ["toml","yaml"]
-
-type = "article"
-
-[amp]
-elements = []
-    
-[article]
-lead = "Lorem ipsum."
-category = "frontmatter"
-related = []
-+++ 
-```
-]
-
-.pull-right[
-```{r eval = FALSE}
---- 
-title: "Lab 06: CS631" #<<
-tags:
-- toml
-- yaml
-type: article
-amp:
-  elements: []
-article:
-  lead: Lorem ipsum.
-  category: frontmatter
-  related: []
+# Archetypes `r emo::ji("arrows_counterclockwise")` Layouts
 ---
-```
-]
+name: hugo-layouts
 
-.footnote[
-[\*] https://gohugohq.com/howto/toml-json-yaml-comparison/
-]
-
----
-
-# Open `config.toml`
-
-- YAML uses indentation with one or more spaces to describe nested collections <sup>*</sup>
-
-.pull-left[
-```{r eval = FALSE}
-+++ 
-title = "Lab 06: CS631" 
-tags = ["toml","yaml"] #<<
-
-type = "article"
-
-[amp]
-elements = []
-    
-[article]
-lead = "Lorem ipsum."
-category = "frontmatter"
-related = []
-+++ 
-```
-]
-
-.pull-right[
-```{r eval = FALSE}
---- 
-title: "Lab 06: CS631" 
-tags: #<<
-- toml #<<
-- yaml #<<
-type: article
-amp:
-  elements: []
-article:
-  lead: Lorem ipsum.
-  category: frontmatter
-  related: []
----
-```
-]
-
-.footnote[
-[\*] https://gohugohq.com/howto/toml-json-yaml-comparison/
-]
-
----
-
-# Edit `config.toml`
+# Hugo Layouts
 
 ```{r eval = FALSE}
-baseurl = "/" #<<
-languageCode = "en-us"
-title = "Ada Lovelace" #<<
-theme = "hugo-future-imperfect"
-preserveTaxonomyNames = true
-paginate = 3
-disqusShortname = "shortname"
-googleAnalytics = ""
-pluralizeListTitles = false
-# Set the followings to true as part of your site SEO
-enableRobotsTXT = true
-canonifyURLs = true
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"] #<<
-relativeURLS = true #<<
-
-[params]
-  # Sets the meta tag description
-  description          = "Ada's blog" #<<
-  # Sets the navbarTitle that appears in the top left of the navigation bar
-  navbarTitle          = "Ada Lovelace" #<<
-  # Sets where "View More Posts" links
-  viewMorePostLink     = "/blog/"
+.
+├── .Rproj.user/
+├── ada-blog.Rproj
+├── archetypes/
+├── config.toml
+├── content/
+├── data/
+├── index.Rmd
+├── layouts/ #<<
+├── public/
+├── resources/
+├── static/ 
+├── staticman.yml
+└── themes/
 ```
 
-- `<title>Ada Lovelace</title>`
-
-- `ignoreFiles`: copy and paste this from your R console when you first served your site
-
-- *.bright[Very important!]* Setting `relativeURLS` is critical for `r emo::ji("cloud")` setup
 
 ???
 
-The first thing I do with any new Hugo theme is make sure the baseurl is just a forward slash. That will always work. This theme has that already, but some don't
-
-Do not change theme here- but it refers to the theme folder you want.
-
-You could have multiple Hugo themes in your themes/ directory.
-
-So the theme name should match the name of the folder that holds the theme you want to use.
-
+Stores templates in the form of .html files that specify how views of your content will be rendered into a static website. 
 
 
 ---
-class: middle, inverse, center
-
-## .fancy[.bright[NEW!]] A full `public` folder
-
-
-
-```{r out.width='35%', echo = FALSE}
-knitr::include_graphics("img/blogdown-public.png")
-```
-
-
----
-name: section
-class: middle, inverse
-background-image: url(callum-shaw-557874-unsplash.jpg)
-background-size: cover
-
----
-name: outline
-template: section
-
-
-# `r emo::ji("old_key")` .fancy[Outline]
-
-+ Edit the `config.toml`
-
-+ Add content
-
-+ Deploy
-
-
-
----
-
-# Go back to `config.toml`
-
-
-
-```{r eval = FALSE}
-baseurl = "/" 
-theme = "cocoa-eh-hugo-theme"
-builddrafts = true
-canonifyurls = true
-contentdir = "content"
-languageCode = "en-US"
-layoutdir = "layouts"
-publishdir = "public"
-author = "Ada Lovelace" 
-title = "Ada Lovelace" 
-disqusshortname = ""
-pluralizelisttitles = false
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"] 
-enableEmoji = true #<<
-```
-
-???
-
-There are some standard parameters in hugo config.toml files- just because it isn't in the site's example config doesn't mean you can use them!
-
----
-
-# Update logo
-
-Mouse over the `static/img/` and see `logo.jpg`? We can replace that file, or make new file. I'll replace mine with [this picture](https://en.wikipedia.org/wiki/Ada_Lovelace).
-
-```{r eval = FALSE}
-[params.intro]
-  header    = "Ada Lovelace" #<<
-
-  paragraph = "A fine place to share my thoughts" #<<
-
-  about     = "" #<<
-
-  # This appears at the top of the sidebar above params.intro.header.
-  # A width of less than 100px is recommended from a design perspective.
-  [params.intro.pic]
-    src       = "/img/main/ada_square.jpg" #<<
-    # Sets Image to be a cirlce
-    circle    = false
-    # Sets Image to be Future Imperfect's hexagon
-    imperfect = true
-    width     = ""
-    alt       = "Ada from Wikipedia" #<<
-```
-
----
-class: center, inverse, top
-
-# `r emo::ji("tada")` Success?
-
+class: middle, center
 
 ```{r echo = FALSE, out.width='70%'}
-include_graphics("img/blogdown-configs.png")
+knitr::include_graphics("img/blogdown-newcontent-post-nobundle.png")
 ```
 
+---
+
+# `r emo::ji("new")` Hugo Page Bundles
+
+```{r eval = FALSE}
+library(usethis)
+edit_r_profile()
+options(blogdown.new_bundle = TRUE, #<<
+        blogdown.title_case = TRUE)
+```
+
+---
+
+# `r emo::ji("seedling")` Page Bundles
+
+```{r eval = FALSE}
+content/
+├── about #<<
+│   ├── index.md
+├── posts
+│   ├── my-post #<<
+│   │   ├── content1.md
+│   │   ├── content2.md
+│   │   ├── image1.jpg
+│   │   ├── image2.png
+│   │   └── index.md
+│   └── my-other-post #<<
+│       └── index.md
+```
+
+--
+
+Allowed bundle resources:
++ Page and non-page (like images, pdf, etc.) types
+
+--
 
 .footnote[
-.fancy[.bright["Show in new window"]] to see in local browser
+https://gohugo.io/content-management/page-bundles/
 ]
+
 ---
-name: yourturn-1
+class: middle, inverse, center
+
+```{r echo = FALSE, out.width='70%'}
+knitr::include_graphics("img/blogdown-newcontent-post-bundled.png")
+```
+
+---
+class: middle, inverse, center
+
+```{r echo = FALSE, out.width='70%'}
+knitr::include_graphics("img/blogdown-newcontent-other-bundled.png")
+```
+
+---
+name: yourturn-3
 template: yourturn
 
 .right-column[
-# .fancy[05:00 minutes]
-<br>
-### Edit your `index.Rmd` YAML to add new title section elements, and re-render your book.
+# .fancy[10:00 minutes]
 
+1. Edit the .bright[About] page.
 
-.blue[.fancy[Hint:] Use [this link](https://github.com/rstudio/bookdown/blob/dda5f5a220058271a43ba8b81c6e6859ae3b9815/inst/templates/default.html) and find the `bookdown` title start/end (line 125).]
+1. Use `usethis` package to `edit_r_profile` to enable bundles (and use title case option too!)
+
+1. Restart your R session, serve your site again.
+
+1. Use the "New Post" addin to create new content.<br>
+  + Try adding a new post to .bright[Blog] (include a featured image in your bundle!)
+  + Try adding a new project to .bright[Itemized]
+
+.bright[.fancy[Stretch:]] In `content/blog/` there is the sample `.Rmd` blog post titled "Hello R Markdown". Can you find it on the site? Why or why not? Can you spot the problem?
 
 ]
 
-
-???
-
-At end of time:
-
-So those are the YAML parameters that change things you see
-
-But most YAML parameters change things you never see
-
+   
 ---
-
-# Edit content 
-
-Mouse to `content/` and:
-
-- Edit your `about.md`
-  - [Awesome slide deck here](https://docs.google.com/presentation/d/1pt8eXaGkFH8JTfOjcyvqt1n6DsUs5bSMuHy_NxepMfQ/edit#slide=id.p4)
-  - Example 1: [Julia Silge](https://juliasilge.com/about/)
-  - Example 2: [Kara Woo](https://karawoo.com)
-  - Example 3 (a bit longer): [David Robinson](http://varianceexplained.org/about/)
-  - Example 4: [Emily Robinson](http://hookedondata.org/about/)
-  - Example 5: [Yihui Xie](https://yihui.name/en/about/)
-  - Example 6: [Chester Ismay](http://chester.rbind.io/about/)
-
---
-
-- Edit your `home.md`
-  - We'll make this your new landing page, so imagine this is what people will initially see when they visit your site.
-      - Example 1: [Hadley Wickham](http://hadley.nz)
-      - Example 2: [Sam Tyner](https://sctyner.github.io)
-
----
-class: inverse, middle, center
-
-## Take 5 minutes to edit your content
-
-![](https://media.giphy.com/media/7jMVtv69xwW0E/giphy.gif)
-
----
-
-# Success?
-
-
-```{r echo = FALSE}
-include_graphics("img/about-ada.png")
-```
-
----
-class: inverse, middle, center
-
-
-
-# 🏇
-
-## Now we override!
-
----
-
-# Let's override the home page
-
-- Index is default landing page for Hugo
-
---
-
-- Look in your theme's layouts directory (`/themes/cocoa-eh-hugo-theme/layouts`).
-  - Open `index.html`- this is the layout for your current home page.
-
---
-
-- Make a *copy* of this file.
-
---
-
-- Put the *copy* in the analogous project root directory: `/layouts/`
-  - It *must* be named `index.html`
-
----
-
-# Edit the `index.html` *copy*
-
-- Edit the version in `/layouts/`
-  - *not* `/themes/cocoa-eh-hugo-theme/layouts`
-  
---
-
-- We'll remove the latest posts and best posts sections:
-
---
-
-```
-{{ partial "header.html" . }}
-<div class="main column">
-    <div class="container">
-        <div class="content">
-            {{ range where .Data.Pages "Title" "Home" }}
-                <div class="markdown">
-                {{ .Content }}
-                </div>
-            {{ end }}
-        </div>
-    </div>
-</div>
-{{ partial "footer.html" . }}
-```
-
----
-
-# Success?
-
-
-```{r echo = FALSE}
-include_graphics("img/ada-home.png")
-```
-
----
+name:workflow
 
 # Workflow<sup>*</sup>
 
@@ -868,9 +956,11 @@ include_graphics("img/ada-home.png")
 
 # Theme examples
 
-- [Julia Silge](https://juliasilge.com)
+- [Mitchell O'Hara-Wild](https://blog.mitchelloharawild.com/)
 
-- [Joshua Rosenberg](https://jrosen48.github.io)
+- [Isabella Velásquez](https://ivelasq.rbind.io/)
+
+- [Cool But Useless](https://coolbutuseless.github.io/)
 
 ---
 
@@ -889,27 +979,10 @@ include_graphics("img/ada-home.png")
 We'll connect to GitHub and deploy to Netlify.
 
 ---
-
-## What is hard about `blogdown`?
-
-- A lot!
-- TOML in `config` file, but YAML in posts
-- Themes vary a lot
-- Overriding versus editing directory structure
-- Related to ⬆️, you have to learn Hugo (in addition to `blogdown`)
-- For much customization, you'll also have to be comfortable with [CSS](https://bookdown.org/yihui/blogdown/css.html)
-- [File paths!](https://blogdown-demo.rbind.io/2018/02/27/r-file-paths/)
-
----
 publishing
 
 cloud rstudio server pro very important
 
-`config.toml` add:
-
-```toml
-relativeURLS = true
-```
 
 
 
@@ -919,3 +992,14 @@ relativeURLS = true
     Develop as normal using blogdown::serve_site()
     When you're ready to deploy, use the Build Pane's Build Website command.
     Click Publish from the built preview, and select "Publish finished website only"
+
+---
+
+Update your theme if you want:
+
+```{r eval = FALSE}
+blogdown::install_theme("gcushen/hugo-academic", 
+                        theme_example = TRUE, 
+                        update_config = TRUE) #<<
+```
+
