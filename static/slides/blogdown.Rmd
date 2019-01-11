@@ -24,8 +24,9 @@ library(knitr)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", out.width = "80%")
 # options(knitr.table.format = "html")
 library(tidyverse)
-library(babynames)
 library(fontawesome) # from github: https://github.com/rstudio/fontawesome
+library(fs)
+library(magick)
 ```
 
 layout: true
@@ -108,24 +109,39 @@ See Chapter 2 of the **bookdown** book for additional Markdown features, such as
 
 If all you want to write about is what you had for breakfast today, or how cute your kittens are, there is no need to use blogdown. If there is anything related to R, statistical computing, and/or graphics, blogdown will be much more convenient.
 
----
-class: middle, center, inverse
 
-# .fancy[All about Ada]
+---
+class: inverse, middle, center
+
+# .fancy[Build a site for [Ada Lovelace](https://en.wikipedia.org/wiki/Ada_Lovelace)]
 
 ![](https://lh3.googleusercontent.com/iXmJ9aWblkGDpg-_jpcqaY10KmA8HthjZ7F15U7mJ9PQK6vZEStMlathz1FfQQWV5XeeF-A1tZ0UpDjx3q6vEm2BWZn5k1btVSuBk9ad=s660)
-
----
-name: start
-class: inverse, middle
-
-## Do one
 
 --
 
 .pull-left[
+### .fancy[.center[Local with GitHub]]
+### .fancy[.center[`r emo::ji("computer")` + <i class="fab fa-github fa-lg fa-fw"></i>]]
+]
 
-### .fancy[.center[`r emo::ji("computer")` Local]]
+--
+
+.pull-right[
+### .fancy[.center[Cloud or Local (no GitHub)]]
+### .fancy[.center[`r emo::ji("cloud")` | `r emo::ji("computer")`]]
+]
+
+
+
+
+---
+name: start-here
+class: inverse, middle
+
+.pull-left[
+### .fancy[.center[Local with GitHub]]
+### .fancy[.center[`r emo::ji("computer")` + <i class="fab fa-github fa-lg fa-fw"></i>]]
+
 
 
 1. Make a [repo on <i class="fab fa-github fa-lg fa-fw"></i>GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
@@ -146,18 +162,16 @@ new_site(theme = "jpescador/hugo-future-imperfect",
 
 ]
 
---
-
 .pull-right[
-
-### .fancy[.center[`r emo::ji("cloud")` Cloud or `r emo::ji("computer")` Local]]
+### .fancy[.center[Cloud or Local]]
+### .fancy[.center[`r emo::ji("cloud")` | `r emo::ji("computer")`]]
 
 
 1. Make a new RStudio project via wizard <br> 
     *File > New Project > New Directory*
 
 1. Scroll down to select: <br>
-    *<img src="https://discourse-cdn-sjc2.com/standard10/uploads/gohugo/original/2X/c/c2d3414c64e766d814100b32063948e604298a70.png" width="4%"> Website using blogdown*
+    <img src="https://discourse-cdn-sjc2.com/standard10/uploads/gohugo/original/2X/c/c2d3414c64e766d814100b32063948e604298a70.png" width="4%"> *Website using blogdown*
 
 ```{r echo = FALSE, out.width='80%'}
 knitr::include_graphics("img/blogdown-workflow-wizard.png")
@@ -180,6 +194,19 @@ sample adds a sample R Markdown blog post (can end up in wrong place though)
 empty_dirs keeps some folders that are initially empty but for important reasons I'll tell you about
 
 finally, to_yaml converts all the exampleSite content to YAML instead of TOML files. We'll talk more about the difference, but this saves you time and is helpful to have done automatically for you.
+
+
+---
+name: block1
+class: middle, inverse, center
+
+# `r emo::ji("crystal_ball")`
+
+## Gaze into your directory structure
+
+.footnote[
+https://bookdown.org/yihui/blogdown/a-quick-example.html
+]
 
 
 ---
@@ -259,7 +286,7 @@ name: hugo-public
 ├── data/
 ├── index.Rmd 
 ├── layouts/ 
-├── public/ # DO NOT TOUCH #<<
+├── public/ # IGNORE #<<
 ├── resources/
 ├── static/
 ├── staticman.yml
@@ -271,7 +298,8 @@ name: hugo-public
 
 public is where your final rendered site files will go
 
-You never touch this folder- it re-generates every time we serve our site
+You can mostly ignore this folder- it re-generates every time we serve our site
+
 
 ---
 name: noknit
@@ -293,8 +321,6 @@ class: center, inverse, middle
 Mouse up to "Addins" `r emo::ji("arrow_right")` "Serve site"
 
 ![](img/addin-serve-site.png)
-
-
 
 
 ---
@@ -320,11 +346,7 @@ What are we seeing here? Everything that is the public folder.
 class: middle, inverse, center
 
 
-```{r echo = FALSE}
-library(fs)
-library(magick)
-library(tidyverse)
-
+```{r echo = FALSE, out.width="2000px"}
 list_png <- c(here::here("static/slides/img/blogdown-lifecycle-01.png"),
               here::here("static/slides/img/blogdown-lifecycle-02.png"),
               here::here("static/slides/img/blogdown-lifecycle-03.png"))
@@ -332,7 +354,49 @@ list_png <- c(here::here("static/slides/img/blogdown-lifecycle-01.png"),
 list_png %>% 
   map(image_read) %>% # reads each path file
   image_join() %>% # joins image
-  image_scale("1500") %>% 
+  image_scale("2000") %>% 
+  image_animate(fps = .5)  # animates, can opt for number of loops
+```
+
+---
+name: earlydeploy
+class: middle, inverse, center
+
+# `r emo::ji("mega")`
+
+---
+template: earlydeploy
+
+## Go to [Netlify.com](https://www.netlify.com/) & Log in
+
+```{r echo = FALSE}
+knitr::include_graphics("img/netlify-landing.png")
+```
+
+---
+template: earlydeploy
+
+
+## Drag & drop the `public/` folder to [deploy](https://bookdown.org/yihui/blogdown/netlify.html)
+
+```{r echo = FALSE, out.width='60%'}
+knitr::include_graphics("img/netlify-new-site.png")
+```
+
+
+---
+class: middle, inverse, center
+
+
+```{r echo = FALSE, out.width="2000px"}
+list_png <- c(here::here("static/slides/img/blogdown-lifecycle-04.png"),
+              here::here("static/slides/img/blogdown-lifecycle-05.png"),
+              here::here("static/slides/img/blogdown-lifecycle-06.png"))
+
+list_png %>% 
+  map(image_read) %>% # reads each path file
+  image_join() %>% # joins image
+  image_scale("2000") %>% 
   image_animate(fps = .5)  # animates, can opt for number of loops
 ```
 
@@ -363,14 +427,14 @@ template: yourturn
 
 .right-column[
 # .fancy[05:00 minutes]
-### Orient yourself to your site, and the files in it!
+### Gaze into your directory structure, and site.
 
 Ideas:
 
-+ Where is the `.md` file for the blog post .bright["Creating A New Theme"]?
++ Where are the `.md` files for the .bright[blog posts]? .fancy[(i.e., "Creating A New Theme")]
 + Where is the `.jpg` file you see in the .bright[hex image] stored? What about the featured images for each blog post?
-+ Where is the `.md` file you see under .bright[About]? (i.e., "Hugo is a static site engine written in Go.")
-+ Where are the `.md` files you see under .bright[Itemized]? (i.e., fancy apps 1-4)
++ Where is the `.md` file you see under .bright[About]? .fancy[(i.e., "Hugo is a static site engine written in Go.")]
++ Where are the `.md` files you see under .bright[Itemized]? .fancy[(i.e., fancy apps 1-4)]
 
 ]
 
@@ -381,18 +445,20 @@ class: middle, inverse
 
 # .fancy[Outline]
 
-+ ~~Orient ourselves to our site and its files~~ [`r emo::ji("key")`](#yourturn-1)
+1. ~~Gaze into your directory structure~~ [`r emo::ji("key")`](#block1) [`r emo::ji("trophy")`](#yourturn-1)
 
-+ Edit the `config.toml` [`r emo::ji("key")`](#block1)
+1. Edit the `config.toml` [`r emo::ji("key")`](#block2) [`r emo::ji("trophy")`](#yourturn-2)
 
-+ Add content [`r emo::ji("key")`](#block2)
+1. Edit the `exampleSite` content [`r emo::ji("key")`](#block3) [`r emo::ji("trophy")`](#yourturn-3)
 
-+ Deploy
+1. Add new content [`r emo::ji("key")`](#block4) [`r emo::ji("trophy")`](#yourturn-4)
+
+1. Deploy [`r emo::ji("key")`](#block5)  [`r emo::ji("trophy")`](#yourturn-5)
 
 
 
 ---
-name: block1
+name: block2
 class: middle, inverse, center
 
 # `r emo::ji("house")`
@@ -510,7 +576,7 @@ What are we seeing here? Everything that is the public folder.
 
 # Add image
 
-Mouse over the `static/img/main/` and see `logo.jpg`? We can replace that file, or make new file. I'll replace mine with [this picture](https://en.wikipedia.org/wiki/Ada_Lovelace).
+Mouse over to `static/img/main/` and see `logo.jpg`? We can replace that file, or make new file. I'll replace mine with [this picture](https://en.wikipedia.org/wiki/Ada_Lovelace).
 
 ```{r eval = FALSE}
 [params.intro]
@@ -574,17 +640,17 @@ Ideas:
 + Change the `highlightjs` theme.
 + Switch some of the "Optional Params"- see what they do.
 
-.bright[.fancy[Stretch:]] All possible Hugo configuration variables are [listed here](https://gohugo.io/getting-started/configuration/).
+.bright[.fancy[Stretch:]] All possible Hugo configuration variables are [listed here](https://gohugo.io/getting-started/configuration/)- try some (like `enableEmoji = TRUE`)!
 
 ]
 
 ---
-name: block2
+name: block3
 class: middle, inverse, center
 
-# `r emo::ji("gift")`
+# `r emo::ji("tophat")`
 
-## Add content
+## Edit the `exampleSite` content
 
 .footnote[
 https://bookdown.org/yihui/blogdown/content.html
@@ -765,7 +831,7 @@ type = "post"
 ]
 
 .pull-right[
-`./content/blog/goisforlovers.md`
+`content/blog/goisforlovers.md`
 ```js
 ---
 author: Unknown Author
@@ -851,10 +917,38 @@ Stores templates in the form of .html files that specify how views of your conte
 
 
 ---
+name: yourturn-3
+template: yourturn
+
+.right-column[
+# .fancy[03:00 minutes]
+### Edit some `exampleSite` content, save, and let "LiveReload" preview your changes.
+
+1. Edit the .bright[About] page.
+
+1. Edit a .bright[Blog] post.
+
+.bright[.fancy[Stretch:]] In `content/blog/` there is the sample `.Rmd` blog post titled "Hello R Markdown". Can you find it on the site? Why or why not? Can you spot the problem?
+
+]
+
+---
+name: block4
+class: middle, inverse, center
+
+# `r emo::ji("postal_horn")`
+
+## Add new content
+
+.footnote[
+https://bookdown.org/yihui/blogdown/rstudio-ide.html
+]
+
+---
 class: middle, center
 
 ```{r echo = FALSE, out.width='70%'}
-knitr::include_graphics("img/blogdown-newcontent-post-nobundle.png")
+knitr::include_graphics("img/blogdown-newpost-unbundle.png")
 ```
 
 ---
@@ -902,7 +996,7 @@ https://gohugo.io/content-management/page-bundles/
 class: middle, inverse, center
 
 ```{r echo = FALSE, out.width='70%'}
-knitr::include_graphics("img/blogdown-newcontent-post-bundled.png")
+knitr::include_graphics("img/blogdown-newpost-bundle.png")
 ```
 
 ---
@@ -913,23 +1007,19 @@ knitr::include_graphics("img/blogdown-newcontent-other-bundled.png")
 ```
 
 ---
-name: yourturn-3
+name: yourturn-4
 template: yourturn
 
 .right-column[
-# .fancy[10:00 minutes]
+# .fancy[05:00 minutes]
+### Try any of these on for size:
 
-1. Edit the .bright[About] page.
-
-1. Use `usethis` package to `edit_r_profile` to enable bundles (and use title case option too!)
-
-1. Restart your R session, serve your site again.
+1. Use `usethis` package to `edit_r_profile` to with some **blogdown** global options.
+  + Don't forget the blank line at the end, and restart your R session, serve your site again.
 
 1. Use the "New Post" addin to create new content.<br>
   + Try adding a new post to .bright[Blog] (include a featured image in your bundle!)
   + Try adding a new project to .bright[Itemized]
-
-.bright[.fancy[Stretch:]] In `content/blog/` there is the sample `.Rmd` blog post titled "Hello R Markdown". Can you find it on the site? Why or why not? Can you spot the problem?
 
 ]
 
@@ -973,10 +1063,13 @@ name:workflow
 - [Yihui's slides from RStudio Conf](https://slides.yihui.name/2018-blogdown-rstudio-conf-Yihui-Xie.html)
 
 ---
+template: earlydeploy
 
-# Next up!
+# Update on Netlify
 
-We'll connect to GitHub and deploy to Netlify.
+```{r echo = FALSE}
+knitr::include_graphics("img/netlify-manual-update.png")
+```
 
 ---
 publishing

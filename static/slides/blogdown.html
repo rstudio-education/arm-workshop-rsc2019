@@ -33,7 +33,7 @@ class: inverse
 
 ### .fancy[Making Websites in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2019-01-10]
+.large[Alison Hill | rstudio::conf | 2019-01-11]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
@@ -95,24 +95,39 @@ See Chapter 2 of the **bookdown** book for additional Markdown features, such as
 
 If all you want to write about is what you had for breakfast today, or how cute your kittens are, there is no need to use blogdown. If there is anything related to R, statistical computing, and/or graphics, blogdown will be much more convenient.
 
----
-class: middle, center, inverse
 
-# .fancy[All about Ada]
+---
+class: inverse, middle, center
+
+# .fancy[Build a site for [Ada Lovelace](https://en.wikipedia.org/wiki/Ada_Lovelace)]
 
 ![](https://lh3.googleusercontent.com/iXmJ9aWblkGDpg-_jpcqaY10KmA8HthjZ7F15U7mJ9PQK6vZEStMlathz1FfQQWV5XeeF-A1tZ0UpDjx3q6vEm2BWZn5k1btVSuBk9ad=s660)
-
----
-name: start
-class: inverse, middle
-
-## Do one
 
 --
 
 .pull-left[
+### .fancy[.center[Local with GitHub]]
+### .fancy[.center[💻 + &lt;i class="fab fa-github fa-lg fa-fw"&gt;&lt;/i&gt;]]
+]
 
-### .fancy[.center[💻 Local]]
+--
+
+.pull-right[
+### .fancy[.center[Cloud or Local (no GitHub)]]
+### .fancy[.center[☁️ | 💻]]
+]
+
+
+
+
+---
+name: start-here
+class: inverse, middle
+
+.pull-left[
+### .fancy[.center[Local with GitHub]]
+### .fancy[.center[💻 + &lt;i class="fab fa-github fa-lg fa-fw"&gt;&lt;/i&gt;]]
+
 
 
 1. Make a [repo on &lt;i class="fab fa-github fa-lg fa-fw"&gt;&lt;/i&gt;GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
@@ -134,18 +149,16 @@ new_site(theme = "jpescador/hugo-future-imperfect",
 
 ]
 
---
-
 .pull-right[
-
-### .fancy[.center[☁️ Cloud or 💻 Local]]
+### .fancy[.center[Cloud or Local]]
+### .fancy[.center[☁️ | 💻]]
 
 
 1. Make a new RStudio project via wizard &lt;br&gt; 
     *File &gt; New Project &gt; New Directory*
 
 1. Scroll down to select: &lt;br&gt;
-    *&lt;img src="https://discourse-cdn-sjc2.com/standard10/uploads/gohugo/original/2X/c/c2d3414c64e766d814100b32063948e604298a70.png" width="4%"&gt; Website using blogdown*
+    &lt;img src="https://discourse-cdn-sjc2.com/standard10/uploads/gohugo/original/2X/c/c2d3414c64e766d814100b32063948e604298a70.png" width="4%"&gt; *Website using blogdown*
 
 &lt;img src="img/blogdown-workflow-wizard.png" width="80%" style="display: block; margin: auto;" /&gt;
 
@@ -166,6 +179,19 @@ sample adds a sample R Markdown blog post (can end up in wrong place though)
 empty_dirs keeps some folders that are initially empty but for important reasons I'll tell you about
 
 finally, to_yaml converts all the exampleSite content to YAML instead of TOML files. We'll talk more about the difference, but this saves you time and is helpful to have done automatically for you.
+
+
+---
+name: block1
+class: middle, inverse, center
+
+# 🔮
+
+## Gaze into your directory structure
+
+.footnote[
+https://bookdown.org/yihui/blogdown/a-quick-example.html
+]
 
 
 ---
@@ -249,7 +275,7 @@ name: hugo-public
 ├── data/
 ├── index.Rmd 
 ├── layouts/ 
-*├── public/ # DO NOT TOUCH
+*├── public/ # IGNORE
 ├── resources/
 ├── static/
 ├── staticman.yml
@@ -261,7 +287,8 @@ name: hugo-public
 
 public is where your final rendered site files will go
 
-You never touch this folder- it re-generates every time we serve our site
+You can mostly ignore this folder- it re-generates every time we serve our site
+
 
 ---
 name: noknit
@@ -285,8 +312,6 @@ Mouse up to "Addins" ➡️ "Serve site"
 ![](img/addin-serve-site.png)
 
 
-
-
 ---
 class: center, inverse, top
 
@@ -308,7 +333,35 @@ What are we seeing here? Everything that is the public folder.
 class: middle, inverse, center
 
 
-&lt;img src="blogdown_files/figure-html/unnamed-chunk-8-1.gif" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="blogdown_files/figure-html/unnamed-chunk-8-1.gif" width="2000px" style="display: block; margin: auto;" /&gt;
+
+---
+name: earlydeploy
+class: middle, inverse, center
+
+# 📣
+
+---
+template: earlydeploy
+
+## Go to [Netlify.com](https://www.netlify.com/) &amp; Log in
+
+&lt;img src="img/netlify-landing.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+template: earlydeploy
+
+
+## Drag &amp; drop the `public/` folder to [deploy](https://bookdown.org/yihui/blogdown/netlify.html)
+
+&lt;img src="img/netlify-new-site.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: middle, inverse, center
+
+
+&lt;img src="blogdown_files/figure-html/unnamed-chunk-11-1.gif" width="2000px" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -335,14 +388,14 @@ template: yourturn
 
 .right-column[
 # .fancy[05:00 minutes]
-### Orient yourself to your site, and the files in it!
+### Gaze into your directory structure, and site.
 
 Ideas:
 
-+ Where is the `.md` file for the blog post .bright["Creating A New Theme"]?
++ Where are the `.md` files for the .bright[blog posts]? .fancy[(i.e., "Creating A New Theme")]
 + Where is the `.jpg` file you see in the .bright[hex image] stored? What about the featured images for each blog post?
-+ Where is the `.md` file you see under .bright[About]? (i.e., "Hugo is a static site engine written in Go.")
-+ Where are the `.md` files you see under .bright[Itemized]? (i.e., fancy apps 1-4)
++ Where is the `.md` file you see under .bright[About]? .fancy[(i.e., "Hugo is a static site engine written in Go.")]
++ Where are the `.md` files you see under .bright[Itemized]? .fancy[(i.e., fancy apps 1-4)]
 
 ]
 
@@ -353,18 +406,20 @@ class: middle, inverse
 
 # .fancy[Outline]
 
-+ ~~Orient ourselves to our site and its files~~ [🔑](#yourturn-1)
+1. ~~Gaze into your directory structure~~ [🔑](#block1) [🏆](#yourturn-1)
 
-+ Edit the `config.toml` [🔑](#block1)
+1. Edit the `config.toml` [🔑](#block2) [🏆](#yourturn-2)
 
-+ Add content [🔑](#block2)
+1. Edit the `exampleSite` content [🔑](#block3) [🏆](#yourturn-3)
 
-+ Deploy
+1. Add new content [🔑](#block4) [🏆](#yourturn-4)
+
+1. Deploy [🔑](#block5)  [🏆](#yourturn-5)
 
 
 
 ---
-name: block1
+name: block2
 class: middle, inverse, center
 
 # 🏠
@@ -482,7 +537,7 @@ What are we seeing here? Everything that is the public folder.
 
 # Add image
 
-Mouse over the `static/img/main/` and see `logo.jpg`? We can replace that file, or make new file. I'll replace mine with [this picture](https://en.wikipedia.org/wiki/Ada_Lovelace).
+Mouse over to `static/img/main/` and see `logo.jpg`? We can replace that file, or make new file. I'll replace mine with [this picture](https://en.wikipedia.org/wiki/Ada_Lovelace).
 
 
 ```r
@@ -545,17 +600,17 @@ Ideas:
 + Change the `highlightjs` theme.
 + Switch some of the "Optional Params"- see what they do.
 
-.bright[.fancy[Stretch:]] All possible Hugo configuration variables are [listed here](https://gohugo.io/getting-started/configuration/).
+.bright[.fancy[Stretch:]] All possible Hugo configuration variables are [listed here](https://gohugo.io/getting-started/configuration/)- try some (like `enableEmoji = TRUE`)!
 
 ]
 
 ---
-name: block2
+name: block3
 class: middle, inverse, center
 
-# 🎁
+# 🎩
 
-## Add content
+## Edit the `exampleSite` content
 
 .footnote[
 https://bookdown.org/yihui/blogdown/content.html
@@ -739,7 +794,7 @@ type = "post"
 ]
 
 .pull-right[
-`./content/blog/goisforlovers.md`
+`content/blog/goisforlovers.md`
 ```js
 ---
 author: Unknown Author
@@ -827,9 +882,37 @@ Stores templates in the form of .html files that specify how views of your conte
 
 
 ---
+name: yourturn-3
+template: yourturn
+
+.right-column[
+# .fancy[03:00 minutes]
+### Edit some `exampleSite` content, save, and let "LiveReload" preview your changes.
+
+1. Edit the .bright[About] page.
+
+1. Edit a .bright[Blog] post.
+
+.bright[.fancy[Stretch:]] In `content/blog/` there is the sample `.Rmd` blog post titled "Hello R Markdown". Can you find it on the site? Why or why not? Can you spot the problem?
+
+]
+
+---
+name: block4
+class: middle, inverse, center
+
+# 📯
+
+## Add new content
+
+.footnote[
+https://bookdown.org/yihui/blogdown/rstudio-ide.html
+]
+
+---
 class: middle, center
 
-&lt;img src="img/blogdown-newcontent-post-nobundle.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/blogdown-newpost-unbundle.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -877,7 +960,7 @@ https://gohugo.io/content-management/page-bundles/
 ---
 class: middle, inverse, center
 
-&lt;img src="img/blogdown-newcontent-post-bundled.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/blogdown-newpost-bundle.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: middle, inverse, center
@@ -885,59 +968,25 @@ class: middle, inverse, center
 &lt;img src="img/blogdown-newcontent-other-bundled.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
-name: yourturn-3
+name: yourturn-4
 template: yourturn
 
 .right-column[
-# .fancy[10:00 minutes]
+# .fancy[05:00 minutes]
+### Try any of these on for size:
 
-1. Edit the .bright[About] page.
-
-1. Use `usethis` package to `edit_r_profile` to enable bundles (and use title case option too!)
-
-1. Restart your R session, serve your site again.
+1. Use `usethis` package to `edit_r_profile` to with some **blogdown** global options.
+  + Don't forget the blank line at the end, and restart your R session, serve your site again.
 
 1. Use the "New Post" addin to create new content.&lt;br&gt;
   + Try adding a new post to .bright[Blog] (include a featured image in your bundle!)
   + Try adding a new project to .bright[Itemized]
 
-.bright[.fancy[Stretch:]] In `content/blog/` there is the sample `.Rmd` blog post titled "Hello R Markdown". Can you find it on the site? Why or why not? Can you spot the problem?
-
 ]
-
----
-
-# Edit content 
-
-Mouse to `content/` and:
-
-- Edit your `about.md`
-  - [Awesome slide deck here](https://docs.google.com/presentation/d/1pt8eXaGkFH8JTfOjcyvqt1n6DsUs5bSMuHy_NxepMfQ/edit#slide=id.p4)
-  - Example 1: [Julia Silge](https://juliasilge.com/about/)
-  - Example 2: [Kara Woo](https://karawoo.com)
-  - Example 3 (a bit longer): [David Robinson](http://varianceexplained.org/about/)
-  - Example 4: [Emily Robinson](http://hookedondata.org/about/)
-  - Example 5: [Yihui Xie](https://yihui.name/en/about/)
-  - Example 6: [Chester Ismay](http://chester.rbind.io/about/)
-
---
-
-- Edit your `home.md`
-  - We'll make this your new landing page, so imagine this is what people will initially see when they visit your site.
-      - Example 1: [Hadley Wickham](http://hadley.nz)
-      - Example 2: [Sam Tyner](https://sctyner.github.io)
-
----
-class: inverse, middle, center
-
-## Take 5 minutes to edit your content
-
-![](https://media.giphy.com/media/7jMVtv69xwW0E/giphy.gif)
-
-
 
    
 ---
+name:workflow
 
 # Workflow&lt;sup&gt;*&lt;/sup&gt;
 
@@ -975,33 +1024,17 @@ class: inverse, middle, center
 - [Yihui's slides from RStudio Conf](https://slides.yihui.name/2018-blogdown-rstudio-conf-Yihui-Xie.html)
 
 ---
+template: earlydeploy
 
-# Next up!
+# Update on Netlify
 
-We'll connect to GitHub and deploy to Netlify.
-
----
-
-## What is hard about `blogdown`?
-
-- A lot!
-- TOML in `config` file, but YAML in posts
-- Themes vary a lot
-- Overriding versus editing directory structure
-- Related to ⬆️, you have to learn Hugo (in addition to `blogdown`)
-- For much customization, you'll also have to be comfortable with [CSS](https://bookdown.org/yihui/blogdown/css.html)
-- [File paths!](https://blogdown-demo.rbind.io/2018/02/27/r-file-paths/)
+&lt;img src="img/netlify-manual-update.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 publishing
 
 cloud rstudio server pro very important
 
-`config.toml` add:
-
-```toml
-relativeURLS = true
-```
 
 
 
