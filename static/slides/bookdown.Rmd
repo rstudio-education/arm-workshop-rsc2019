@@ -170,23 +170,30 @@ class: inverse, middle, center
 
 # .fancy[Let's build a book right now]
 
-
-
-
----
-name: start
-class: inverse, middle
-
-# Do one
-
 --
 
 .pull-left[
+### .fancy[.center[Local with GitHub]]
+### .fancy[.center[`r emo::ji("computer")` + <i class="fab fa-github fa-lg fa-fw"></i>]]
+]
 
-### .fancy[.center[`r emo::ji("computer")` Local]]
+--
+
+.pull-right[
+### .fancy[.center[Cloud or Local (no GitHub)]]
+### .fancy[.center[`r emo::ji("cloud")` | `r emo::ji("computer")`]]
+]
 
 
-1. Make a [repo on <i class="fab fa-github fa-lg fa-fw"></i>GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
+---
+name: start-here
+class: inverse, middle
+
+.pull-left[
+### .fancy[.center[Local with GitHub]]
+### .fancy[.center[`r emo::ji("computer")` + <i class="fab fa-github fa-lg fa-fw"></i>]]
+
+1. Make a [repo on GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
 
 1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone) <br>
     *File > New Project > Version Control > Git*
@@ -196,26 +203,28 @@ class: inverse, middle
 ```{r eval = FALSE}
 bookdown:::bookdown_skeleton(getwd())
 ```
-
 ]
 
 --
 
 .pull-right[
-
-### .fancy[.center[`r emo::ji("cloud")` Cloud or `r emo::ji("computer")` Local]]
-
+### .fancy[.center[Cloud or Local]]
+### .fancy[.center[`r emo::ji("cloud")` | `r emo::ji("computer")`]]
 
 1. Make a new RStudio project via wizard <br>
     *File > New Project > New Directory*
 
 1. Scroll down to select: <br>
-    *`r emo::ji("book")` Book Project using bookdown*
+    `r emo::ji("book")` *Book Project using bookdown*
 
 ]
 
----
+--
 
+<hr>
+.center[Name it something like `<yourname>-arm-bookdown`]
+
+---
 
 # Project structure
 
@@ -330,7 +339,6 @@ bookdown::serve_book()
 
 .blue["Preview Book"] Add-in calls `bookdown::serve_book()`
 
-
 ---
 name: first-preview
 
@@ -405,6 +413,15 @@ knitr::write_bib(c(
 ```
 ````
 
+---
+name: earlydeploy
+
+
+Netlify: drag and drop
+
+Or RStudio Connect
+
+in gitter chat copy/paste rendered link
 
 ---
 name: clean
@@ -598,8 +615,8 @@ template: yourturn
 
 Ideas:
 
-+ [Change the title and author](#edit-yaml)
-+ [Add a subtitle, author affiliation, or author email](#add-yaml)<br>
++ Change the [title and author](#edit-yaml)
++ Add a [subtitle, author affiliation, or author email](#add-yaml)<br>
     
 .blue[.fancy[Hint:] Use [this link](https://github.com/rstudio/bookdown/blob/dda5f5a220058271a43ba8b81c6e6859ae3b9815/inst/templates/default.html) and find the `bookdown` title start/end (line 125).]
 
@@ -738,7 +755,7 @@ template: yourturn
 
 Ideas:
 
-+ [Add url, cover-image, description, github-repo](#meta)
++ Add [url, cover-image, description, github-repo](#meta)
 
 .blue[.fancy[Hint:] see all possible Pandoc EPUB metadata parameters [here](https://pandoc.org/MANUAL.html#epub-metadata).]
 
@@ -780,7 +797,7 @@ The numbered chapter names are a naming convention- you don't have to use them. 
 name: headers
 class: middle
 
-## .center[.fancy[Chapters (by default)]]
+## .center[.fancy[Numbered Chapters (default)]]
 
 .pull-left[
 `index.Rmd`
@@ -825,7 +842,7 @@ Here is a review of existing methods.
 class: middle
 name: headers-manip
 
-## .center[.fancy[Un-numbering Chapters]]
+## .center[.fancy[Un-numbered Chapters]]
 
 .pull-left[
 `index.Rmd`
@@ -875,7 +892,7 @@ You can un-number a chapter by following the header text with curly brackets, wi
 class: middle
 name: headers-cross
 
-## .center[.fancy[Labelling & Cross-Referencing Chapters/Subchapters]]
+## .center[.fancy[Label & Cross-Reference Chapters/Subchapters]]
 
 .pull-left[
 `index.Rmd`
@@ -1196,7 +1213,7 @@ name: toc-num-parts
 ```
 `01-intro.Rmd`
 ```{r eval = FALSE}
-# (PART) Part I {-}  #<<
+# (PART) Act one {-}  #<<
 
 # Introduction
 ```
@@ -1208,7 +1225,7 @@ name: toc-num-parts
 
 `03-methods.Rmd`
 ```{r eval = FALSE}
-# (PART) Part II {-}  #<<
+# (PART) Act two {-}  #<<
 
 # Methods
 ```
@@ -1217,8 +1234,8 @@ name: toc-num-parts
 
 .pull-right[
 .center[
-```{r echo = FALSE, out.width='55%'}
-knitr::include_graphics("img/bookdown-skeleton-toc_numsections.png")
+```{r echo = FALSE, out.width='70%'}
+knitr::include_graphics("img/bookdown-skeleton-toc_numparts.png")
 ```
 ]
 ]
@@ -1233,7 +1250,7 @@ You add them with a first-level header followed by PART in all caps within paren
 ---
 name: toc-parts
 
-# Unnumbered Parts
+# Un-numbered Parts
 
 .pull-left[
 `index.Rmd`
@@ -1242,7 +1259,7 @@ name: toc-parts
 ```
 `01-intro.Rmd`
 ```{r eval = FALSE}
-# (PART\*) Part I {-} #<<
+# (PART\*) Act one {-} #<<
 
 # Introduction
 ```
@@ -1254,7 +1271,7 @@ name: toc-parts
 
 `03-methods.Rmd`
 ```{r eval = FALSE}
-# (PART\*) Part II {-}  #<<
+# (PART\*) Act two {-}  #<<
 
 # Methods
 ```
@@ -1263,8 +1280,8 @@ name: toc-parts
 
 .pull-right[
 .center[
-```{r echo = FALSE, out.width='55%'}
-knitr::include_graphics("img/bookdown-skeleton-toc_sections.png")
+```{r echo = FALSE, out.width='70%'}
+knitr::include_graphics("img/bookdown-skeleton-toc_parts.png")
 ```
 ]
 ]
@@ -1287,7 +1304,7 @@ name: toc-appendix
 ```
 `01-intro.Rmd`
 ```{r eval = FALSE}
-# (PART\*) Part I {-}
+# (PART\*) Act one {-}
 
 # Introduction
 ```
@@ -1297,7 +1314,7 @@ name: toc-appendix
 
 `05-summary.Rmd`
 ```{r eval = FALSE}
-# (APPENDIX) Appendix {-} #<<
+# (APPENDIX) Other stuff {-} #<<
 
 # Final Words
 ```
@@ -1306,7 +1323,7 @@ name: toc-appendix
 
 .pull-right[
 .center[
-```{r echo = FALSE, out.width='50%'}
+```{r echo = FALSE, out.width='65%'}
 knitr::include_graphics("img/bookdown-skeleton-toc_appendix.png")
 ```
 ]
@@ -1400,7 +1417,7 @@ name: render
 
 # `_bookdown.yml`
 
-This yaml gets fed to the `bookdown::render_book` function:
+This YAML file gets fed to the `bookdown::render_book` function:
 
 ```{r gitbook-args, code=formatR::usage(bookdown::render_book, output=FALSE, fail='none'), eval=FALSE, R.options=list(width=50)}
 ```
@@ -1499,7 +1516,7 @@ bookdown::gitbook:
     toc: <!--covered earlier!-->
     download: ["rmd"]
     edit:
-      link: https://github.com/username/repo/edit/branch/%s
+      link: https://github.com/USERNAME/REPO/edit/BRANCH/%s
       text: "Suggest an edit"
     sharing:
       github: yes
@@ -1508,8 +1525,8 @@ bookdown::gitbook:
 ```
 
 Very important!
-1. Edit link: <br>
-    `https://github.com/apreshill/armed/edit/master/%s`
+1. Edit link to read: <br>
+    https://github.com/apreshill/armed/edit/master/%s
 1. For GitHub sharing, add to `index.Rmd` YAML: <br>
     `github-repo: apreshill/armed`
 ]
@@ -1577,9 +1594,15 @@ name: rsconnect
 ---
 name: netlify
 
+OPEN WITH DRAG AND DROP
+
+in gitter chat copy/paste rendered link
+
 # GitHub + Netlify `r emo::ji("computer")`
 
-1. Add/commit/push your edits to your remote repository
+1. Preview your book one more time.
+1. Add/commit/push your edits to your remote repository.
+1. In your repo on GitHub `_book` folder
 1. Go to [Netlify.com](https://www.netlify.com/)
   + Login
   + Select "New Site from Git"
