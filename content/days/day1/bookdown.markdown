@@ -1,7 +1,7 @@
 ---
 title: bookdown
 
-date: "2019-01-09"
+date: "2019-01-10"
 
 draft: true
 toc: true
@@ -33,7 +33,7 @@ menu:
    <td style="text-align:left;"> <a href="../../../slides/bookdown.html#outline" style="     ">Outline 🗒</a> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#workflow" style="     ">Workflows: ☁️ or 💻</a> </td>
+   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#start" style="     ">Get started ☁️ or 💻</a> </td>
   </tr>
   <tr>
    <td style="text-align:left;"> <a href="../../../slides/bookdown.html#publish" style="     ">Publishing 🚀</a> </td>
@@ -55,23 +55,23 @@ menu:
 <tbody>
   <tr>
    <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn-1" style="     ">📤 Your turn #1: Edit your `index.Rmd` YAML</a> </td>
-   <td style="text-align:left;"> 🕑 03:00 minutes </td>
+   <td style="text-align:left;"> ⌚ 03:00 minutes </td>
   </tr>
   <tr>
    <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn-2" style="     ">📤 Your turn #2: Add new YAML metadata tags to your `index.Rmd`</a> </td>
-   <td style="text-align:left;"> 🕑 03:00 minutes </td>
+   <td style="text-align:left;"> ⌚ 03:00 minutes </td>
   </tr>
   <tr>
    <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn-3" style="     ">📤 Your turn #3: Add/edit chapters in your book</a> </td>
-   <td style="text-align:left;"> 🕑 10:00 minutes </td>
+   <td style="text-align:left;"> ⌚ 10:00 minutes </td>
   </tr>
   <tr>
    <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn-4" style="     ">📤 Your turn #4: Change how your sidebar TOC looks &amp; works</a> </td>
-   <td style="text-align:left;"> 🕑 05:00 minutes </td>
+   <td style="text-align:left;"> ⌚ 05:00 minutes </td>
   </tr>
   <tr>
    <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn-5" style="     ">📤 Your turn #5: Tune the book output &amp; publish</a> </td>
-   <td style="text-align:left;"> 🕑 15:00 minutes </td>
+   <td style="text-align:left;"> ⌚ 15:00 minutes </td>
   </tr>
 </tbody>
 </table>

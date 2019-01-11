@@ -29,7 +29,7 @@ library(fontawesome)
 slides <- tribble(~link, ~description, 
                       "../../../slides/bookdown.html#1", "Full slide deck",
                       "../../../slides/bookdown.html#outline", "Outline", 
-                      "../../../slides/bookdown.html#workflow", "Workflows:",
+                      "../../../slides/bookdown.html#start", "Get started",
                       "../../../slides/bookdown.html#publish", "Publishing")
 
 slides %>% 
