@@ -422,7 +422,7 @@ class: middle, inverse
 name: block2
 class: middle, inverse, center
 
-# 🏠
+# 🏡
 
 ## Edit the configuration file
 
@@ -886,14 +886,14 @@ name: yourturn-3
 template: yourturn
 
 .right-column[
-# .fancy[03:00 minutes]
+# .fancy[05:00 minutes]
 ### Edit some `exampleSite` content, save, and let "LiveReload" preview your changes.
 
 1. Edit the .bright[About] page.
 
 1. Edit a .bright[Blog] post.
 
-.bright[.fancy[Stretch:]] In `content/blog/` there is the sample `.Rmd` blog post titled "Hello R Markdown". Can you find it on the site? Why or why not? Can you spot the problem?
+1. .bright[Challenge!] In `content/blog/` there is the sample `.Rmd` blog post titled .fancy["Hello R Markdown"]. Can you find it on the site? Why or why not? Can you spot the problem? .fancy[.bright[hint: it was to do with a YAML parameter that tells Hugo which layout to use]]
 
 ]
 
@@ -922,9 +922,9 @@ class: middle, center
 ```r
 library(usethis)
 edit_r_profile()
-*options(blogdown.new_bundle = TRUE,
-        blogdown.title_case = TRUE)
+*options(blogdown.new_bundle = TRUE)
 ```
+
 
 ---
 
@@ -968,6 +968,29 @@ class: middle, inverse, center
 &lt;img src="img/blogdown-newcontent-other-bundled.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
+name: global-options
+
+# 🌍 Other global options
+
+
+```r
+library(usethis)
+edit_r_profile()
+options(blogdown.author = "Ada Lovelace",
+        blogdown.ext = ".Rmd",
+        blogdown.subdir = "blog",
+        blogdown.yaml.empty = TRUE,
+        blogdown.new_bundle = TRUE,
+        blogdown.title_case = TRUE)
+```
+
+.footnote[
+[Global options](https://bookdown.org/yihui/blogdown/global-options.html)
+
+[More global options](https://bookdown.org/yihui/blogdown/more-global-options.html)
+]
+
+---
 name: yourturn-4
 template: yourturn
 
@@ -975,7 +998,7 @@ template: yourturn
 # .fancy[05:00 minutes]
 ### Try any of these on for size:
 
-1. Use `usethis` package to `edit_r_profile` to with some **blogdown** global options.
+1. Use `usethis::edit_r_profile` to add some **blogdown** global options.
   + Don't forget the blank line at the end, and restart your R session, serve your site again.
 
 1. Use the "New Post" addin to create new content.&lt;br&gt;
