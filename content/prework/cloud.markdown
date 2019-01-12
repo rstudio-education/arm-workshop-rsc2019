@@ -1,16 +1,16 @@
 ---
-author: ""
+title: Cloud setup
+author: ''
+date: "2019-01-11"
+slug: cloud
 categories: []
-date: "2019-01-04"
-linktitle: Cloud setup
+tags: []
+linktitle: "Cloud setup"
 menu:
   prework:
-    name: Cloud setup
+    name: "Cloud setup"
     weight: 2
-slug: cloud
-tags: []
-title: Cloud setup
-toc: true
+toc: yes
 type: docs
 ---
 

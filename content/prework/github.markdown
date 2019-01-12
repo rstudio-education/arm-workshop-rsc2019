@@ -1,7 +1,7 @@
 ---
 title: Install Git & GitHub
 author: ''
-date: "2019-01-04"
+date: "2019-01-11"
 slug: github
 categories: []
 tags: []

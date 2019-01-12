@@ -1,7 +1,7 @@
 ---
 title: Install/upgrade software
 author: ''
-date: "2019-01-09"
+date: "2019-01-11"
 slug: system
 categories: []
 tags: []
