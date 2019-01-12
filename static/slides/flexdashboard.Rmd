@@ -1,0 +1,61 @@
+---
+title: "Making Dashboards in R Markdown"
+subtitle: "Meet flexdashboard"
+author: "Alison Hill"
+date: "2019/01/15 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css/ada.css", "css/fonts.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "https://platform.twitter.com/widgets.js"
+    seal: false 
+    includes:
+      in_header: header.html
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", out.width = "80%")
+# options(knitr.table.format = "html")
+library(tidyverse)
+library(fontawesome) # from github: https://github.com/rstudio/fontawesome
+```
+
+layout: true
+  
+<div class="my-footer"><span>bit.ly/flexdashboard-rsconf19</span></div>
+
+<!-- this adds the link footer to all slides, depends on my-footer class in css-->
+
+---
+name: flexdashboard-title
+background-image: url(img/fer-gomez-1164907-unsplash.jpg)
+background-size: cover
+class: inverse
+
+# `r rmarkdown::metadata$subtitle`
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+### .fancy[`r rmarkdown::metadata$title`]
+
+.large[`r rmarkdown::metadata$author` | rstudio::conf | `r Sys.Date()`]
+
+<!-- this ends up being the title slide since seal = FALSE-->
