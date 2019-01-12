@@ -1037,9 +1037,9 @@ template: yourturn
 
 .right-column[
 # .fancy[05:00 minutes]
-### Try any of these on for size:
+### Add new content
 
-1. Use `usethis::edit_r_profile` to add some **blogdown** global options.
+1. .fancy[Optional:] Use `usethis::edit_r_profile` to add some **blogdown** global options.
   + Don't forget the blank line at the end, and restart your R session, serve your site again.
 
 1. Use the "New Post" addin to create new content.<br>
@@ -1111,6 +1111,24 @@ cloud rstudio server pro very important
     When you're ready to deploy, use the Build Pane's Build Website command.
     Click Publish from the built preview, and select "Publish finished website only"
 
+
+---
+name: yourturn-5
+template: yourturn
+
+.right-column[
+# .fancy[05:00 minutes]
+### Deploy!
+
+1. `r emo::ji("cloud")` | `r emo::ji("computer")`
+  + Use RStudio Connect
+
+1. `r emo::ji("computer")` + <i class="fab fa-github fa-lg fa-fw"></i>
+  + Add a `.gitignore`
+  + Push your changes to GitHub
+  + On Netlify.com, New Site from Git > pick your repo
+
+]
 ---
 
 `r emo::ji("newspaper")`

@@ -52,11 +52,11 @@ slides %>%
 
 ```{r}
 activities <- tribble(~link, ~description, ~time,
-                      "../../../slides/blogdown.html#yourturn-1", "Orient yourself to your site, and the files in it!", "05:00 minutes",
+                      "../../../slides/blogdown.html#yourturn-1", "Gaze into your directory structure, and site", "05:00 minutes",
                       "../../../slides/blogdown.html#yourturn-2", "Edit the config.toml to customize your site", "05:00 minutes",
-                      "../../../slides/blogdown.html#yourturn-3", "Add/edit chapters in your book", "10:00 minutes",
-                      "../../../slides/blogdown.html#yourturn-4", "Change how your sidebar TOC looks & works", "05:00 minutes",
-                      "../../../slides/blogdown.html#yourturn-5", "Tune the book output & publish", "15:00 minutes")
+                      "../../../slides/blogdown.html#yourturn-3", "Edit some exampleSite content, save, and let 'LiveReload' preview your changes", "05:00 minutes",
+                      "../../../slides/blogdown.html#yourturn-4", "Add new content", "05:00 minutes",
+                      "../../../slides/blogdown.html#yourturn-5", "Deploy", "05:00 minutes")
 
 activities %>% 
   mutate(activity = cell_spec(glue::glue('{emo::ji("sent")} Your turn #{
@@ -71,4 +71,6 @@ activities %>%
   kable("html", escape = FALSE) %>%
   kable_styling(bootstrap_options = c("hover", "condensed")) 
 ```
+
+## Enable Continuous Deployment with Netlify
 

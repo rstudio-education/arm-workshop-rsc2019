@@ -863,6 +863,9 @@ name: hugo-layouts
 ├── .Rproj.user/
 ├── ada-blog.Rproj
 ├── archetypes/
+*|   └──  blog.md
+*|   └──  default.md
+*|   └──  itemized.md
 ├── config.toml
 ├── content/
 ├── data/
@@ -996,9 +999,9 @@ template: yourturn
 
 .right-column[
 # .fancy[05:00 minutes]
-### Try any of these on for size:
+### Add new content
 
-1. Use `usethis::edit_r_profile` to add some **blogdown** global options.
+1. .fancy[Optional:] Use `usethis::edit_r_profile` to add some **blogdown** global options.
   + Don't forget the blank line at the end, and restart your R session, serve your site again.
 
 1. Use the "New Post" addin to create new content.&lt;br&gt;
@@ -1067,6 +1070,37 @@ cloud rstudio server pro very important
     Develop as normal using blogdown::serve_site()
     When you're ready to deploy, use the Build Pane's Build Website command.
     Click Publish from the built preview, and select "Publish finished website only"
+
+
+---
+name: yourturn-5
+template: yourturn
+
+.right-column[
+# .fancy[05:00 minutes]
+### Deploy!
+
+1. ☁️ | 💻
+  + Use RStudio Connect
+
+1. 💻 + &lt;i class="fab fa-github fa-lg fa-fw"&gt;&lt;/i&gt;
+  + Add a `.gitignore`
+  + Push your changes to GitHub
+  + On Netlify.com, New Site from Git &gt; pick your repo
+
+]
+---
+
+📰
+
+Extra Extra!
+
+Want to change the landing page? You need to do two things:
+
+1. add an `_index.md` file to `content/` (not in a subfolder)
+1. update the `index.html` layout
+
+Let's try it!
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: blogdown
 
-date: "2019-01-10"
+date: "2019-01-11"
 
 draft: true
 toc: true
@@ -54,25 +54,27 @@ menu:
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> <a href="../../../slides/blogdown.html#yourturn-1" style="     ">📩 Your turn #1: Orient yourself to your site, and the files in it!</a> </td>
-   <td style="text-align:left;"> 🕕 05:00 minutes </td>
+   <td style="text-align:left;"> <a href="../../../slides/blogdown.html#yourturn-1" style="     ">📩 Your turn #1: Gaze into your directory structure, and site</a> </td>
+   <td style="text-align:left;"> ⏲ 05:00 minutes </td>
   </tr>
   <tr>
    <td style="text-align:left;"> <a href="../../../slides/blogdown.html#yourturn-2" style="     ">📩 Your turn #2: Edit the config.toml to customize your site</a> </td>
-   <td style="text-align:left;"> 🕕 05:00 minutes </td>
+   <td style="text-align:left;"> ⏲ 05:00 minutes </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a href="../../../slides/blogdown.html#yourturn-3" style="     ">📩 Your turn #3: Add/edit chapters in your book</a> </td>
-   <td style="text-align:left;"> 🕕 10:00 minutes </td>
+   <td style="text-align:left;"> <a href="../../../slides/blogdown.html#yourturn-3" style="     ">📩 Your turn #3: Edit some exampleSite content, save, and let 'LiveReload' preview your changes</a> </td>
+   <td style="text-align:left;"> ⏲ 05:00 minutes </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a href="../../../slides/blogdown.html#yourturn-4" style="     ">📩 Your turn #4: Change how your sidebar TOC looks &amp; works</a> </td>
-   <td style="text-align:left;"> 🕕 05:00 minutes </td>
+   <td style="text-align:left;"> <a href="../../../slides/blogdown.html#yourturn-4" style="     ">📩 Your turn #4: Add new content</a> </td>
+   <td style="text-align:left;"> ⏲ 05:00 minutes </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a href="../../../slides/blogdown.html#yourturn-5" style="     ">📩 Your turn #5: Tune the book output &amp; publish</a> </td>
-   <td style="text-align:left;"> 🕕 15:00 minutes </td>
+   <td style="text-align:left;"> <a href="../../../slides/blogdown.html#yourturn-5" style="     ">📩 Your turn #5: Deploy</a> </td>
+   <td style="text-align:left;"> ⏲ 05:00 minutes </td>
   </tr>
 </tbody>
 </table>
+
+## Enable Continuous Deployment with Netlify
 
