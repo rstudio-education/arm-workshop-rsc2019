@@ -32,7 +32,8 @@ install.packages(arm_from_cran, dependencies = TRUE)
 ```
 
 ```{r gh_pkgs, purl = TRUE, eval = TRUE}
-arm_from_gh <- c('yihui/xaringan', 'rstudio/blogdown')
+arm_from_gh <- c('yihui/xaringan', 'rstudio/blogdown',
+                 'rstudio-education/armcompanion')
 ```
 
 ```{r install_gh, purl = TRUE}
@@ -272,7 +273,7 @@ For many code examples provided in the workshop activities, you'll need to insta
 install.packages(c("tidyverse", "babynames"), dependencies = TRUE)
 ```
 
-Can you load the package?
+Can you load the packages?
 ```{r}
 # should just work if installed
 library(tidyverse)
@@ -285,10 +286,30 @@ Does this code return `TRUE`?
 is_installed(c("tidyverse", "babynames"))
 ```
 
+## armcompanion
+
+You can download our workshop companion package from the RStudio Education GitHub:
+
+```{r}
+remotes::install_github("armcompanion", dependencies = TRUE)
+```
+
+Can you load the package?
+```{r}
+# should just work if installed
+library(armcompanion)
+```
+
+
+Does this code return `TRUE`?
+```{r eval = TRUE}
+is_installed("armcompanion")
+```
+
 ## Check all package installs {#all}
 
 ```{r check_all_installs, eval = TRUE, purl = TRUE}
-is_installed(c(arm_from_cran, 'xaringan', 'blogdown'))
+is_installed(c(arm_from_cran, 'xaringan', 'blogdown', 'armcompanion'))
 ```
 
 

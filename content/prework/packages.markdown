@@ -1,7 +1,7 @@
 ---
 title: Install R packages
 author: ''
-date: "2019-01-11"
+date: "2019-01-13"
 slug: packages
 categories: []
 tags: []
@@ -33,7 +33,8 @@ install.packages(arm_from_cran, dependencies = TRUE)
 
 
 ```r
-arm_from_gh <- c('yihui/xaringan', 'rstudio/blogdown')
+arm_from_gh <- c('yihui/xaringan', 'rstudio/blogdown',
+                 'rstudio-education/armcompanion')
 ```
 
 
@@ -67,7 +68,7 @@ Can you load the package?
 library(xaringan)
 ```
 
-You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">0.12</a> for how to check for all packages):
+You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">0.13</a> for how to check for all packages):
 
 
 
@@ -341,7 +342,7 @@ For many code examples provided in the workshop activities, you'll need to insta
 install.packages(c("tidyverse", "babynames"), dependencies = TRUE)
 ```
 
-Can you load the package?
+Can you load the packages?
 
 ```r
 # should just work if installed
@@ -361,11 +362,39 @@ is_installed(c("tidyverse", "babynames"))
 #      TRUE      TRUE
 ```
 
+## armcompanion
+
+You can download our workshop companion package from the RStudio Education GitHub:
+
+
+```r
+remotes::install_github("armcompanion", dependencies = TRUE)
+```
+
+Can you load the package?
+
+```r
+# should just work if installed
+library(armcompanion)
+```
+
+
+Does this code return `TRUE`?
+
+```r
+is_installed("armcompanion")
+```
+
+```
+# armcompanion 
+#         TRUE
+```
+
 ## Check all package installs {#all}
 
 
 ```r
-is_installed(c(arm_from_cran, 'xaringan', 'blogdown'))
+is_installed(c(arm_from_cran, 'xaringan', 'blogdown', 'armcompanion'))
 ```
 
 ```
@@ -373,8 +402,8 @@ is_installed(c(arm_from_cran, 'xaringan', 'blogdown'))
 #          TRUE          TRUE          TRUE          TRUE          TRUE 
 #       rticles         memor     tidyverse       remotes     babynames 
 #          TRUE          TRUE          TRUE          TRUE          TRUE 
-#      xaringan      blogdown 
-#          TRUE          TRUE
+#      xaringan      blogdown  armcompanion 
+#          TRUE          TRUE          TRUE
 ```
 
 
