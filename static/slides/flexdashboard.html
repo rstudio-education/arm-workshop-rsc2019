@@ -53,9 +53,45 @@ class: inverse
 
 ### .fancy[Making Dashboards in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2019-01-12]
+.large[Alison Hill | rstudio::conf | 2019-01-14]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
+
+
+---
+class: middle, inverse, center
+
+
+&lt;img src="img/flexdashboard-fatalpoliceshootings.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+--
+
+.footnote[
+
+By [Julia Silge](https://juliasilge.com/) ([blog](https://juliasilge.com/blog/fatal-shootings/); [flexdashboard](https://beta.rstudioconnect.com/juliasilge/policeshooting/policeshooting.html); [source code](https://gist.github.com/juliasilge/9acbe97c549502bac85404779edceba0))
+]
+
+---
+class: middle, inverse, center
+
+&lt;img src="https://jenthompson.me/images/flexdash_example.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+--
+
+.footnote[
+
+By [Jennifer Thompson](https://jenthompson.me) ([blog](https://jenthompson.me/2018/02/09/flexdashboards-monitoring/);  [source code](https://github.com/jenniferthompson/MOSAICProgress))
+]
+
+
+---
+## Why?
+
+- Use Markdown headings to describe the boxes and space division of your dashboard
+    - Layout is implicit and automatic
+    - Tweakable with custom attributes
+- Content in your boxes fills the box automatically
+- Supply gaps between R offerings and common dashboard components
 
 ---
 
@@ -128,10 +164,51 @@ new_site(theme = "jpescador/hugo-future-imperfect",
 
 ]
 
+---
+name: knit
+class: center, inverse, middle
+
+# 🧶
+
+# .fancy[Knit to flex_dashboard]
+
+
+---
+name: inf_mr
+class: center, inverse, middle
+
+# 🧶 + 🚀
+
+# .fancy[Knit to infinity and beyond!]
+
+Mouse up to "Addins" ➡️ "Infinite Moon Reader"
+
+&lt;img src="img/flexdashboard-infmr.png" width="40%" style="display: block; margin: auto;" /&gt;
+
 
 ???
 
-if an exampleSite exists, it will be in themes/&lt;hugo-future-imperfect&gt;/exampleSite
+Generates live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.)
+
+---
+background-image: url(img/flexdashboard-template.png)
+background-size: contain
+
+
+---
+name: outline
+class: middle, inverse
+
+
+# &lt;i class="fas fa-tachometer-alt"&gt;&lt;/i&gt; .fancy[Outline]
+
++ [Layouts](#block1)
+
++ [Components](#block2)
+
++ [Interactivity](#block3)
+
+
 
 ---
 ## YAML header
@@ -142,14 +219,7 @@ if an exampleSite exists, it will be in themes/&lt;hugo-future-imperfect&gt;/exa
     ---
     
     
----
-## The Big Idea
 
-- Use Markdown headings to describe the boxes and space division of your dashboard
-    - Layout is implicit and automatic
-    - Tweakable with custom attributes
-- Content in your boxes fills the box automatically
-- Supply gaps between R offerings and common dashboard components
 
 ---
 name: block1
@@ -165,75 +235,232 @@ https://bookdown.org/yihui/rmarkdown/layout.html
 ---
 name: layouts-boxes
 
-# Level three: boxes
+# Level 3: boxes
 
+.pull-left[
+We see three boxes because we have:
 
-    ### This is a box. 
-    
-    This is some text in the box.
+```
+### Chart A
+
+### Chart B
+
+### Chart C
+```
+]
+
+.pull-right[
+
+&lt;img src="img/flexdashboard-boxes.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
   
-![level three](level-three.png)
+???
+
+What you call your boxes does matter- the text shows up right above them.
+
+Content in your boxes fills the box automatically.
 
 ---
 name: layouts-columns
 
-# Level two: columns
+# Level 2: columns
+
+The default YAML:
 
 
-    ## My first column
-    
-    ### My first box
-    
-    This is some text in a box.
-    
-    ## My second column
-    
-    ### My second box
-    
-    This is some slightly different text in a box.
+```r
+output: 
+  flexdashboard::flex_dashboard:
+*   orientation: columns
+```
+
+--
+
+.pull-left[
+We see 2 columns because we have:
+
+
+```r
+Column {data-width=650}
+------------------------------------
+  
+Column {data-width=350}
+------------------------------------
+```
+
+
+]
+
+--
+
+.pull-right[
+
+But we could also use level 2 headers too:
+
+
+```r
+## Column {data-width=650}
+
+
+
+## Column {data-width=350}
+```
+
+
+]
+
+
+--
+
+
+Let's change our long dashed lines to `##` now together!
+
+???
+
+What you call your columns does NOT matter- the text not displayed anywhere
+
+The column layout is implicit and automatic.
+
+You can apply widths to columns, this is what data-width does
+
+
 
 ---
+name: layouts-rows
 
-# Level two: columns
+# Level 2: rows
 
-![level two](level-two.png)
+You could think row-wise instead of column-wise by changing the YAML:
+
+
+```r
+output: 
+  flexdashboard::flex_dashboard:
+*   orientation: rows
+```
+
+--
+
+.pull-left[
+So...
+
+
+```r
+Row {data-height=650}
+------------------------------------
+  
+Row {data-height=350}
+------------------------------------
+```
+
+
+]
+
+.pull-right[
+
+But we could also use level 2 headers too:
+
+
+```r
+## Row {data-height=650}
+
+
+
+## Row {data-height=350}
+```
+
+
+]
 
 ---
 name: layouts-pages
 
-# Level one: pages
+# Level 1: pages
 
-    # Page one
-    
-    ### My first box
-    
-    This is some text in a box.
-    
-    # Page two
-    
-    ### My second box
-    
-    This is some slightly different text in a box.
+We only have one page here- you can see that, but notice that we also don't have any level 1 headers...let's add pages together.
+
+--
+
+.pull-left[
+Add a level-one header (`#`) at the top, save, 🚀
+
+
+```r
+*# Page 1
+
+## Column {data-width=650}
+```
+
+
+]
+
+--
+
+.pull-right[
+
+Add another level-one header (`#`) at the bottom, save, 🚀
+
+
+
+```r
+### Chart C
+
+&lt;code chunk here&gt;
+  
+*# Page 2
+```
+
+
+]
+
 
 ---
 
-# Level one: pages
+# Level 1: pages
 
-![level one](level-one.png)
+.pull-left[
 
----
-## Layout Recap:
+&lt;img src="img/flexdashboard-pages.png" width="80%" style="display: block; margin: auto;" /&gt;
 
-- flexdashboards are composed of space-filling boxes created with level 3 headers (`###`)
-- Boxes can be grouped into columns (or rows, or tabs) with level 2 headers (`##`)
-- Pages can group other kinds of components
-- Much more advanced layout is possible (see docs for details)
+]
+
+--
+
+.pull-right[
+
+
+```r
+# Page 1
+
+## Column
+  
+### Chart A
+```
+
+
+Technically, you can also demarcate pages with
+
+
+```r
+*Page 1
+*=====================================
+
+## Column
+  
+### Chart A
+```
+
+
+]
+
+.footnote[
+https://rmarkdown.rstudio.com/flexdashboard/using.html#multiple_pages
+]
 
 ---
 name: yourturn
-background-image: url(img/joanna-kosinska-288950-unsplash.jpg)
-background-size: cover
-class: middle
+class: middle, inverse
 
 
 # &lt;i class="fas fa-edit"&gt;&lt;/i&gt; .fancy[Your turn]
@@ -244,17 +471,33 @@ name: yourturn-1
 template: yourturn
 
 
-# .fancy[03:00 minutes]
+# .fancy[05:00 minutes]
 
-## Make a new `flexdashboard` with some layouts like:
+### Make a new `flexdashboard` with some layouts like:
 
-+ [Boxes](#layouts-boxes)
++ [Boxes](#layouts-boxes) with `###`
 
-+  [Columns](#layouts-columns)
++ [Columns](#layouts-columns) with `##` .fancy[(play with `{data-width=}`)]
 
-+ [Pages](#layouts-pages)
++ [Pages](#layouts-pages) with `#`
+
++ Extras:
+  + Update YAML to try out [rows](#layouts-rows) with `orientation: rows`; .fancy[play with `{data-height=}`]
+  + Add tabs to a [column](https://rmarkdown.rstudio.com/flexdashboard/layouts.html#tabset_column) or a [row](https://rmarkdown.rstudio.com/flexdashboard/layouts.html#tabset_row) to a level 2 header `{.tabset}`
+  + Add a [sidebar](https://rmarkdown.rstudio.com/flexdashboard/layouts.html#input_sidebar) to a level 1 or 2 header with `{.sidebar}`
+  + Try another [layout option](https://rmarkdown.rstudio.com/flexdashboard/layouts.html)
 
 
+---
+## Recap Layouts
+
+- flexdashboards are composed of space-filling [boxes](#layouts-boxes) created with level 3 headers (`###`)
+
+- Boxes can be grouped into [columns](#layouts-columns) (or [rows](#layouts-rows), or [tabs](https://rmarkdown.rstudio.com/flexdashboard/using.html#tabsets)) with level 2 headers (`##`)
+
+- [Pages](#layouts-pages) can group other kinds of components with level 1 headers (`#`)
+
+- Much more advanced layout is possible (see [docs for details]((https://rmarkdown.rstudio.com/flexdashboard/layouts.html))
 
 ---
 name: block2
@@ -357,38 +600,6 @@ gauge(satisfaction, min = 0, max = 100, symbol = '%',
 
 ---
 
-{.tabset .tabset-dropdown}
-
-```
-# R Markdown {.tabset .tabset-dropdown}
-
-## Tab A
-
-This is an R Markdown document. 
-
-## Tab B
-
-When you click the **Knit** button a document will be generated.
-
-## Tab C
-
-Here is a summary table.
-
-
-```r
-summary(cars)
-```
-
-```
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-```
-```
 
 ---
 name: block3
@@ -405,12 +616,12 @@ https://bookdown.org/yihui/rmarkdown/interactive-documents.html#intro-widgets
 ---
 ## Interactivity with HTML widgets
 
+https://www.htmlwidgets.org/
 - Simplest form of interactivity
 - Static HTML; no special client or server requirements
     - Host anywhere, view anywhere
 - Data must be fixed (can't run R code)
-- Interaction within single widget only 
-    - Most widgets don't talk to each other (yet)
+- Interaction *can happen* across widgets with [crosstalk](https://rstudio.github.io/crosstalk/)
 
 ---
 ## HTML widget interactivity
@@ -426,8 +637,8 @@ dygraph(lungDeaths) %&gt;%
 ---
 ## HTML widget interactivity 
 
-<div id="htmlwidget-d789caf6d25a8e5e8e9f" style="width:80%;height:504px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d789caf6d25a8e5e8e9f">{"x":{"attrs":{"labels":["month","mdeaths","fdeaths"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1974-01-01T00:00:00.000Z","1974-02-01T00:00:00.000Z","1974-03-01T00:00:00.000Z","1974-04-01T00:00:00.000Z","1974-05-01T00:00:00.000Z","1974-06-01T00:00:00.000Z","1974-07-01T00:00:00.000Z","1974-08-01T00:00:00.000Z","1974-09-01T00:00:00.000Z","1974-10-01T00:00:00.000Z","1974-11-01T00:00:00.000Z","1974-12-01T00:00:00.000Z","1975-01-01T00:00:00.000Z","1975-02-01T00:00:00.000Z","1975-03-01T00:00:00.000Z","1975-04-01T00:00:00.000Z","1975-05-01T00:00:00.000Z","1975-06-01T00:00:00.000Z","1975-07-01T00:00:00.000Z","1975-08-01T00:00:00.000Z","1975-09-01T00:00:00.000Z","1975-10-01T00:00:00.000Z","1975-11-01T00:00:00.000Z","1975-12-01T00:00:00.000Z","1976-01-01T00:00:00.000Z","1976-02-01T00:00:00.000Z","1976-03-01T00:00:00.000Z","1976-04-01T00:00:00.000Z","1976-05-01T00:00:00.000Z","1976-06-01T00:00:00.000Z","1976-07-01T00:00:00.000Z","1976-08-01T00:00:00.000Z","1976-09-01T00:00:00.000Z","1976-10-01T00:00:00.000Z","1976-11-01T00:00:00.000Z","1976-12-01T00:00:00.000Z","1977-01-01T00:00:00.000Z","1977-02-01T00:00:00.000Z","1977-03-01T00:00:00.000Z","1977-04-01T00:00:00.000Z","1977-05-01T00:00:00.000Z","1977-06-01T00:00:00.000Z","1977-07-01T00:00:00.000Z","1977-08-01T00:00:00.000Z","1977-09-01T00:00:00.000Z","1977-10-01T00:00:00.000Z","1977-11-01T00:00:00.000Z","1977-12-01T00:00:00.000Z","1978-01-01T00:00:00.000Z","1978-02-01T00:00:00.000Z","1978-03-01T00:00:00.000Z","1978-04-01T00:00:00.000Z","1978-05-01T00:00:00.000Z","1978-06-01T00:00:00.000Z","1978-07-01T00:00:00.000Z","1978-08-01T00:00:00.000Z","1978-09-01T00:00:00.000Z","1978-10-01T00:00:00.000Z","1978-11-01T00:00:00.000Z","1978-12-01T00:00:00.000Z","1979-01-01T00:00:00.000Z","1979-02-01T00:00:00.000Z","1979-03-01T00:00:00.000Z","1979-04-01T00:00:00.000Z","1979-05-01T00:00:00.000Z","1979-06-01T00:00:00.000Z","1979-07-01T00:00:00.000Z","1979-08-01T00:00:00.000Z","1979-09-01T00:00:00.000Z","1979-10-01T00:00:00.000Z","1979-11-01T00:00:00.000Z","1979-12-01T00:00:00.000Z"],[2134,1863,1877,1877,1492,1249,1280,1131,1209,1492,1621,1846,2103,2137,2153,1833,1403,1288,1186,1133,1053,1347,1545,2066,2020,2750,2283,1479,1189,1160,1113,970,999,1208,1467,2059,2240,1634,1722,1801,1246,1162,1087,1013,959,1179,1229,1655,2019,2284,1942,1423,1340,1187,1098,1004,970,1140,1110,1812,2263,1820,1846,1531,1215,1075,1056,975,940,1081,1294,1341],[901,689,827,677,522,406,441,393,387,582,578,666,830,752,785,664,467,438,421,412,343,440,531,771,767,1141,896,532,447,420,376,330,357,445,546,764,862,660,663,643,502,392,411,348,387,385,411,638,796,853,737,546,530,446,431,362,387,430,425,679,821,785,727,612,478,429,405,379,393,411,487,574]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<div id="htmlwidget-f7e35e53d740dd2e7ea1" style="width:80%;height:504px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f7e35e53d740dd2e7ea1">{"x":{"attrs":{"labels":["month","mdeaths","fdeaths"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1974-01-01T00:00:00.000Z","1974-02-01T00:00:00.000Z","1974-03-01T00:00:00.000Z","1974-04-01T00:00:00.000Z","1974-05-01T00:00:00.000Z","1974-06-01T00:00:00.000Z","1974-07-01T00:00:00.000Z","1974-08-01T00:00:00.000Z","1974-09-01T00:00:00.000Z","1974-10-01T00:00:00.000Z","1974-11-01T00:00:00.000Z","1974-12-01T00:00:00.000Z","1975-01-01T00:00:00.000Z","1975-02-01T00:00:00.000Z","1975-03-01T00:00:00.000Z","1975-04-01T00:00:00.000Z","1975-05-01T00:00:00.000Z","1975-06-01T00:00:00.000Z","1975-07-01T00:00:00.000Z","1975-08-01T00:00:00.000Z","1975-09-01T00:00:00.000Z","1975-10-01T00:00:00.000Z","1975-11-01T00:00:00.000Z","1975-12-01T00:00:00.000Z","1976-01-01T00:00:00.000Z","1976-02-01T00:00:00.000Z","1976-03-01T00:00:00.000Z","1976-04-01T00:00:00.000Z","1976-05-01T00:00:00.000Z","1976-06-01T00:00:00.000Z","1976-07-01T00:00:00.000Z","1976-08-01T00:00:00.000Z","1976-09-01T00:00:00.000Z","1976-10-01T00:00:00.000Z","1976-11-01T00:00:00.000Z","1976-12-01T00:00:00.000Z","1977-01-01T00:00:00.000Z","1977-02-01T00:00:00.000Z","1977-03-01T00:00:00.000Z","1977-04-01T00:00:00.000Z","1977-05-01T00:00:00.000Z","1977-06-01T00:00:00.000Z","1977-07-01T00:00:00.000Z","1977-08-01T00:00:00.000Z","1977-09-01T00:00:00.000Z","1977-10-01T00:00:00.000Z","1977-11-01T00:00:00.000Z","1977-12-01T00:00:00.000Z","1978-01-01T00:00:00.000Z","1978-02-01T00:00:00.000Z","1978-03-01T00:00:00.000Z","1978-04-01T00:00:00.000Z","1978-05-01T00:00:00.000Z","1978-06-01T00:00:00.000Z","1978-07-01T00:00:00.000Z","1978-08-01T00:00:00.000Z","1978-09-01T00:00:00.000Z","1978-10-01T00:00:00.000Z","1978-11-01T00:00:00.000Z","1978-12-01T00:00:00.000Z","1979-01-01T00:00:00.000Z","1979-02-01T00:00:00.000Z","1979-03-01T00:00:00.000Z","1979-04-01T00:00:00.000Z","1979-05-01T00:00:00.000Z","1979-06-01T00:00:00.000Z","1979-07-01T00:00:00.000Z","1979-08-01T00:00:00.000Z","1979-09-01T00:00:00.000Z","1979-10-01T00:00:00.000Z","1979-11-01T00:00:00.000Z","1979-12-01T00:00:00.000Z"],[2134,1863,1877,1877,1492,1249,1280,1131,1209,1492,1621,1846,2103,2137,2153,1833,1403,1288,1186,1133,1053,1347,1545,2066,2020,2750,2283,1479,1189,1160,1113,970,999,1208,1467,2059,2240,1634,1722,1801,1246,1162,1087,1013,959,1179,1229,1655,2019,2284,1942,1423,1340,1187,1098,1004,970,1140,1110,1812,2263,1820,1846,1531,1215,1075,1056,975,940,1081,1294,1341],[901,689,827,677,522,406,441,393,387,582,578,666,830,752,785,664,467,438,421,412,343,440,531,771,767,1141,896,532,447,420,376,330,357,445,546,764,862,660,663,643,502,392,411,348,387,385,411,638,796,853,737,546,530,446,431,362,387,430,425,679,821,785,727,612,478,429,405,379,393,411,487,574]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
 
 ---
 ## flexdashboard vs. shinydashboard
@@ -439,10 +650,12 @@ dygraph(lungDeaths) %&gt;%
 ---
 ## Advanced topics
 
-- Layout tweaking: adjust column widths/sizes
-- Mobile friendliness
+- [Themes](https://rmarkdown.rstudio.com/flexdashboard/using.html#themes)
+- [Logos](https://rmarkdown.rstudio.com/flexdashboard/using.html#logo__favicon)
+- [Layout tweaking:](https://rmarkdown.rstudio.com/flexdashboard/using.html#sizing) adjust column widths/sizes
+- [Mobile friendly layouts](https://rmarkdown.rstudio.com/flexdashboard/using.html#mobile_layout)
    - Largely automatic but can show/hide specifically
-- Storyboards
+- [Storyboards](https://rmarkdown.rstudio.com/flexdashboard/using.html#storyboards)
 - Navigation
 
 ---

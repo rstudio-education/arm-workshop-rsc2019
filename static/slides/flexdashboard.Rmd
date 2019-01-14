@@ -60,6 +60,46 @@ class: inverse
 
 <!-- this ends up being the title slide since seal = FALSE-->
 
+
+---
+class: middle, inverse, center
+
+
+```{r echo = FALSE}
+knitr::include_graphics("img/flexdashboard-fatalpoliceshootings.png")
+```
+
+--
+
+.footnote[
+
+By [Julia Silge](https://juliasilge.com/) ([blog](https://juliasilge.com/blog/fatal-shootings/); [flexdashboard](https://beta.rstudioconnect.com/juliasilge/policeshooting/policeshooting.html); [source code](https://gist.github.com/juliasilge/9acbe97c549502bac85404779edceba0))
+]
+
+---
+class: middle, inverse, center
+
+```{r echo = FALSE, out.width='70%'}
+knitr::include_graphics("https://jenthompson.me/images/flexdash_example.png")
+```
+
+--
+
+.footnote[
+
+By [Jennifer Thompson](https://jenthompson.me) ([blog](https://jenthompson.me/2018/02/09/flexdashboards-monitoring/);  [source code](https://github.com/jenniferthompson/MOSAICProgress))
+]
+
+
+---
+## Why?
+
+- Use Markdown headings to describe the boxes and space division of your dashboard
+    - Layout is implicit and automatic
+    - Tweakable with custom attributes
+- Content in your boxes fills the box automatically
+- Supply gaps between R offerings and common dashboard components
+
 ---
 
 class: inverse, middle, center
@@ -134,10 +174,53 @@ knitr::include_graphics("img/blogdown-workflow-wizard.png")
 
 ]
 
+---
+name: knit
+class: center, inverse, middle
+
+# `r emo::ji("yarn")`
+
+# .fancy[Knit to flex_dashboard]
+
+
+---
+name: inf_mr
+class: center, inverse, middle
+
+# `r emo::ji("yarn")` + `r emo::ji("rocket")`
+
+# .fancy[Knit to infinity and beyond!]
+
+Mouse up to "Addins" `r emo::ji("arrow_right")` "Infinite Moon Reader"
+
+```{r, out.width='40%', echo = FALSE}
+knitr::include_graphics("img/flexdashboard-infmr.png")
+```
+
 
 ???
 
-if an exampleSite exists, it will be in themes/<hugo-future-imperfect>/exampleSite
+Generates live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.)
+
+---
+background-image: url(img/flexdashboard-template.png)
+background-size: contain
+
+
+---
+name: outline
+class: middle, inverse
+
+
+# <i class="fas fa-tachometer-alt"></i> .fancy[Outline]
+
++ [Layouts](#block1)
+
++ [Components](#block2)
+
++ [Interactivity](#block3)
+
+
 
 ---
 ## YAML header
@@ -148,14 +231,7 @@ if an exampleSite exists, it will be in themes/<hugo-future-imperfect>/exampleSi
     ---
     
     
----
-## The Big Idea
 
-- Use Markdown headings to describe the boxes and space division of your dashboard
-    - Layout is implicit and automatic
-    - Tweakable with custom attributes
-- Content in your boxes fills the box automatically
-- Supply gaps between R offerings and common dashboard components
 
 ---
 name: block1
@@ -171,75 +247,226 @@ https://bookdown.org/yihui/rmarkdown/layout.html
 ---
 name: layouts-boxes
 
-# Level three: boxes
+# Level 3: boxes
 
+.pull-left[
+We see three boxes because we have:
 
-    ### This is a box. 
-    
-    This is some text in the box.
+```
+### Chart A
+
+### Chart B
+
+### Chart C
+```
+]
+
+.pull-right[
+
+```{r echo = FALSE}
+knitr::include_graphics("img/flexdashboard-boxes.png")
+```
+
+]
   
-![level three](level-three.png)
+???
+
+What you call your boxes does matter- the text shows up right above them.
+
+Content in your boxes fills the box automatically.
 
 ---
 name: layouts-columns
 
-# Level two: columns
+# Level 2: columns
+
+The default YAML:
+
+```{r eval = FALSE}
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns #<<
+```
+
+--
+
+.pull-left[
+We see 2 columns because we have:
+
+```{r eval = FALSE}
+Column {data-width=650}
+------------------------------------
+  
+Column {data-width=350}
+------------------------------------
+```
 
 
-    ## My first column
-    
-    ### My first box
-    
-    This is some text in a box.
-    
-    ## My second column
-    
-    ### My second box
-    
-    This is some slightly different text in a box.
+]
+
+--
+
+.pull-right[
+
+But we could also use level 2 headers too:
+
+```{r eval = FALSE}
+## Column {data-width=650}
+
+
+
+## Column {data-width=350}
+```
+
+
+]
+
+
+--
+
+
+Let's change our long dashed lines to `##` now together!
+
+???
+
+What you call your columns does NOT matter- the text not displayed anywhere
+
+The column layout is implicit and automatic.
+
+You can apply widths to columns, this is what data-width does
+
+
 
 ---
+name: layouts-rows
 
-# Level two: columns
+# Level 2: rows
 
-![level two](level-two.png)
+You could think row-wise instead of column-wise by changing the YAML:
+
+```{r eval = FALSE}
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows #<<
+```
+
+--
+
+.pull-left[
+So...
+
+```{r eval = FALSE}
+Row {data-height=650}
+------------------------------------
+  
+Row {data-height=350}
+------------------------------------
+```
+
+
+]
+
+.pull-right[
+
+But we could also use level 2 headers too:
+
+```{r eval = FALSE}
+## Row {data-height=650}
+
+
+
+## Row {data-height=350}
+```
+
+
+]
 
 ---
 name: layouts-pages
 
-# Level one: pages
+# Level 1: pages
 
-    # Page one
-    
-    ### My first box
-    
-    This is some text in a box.
-    
-    # Page two
-    
-    ### My second box
-    
-    This is some slightly different text in a box.
+We only have one page here- you can see that, but notice that we also don't have any level 1 headers...let's add pages together.
+
+--
+
+.pull-left[
+Add a level-one header (`#`) at the top, save, `r emo::ji("rocket")`
+
+```{r eval = FALSE}
+# Page 1 #<<
+
+## Column {data-width=650}
+```
+
+
+]
+
+--
+
+.pull-right[
+
+Add another level-one header (`#`) at the bottom, save, `r emo::ji("rocket")`
+
+
+```{r eval = FALSE}
+### Chart C
+
+<code chunk here>
+  
+# Page 2 #<<
+````
+
+
+]
+
 
 ---
 
-# Level one: pages
+# Level 1: pages
 
-![level one](level-one.png)
+.pull-left[
 
----
-## Layout Recap:
+```{r echo = FALSE}
+knitr::include_graphics("img/flexdashboard-pages.png")
+```
 
-- flexdashboards are composed of space-filling boxes created with level 3 headers (`###`)
-- Boxes can be grouped into columns (or rows, or tabs) with level 2 headers (`##`)
-- Pages can group other kinds of components
-- Much more advanced layout is possible (see docs for details)
+]
+
+--
+
+.pull-right[
+
+```{r eval = FALSE}
+# Page 1
+
+## Column
+  
+### Chart A
+```
+
+
+Technically, you can also demarcate pages with
+
+```{r eval = FALSE}
+Page 1 #<<
+===================================== #<<
+
+## Column
+  
+### Chart A
+```
+
+
+]
+
+.footnote[
+https://rmarkdown.rstudio.com/flexdashboard/using.html#multiple_pages
+]
 
 ---
 name: yourturn
-background-image: url(img/joanna-kosinska-288950-unsplash.jpg)
-background-size: cover
-class: middle
+class: middle, inverse
 
 
 # <i class="fas fa-edit"></i> .fancy[Your turn]
@@ -250,17 +477,33 @@ name: yourturn-1
 template: yourturn
 
 
-# .fancy[03:00 minutes]
+# .fancy[05:00 minutes]
 
-## Make a new `flexdashboard` with some layouts like:
+### Make a new `flexdashboard` with some layouts like:
 
-+ [Boxes](#layouts-boxes)
++ [Boxes](#layouts-boxes) with `###`
 
-+  [Columns](#layouts-columns)
++ [Columns](#layouts-columns) with `##` .fancy[(play with `{data-width=}`)]
 
-+ [Pages](#layouts-pages)
++ [Pages](#layouts-pages) with `#`
+
++ Extras:
+  + Update YAML to try out [rows](#layouts-rows) with `orientation: rows`; .fancy[play with `{data-height=}`]
+  + Add tabs to a [column](https://rmarkdown.rstudio.com/flexdashboard/layouts.html#tabset_column) or a [row](https://rmarkdown.rstudio.com/flexdashboard/layouts.html#tabset_row) to a level 2 header `{.tabset}`
+  + Add a [sidebar](https://rmarkdown.rstudio.com/flexdashboard/layouts.html#input_sidebar) to a level 1 or 2 header with `{.sidebar}`
+  + Try another [layout option](https://rmarkdown.rstudio.com/flexdashboard/layouts.html)
 
 
+---
+## Recap Layouts
+
+- flexdashboards are composed of space-filling [boxes](#layouts-boxes) created with level 3 headers (`###`)
+
+- Boxes can be grouped into [columns](#layouts-columns) (or [rows](#layouts-rows), or [tabs](https://rmarkdown.rstudio.com/flexdashboard/using.html#tabsets)) with level 2 headers (`##`)
+
+- [Pages](#layouts-pages) can group other kinds of components with level 1 headers (`#`)
+
+- Much more advanced layout is possible (see [docs for details]((https://rmarkdown.rstudio.com/flexdashboard/layouts.html))
 
 ---
 name: block2
@@ -370,27 +613,6 @@ cat(paste("    ```{r}",
 
 ---
 
-`{.tabset .tabset-dropdown}`
-
-```
-# R Markdown {.tabset .tabset-dropdown}
-
-## Tab A
-
-This is an R Markdown document. 
-
-## Tab B
-
-When you click the **Knit** button a document will be generated.
-
-## Tab C
-
-Here is a summary table.
-
-```{r cars}
-summary(cars)
-```
-```
 
 ---
 name: block3
@@ -405,14 +627,23 @@ https://bookdown.org/yihui/rmarkdown/interactive-documents.html#intro-widgets
 ]
 
 ---
+class: middle, inverse, center
+
+
+# You may not need Shiny!
+
+
+
+---
 ## Interactivity with HTML widgets
 
+
+https://www.htmlwidgets.org/
 - Simplest form of interactivity
 - Static HTML; no special client or server requirements
     - Host anywhere, view anywhere
 - Data must be fixed (can't run R code)
-- Interaction within single widget only 
-    - Most widgets don't talk to each other (yet)
+- Interaction *can happen* across widgets with [crosstalk](https://rstudio.github.io/crosstalk/)
 
 ---
 ## HTML widget interactivity
@@ -444,10 +675,12 @@ dygraph(lungDeaths) %>%
 ---
 ## Advanced topics
 
-- Layout tweaking: adjust column widths/sizes
-- Mobile friendliness
+- [Themes](https://rmarkdown.rstudio.com/flexdashboard/using.html#themes)
+- [Logos](https://rmarkdown.rstudio.com/flexdashboard/using.html#logo__favicon)
+- [Layout tweaking:](https://rmarkdown.rstudio.com/flexdashboard/using.html#sizing) adjust column widths/sizes
+- [Mobile friendly layouts](https://rmarkdown.rstudio.com/flexdashboard/using.html#mobile_layout)
    - Largely automatic but can show/hide specifically
-- Storyboards
+- [Storyboards](https://rmarkdown.rstudio.com/flexdashboard/using.html#storyboards)
 - Navigation
 
 ---
