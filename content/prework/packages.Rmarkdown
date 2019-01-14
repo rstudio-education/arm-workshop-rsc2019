@@ -23,8 +23,8 @@ For this workshop, you'll need to install several R packages. This page will gui
 
 ```{r cran_pkgs, purl = TRUE, eval = TRUE}
 arm_from_cran <- c("flexdashboard", "learnr", "bookdown",
-                   "officer", "kableExtra", "rticles", "memor",
-                   "tidyverse", "remotes", "babynames")
+                   "officer", "rticles", "memor", "webshot",
+                   "tidyverse", "remotes", "babynames", "magick")
 ```
 
 ```{r install_cran, purl = TRUE}
@@ -33,15 +33,20 @@ install.packages(arm_from_cran, dependencies = TRUE)
 
 ```{r gh_pkgs, purl = TRUE, eval = TRUE}
 arm_from_gh <- c('yihui/xaringan', 'rstudio/blogdown',
-                 'rstudio-education/armcompanion')
+                 'rstudio-education/armcompanion', 
+                 'haozhu233/kableExtra')
 ```
 
 ```{r install_gh, purl = TRUE}
 remotes::install_github(arm_from_gh, dependencies = TRUE)
 ```
 
+```{r}
+webshot::install_phantomjs()
+```
 
-Also please review section \@ref(update-hugo) to make sure you have Hugo version `r blogdown::hugo_version()`, which you'll need for **blogdown**.
++ Also please review section \@ref(update-hugo) to make sure you have Hugo version `r blogdown::hugo_version()`, which you'll need for **blogdown**. 
++ Please review section \@ref(webshot) to install `phantom_js`
 
 ## Download script {#script}
 
@@ -227,10 +232,10 @@ is_installed("rticles")
 
 ## kableExtra {#kableExtra}
 
-Install the [**kableExtra** package](https://haozhu233.github.io/kableExtra/) from CRAN as follows:
+Install the [**kableExtra** package](https://haozhu233.github.io/kableExtra/) from GitHub as follows:
 
 ```{r}
-install.packages("kableExtra", dependencies = TRUE)
+remotes::install_packages("haozhu233/kableExtra", dependencies = TRUE)
 ```
 
 Can you load the package?
@@ -244,6 +249,54 @@ Does this code return `TRUE`?
 ```{r eval = TRUE}
 is_installed("kableExtra")
 ```
+
+### webshot {#webshot}
+
+To be able to save HTML table as images (`kableExtra::save_kable()`):
+
+
+```{r}
+install.packages("webshot", dependencies = TRUE)
+```
+
+Can you load the package?
+```{r}
+# should just work if installed
+library(webshot)
+```
+
+
+Does this code return `TRUE`?
+```{r eval = TRUE}
+is_installed("webshot")
+```
+
+Please also do the following:
+```{r}
+webshot::install_phantomjs()
+```
+
+
+### magick {#magick}
+
+To be able to save PDF table as images (`kableExtra::save_kable()`):
+
+```{r}
+install.packages("magick", dependencies = TRUE)
+```
+
+Can you load the package?
+```{r}
+# should just work if installed
+library(magick)
+```
+
+
+Does this code return `TRUE`?
+```{r eval = TRUE}
+is_installed("magick")
+```
+
 
 ## memor {#memor}
 
@@ -309,7 +362,7 @@ is_installed("armcompanion")
 ## Check all package installs {#all}
 
 ```{r check_all_installs, eval = TRUE, purl = TRUE}
-is_installed(c(arm_from_cran, 'xaringan', 'blogdown', 'armcompanion'))
+is_installed(c(arm_from_cran, 'xaringan', 'blogdown', 'armcompanion', 'kableExtra'))
 ```
 
 
