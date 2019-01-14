@@ -1,7 +1,7 @@
-https://arm.rbind.io/days/day1/xaringan.html*       https://arm.rbind.io/xaringan  301!
-https://arm.rbind.io/days/day1/flexdashboard.html*  https://arm.rbind.io/flexdashboard  301!
-https://arm.rbind.io/days/day1/learnr.html*         https://arm.rbind.io/learnr  301!
-https://arm.rbind.io/days/day1/bookdown.html*       https://arm.rbind.io/bookdown  301!
-https://arm.rbind.io/days/day1/blogdown.html*       https://arm.rbind.io/blogdown  301!
-https://arm.rbind.io/days/day1/*                    https://arm.rbind.io/day1  301!
-https://arm.rbind.io/days/day2/*                    https://arm.rbind.io/day2  301!
+/days/day1/xaringan.html       /xaringan
+/days/day1/flexdashboard.html  /flexdashboard
+/days/day1/learnr.html         /learnr
+/days/day1/bookdown.html       /bookdown
+/days/day1/blogdown.html       /blogdown
+/days/day1/                    /day1
+/days/day2/                    /day2
