@@ -31,7 +31,7 @@ Here is a tentative timetable for Day 2:
 |               | 10:30-11:00 |:coffee: BREAK   |
 | Session #2, AM  | 11:00-12:30 | R Markdown output formats |
 |               | 12:30-02:00  |:fork_and_knife: LUNCH |
-| Session #3, PM  | 02:00-03:30   | Customizing R Markdown (Hao Zhu) |
+| Session #3, PM  | 02:00-03:30   | [Extending R Markdown (Hao Zhu)](extend) |
 |              | 03:30-04:00   |:coffee: BREAK   |
 | Session #4, PM   | 04:00-05:00   | HTML widgets and Shiny |
 | Session #5, PM  | 05:00-05:30  | More advanced stuff, or Q & A if we are all tired |
