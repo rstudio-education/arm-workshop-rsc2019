@@ -635,7 +635,7 @@ class: middle, inverse, center
 
 
 ---
-## Interactivity with HTML widgets
+# Interactivity with HTML widgets
 
 
 https://www.htmlwidgets.org/
@@ -646,24 +646,21 @@ https://www.htmlwidgets.org/
 - Interaction *can happen* across widgets with [crosstalk](https://rstudio.github.io/crosstalk/)
 
 ---
-## HTML widget interactivity
+# HTML widget interactivity
 
-```{r, eval=FALSE}
+.pull-left[
+```{r lungdygraph, eval=FALSE}
 library(dygraphs)
 lungDeaths <- cbind(mdeaths, fdeaths)
 dygraph(lungDeaths) %>% 
    dyRangeSelector()
 ```
+]
 
----
-## HTML widget interactivity 
-
-```{r, echo=FALSE}
-library(dygraphs)
-lungDeaths <- cbind(mdeaths, fdeaths)
-dygraph(lungDeaths) %>% 
-   dyRangeSelector()
+.pull-right[
+```{r ref.label = 'lungdygraph', echo=FALSE}
 ```
+]
 
 ---
 ## flexdashboard vs. shinydashboard
@@ -687,11 +684,13 @@ dygraph(lungDeaths) %>%
 # Wrap - up / Q & A
 
 ---
-## Links
+class: middle, center, inverse
 
-    https://github.com/jmcphers/flexdashboard-talk
+# More resources
 
-- [flexdashboard documentation](http://rmarkdown.rstudio.com/flexdashboard/)
-- [HTML widget crosstalk](https://github.com/rstudio/crosstalk)
-- [HTML widget showcase](http://www.htmlwidgets.org/showcase_leaflet.html)
+## Special thanks to Jonathan McPherson for sharing his `flexdashboard` talk from [useR2016](https://github.com/jmcphers/flexdashboard-talk)
+
++ [flexdashboard documentation](http://rmarkdown.rstudio.com/flexdashboard/)
++ [HTML widget crosstalk](https://github.com/rstudio/crosstalk)
++ [HTML widget showcase](http://www.htmlwidgets.org/showcase_leaflet.html)
 
