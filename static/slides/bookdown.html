@@ -32,7 +32,7 @@ background-size: cover
 
 ### .fancy[Making Books in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2019-01-11]
+.large[Alison Hill | rstudio::conf | 2019-01-14]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
@@ -283,7 +283,7 @@ class: inverse, middle, center
 name: noknit
 class: middle, inverse, center
 
-# DON'T 🧶 KNIT!
+# DO NOT KNIT!
 
 ![](https://media.giphy.com/media/Vg6vGMxVs9Sve/giphy.gif)
 
@@ -340,7 +340,7 @@ https://skeleton-bookdown.netlify.com/
 
 ???
 
-The index.Rmd technically contains the first "chapter". Notice that in your rendered book, the second chapter is called "Introduction"- but the filename was 01-intro.Rmd. Prerequisites, which is the first level-one heading in the index.Rmd became Chapter 1. And Introduction became Chapter 2.
+The index.Rmd contains the first "chapter" because it starts with a level one header. Notice that in your rendered book, the second chapter is called "Introduction"- but the filename was 01-intro.Rmd. Prerequisites, which is the first level-one heading in the index.Rmd became Chapter 1. And Introduction became Chapter 2.
 
 I'll show you later how to change this if you want to.
 
@@ -492,7 +492,7 @@ name: edit-yaml
 --- 
 title: "A Minimal Book Example"
 author: "Yihui Xie"
-date: "2019-01-11"
+date: "2019-01-14"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -516,7 +516,7 @@ The `site` is **required**
 --- 
 title: "A Minimal Book Example" 
 author: "Yihui Xie" 
-date: "2019-01-11" 
+date: "2019-01-14" 
 site: bookdown::bookdown_site 
 documentclass: book
 bibliography: [book.bib, packages.bib]

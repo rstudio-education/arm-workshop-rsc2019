@@ -298,7 +298,7 @@ class: inverse, middle, center
 name: noknit
 class: middle, inverse, center
 
-# DON'T `r emo::ji("knit")` KNIT!
+# DO NOT KNIT!
 
 ![](https://media.giphy.com/media/Vg6vGMxVs9Sve/giphy.gif)
 
@@ -357,7 +357,7 @@ https://skeleton-bookdown.netlify.com/
 
 ???
 
-The index.Rmd technically contains the first "chapter". Notice that in your rendered book, the second chapter is called "Introduction"- but the filename was 01-intro.Rmd. Prerequisites, which is the first level-one heading in the index.Rmd became Chapter 1. And Introduction became Chapter 2.
+The index.Rmd contains the first "chapter" because it starts with a level one header. Notice that in your rendered book, the second chapter is called "Introduction"- but the filename was 01-intro.Rmd. Prerequisites, which is the first level-one heading in the index.Rmd became Chapter 1. And Introduction became Chapter 2.
 
 I'll show you later how to change this if you want to.
 
