@@ -123,7 +123,6 @@ mtcars[1:4, 1:4] %>%
 
 # Sample kableExtra code
 
-Hao fix!
 
 ```{r, message=F, eval = FALSE}
 # LaTeX Table
@@ -131,10 +130,11 @@ mtcars[1:4, 1:4] %>%
   kable("latex", booktabs = T) %>%
   add_header_above(c(" ", "RStudio" = 2, "Conf" = 2)) %>%
   group_rows("ARM workshop", start_row = 3, end_row = 4) %>%
-  kable_styling(latex_options = "striped") %>%
-  save_kable("img/kE_latex_example.png") # for this presentation only
+  kable_styling(latex_options = "striped") 
+```
 
-knitr::include_graphics("img/kE_latex_example.png")
+```{r echo = FALSE}
+knitr::include_graphics("img/extend-img/kE_latex_example.png")
 ```
 
 ---
