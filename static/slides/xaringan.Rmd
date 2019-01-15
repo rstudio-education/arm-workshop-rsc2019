@@ -61,7 +61,7 @@ class: middle, inverse
 ]
 
 .right-column[
-/ʃæ.'riŋ.ɡæn/
+# /ʃæ.'riŋ.ɡæn/
 ]
 
 ---
@@ -198,7 +198,7 @@ class: center, inverse, middle
 
 # .fancy[but, remark.js doesn't know R...]
 
-![bakeoff-gif](https://media.giphy.com/media/l41Yvum3TNt6XvN6g/giphy.gif)
+--
 
 # .fancy[remark.js only supports Markdown]
 
@@ -376,18 +376,13 @@ Save this!
 
 
 
-1. Click the `Knit` button to compile it;
+Click the `Knit` button to compile it
 
-1. Use your console:
-
-    ```
-    rmarkdown::render('foodie.Rmd', 'xaringan::moon_reader')
-    ```
 
 
 --
 
-<hr>
+
 
 Do you see both slides?
 
@@ -413,10 +408,79 @@ Don't worry: it gets much better. But first...
 
 - Generates live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.)
 
-.footnote[
-[1] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the addin in RStudio.
+--
+
+- Be sure to click on the "Show in new window" button in your RStudio viewer pane.
+
+--
+
+- In your browser, see the `...html#41` at the end? Make it `...html#hop` `r emo::ji("rabbit")`
+
+
+
+---
+name: skip
+class: middle, inverse
+
+# .fancy[And we're back!]
+
+This is the power of using:
+
+```{r eval = FALSE}
+---
+  
+name: something
+
+# This is really something!
+```
+
+--
+
+You can [name individual slides](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to them too from other slides in your deck: 
+
+`[hop back to the end](#hop)` -> [hop back to the end](#hop)
+
+
+???
+
+For example, for these slide decks today, I named all the Your Turn slides so that they would be easily linkable.
+
+---
+name: keyboard-demo
+class: center, inverse, middle
+
+# .fancy[Keyboard shortcuts]
+
+Press `h` or `?` to see the `remark.js` [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html). 
+
+--
+
+A useful workflow for presenting; if you have two screens, turn off display mirroring then press `c` to clone:
+
+.pull-left[
+
+# `r fa(name = "desktop", fill = "white")`
+
+On the presentation screen:
+
+Move cloned window to this screen <br>
+Then press `f` for full-screen mode
+
 ]
 
+.pull-right[
+
+# `r fa(name = "laptop", fill = "white")`
+
+On your laptop screen:
+
+Press `p` for presenter mode on laptop <br>
+Wish you had used `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes)
+]
+
+???
+
+Don't forget to add presenter notes- when you are in presenter mode you see them but your audience does not! You use three question marks at the bottom of your slide to separate out your notes.
 
 ---
 name: sfah
@@ -461,8 +525,6 @@ What you need to know now:
 
 - [Making slides](#newslide-demo)
 
-- [Keyboard shortcuts](#keyboard-demo)
-
 - Align [all](#fullalign-demo) or [some slide content](#textalign-demo)
 
 - [Incremental reveals](#increment-demo)
@@ -470,9 +532,6 @@ What you need to know now:
 - [Two-column slides](#pull-demo)
 
 
-+ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
-
-+ [name a single slide](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to it: `[back to the beginning](#xaringan-title)` -> [back to the beginning](#xaringan-title)
 
 ---
 name: newslide-demo
@@ -488,7 +547,7 @@ name: newslide-demo
 .pull-right[
 ```
 ---
-title: "foodie-safety"
+title: "armdeck"
 output: xaringan::moon_reader 
 ---
 
@@ -504,42 +563,7 @@ All the details...
 ```
 ]
 
----
-name: keyboard-demo
-class: center, inverse, middle
 
-# .fancy[Keyboard shortcuts]
-
-Press `h` or `?` to see the `remark.js` [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html). 
-
---
-
-A useful workflow for presenting; if you have two screens, turn off display mirroring then press `c` to clone:
-
-.pull-left[
-
-# `r fa(name = "desktop", fill = "white")`
-
-On the presentation screen:
-
-Move cloned window to this screen <br>
-Then press `f` for full-screen mode
-
-]
-
-.pull-right[
-
-# `r fa(name = "laptop", fill = "white")`
-
-On your laptop screen:
-
-Press `p` for presenter mode on laptop <br>
-Wish you had used `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes)
-]
-
-???
-
-Don't forget to add presenter notes- when you are in presenter mode you see them but your audience does not!
 
 
 ---
@@ -581,19 +605,7 @@ class: center, middle #<<
 
 # Slide with centered content in the middle
 
-My name is Alison
-
---
-
-I like hot toddies
-
---
-
-`#rdogladies`
-
---
-
-and babies
+My name is Alison. I like hot toddies, `#rdogladies`, and babies.
 
 ---
 ```
@@ -605,27 +617,19 @@ and babies
 
 class: center, middle
 
-.footnote[
+
+.left[
 ```
+---
+
 class: center, middle
 ```
 ]
 
 # Slide with centered content in the middle
 
-My name is Alison
+My name is Alison. I like hot toddies, `#rdogladies`, and babies.
 
---
-
-I like hot toddies
-
---
-
-`#rdogladies`
-    
---
-
-and babies
 
 ---
 
@@ -656,19 +660,9 @@ class: center, middle
 
 # Slide with some aligned text
 
-My name is Alison
+My name is Alison. I like hot toddies, `#rdogladies`,...
 
---
-
-.left[I like hot toddies] #<<
-
---
-
-.center[`#rdogladies`]  #<<
-
---
-
-.right[and babies] #<<
+.left[and babies.] #<<
 
 ---
 ```
@@ -678,21 +672,19 @@ My name is Alison
 
 class: center, middle
 
+.left[
+```
+---
+
+class: center, middle
+```
+]
+
 # Slide with some aligned text
 
-My name is Alison
+My name is Alison. I like hot toddies, `#rdogladies`,...
 
---
-
-.left[I like hot toddies] 
-
---
-
-.center[`#rdogladies`] 
-
---
-
-.right[and babies]
+.left[and babies.]
 
 
 ---
@@ -707,6 +699,7 @@ background-size: cover
 ---
 
 name: mdimage-demo
+class: middle
 
 .pull-left[
 ```{r eval = FALSE}
@@ -714,19 +707,10 @@ name: mdimage-demo
 
 class: center, middle 
 
-### Hi there, take 2
+# Hi there, with an image
 
-My name is Alison
-
---
-
-![Image of hot toddy](http://bit.ly/wiki-toddy)  #<<
-
---
-
-![Image of rdogladies](http://bit.ly/rdogladies-hex)  #<<
-
---
+My name is Alison. I like hot toddies, 
+`#rdogladies`, and
 
 ![Image of Momtocat](http://bit.ly/momtocat)  #<<
 
@@ -739,27 +723,15 @@ My name is Alison
 .pull-right[
 
 .center[.middle[
-### Hi there, take 2
+### Hi there, with an image
 
-My name is Alison
-{{content}}
+My name is Alison. 
+I like hot toddies, 
+`#rdogladies`, and
+<img class="lil" src="http://bit.ly/momtocat">
 ]]
 
 ]
-
---
-
-<img class="lil" src="http://bit.ly/wiki-toddy">
-{{content}}
-
---
-
-<img class="lil" src="http://bit.ly/rdogladies-hex">
-{{content}}
-
---
-
-<img class="lil" src="http://bit.ly/momtocat">
 
 
 --
@@ -871,13 +843,6 @@ Poptocat on your right
 [2] You can also similarly use `.left-column[ ]` (20%) and `.right-column` (75%).
 ]
 
----
-
-template: sfah
-
-## .salt[REMARK.JS] &nbsp; .fat[CHUNKS]
-
-## .acid[IMAGES] &nbsp; .heat[THEMES]
 
 ---
 name: section
@@ -901,7 +866,7 @@ template: yourturn
 .right-column[
 [Season](#block1) some slides with `remark.js` salt! Consider trying:
 
-1. Using [keyboard shortcuts & presenter notes with `???`](#keyboard-demo)
+1. Add [presenter notes with `???`](#keyboard-demo)
 
 1. Incremental reveals with `--` ([demo slide](#increment-demo))
 
@@ -960,7 +925,7 @@ Why? It makes it more readable `r emo::ji("eyes")`
 
 ```{r eval = FALSE}
 ---
-title: "foodie-safety"
+title: "armdeck"
 subtitle: "rstudio::conf 2019"
 author: "Alison Hill"
 date: "`r Sys.Date()`"
@@ -1133,20 +1098,6 @@ head(tx_names) %>%
 ---
 
 .left-column[
-# Hello `leaflet`
-]
-
-.right-column[
-
-```{r out.width='100%', fig.height=6, eval=require('leaflet')}
-library(leaflet)
-leaflet() %>% addTiles() %>% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
-```
-]
-
----
-
-.left-column[
 # Hello `gt`
 ]
 
@@ -1159,6 +1110,22 @@ head(tx_names) %>%
 ```
 
 ]
+
+---
+
+.left-column[
+# Hello `leaflet`
+]
+
+.right-column[
+
+```{r out.width='100%', fig.height=6, eval=require('leaflet')}
+library(leaflet)
+leaflet() %>% addTiles() %>% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
+```
+]
+
+
 
 ---
 
@@ -1328,12 +1295,20 @@ name: tldr-side-by-side
 
 # tl;dr: side-by-side code + plot
 
+Why? Don't repeat yourself!
+
+--
+
 
 1. [Code first, plot second](#plot-last)
+
     - Chunk 1: `` {r plot-last, fig.show = 'hide'} ``
     - Chunk 2: `` {r ref.label = 'plot-last', echo = FALSE} ``
+    
+--
 
 1. [Plot first, code second](#plot-first)
+
     - Chunk 1: `` {r plot-first, echo = FALSE} ``
     - Chunk 2: `` {r ref.label = 'plot-first', eval = FALSE} ``
 
@@ -1477,7 +1452,7 @@ template: yourturn
 
 1. Add a plot ([demo slide](#plot-demo))
 
-1. Enable code highlighting ([demo slide](#highlightjs-demo))
+1. Enable code highlighting ([demo slide](#highlightjs-demo)) +
   + Highlight R input ([demo slide](#highlight-input))
   + Highlight R output ([demo slide](#highlight-output))
 
@@ -1533,16 +1508,24 @@ Use the [`background-image` property](https://github.com/gnab/remark/wiki/Markdo
 
 - `background-image: url("url")`
 - `background-size:`
-    - `cover` --> rescales + crops with no empty space; best if image size < slide size
-    - `contain` --> rescales only; best if image size > slide size
+    - `cover` --> rescales + crops with no empty space
+    - `contain` --> rescales only
 - `background-position:` play with [this](https://www.w3schools.com/cssref/pr_background-position.asp)
+
+--
+
+If it is a url: `url(http://bit.ly/arm-greens)`
+
+--
+
+If it is a local image, use relative file paths: `url(img/arm-greens.jpg)`
 
 
 ---
 name: greens-none
 class: center, middle, inverse
 background-size: initial
-background-image: url("http://bit.ly/arm-greens")
+background-image: url(http://bit.ly/arm-greens)
 
 
 # .fancy[No background size]
@@ -1973,4 +1956,16 @@ Serve your slides by publishing on either:
 
 
 
+---
+name: hop
+class: middle, center, inverse
 
+# `r emo::ji("hole")`
+
+This a slide much later in the deck!
+
+Let's go back to where we left off...
+
+--
+
+In your browser, see the `...html#144` at the end? Make it `...html#skip`!

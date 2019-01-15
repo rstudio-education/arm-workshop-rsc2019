@@ -66,7 +66,7 @@ class: middle, inverse
 ]
 
 .right-column[
-/ʃæ.'riŋ.ɡæn/
+# /ʃæ.'riŋ.ɡæn/
 ]
 
 ---
@@ -202,7 +202,7 @@ class: center, inverse, middle
 
 # .fancy[but, remark.js doesn't know R...]
 
-![bakeoff-gif](https://media.giphy.com/media/l41Yvum3TNt6XvN6g/giphy.gif)
+--
 
 # .fancy[remark.js only supports Markdown]
 
@@ -250,8 +250,8 @@ With R Markdown, you are used to this:
 
 With **xaringan** (no `pandoc`!):
 
-<div id="htmlwidget-76312a06aeb0b3a698bb" style="width:75%;height:50%;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-76312a06aeb0b3a698bb">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       rankdir = \"LR\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"xaringan\\n .Rmd\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.75\", fillcolor = \"#61acf0\"] \n  \"2\" [label = \"knitr\", shape = \"square\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#f0a561\"] \n  \"3\" [label = \".md\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#cbd20a\"] \n  \"4\" [label = \"remark.js via\\n xaringan::moon_reader\", shape = \"rectangle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"2\", fillcolor = \"#f0a561\"] \n  \"5\" [label = \"html\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#e74a2f\"] \n\"1\"->\"2\" [color = \"#3C3C3C\"] \n\"2\"->\"3\" [color = \"#3C3C3C\"] \n\"3\"->\"4\" [color = \"#3C3C3C\"] \n\"4\"->\"5\" [color = \"#3C3C3C\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e4ad0539b00523778c85" style="width:75%;height:50%;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e4ad0539b00523778c85">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       rankdir = \"LR\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"xaringan\\n .Rmd\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.75\", fillcolor = \"#61acf0\"] \n  \"2\" [label = \"knitr\", shape = \"square\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#f0a561\"] \n  \"3\" [label = \".md\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#cbd20a\"] \n  \"4\" [label = \"remark.js via\\n xaringan::moon_reader\", shape = \"rectangle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"2\", fillcolor = \"#f0a561\"] \n  \"5\" [label = \"html\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#e74a2f\"] \n\"1\"->\"2\" [color = \"#3C3C3C\"] \n\"2\"->\"3\" [color = \"#3C3C3C\"] \n\"3\"->\"4\" [color = \"#3C3C3C\"] \n\"4\"->\"5\" [color = \"#3C3C3C\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 
@@ -350,22 +350,17 @@ Save this!
 
 ---
 
-# Moon reader 👨‍🚀
+# Moon reader 👩‍🚀
 
 
 
-1. Click the `Knit` button to compile it;
+Click the `Knit` button to compile it
 
-1. Use your console:
-
-    ```
-    rmarkdown::render('foodie.Rmd', 'xaringan::moon_reader')
-    ```
 
 
 --
 
-&lt;hr&gt;
+
 
 Do you see both slides?
 
@@ -391,10 +386,80 @@ Don't worry: it gets much better. But first...
 
 - Generates live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.)
 
-.footnote[
-[1] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the addin in RStudio.
+--
+
+- Be sure to click on the "Show in new window" button in your RStudio viewer pane.
+
+--
+
+- In your browser, see the `...html#41` at the end? Make it `...html#hop` 🐰
+
+
+
+---
+name: skip
+class: middle, inverse
+
+# .fancy[And we're back!]
+
+This is the power of using:
+
+
+```r
+---
+  
+name: something
+
+# This is really something!
+```
+
+--
+
+You can [name individual slides](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to them too from other slides in your deck: 
+
+`[hop back to the end](#hop)` -&gt; [hop back to the end](#hop)
+
+
+???
+
+For example, for these slide decks today, I named all the Your Turn slides so that they would be easily linkable.
+
+---
+name: keyboard-demo
+class: center, inverse, middle
+
+# .fancy[Keyboard shortcuts]
+
+Press `h` or `?` to see the `remark.js` [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html). 
+
+--
+
+A useful workflow for presenting; if you have two screens, turn off display mirroring then press `c` to clone:
+
+.pull-left[
+
+# &lt;svg style="height:0.8em;top:.04em;position:relative;fill:white;" viewBox="0 0 576 512"&gt;&lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"/&gt;&lt;/svg&gt;
+
+On the presentation screen:
+
+Move cloned window to this screen &lt;br&gt;
+Then press `f` for full-screen mode
+
 ]
 
+.pull-right[
+
+# &lt;svg style="height:0.8em;top:.04em;position:relative;fill:white;" viewBox="0 0 640 512"&gt;&lt;path d="M512 64v256H128V64h384m16-64H112C85.5 0 64 21.5 64 48v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm100 416H389.5c-3 0-5.5 2.1-5.9 5.1C381.2 436.3 368 448 352 448h-64c-16 0-29.2-11.7-31.6-26.9-.5-2.9-3-5.1-5.9-5.1H12c-6.6 0-12 5.4-12 12v36c0 26.5 21.5 48 48 48h544c26.5 0 48-21.5 48-48v-36c0-6.6-5.4-12-12-12z"/&gt;&lt;/svg&gt;
+
+On your laptop screen:
+
+Press `p` for presenter mode on laptop &lt;br&gt;
+Wish you had used `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes)
+]
+
+???
+
+Don't forget to add presenter notes- when you are in presenter mode you see them but your audience does not! You use three question marks at the bottom of your slide to separate out your notes.
 
 ---
 name: sfah
@@ -439,8 +504,6 @@ What you need to know now:
 
 - [Making slides](#newslide-demo)
 
-- [Keyboard shortcuts](#keyboard-demo)
-
 - Align [all](#fullalign-demo) or [some slide content](#textalign-demo)
 
 - [Incremental reveals](#increment-demo)
@@ -448,9 +511,6 @@ What you need to know now:
 - [Two-column slides](#pull-demo)
 
 
-+ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
-
-+ [name a single slide](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to it: `[back to the beginning](#xaringan-title)` -&gt; [back to the beginning](#xaringan-title)
 
 ---
 name: newslide-demo
@@ -466,7 +526,7 @@ name: newslide-demo
 .pull-right[
 ```
 ---
-title: "foodie-safety"
+title: "armdeck"
 output: xaringan::moon_reader 
 ---
 
@@ -482,42 +542,7 @@ All the details...
 ```
 ]
 
----
-name: keyboard-demo
-class: center, inverse, middle
 
-# .fancy[Keyboard shortcuts]
-
-Press `h` or `?` to see the `remark.js` [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html). 
-
---
-
-A useful workflow for presenting; if you have two screens, turn off display mirroring then press `c` to clone:
-
-.pull-left[
-
-# &lt;svg style="height:0.8em;top:.04em;position:relative;fill:white;" viewBox="0 0 576 512"&gt;&lt;path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"/&gt;&lt;/svg&gt;
-
-On the presentation screen:
-
-Move cloned window to this screen &lt;br&gt;
-Then press `f` for full-screen mode
-
-]
-
-.pull-right[
-
-# &lt;svg style="height:0.8em;top:.04em;position:relative;fill:white;" viewBox="0 0 640 512"&gt;&lt;path d="M512 64v256H128V64h384m16-64H112C85.5 0 64 21.5 64 48v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm100 416H389.5c-3 0-5.5 2.1-5.9 5.1C381.2 436.3 368 448 352 448h-64c-16 0-29.2-11.7-31.6-26.9-.5-2.9-3-5.1-5.9-5.1H12c-6.6 0-12 5.4-12 12v36c0 26.5 21.5 48 48 48h544c26.5 0 48-21.5 48-48v-36c0-6.6-5.4-12-12-12z"/&gt;&lt;/svg&gt;
-
-On your laptop screen:
-
-Press `p` for presenter mode on laptop &lt;br&gt;
-Wish you had used `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes)
-]
-
-???
-
-Don't forget to add presenter notes- when you are in presenter mode you see them but your audience does not!
 
 
 ---
@@ -560,19 +585,7 @@ bottom
 
 # Slide with centered content in the middle
 
-My name is Alison
-
---
-
-I like hot toddies
-
---
-
-`#rdogladies`
-
---
-
-and babies
+My name is Alison. I like hot toddies, `#rdogladies`, and babies.
 
 ---
 ```
@@ -584,27 +597,19 @@ and babies
 
 class: center, middle
 
-.footnote[
+
+.left[
 ```
+---
+
 class: center, middle
 ```
 ]
 
 # Slide with centered content in the middle
 
-My name is Alison
+My name is Alison. I like hot toddies, `#rdogladies`, and babies.
 
---
-
-I like hot toddies
-
---
-
-`#rdogladies`
-    
---
-
-and babies
 
 ---
 
@@ -636,19 +641,9 @@ class: center, middle
 
 # Slide with some aligned text
 
-My name is Alison
+My name is Alison. I like hot toddies, `#rdogladies`,...
 
---
-
-*.left[I like hot toddies]
-
---
-
-*.center[`#rdogladies`]
-
---
-
-*.right[and babies]
+*.left[and babies.]
 
 ---
 ```
@@ -658,21 +653,19 @@ My name is Alison
 
 class: center, middle
 
+.left[
+```
+---
+
+class: center, middle
+```
+]
+
 # Slide with some aligned text
 
-My name is Alison
+My name is Alison. I like hot toddies, `#rdogladies`,...
 
---
-
-.left[I like hot toddies] 
-
---
-
-.center[`#rdogladies`] 
-
---
-
-.right[and babies]
+.left[and babies.]
 
 
 ---
@@ -687,6 +680,7 @@ background-size: cover
 ---
 
 name: mdimage-demo
+class: middle
 
 .pull-left[
 
@@ -695,19 +689,10 @@ name: mdimage-demo
 
 class: center, middle 
 
-### Hi there, take 2
+# Hi there, with an image
 
-My name is Alison
-
---
-
-*![Image of hot toddy](http://bit.ly/wiki-toddy)
-
---
-
-*![Image of rdogladies](http://bit.ly/rdogladies-hex)
-
---
+My name is Alison. I like hot toddies, 
+`#rdogladies`, and
 
 *![Image of Momtocat](http://bit.ly/momtocat)
 
@@ -720,27 +705,15 @@ My name is Alison
 .pull-right[
 
 .center[.middle[
-### Hi there, take 2
+### Hi there, with an image
 
-My name is Alison
-{{content}}
+My name is Alison. 
+I like hot toddies, 
+`#rdogladies`, and
+&lt;img class="lil" src="http://bit.ly/momtocat"&gt;
 ]]
 
 ]
-
---
-
-&lt;img class="lil" src="http://bit.ly/wiki-toddy"&gt;
-{{content}}
-
---
-
-&lt;img class="lil" src="http://bit.ly/rdogladies-hex"&gt;
-{{content}}
-
---
-
-&lt;img class="lil" src="http://bit.ly/momtocat"&gt;
 
 
 --
@@ -852,13 +825,6 @@ Poptocat on your right
 [2] You can also similarly use `.left-column[ ]` (20%) and `.right-column` (75%).
 ]
 
----
-
-template: sfah
-
-## .salt[REMARK.JS] &amp;nbsp; .fat[CHUNKS]
-
-## .acid[IMAGES] &amp;nbsp; .heat[THEMES]
 
 ---
 name: section
@@ -882,7 +848,7 @@ template: yourturn
 .right-column[
 [Season](#block1) some slides with `remark.js` salt! Consider trying:
 
-1. Using [keyboard shortcuts &amp; presenter notes with `???`](#keyboard-demo)
+1. Add [presenter notes with `???`](#keyboard-demo)
 
 1. Incremental reveals with `--` ([demo slide](#increment-demo))
 
@@ -942,7 +908,7 @@ Why? It makes it more readable 👀
 
 ```r
 ---
-title: "foodie-safety"
+title: "armdeck"
 subtitle: "rstudio::conf 2019"
 author: "Alison Hill"
 date: "`r Sys.Date()`"
@@ -1205,27 +1171,9 @@ head(tx_names) %&gt;%
   datatable()
 ```
 
-<div id="htmlwidget-991aaaf5e44d5ce16db2" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-991aaaf5e44d5ce16db2">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0ca28bfa9a23cbfca392" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0ca28bfa9a23cbfca392">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
-]
-
----
-
-.left-column[
-# Hello `leaflet`
-]
-
-.right-column[
-
-
-```r
-library(leaflet)
-leaflet() %&gt;% addTiles() %&gt;% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
-```
-
-<div id="htmlwidget-9108a05b4611cbdf9bad" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9108a05b4611cbdf9bad">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[30.2621,-97.7382],17,[]]},"evals":[],"jsHooks":[]}</script>
 ]
 
 ---
@@ -1247,7 +1195,7 @@ head(tx_names) %&gt;%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#eearrsqpsp .gt_table {
+#rafradmonb .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1266,13 +1214,13 @@ head(tx_names) %&gt;%
   /* table.border.top.color */
 }
 
-#eearrsqpsp .gt_heading {
+#rafradmonb .gt_heading {
   background-color: #FFFFFF;
   /* heading.background.color */
   border-bottom-color: #FFFFFF;
 }
 
-#eearrsqpsp .gt_title {
+#rafradmonb .gt_title {
   color: #000000;
   font-size: 125%;
   /* heading.title.font.size */
@@ -1283,7 +1231,7 @@ head(tx_names) %&gt;%
   border-bottom-width: 0;
 }
 
-#eearrsqpsp .gt_subtitle {
+#rafradmonb .gt_subtitle {
   color: #000000;
   font-size: 85%;
   /* heading.subtitle.font.size */
@@ -1294,7 +1242,7 @@ head(tx_names) %&gt;%
   border-top-width: 0;
 }
 
-#eearrsqpsp .gt_bottom_border {
+#rafradmonb .gt_bottom_border {
   border-bottom-style: solid;
   /* heading.border.bottom.style */
   border-bottom-width: 2px;
@@ -1303,7 +1251,7 @@ head(tx_names) %&gt;%
   /* heading.border.bottom.color */
 }
 
-#eearrsqpsp .gt_column_spanner {
+#rafradmonb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #A8A8A8;
@@ -1311,7 +1259,7 @@ head(tx_names) %&gt;%
   padding-bottom: 4px;
 }
 
-#eearrsqpsp .gt_col_heading {
+#rafradmonb .gt_col_heading {
   color: #000000;
   background-color: #FFFFFF;
   /* column_labels.background.color */
@@ -1324,11 +1272,11 @@ head(tx_names) %&gt;%
   margin: 10px;
 }
 
-#eearrsqpsp .gt_sep_right {
+#rafradmonb .gt_sep_right {
   border-right: 5px solid #FFFFFF;
 }
 
-#eearrsqpsp .gt_group_heading {
+#rafradmonb .gt_group_heading {
   padding: 8px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1352,7 +1300,7 @@ head(tx_names) %&gt;%
   vertical-align: middle;
 }
 
-#eearrsqpsp .gt_empty_group_heading {
+#rafradmonb .gt_empty_group_heading {
   padding: 0.5px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1376,29 +1324,29 @@ head(tx_names) %&gt;%
   vertical-align: middle;
 }
 
-#eearrsqpsp .gt_striped tr:nth-child(even) {
+#rafradmonb .gt_striped tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#eearrsqpsp .gt_row {
+#rafradmonb .gt_row {
   padding: 10px;
   /* row.padding */
   margin: 10px;
   vertical-align: middle;
 }
 
-#eearrsqpsp .gt_stub {
+#rafradmonb .gt_stub {
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #A8A8A8;
   padding-left: 12px;
 }
 
-#eearrsqpsp .gt_stub.gt_row {
+#rafradmonb .gt_stub.gt_row {
   background-color: #FFFFFF;
 }
 
-#eearrsqpsp .gt_summary_row {
+#rafradmonb .gt_summary_row {
   background-color: #FFFFFF;
   /* summary_row.background.color */
   padding: 6px;
@@ -1407,13 +1355,13 @@ head(tx_names) %&gt;%
   /* summary_row.text_transform */
 }
 
-#eearrsqpsp .gt_first_summary_row {
+#rafradmonb .gt_first_summary_row {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
 }
 
-#eearrsqpsp .gt_table_body {
+#rafradmonb .gt_table_body {
   border-top-style: solid;
   /* field.border.top.style */
   border-top-width: 2px;
@@ -1428,55 +1376,55 @@ head(tx_names) %&gt;%
   /* field.border.bottom.color */
 }
 
-#eearrsqpsp .gt_footnote {
+#rafradmonb .gt_footnote {
   font-size: 90%;
   /* footnote.font.size */
   padding: 4px;
   /* footnote.padding */
 }
 
-#eearrsqpsp .gt_sourcenote {
+#rafradmonb .gt_sourcenote {
   font-size: 90%;
   /* sourcenote.font.size */
   padding: 4px;
   /* sourcenote.padding */
 }
 
-#eearrsqpsp .gt_center {
+#rafradmonb .gt_center {
   text-align: center;
 }
 
-#eearrsqpsp .gt_left {
+#rafradmonb .gt_left {
   text-align: left;
 }
 
-#eearrsqpsp .gt_right {
+#rafradmonb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eearrsqpsp .gt_font_normal {
+#rafradmonb .gt_font_normal {
   font-weight: normal;
 }
 
-#eearrsqpsp .gt_font_bold {
+#rafradmonb .gt_font_bold {
   font-weight: bold;
 }
 
-#eearrsqpsp .gt_font_italic {
+#rafradmonb .gt_font_italic {
   font-style: italic;
 }
 
-#eearrsqpsp .gt_super {
+#rafradmonb .gt_super {
   font-size: 65%;
 }
 
-#eearrsqpsp .gt_footnote_glyph {
+#rafradmonb .gt_footnote_glyph {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="eearrsqpsp" style="overflow-x:auto;"><!--gt table start-->
+<div id="rafradmonb" style="overflow-x:auto;"><!--gt table start-->
 <table class='gt_table'>
 <tr>
 <th class='gt_col_heading gt_right' rowspan='1' colspan='1'>year</th>
@@ -1538,6 +1486,26 @@ head(tx_names) %&gt;%
 ---
 
 .left-column[
+# Hello `leaflet`
+]
+
+.right-column[
+
+
+```r
+library(leaflet)
+leaflet() %&gt;% addTiles() %&gt;% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
+```
+
+<div id="htmlwidget-bd4178a1f32506d7132d" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bd4178a1f32506d7132d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[30.2621,-97.7382],17,[]]},"evals":[],"jsHooks":[]}</script>
+]
+
+
+
+---
+
+.left-column[
 # Hello plot
 ]
 
@@ -1578,7 +1546,7 @@ name_plot
 ```
 ````
 
-![](xaringan_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
+![](xaringan_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
 
 ]
 
@@ -1604,7 +1572,7 @@ name_plot
 ```
 ````
 
-&lt;img src="xaringan_files/figure-html/unnamed-chunk-18-1.png" width="504" /&gt;
+&lt;img src="xaringan_files/figure-html/unnamed-chunk-19-1.png" width="504" /&gt;
 ]
 
 .footnote[
@@ -1617,7 +1585,7 @@ class: inverse
 name: gg-theme
 
 .pull-left[
-# 😮
+# 🤭
 
 ````
 ```{r dev = 'svg', dev.args = list(bg = "transparent")}
@@ -1643,7 +1611,7 @@ name_plot + invthm
 ```
 ````
 
-![](xaringan_files/figure-html/unnamed-chunk-19-1.svg)&lt;!-- --&gt;
+![](xaringan_files/figure-html/unnamed-chunk-20-1.svg)&lt;!-- --&gt;
 ]
 
 
@@ -1688,12 +1656,20 @@ name: tldr-side-by-side
 
 # tl;dr: side-by-side code + plot
 
+Why? Don't repeat yourself!
+
+--
+
 
 1. [Code first, plot second](#plot-last)
+
     - Chunk 1: `` {r plot-last, fig.show = 'hide'} ``
     - Chunk 2: `` {r ref.label = 'plot-last', echo = FALSE} ``
+    
+--
 
 1. [Plot first, code second](#plot-first)
+
     - Chunk 1: `` {r plot-first, echo = FALSE} ``
     - Chunk 2: `` {r ref.label = 'plot-first', eval = FALSE} ``
 
@@ -1754,7 +1730,7 @@ tx_plot
 ]
 
 .pull-right[
-&lt;img src="xaringan_files/figure-html/unnamed-chunk-21-1.png" width="504" /&gt;
+&lt;img src="xaringan_files/figure-html/unnamed-chunk-22-1.png" width="504" /&gt;
 ]
 
 
@@ -1833,7 +1809,7 @@ template: yourturn
 
 1. Add a plot ([demo slide](#plot-demo))
 
-1. Enable code highlighting ([demo slide](#highlightjs-demo))
+1. Enable code highlighting ([demo slide](#highlightjs-demo)) +
   + Highlight R input ([demo slide](#highlight-input))
   + Highlight R output ([demo slide](#highlight-output))
 
@@ -1889,16 +1865,24 @@ Use the [`background-image` property](https://github.com/gnab/remark/wiki/Markdo
 
 - `background-image: url("url")`
 - `background-size:`
-    - `cover` --&gt; rescales + crops with no empty space; best if image size &lt; slide size
-    - `contain` --&gt; rescales only; best if image size &gt; slide size
+    - `cover` --&gt; rescales + crops with no empty space
+    - `contain` --&gt; rescales only
 - `background-position:` play with [this](https://www.w3schools.com/cssref/pr_background-position.asp)
+
+--
+
+If it is a url: `url(http://bit.ly/arm-greens)`
+
+--
+
+If it is a local image, use relative file paths: `url(img/arm-greens.jpg)`
 
 
 ---
 name: greens-none
 class: center, middle, inverse
 background-size: initial
-background-image: url("http://bit.ly/arm-greens")
+background-image: url(http://bit.ly/arm-greens)
 
 
 # .fancy[No background size]
@@ -2334,6 +2318,22 @@ Serve your slides by publishing on either:
 .left-column[
 ## .fancy[.heatinline[05:00 minutes]]
 ]
+
+
+
+---
+name: hop
+class: middle, center, inverse
+
+# 🕳
+
+This a slide much later in the deck!
+
+Let's go back to where we left off...
+
+--
+
+In your browser, see the `...html#144` at the end? Make it `...html#skip`!
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="https://platform.twitter.com/widgets.js"></script>
