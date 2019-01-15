@@ -1046,8 +1046,6 @@ name: figs-tabs-cross
 
 .pull-left[
 
-See Figure `\@ref(fig:pressure-plot)`.
-
 ````
 ```{r pressure-plot, fig.cap='Look!'}`r ''`
 par(mar = c(4, 4, .1, .1))
@@ -1055,61 +1053,29 @@ plot(pressure, type = 'b', pch = 19)
 ```
 ````
 
+````
+```{r iris-tab}`r ''`
+knitr::kable(
+  head(iris[,1:4], 3), caption = 'Look!',
+  booktabs = TRUE
+)
+```
+````
+
+
+See Figure `\@ref(fig:pressure-plot)`.
+
 Don't miss Table `\@ref(tab:iris-tab)`.
 
-````
-```{r iris-tab}`r ''`
-knitr::kable(
-  head(iris[,1:4], 3), caption = 'Look!',
-  booktabs = TRUE
-)
-```
-````
+
 
 
 ]
 
 .pull-right[
-See Figure [1](figure-cross).
-.center[
+See Figure [1](#figure-caption).
 
-```{r ref.label='pressure-plot', out.width='75%', echo = FALSE, fig.retina = 3}
-```
-
-**Fig. 1:** Look!]
-
-]
-
-name: table-cross
-
-# Add a cross-reference
-
-.pull-left[
-
-See Table `\@ref(tab:iris-tab)`.
-
-````
-```{r iris-tab}`r ''`
-knitr::kable(
-  head(iris[,1:4], 3), caption = 'Look!',
-  booktabs = TRUE
-)
-```
-````
-
-
-]
-
-.pull-right[
-See Table [1](table-cross).
-.center[
-
-**Table 1:** Look!
-
-```{r ref.label='iris-tab', out.width='75%', echo = FALSE}
-```
-
-]
+See Table [1](#table-caption).
 
 ]
 

@@ -1054,8 +1054,6 @@ name: figs-tabs-cross
 
 .pull-left[
 
-See Figure `\@ref(fig:pressure-plot)`.
-
 ````
 ```{r pressure-plot, fig.cap='Look!'}
 par(mar = c(4, 4, .1, .1))
@@ -1063,88 +1061,29 @@ plot(pressure, type = 'b', pch = 19)
 ```
 ````
 
+````
+```{r iris-tab}
+knitr::kable(
+  head(iris[,1:4], 3), caption = 'Look!',
+  booktabs = TRUE
+)
+```
+````
+
+
+See Figure `\@ref(fig:pressure-plot)`.
+
 Don't miss Table `\@ref(tab:iris-tab)`.
 
-````
-```{r iris-tab}
-knitr::kable(
-  head(iris[,1:4], 3), caption = 'Look!',
-  booktabs = TRUE
-)
-```
-````
+
 
 
 ]
 
 .pull-right[
-See Figure [1](figure-cross).
-.center[
+See Figure [1](#figure-caption).
 
-&lt;img src="bookdown_files/figure-html/unnamed-chunk-26-1.png" width="75%" /&gt;
-
-**Fig. 1:** Look!]
-
-]
-
-name: table-cross
-
-# Add a cross-reference
-
-.pull-left[
-
-See Table `\@ref(tab:iris-tab)`.
-
-````
-```{r iris-tab}
-knitr::kable(
-  head(iris[,1:4], 3), caption = 'Look!',
-  booktabs = TRUE
-)
-```
-````
-
-
-]
-
-.pull-right[
-See Table [1](table-cross).
-.center[
-
-**Table 1:** Look!
-
-&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-]
+See Table [1](#table-caption).
 
 ]
 
