@@ -931,7 +931,7 @@ template: yourturn
 
 1. Edit a .bright[Blog] post.
 
-1. .bright[Challenge!] In `content/blog/` there is the sample `.Rmd` blog post titled .fancy["Hello R Markdown"]. Can you find it on the site? Why or why not? Can you spot the problem? .fancy[.bright[hint: it was to do with a YAML parameter that tells Hugo which layout to use]]
+1. .bright[Challenge!] In `content/blog/` there is the sample `.Rmd` blog post titled .fancy["Hello R Markdown"]. Can you find it on the site? Can you spot the problem? .fancy[.bright[hint: it was to do with a YAML parameter that tells Hugo which layout to use]]
 
 ]
 
