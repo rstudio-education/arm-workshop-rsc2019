@@ -3,7 +3,7 @@ title: blogdown
 
 date: "`r Sys.Date()`"
 
-draft: true
+draft: false
 toc: true
 type: docs
 
