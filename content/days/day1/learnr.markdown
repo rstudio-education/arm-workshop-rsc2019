@@ -1,7 +1,7 @@
 ---
 title: learnr
 
-date: "2019-01-11"
+date: "2019-01-15"
 
 draft: false
 toc: true
@@ -14,14 +14,4 @@ menu:
     weight: 5
 ---
 
-## Slides {#slides}
-
-<!--[Link](../../../slides/flexdashboard.html)-->
-
-
-
-## Activity {#activity}
-
-## Stretch {#stretch}
-
-## More {#more}
+https://arm.rbind.io/slides/learnr.pdf
