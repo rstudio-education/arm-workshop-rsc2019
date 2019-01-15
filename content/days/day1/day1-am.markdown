@@ -88,3 +88,5 @@ Feel free to take notes within the files set up for you on RStudio Server! You c
 <img src="/img/setup-screencaps/server_export.png" width="75%" />
 
 A dialog box will pop up allowing you to name the zip file.
+
+> These detailed instructions were kindly curated by [Jennifer Thompson](https://jenthompson.me/)
