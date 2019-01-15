@@ -20,4 +20,6 @@ Visit [rpodcast.github.io/officer-advrmarkdown](https://rpodcast.github.io/offic
 
 ## Resources {#resources}
 
-GitHub repository: [github.com/rpodcast/officer-advrmarkdown](https://github.com/rpodcast/officer-advrmarkdown)
+* GitHub repository: [github.com/rpodcast/officer-advrmarkdown](https://github.com/rpodcast/officer-advrmarkdown)
+* Officer package documentation: [davidgohel.github.io/officer/](https://davidgohel.github.io/officer/)
+* Example Shiny app: [rpodcast.shinyapps.io/megaman](https://rpodcast.shinyapps.io/megaman)
