@@ -15,4 +15,4 @@ The PM session will cover:
 
 - bookdown
 - blogdown
-- cohorts (TBD)
+- officer

@@ -32,5 +32,5 @@ Here is a tentative timetable for Day 1:
 | Session #3, PM  | 02:00-03:30   |[bookdown](bookdown) |
 |              | 03:30-04:00   |:coffee: BREAK   |
 | Session #4, PM   | 04:00-05:00   |[blogdown](blogdown) |
-| Session #5, PM  | 05:00-05:30  |officer |
+| Session #5, PM  | 05:00-05:30  |[officer](https://rpodcast.github.io/officer-advrmarkdown) |
 |                 | 05:30-07:30   |:cocktail: `rstudio::conf` happy hour + :book: signing|
