@@ -1961,7 +1961,7 @@ Serve your slides by publishing on either:
 
 1. RStudio Connect ([demo slides](#rsconnect))
 
-1. Github + Netlify ([demo slides](#netlify))
+1. Netlify ([demo slides](#netlify))
 
 <br>
 

@@ -29,14 +29,12 @@ library(fontawesome)
 slides <- tribble(~link, ~description, 
                       "../../../slides/xaringan.html#1", "Full slide deck",
                       "../../../slides/xaringan.html#outline", "Outline", 
-                      "../../../slides/xaringan.html#start-here", "Start Here",
-                      "../../../slides/xaringan.html#publish", "Publishing")
+                      "../../../slides/xaringan.html#start-here", "Start Here")
 
 slides %>% 
   mutate(emoji_id = c(emo::ji("picture"), 
                       emo::ji("heavy_check_mark"), 
-                      emo::ji("round_pushpin"), 
-                      emo::ji("rocket"))) %>%
+                      emo::ji("round_pushpin"))) %>%
   mutate(slide = cell_spec(glue::glue('{emoji_id} {description}'), 
                            "html", 
                            link = link)
