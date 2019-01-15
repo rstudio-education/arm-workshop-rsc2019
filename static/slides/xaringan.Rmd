@@ -1535,7 +1535,7 @@ Image size: 6016 × 4016
 ---
 name: greens-cover
 class: center, middle, inverse
-background-image: url("http://bit.ly/arm-greens")
+background-image: url(http://bit.ly/arm-greens)
 background-size: cover
 
 # .fancy[Cover]
@@ -1543,11 +1543,36 @@ background-size: cover
 
 ---
 name: greens-contain
-background-image: url("http://bit.ly/arm-greens")
+background-image: url(http://bit.ly/arm-greens)
 background-size: contain
 class: center, middle, inverse
 
 # .fancy[Contain]
+
+---
+class: center, middle, inverse
+
+# All other images
+
+You may use:
+
+.pull-left[
+
+    ![my-greens](http://bit.ly/arm-greens)
+    ![my-greens](img/arm-greens.jpg)
+]
+
+--
+
+.pull-right[
+
+````
+```{r}`r ''`
+knitr::include_graphics("http://bit.ly/arm-greens") # url
+knitr::include_graphics("img/arm-greens.jpg") # local
+```
+````
+]
 
 
 ---
@@ -1708,7 +1733,7 @@ tl;dr: treat like slide-specific background images!
 
 layout: true
 
-background-image: url("img/RStudio-Logo-Flat.png")
+background-image: url(img/RStudio-Logo-Flat.png)
 background-position: 0% 100%
 background-size: 10%
 
@@ -1724,7 +1749,7 @@ YAML goes here
   
 layout: true #<<
 
-background-image: url("img/RStudio-Logo-Flat.png")
+background-image: url(img/RStudio-Logo-Flat.png)
 background-position: 0% 100%;
 background-size: 10%
 
@@ -1747,7 +1772,7 @@ layout: false
 
 layout: true
 
-background-image: url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png")
+background-image: url(img/RStudio-Logo-Flat.png), url(img/RStudio-Logo-Flat.png), url(img/RStudio-Logo-Flat.png)
 background-position: 0% 100%, 100% 0%, 50% 100%
 background-size: 10%, 10%, 10%
 
@@ -1763,7 +1788,7 @@ YAML goes here
   
 layout: true #<<
 
-background-image: url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png"), url("img/RStudio-Logo-Flat.png")
+background-image: url(img/RStudio-Logo-Flat.png), url(img/RStudio-Logo-Flat.png), url(img/RStudio-Logo-Flat.png)
 background-position: 0% 100%, 100% 0%, 50% 100%
 background-size: 10%, 10%, 10%
 
@@ -1968,4 +1993,4 @@ Let's go back to where we left off...
 
 --
 
-In your browser, see the `...html#144` at the end? Make it `...html#skip`!
+In your browser, see the `...html#138` at the end? Make it `...html#skip`!
