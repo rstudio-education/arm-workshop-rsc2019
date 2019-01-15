@@ -31,7 +31,7 @@ library(DiagrammeR)
 
 layout: true
   
-<div class="my-footer"><span>rstd.io/arm-xaringan</span></div>
+<div class="my-footer"><span>arm.rbind.io/slides/xaringan</span></div>
 
 <!-- this adds the link footer to all slides, depends on my-footer class in css-->
 
@@ -52,6 +52,7 @@ background-size: cover
 <!-- this ends up being the title slide since seal = FALSE-->
 
 ---
+class: middle, inverse
 
 .left-column[
 
@@ -59,14 +60,8 @@ background-size: cover
 
 ]
 
-.right[
-
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Finally heard how to pronounce xaringan in <a href="https://twitter.com/kevin_ushey?ref_src=twsrc%5Etfw">@kevin_ushey</a>&#39;s talk! <a href="https://twitter.com/hashtag/rstudioconf?src=hash&amp;ref_src=twsrc%5Etfw">#rstudioconf</a><br>🗣 (something like) shar-in-gen 🙌<br>🔗 <a href="https://t.co/v9rTANw0ED">https://t.co/v9rTANw0ED</a></p>&mdash; 𝓛𝓾𝓬𝔂::maternity_leave🤱 (@LucyStats) <a href="https://twitter.com/LucyStats/status/959504698842652672?ref_src=twsrc%5Etfw">February 2, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-.left[/ʃæ.'riŋ.ɡæn/]
-
+.right-column[
+/ʃæ.'riŋ.ɡæn/
 ]
 
 ---
@@ -84,12 +79,6 @@ class: right, middle
 [`r fa(name = "paper-plane")` alison@rstudio.com](mailto:alison@rstudio.com)
 
 
---
-
-.footnote[
-.fancy[You'll make this slide in our first hands-on activity!]
-]
-
 
 
 ---
@@ -98,26 +87,18 @@ class: middle, inverse
 
 # Did you do the <br> .fat[.fancy[pre-work setup?]]
 
-.large[https://armextensions.netlify.com/prework/]
+.large[https://arm.rbind.io/prework/]
 
 
 ---
 name: usecourse
 class: middle, inverse
 
-# Did you download the <br> .salt[.fancy[workshop materials?]]
+# Did you download the <br> .salt[.fancy[workshop package?]]
 
-```{r eval = FALSE, echo = FALSE}
-install.packages(usethis)
-library(usethis)
-use_course("https://github.com/rstudio-education/arm-companion-rsc2019/zipball/master/")
-http://bit.ly/arm-rsc2019
-```
 
 ```{r eval = FALSE, echo = TRUE}
-install.packages(usethis)
-library(usethis)
-use_course("http://bit.ly/arm-rsc2019")
+remotes::install_github("armcompanion")
 ```
 
 
@@ -267,7 +248,7 @@ With R Markdown, you are used to this:
 
 With **xaringan** (no `pandoc`!):
 
-````{r echo = FALSE, out.width = '75%', out.height = "50%"}
+```{r echo = FALSE, out.width = '75%', out.height = "50%"}
 # Create a graph as a left-to-right path
 graph <-
   create_graph() %>%
@@ -297,63 +278,77 @@ graph %>% render_graph()
 ```
 
 
+
 ---
 class: inverse, middle, center
 
-# `r fa(name = "user-ninja")`
+# `r fa(name = "user-ninja", fill = "white")`
 
 # .fancy[Let's make a slide deck right now]
-
----
-name: workflow
-class: inverse, middle
-
-# Do one
 
 --
 
 .pull-left[
+### .fancy[.center[Local with GitHub]]
+### .fancy[.center[`r emo::ji("computer")` + <i class="fab fa-github fa-lg fa-fw"></i>]]
+]
 
-## .fancy[Your laptop `r emo::ji("computer")`]
+--
+
+.pull-right[
+### .fancy[.center[Cloud or Local (no GitHub)]]
+### .fancy[.center[`r emo::ji("cloud")` | `r emo::ji("computer")`]]
+]
 
 
-1. Make a [repo on <i class="fab fa-github fa-lg fa-fw"></i>GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
+---
+name: start-here
+class: inverse, middle
 
-1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
+.pull-left[
+### .fancy[.center[Local with GitHub]]
+### .fancy[.center[`r emo::ji("computer")` + <i class="fab fa-github fa-lg fa-fw"></i>]]
 
+1. Make a [repo on GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
+
+1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone) <br>
     *File > New Project > Version Control > Git*
-
-1. Run:
-
-```{r eval = FALSE}
-bookdown:::bookdown_skeleton(getwd())
-```
 
 ]
 
 --
 
 .pull-right[
+### .fancy[.center[Cloud or Local]]
+### .fancy[.center[`r emo::ji("cloud")` | `r emo::ji("computer")`]]
 
-## .fancy[RStudio Server Pro `r emo::ji("cloud")`]
-
-
-1. Make a new RStudio project via wizard
-
-    *File > New Project > New Project > <br> call it: xxx*
+1. Make a new RStudio project via wizard <br>
+    *File > New Project > New Directory > New Project*
 
 ]
+
+
+--
+
+<hr>
+
+.center[When inside your new project, do:
+
+*File > New File > R Markdown > From Template*
+
+Select .acidinline["arm-xaringan"] from the .heatinline[**armcompanion**] package
+]
+
+
 
 ---
 # Let's make this a slide deck
 
-Use the .Rmd provided to you...
 
 .pull-left[
 Where you see:
 ```{r eval = FALSE}
 ---
-title: "foodie-safety"
 output: html_document #<<
 ---
 ```
@@ -365,7 +360,6 @@ output: html_document #<<
 Change to:
 ```{r eval = FALSE}
 ---
-title: "foodie-safety"
 output: xaringan::moon_reader #<<
 ---
 ```
@@ -378,7 +372,7 @@ Save this!
 
 ---
 
-# Two ways to use `moon_reader` `r emo::ji("astronaut")`
+# Moon reader `r emo::ji("astronaut")`
 
 
 
@@ -423,7 +417,66 @@ Don't worry: it gets much better. But first...
 [1] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the addin in RStudio.
 ]
 
+
 ---
+name: sfah
+class: center, middle
+
+---
+
+template: sfah
+
+## .salt[SALT] .fat[FAT]
+
+## .acid[ACID] .heat[HEAT]
+
+---
+name: outline
+template: sfah
+
+## .salt[REMARK.JS] [`r emo::ji("link")`](#block1) &nbsp; .fat[CHUNKS] [`r emo::ji("link")`](#block2)
+
+## .acid[IMAGES] [`r emo::ji("link")`](#block3) &nbsp; .heat[THEMES] [`r emo::ji("link")`](#block4)
+
+---
+name: salt
+class: inverse, middle, center
+background-image: url(img/jason-tuinstra-551608-unsplash.jpg)
+background-size: cover
+
+# SALT = remark.js
+
+???
+
+SALT enhances flavor
+
+REMARK.JS enhances your code
+
+---
+name: block1
+
+# remark.js
+
+What you need to know now:
+
+- [Making slides](#newslide-demo)
+
+- [Keyboard shortcuts](#keyboard-demo)
+
+- Align [all](#fullalign-demo) or [some slide content](#textalign-demo)
+
+- [Incremental reveals](#increment-demo)
+
+- [Two-column slides](#pull-demo)
+
+
++ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
+
++ [name a single slide](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to it: `[back to the beginning](#xaringan-title)` -> [back to the beginning](#xaringan-title)
+
+---
+name: newslide-demo
+
 # Making slides
 
 .pull-left[
@@ -469,8 +522,8 @@ A useful workflow for presenting; if you have two screens, turn off display mirr
 
 On the presentation screen:
 
-- Move cloned window to this screen
-- Then press `f` for full-screen mode
+Move cloned window to this screen <br>
+Then press `f` for full-screen mode
 
 ]
 
@@ -480,129 +533,14 @@ On the presentation screen:
 
 On your laptop screen:
 
-- Press `p` for presenter mode on laptop
-- Wish you had used `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes)
+Press `p` for presenter mode on laptop <br>
+Wish you had used `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes)
 ]
-
-
----
-name: sfah
-class: center, middle
-
----
-
-template: sfah
-
-## .salt[SALT] .fat[FAT]
-
-## .acid[ACID] .heat[HEAT]
-
----
-name: outline
-template: sfah
-
-## .salt[REMARK.JS] &nbsp; .fat[CHUNKS]
-
-## .acid[IMAGES] &nbsp; .heat[THEMES]
-
----
-
-name: cookbook
-background-image: url(img/cynthia-del-rio-88295-unsplash.jpg)
-background-size: cover
-class: center, top
-
-### .fancy[This deck is my way of sharing my most prized recipes with all of you.]
-
-.footnote[
-.fancy[There will a lot of detail in here: you may not need all of it right away, <br>
-but you'll need it eventually!]
-]
-
----
-name: salt
-class: inverse, middle, center
-background-image: url(img/jason-tuinstra-551608-unsplash.jpg)
-background-size: cover
-
-# SALT = remark.js
 
 ???
 
-SALT enhances flavor
+Don't forget to add presenter notes- when you are in presenter mode you see them but your audience does not!
 
-REMARK.JS enhances your code
-
----
-name: remark.js
-# remark.js
-
-What you need to know now:
-
-- [Incremental reveals](#increment-demo)
-
-- [Aligning slide content](#fullalign-demo)
-
-- [Aligning text blocks](#textalign-demo)
-
-- [Making two-column slides](#pull-demo)
-
-
----
-
-name: increment-demo
-
-# Incremental reveals
-
-.left-column[
-
-
-```
-# Hi there
-
-My name is Alison
-
---
-
-I like hot toddies
-
---
-
-`#rdogladies`
-
---
-
-and babies
-```
-]
-
---
-
-.right-column[
-
-### Hi there
-
-My name is Alison
-{{content}}
-
-]
-
---
-
-I like hot toddies
-{{content}}
-
---
-
-`#rdogladies`
-{{content}}
-
---
-
-and babies
-
-
-<!--https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout-->
 
 ---
 name: fullalign-demo
@@ -830,6 +768,61 @@ My name is Alison
 In "real life", you'll often want to use straight-up HTML too:  
 `<img src="http://bit.ly/wiki-toddy" width="15%" align="right" />`
 ]
+---
+
+name: increment-demo
+
+# Incremental reveals
+
+.left-column[
+
+
+```
+# Hi there
+
+My name is Alison
+
+--
+
+I like hot toddies
+
+--
+
+`#rdogladies`
+
+--
+
+and babies
+```
+]
+
+--
+
+.right-column[
+
+### Hi there
+
+My name is Alison
+{{content}}
+
+]
+
+--
+
+I like hot toddies
+{{content}}
+
+--
+
+`#rdogladies`
+{{content}}
+
+--
+
+and babies
+
+
+<!--https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout-->
 
 ---
 
@@ -901,14 +894,14 @@ template: section
 ]
 
 ---
-name: yourturn-1
+name: yourturn1
 template: yourturn
 
 
 .right-column[
-[Season](#salt) some slides with `remark.js` salt! Consider:
+[Season](#block1) some slides with `remark.js` salt! Consider trying:
 
-1. Edit the introduction slide
+1. Using [keyboard shortcuts & presenter notes with `???`](#keyboard-demo)
 
 1. Incremental reveals with `--` ([demo slide](#increment-demo))
 
@@ -921,7 +914,7 @@ template: yourturn
 ]
 
 .left-column[
-## .fancy[.saltinline[05:00 minutes]]
+## .fancy[.saltinline[10:00 minutes]]
 ]
 
 
@@ -944,6 +937,19 @@ template: fat
 template: fat
 
 # FAT = CHUNKS
+
+---
+name: block2
+
+# Chunks
+
+What you need to know now:
+
+- [Highlight your code](#highlightjs-demo)
+
+- [Add a table](#table-demos)
+
+- [Add a plot](#plot-demo)
 
 ---
 name: highlightjs-demo
@@ -1460,12 +1466,12 @@ tx_plot
 
 
 ---
-name: yourturn-2
+name: yourturn2
 template: yourturn
 
 .right-column[
 
-[Fatten](#fat) up your slides with some R code chunks (+ `knitr` butter). Consider:
+[Fatten](#block2) up your slides with some R code chunks (+ `knitr` butter). Consider:
 
 1. Add a table ([demo slides](#table-demos))
 
@@ -1505,6 +1511,18 @@ template: acid
 
 # ACID = IMAGES
 
+---
+name: block3
+
+# Images
+
+What you need to know now:
+
+- [Add background images](#background-image)
+
+- [Make your title slide](#title-slides)
+
+- [Add a logo](#logos)
 
 ---
 name: background-image
@@ -1696,45 +1714,6 @@ background-size: cover
 seal disables 
 
 ---
-
-## Create your own .fancy[(*recommend!)]
-
-.pull-left[
-```{r echo = FALSE}
-knitr::include_graphics("img/xaringan-title-arm.png")
-```
-
-]
-
-.pull-right[
-
-From [.Rmd](https://github.com/rstudio-education/arm-workshop-rsc2019/blob/master/static/slides/xaringan.Rmd)
-
-```{r eval = FALSE}
-output:
-  xaringan::moon_reader:
-    seal: false #<<
-
----
-  
-name: xaringan-title
-class: left, middle, title-slide
-
-# Meet xaringan
-
-<img src="https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png" alt="Sharingan" width="180" />
-
-### .fancy[Making slides in R Markdown]
-
-.large[Alison Hill | rstudio::conf | `r Sys.Date()`]
-
-<!-- this ends up being the title slide since seal = FALSE-->
----
-```
-
-]
-
----
 name: logos
 class: middle, center
 
@@ -1823,12 +1802,12 @@ layout: true
 <div class="my-footer"><span>rstd.io/arm-xaringan</span></div>
 
 ---
-name: yourturn-3
+name: yourturn3
 template: yourturn
 
 .right-column[
 
-Add some [acid](#acid) to your slides with images. Consider:
+Add some [acid](#block3) to your slides with images. Consider:
 
 1. Adding a background image to a slide ([demo slides](#background-image))
 
@@ -1864,6 +1843,18 @@ template: heat
 # HEAT = THEMES
 
 ---
+name: block4
+
+# Themes
+
+What you need to know now:
+
+- [Built-in themes](#themes)
+
+- [Build your own theme](#css-theme)
+
+
+---
 name: themes
 
 # Built-in themes
@@ -1889,54 +1880,38 @@ output:
 
 
 ---
+class: middle, center, inverse
 name: css-theme
 
-# Now we need to use CSS to:
+## Want more control, but less CSS?
 
-- edit or create a new theme
-- throw at xaringan-themer package
+```{r echo = FALSE}
+knitr::include_graphics("https://pkg.garrickadenbuie.com/xaringanthemer/articles/images/examples.gif")
+```
+
+.footnote[
+https://pkg.garrickadenbuie.com/xaringanthemer/
+]
+
 
 ---
-name: css-footer
-
-# Now we need to use CSS to:
-
-- add a custom layout, like a footer
-
----
-name: yourturn-4
+name: yourturn4
 template: yourturn
 
 .right-column[
 
-Raise the [heat](#heat) on your slides by changing themes. Consider:
-
-1. Using a built-in theme ([demo slides](#themes))
-
-1. Creating your own theme ([demo slides](#css-theme))
-
-  + *Requires CSS*
-
-1. Adding a footer ([demo slide](#css-footer))
-
-  + *Requires CSS*
-
+Raise the [heat](#block4) on your slides by changing themes, using one of the built-in themes ([demo slides](#themes)).
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 ]
 
 .left-column[
-## .fancy[.heatinline[08:00 minutes]]
+## .fancy[.heatinline[03:00 minutes]]
 ]
-
----
-name: publish
-
-publishing from cloud setup
-
-workflow
-
-new project --> new directory --> new project
-
-in the new project, file --> new file --> rmarkdown --> from template (maybe) (for xaringan, learnr, flexdashboard)
 
 ---
 name: rsconnect
@@ -1944,29 +1919,41 @@ name: rsconnect
 # RStudio Connect `r emo::ji("cloud")` + `r emo::ji("computer")`
 
 
-+ `account =`
-+ `server =` (defaults to `beta.rstudioconnect.com`)
-
-```{r publish-args, code=formatR::usage(bookdown::publish_book, output=FALSE, fail='none'), eval=FALSE, R.options=list(width=50)}
-```
 
 ---
 name: netlify
 
-# GitHub + Netlify `r emo::ji("computer")`
+# Netlify `r emo::ji("computer")`
 
-1. Add/commit/push your edits to your remote repository
-1. Go to [Netlify.com](https://www.netlify.com/)
-  + Login
-  + Select "New Site from Git"
-  + Select "GitHub"
-  + Find & select your repository with your bookdown project
-  + Leave "Build" empty
-  + Set "Publish Directory" to...
+---
+name: earlydeploy
+class: middle, inverse, center
+
+# `r emo::ji("mega")`
+
+---
+template: earlydeploy
+
+## Go to [Netlify.com](https://www.netlify.com/) & Log in
+
+```{r echo = FALSE}
+knitr::include_graphics("img/netlify-landing.png")
+```
+
+---
+template: earlydeploy
+
+
+## Drag & drop the `.html` file for your slides to deploy
+
+```{r echo = FALSE, out.width='60%'}
+knitr::include_graphics("img/netlify-new-site.png")
+```
+
   
 ---
 template: yourturn
-name: yourturn-5
+name: yourturn5
 
 .right-column[
 
@@ -1986,18 +1973,4 @@ Serve your slides by publishing on either:
 
 
 
----
-exclude: true
 
-If this is easy, try:
-
-+ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
-
-+ [name a single slide](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to it: `[back to the beginning](#xaringan-title)` -> [back to the beginning](#xaringan-title)
-
-
-If this is easy, try:
-
-+ combining with the salts (make code chunks incremental),
-
-+ play with adding emojis using the [emo package](https://github.com/hadley/emo)

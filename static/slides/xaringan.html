@@ -36,7 +36,7 @@
 
 layout: true
   
-&lt;div class="my-footer"&gt;&lt;span&gt;rstd.io/arm-xaringan&lt;/span&gt;&lt;/div&gt;
+&lt;div class="my-footer"&gt;&lt;span&gt;arm.rbind.io/slides/xaringan&lt;/span&gt;&lt;/div&gt;
 
 &lt;!-- this adds the link footer to all slides, depends on my-footer class in css--&gt;
 
@@ -52,11 +52,12 @@ background-size: cover
 
 ### .fancy[Making slides in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2019-01-09]
+.large[Alison Hill | rstudio::conf | 2019-01-15]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
 ---
+class: middle, inverse
 
 .left-column[
 
@@ -64,14 +65,8 @@ background-size: cover
 
 ]
 
-.right[
-
-
-&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;Finally heard how to pronounce xaringan in &lt;a href="https://twitter.com/kevin_ushey?ref_src=twsrc%5Etfw"&gt;@kevin_ushey&lt;/a&gt;&amp;#39;s talk! &lt;a href="https://twitter.com/hashtag/rstudioconf?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rstudioconf&lt;/a&gt;&lt;br&gt;🗣 (something like) shar-in-gen 🙌&lt;br&gt;🔗 &lt;a href="https://t.co/v9rTANw0ED"&gt;https://t.co/v9rTANw0ED&lt;/a&gt;&lt;/p&gt;&amp;mdash; 𝓛𝓾𝓬𝔂::maternity_leave🤱 (@LucyStats) &lt;a href="https://twitter.com/LucyStats/status/959504698842652672?ref_src=twsrc%5Etfw"&gt;February 2, 2018&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
-
-.left[/ʃæ.'riŋ.ɡæn/]
-
+.right-column[
+/ʃæ.'riŋ.ɡæn/
 ]
 
 ---
@@ -89,12 +84,6 @@ class: right, middle
 [&lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 512 512"&gt;&lt;path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/&gt;&lt;/svg&gt; alison@rstudio.com](mailto:alison@rstudio.com)
 
 
---
-
-.footnote[
-.fancy[You'll make this slide in our first hands-on activity!]
-]
-
 
 
 ---
@@ -103,22 +92,19 @@ class: middle, inverse
 
 # Did you do the &lt;br&gt; .fat[.fancy[pre-work setup?]]
 
-.large[https://armextensions.netlify.com/prework/]
+.large[https://arm.rbind.io/prework/]
 
 
 ---
 name: usecourse
 class: middle, inverse
 
-# Did you download the &lt;br&gt; .salt[.fancy[workshop materials?]]
-
+# Did you download the &lt;br&gt; .salt[.fancy[workshop package?]]
 
 
 
 ```r
-install.packages(usethis)
-library(usethis)
-use_course("http://bit.ly/arm-rsc2019")
+remotes::install_github("armcompanion")
 ```
 
 
@@ -264,69 +250,82 @@ With R Markdown, you are used to this:
 
 With **xaringan** (no `pandoc`!):
 
-<div id="htmlwidget-91354517db2aeed1751f" style="width:75%;height:50%;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-91354517db2aeed1751f">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       rankdir = \"LR\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"xaringan\\n .Rmd\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.75\", fillcolor = \"#61acf0\"] \n  \"2\" [label = \"knitr\", shape = \"square\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#f0a561\"] \n  \"3\" [label = \".md\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#cbd20a\"] \n  \"4\" [label = \"remark.js via\\n xaringan::moon_reader\", shape = \"rectangle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"2\", fillcolor = \"#f0a561\"] \n  \"5\" [label = \"html\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#e74a2f\"] \n\"1\"->\"2\" [color = \"#3C3C3C\"] \n\"2\"->\"3\" [color = \"#3C3C3C\"] \n\"3\"->\"4\" [color = \"#3C3C3C\"] \n\"4\"->\"5\" [color = \"#3C3C3C\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-11b25e9a000c8d025f7b" style="width:75%;height:50%;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-11b25e9a000c8d025f7b">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       rankdir = \"LR\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"xaringan\\n .Rmd\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.75\", fillcolor = \"#61acf0\"] \n  \"2\" [label = \"knitr\", shape = \"square\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#f0a561\"] \n  \"3\" [label = \".md\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#cbd20a\"] \n  \"4\" [label = \"remark.js via\\n xaringan::moon_reader\", shape = \"rectangle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"2\", fillcolor = \"#f0a561\"] \n  \"5\" [label = \"html\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#e74a2f\"] \n\"1\"->\"2\" [color = \"#3C3C3C\"] \n\"2\"->\"3\" [color = \"#3C3C3C\"] \n\"3\"->\"4\" [color = \"#3C3C3C\"] \n\"4\"->\"5\" [color = \"#3C3C3C\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
 
 
 ---
 class: inverse, middle, center
 
-# &lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 448 512"&gt;&lt;path d="M325.4 289.2L224 390.6 122.6 289.2C54 295.3 0 352.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-70.2-54-127.1-122.6-133.2zM32 192c27.3 0 51.8-11.5 69.2-29.7 15.1 53.9 64 93.7 122.8 93.7 70.7 0 128-57.3 128-128S294.7 0 224 0c-50.4 0-93.6 29.4-114.5 71.8C92.1 47.8 64 32 32 32c0 33.4 17.1 62.8 43.1 80-26 17.2-43.1 46.6-43.1 80zm144-96h96c17.7 0 32 14.3 32 32H144c0-17.7 14.3-32 32-32z"/&gt;&lt;/svg&gt;
+# &lt;svg style="height:0.8em;top:.04em;position:relative;fill:white;" viewBox="0 0 448 512"&gt;&lt;path d="M325.4 289.2L224 390.6 122.6 289.2C54 295.3 0 352.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-70.2-54-127.1-122.6-133.2zM32 192c27.3 0 51.8-11.5 69.2-29.7 15.1 53.9 64 93.7 122.8 93.7 70.7 0 128-57.3 128-128S294.7 0 224 0c-50.4 0-93.6 29.4-114.5 71.8C92.1 47.8 64 32 32 32c0 33.4 17.1 62.8 43.1 80-26 17.2-43.1 46.6-43.1 80zm144-96h96c17.7 0 32 14.3 32 32H144c0-17.7 14.3-32 32-32z"/&gt;&lt;/svg&gt;
 
 # .fancy[Let's make a slide deck right now]
-
----
-name: workflow
-class: inverse, middle
-
-# Do one
 
 --
 
 .pull-left[
+### .fancy[.center[Local with GitHub]]
+### .fancy[.center[💻 + &lt;i class="fab fa-github fa-lg fa-fw"&gt;&lt;/i&gt;]]
+]
 
-## .fancy[Your laptop 💻]
+--
+
+.pull-right[
+### .fancy[.center[Cloud or Local (no GitHub)]]
+### .fancy[.center[☁️ | 💻]]
+]
 
 
-1. Make a [repo on &lt;i class="fab fa-github fa-lg fa-fw"&gt;&lt;/i&gt;GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
+---
+name: start-here
+class: inverse, middle
 
-1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone)
+.pull-left[
+### .fancy[.center[Local with GitHub]]
+### .fancy[.center[💻 + &lt;i class="fab fa-github fa-lg fa-fw"&gt;&lt;/i&gt;]]
 
+1. Make a [repo on GitHub](https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-1)
+
+1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone) &lt;br&gt;
     *File &gt; New Project &gt; Version Control &gt; Git*
-
-1. Run:
-
-
-```r
-bookdown:::bookdown_skeleton(getwd())
-```
 
 ]
 
 --
 
 .pull-right[
+### .fancy[.center[Cloud or Local]]
+### .fancy[.center[☁️ | 💻]]
 
-## .fancy[RStudio Server Pro ☁️]
-
-
-1. Make a new RStudio project via wizard
-
-    *File &gt; New Project &gt; New Project &gt; &lt;br&gt; call it: xxx*
+1. Make a new RStudio project via wizard &lt;br&gt;
+    *File &gt; New Project &gt; New Directory &gt; New Project*
 
 ]
+
+
+--
+
+&lt;hr&gt;
+
+.center[When inside your new project, do:
+
+*File &gt; New File &gt; R Markdown &gt; From Template*
+
+Select .acidinline["arm-xaringan"] from the .heatinline[**armcompanion**] package
+]
+
+
 
 ---
 # Let's make this a slide deck
 
-Use the .Rmd provided to you...
 
 .pull-left[
 Where you see:
 
 ```r
 ---
-title: "foodie-safety"
 *output: html_document
 ---
 ```
@@ -339,7 +338,6 @@ Change to:
 
 ```r
 ---
-title: "foodie-safety"
 *output: xaringan::moon_reader
 ---
 ```
@@ -352,7 +350,7 @@ Save this!
 
 ---
 
-# Two ways to use `moon_reader` 👩‍🚀
+# Moon reader 👨‍🚀
 
 
 
@@ -397,7 +395,66 @@ Don't worry: it gets much better. But first...
 [1] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the addin in RStudio.
 ]
 
+
 ---
+name: sfah
+class: center, middle
+
+---
+
+template: sfah
+
+## .salt[SALT] .fat[FAT]
+
+## .acid[ACID] .heat[HEAT]
+
+---
+name: outline
+template: sfah
+
+## .salt[REMARK.JS] [🔗](#block1) &amp;nbsp; .fat[CHUNKS] [🔗](#block2)
+
+## .acid[IMAGES] [🔗](#block3) &amp;nbsp; .heat[THEMES] [🔗](#block4)
+
+---
+name: salt
+class: inverse, middle, center
+background-image: url(img/jason-tuinstra-551608-unsplash.jpg)
+background-size: cover
+
+# SALT = remark.js
+
+???
+
+SALT enhances flavor
+
+REMARK.JS enhances your code
+
+---
+name: block1
+
+# remark.js
+
+What you need to know now:
+
+- [Making slides](#newslide-demo)
+
+- [Keyboard shortcuts](#keyboard-demo)
+
+- Align [all](#fullalign-demo) or [some slide content](#textalign-demo)
+
+- [Incremental reveals](#increment-demo)
+
+- [Two-column slides](#pull-demo)
+
+
++ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
+
++ [name a single slide](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to it: `[back to the beginning](#xaringan-title)` -&gt; [back to the beginning](#xaringan-title)
+
+---
+name: newslide-demo
+
 # Making slides
 
 .pull-left[
@@ -443,8 +500,8 @@ A useful workflow for presenting; if you have two screens, turn off display mirr
 
 On the presentation screen:
 
-- Move cloned window to this screen
-- Then press `f` for full-screen mode
+Move cloned window to this screen &lt;br&gt;
+Then press `f` for full-screen mode
 
 ]
 
@@ -454,129 +511,14 @@ On the presentation screen:
 
 On your laptop screen:
 
-- Press `p` for presenter mode on laptop
-- Wish you had used `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes)
+Press `p` for presenter mode on laptop &lt;br&gt;
+Wish you had used `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes)
 ]
-
-
----
-name: sfah
-class: center, middle
-
----
-
-template: sfah
-
-## .salt[SALT] .fat[FAT]
-
-## .acid[ACID] .heat[HEAT]
-
----
-name: outline
-template: sfah
-
-## .salt[REMARK.JS] &amp;nbsp; .fat[CHUNKS]
-
-## .acid[IMAGES] &amp;nbsp; .heat[THEMES]
-
----
-
-name: cookbook
-background-image: url(img/cynthia-del-rio-88295-unsplash.jpg)
-background-size: cover
-class: center, top
-
-### .fancy[This deck is my way of sharing my most prized recipes with all of you.]
-
-.footnote[
-.fancy[There will a lot of detail in here: you may not need all of it right away, &lt;br&gt;
-but you'll need it eventually!]
-]
-
----
-name: salt
-class: inverse, middle, center
-background-image: url(img/jason-tuinstra-551608-unsplash.jpg)
-background-size: cover
-
-# SALT = remark.js
 
 ???
 
-SALT enhances flavor
+Don't forget to add presenter notes- when you are in presenter mode you see them but your audience does not!
 
-REMARK.JS enhances your code
-
----
-name: remark.js
-# remark.js
-
-What you need to know now:
-
-- [Incremental reveals](#increment-demo)
-
-- [Aligning slide content](#fullalign-demo)
-
-- [Aligning text blocks](#textalign-demo)
-
-- [Making two-column slides](#pull-demo)
-
-
----
-
-name: increment-demo
-
-# Incremental reveals
-
-.left-column[
-
-
-```
-# Hi there
-
-My name is Alison
-
---
-
-I like hot toddies
-
---
-
-`#rdogladies`
-
---
-
-and babies
-```
-]
-
---
-
-.right-column[
-
-### Hi there
-
-My name is Alison
-{{content}}
-
-]
-
---
-
-I like hot toddies
-{{content}}
-
---
-
-`#rdogladies`
-{{content}}
-
---
-
-and babies
-
-
-&lt;!--https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout--&gt;
 
 ---
 name: fullalign-demo
@@ -807,6 +749,61 @@ My name is Alison
 In "real life", you'll often want to use straight-up HTML too:  
 `&lt;img src="http://bit.ly/wiki-toddy" width="15%" align="right" /&gt;`
 ]
+---
+
+name: increment-demo
+
+# Incremental reveals
+
+.left-column[
+
+
+```
+# Hi there
+
+My name is Alison
+
+--
+
+I like hot toddies
+
+--
+
+`#rdogladies`
+
+--
+
+and babies
+```
+]
+
+--
+
+.right-column[
+
+### Hi there
+
+My name is Alison
+{{content}}
+
+]
+
+--
+
+I like hot toddies
+{{content}}
+
+--
+
+`#rdogladies`
+{{content}}
+
+--
+
+and babies
+
+
+&lt;!--https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout--&gt;
 
 ---
 
@@ -878,14 +875,14 @@ template: section
 ]
 
 ---
-name: yourturn-1
+name: yourturn1
 template: yourturn
 
 
 .right-column[
-[Season](#salt) some slides with `remark.js` salt! Consider:
+[Season](#block1) some slides with `remark.js` salt! Consider trying:
 
-1. Edit the introduction slide
+1. Using [keyboard shortcuts &amp; presenter notes with `???`](#keyboard-demo)
 
 1. Incremental reveals with `--` ([demo slide](#increment-demo))
 
@@ -898,7 +895,7 @@ template: yourturn
 ]
 
 .left-column[
-## .fancy[.saltinline[05:00 minutes]]
+## .fancy[.saltinline[10:00 minutes]]
 ]
 
 
@@ -921,6 +918,19 @@ template: fat
 template: fat
 
 # FAT = CHUNKS
+
+---
+name: block2
+
+# Chunks
+
+What you need to know now:
+
+- [Highlight your code](#highlightjs-demo)
+
+- [Add a table](#table-demos)
+
+- [Add a plot](#plot-demo)
 
 ---
 name: highlightjs-demo
@@ -1031,11 +1041,11 @@ glimpse(tx_names)
 ```
 ## Observations: 167
 ## Variables: 5
-*## $ year &lt;dbl&gt; 1892, 1894, 1896, 1899, 1900, 1903, 1904, 1905, 1906, 190...
-*## $ sex  &lt;chr&gt; "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F...
-## $ name &lt;chr&gt; "Dallas", "Dallas", "Dallas", "Dallas", "Dallas", "Dallas...
-## $ n    &lt;int&gt; 9, 6, 7, 6, 9, 9, 9, 12, 8, 7, 14, 11, 20, 19, 24, 16, 28...
-## $ prop &lt;dbl&gt; 4.001512e-05, 2.542675e-05, 2.777855e-05, 2.424340e-05, 2...
+*## $ year &lt;dbl&gt; 1892, 1894, 1896, 1899, 1900, 1903, 1904, 1905, 1906, 1907,…
+*## $ sex  &lt;chr&gt; "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F",…
+## $ name &lt;chr&gt; "Dallas", "Dallas", "Dallas", "Dallas", "Dallas", "Dallas",…
+## $ n    &lt;int&gt; 9, 6, 7, 6, 9, 9, 9, 12, 8, 7, 14, 11, 20, 19, 24, 16, 28, …
+## $ prop &lt;dbl&gt; 4.001512e-05, 2.542675e-05, 2.777855e-05, 2.424340e-05, 2.8…
 ```
 ]
 
@@ -1195,8 +1205,8 @@ head(tx_names) %&gt;%
   datatable()
 ```
 
-<div id="htmlwidget-22dd9b83fdaed72f3e14" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-22dd9b83fdaed72f3e14">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-12a40e32f1027e83e228" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-12a40e32f1027e83e228">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 ]
 
@@ -1214,8 +1224,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
 ```
 
-<div id="htmlwidget-5bb9add8842104db5850" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5bb9add8842104db5850">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[30.2621,-97.7382],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-96b786471565d2db069e" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-96b786471565d2db069e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[30.2621,-97.7382],17,[]]},"evals":[],"jsHooks":[]}</script>
 ]
 
 ---
@@ -1237,7 +1247,7 @@ head(tx_names) %&gt;%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#fhcweyvldd .gt_table {
+#sjpaboajmb .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1256,13 +1266,13 @@ head(tx_names) %&gt;%
   /* table.border.top.color */
 }
 
-#fhcweyvldd .gt_heading {
+#sjpaboajmb .gt_heading {
   background-color: #FFFFFF;
   /* heading.background.color */
   border-bottom-color: #FFFFFF;
 }
 
-#fhcweyvldd .gt_title {
+#sjpaboajmb .gt_title {
   color: #000000;
   font-size: 125%;
   /* heading.title.font.size */
@@ -1273,7 +1283,7 @@ head(tx_names) %&gt;%
   border-bottom-width: 0;
 }
 
-#fhcweyvldd .gt_subtitle {
+#sjpaboajmb .gt_subtitle {
   color: #000000;
   font-size: 85%;
   /* heading.subtitle.font.size */
@@ -1284,7 +1294,7 @@ head(tx_names) %&gt;%
   border-top-width: 0;
 }
 
-#fhcweyvldd .gt_bottom_border {
+#sjpaboajmb .gt_bottom_border {
   border-bottom-style: solid;
   /* heading.border.bottom.style */
   border-bottom-width: 2px;
@@ -1293,7 +1303,7 @@ head(tx_names) %&gt;%
   /* heading.border.bottom.color */
 }
 
-#fhcweyvldd .gt_column_spanner {
+#sjpaboajmb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #A8A8A8;
@@ -1301,7 +1311,7 @@ head(tx_names) %&gt;%
   padding-bottom: 4px;
 }
 
-#fhcweyvldd .gt_col_heading {
+#sjpaboajmb .gt_col_heading {
   color: #000000;
   background-color: #FFFFFF;
   /* column_labels.background.color */
@@ -1314,11 +1324,11 @@ head(tx_names) %&gt;%
   margin: 10px;
 }
 
-#fhcweyvldd .gt_sep_right {
+#sjpaboajmb .gt_sep_right {
   border-right: 5px solid #FFFFFF;
 }
 
-#fhcweyvldd .gt_group_heading {
+#sjpaboajmb .gt_group_heading {
   padding: 8px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1342,7 +1352,7 @@ head(tx_names) %&gt;%
   vertical-align: middle;
 }
 
-#fhcweyvldd .gt_empty_group_heading {
+#sjpaboajmb .gt_empty_group_heading {
   padding: 0.5px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1366,29 +1376,29 @@ head(tx_names) %&gt;%
   vertical-align: middle;
 }
 
-#fhcweyvldd .gt_striped tr:nth-child(even) {
+#sjpaboajmb .gt_striped tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#fhcweyvldd .gt_row {
+#sjpaboajmb .gt_row {
   padding: 10px;
   /* row.padding */
   margin: 10px;
   vertical-align: middle;
 }
 
-#fhcweyvldd .gt_stub {
+#sjpaboajmb .gt_stub {
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #A8A8A8;
   padding-left: 12px;
 }
 
-#fhcweyvldd .gt_stub.gt_row {
+#sjpaboajmb .gt_stub.gt_row {
   background-color: #FFFFFF;
 }
 
-#fhcweyvldd .gt_summary_row {
+#sjpaboajmb .gt_summary_row {
   background-color: #FFFFFF;
   /* summary_row.background.color */
   padding: 6px;
@@ -1397,13 +1407,13 @@ head(tx_names) %&gt;%
   /* summary_row.text_transform */
 }
 
-#fhcweyvldd .gt_first_summary_row {
+#sjpaboajmb .gt_first_summary_row {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
 }
 
-#fhcweyvldd .gt_table_body {
+#sjpaboajmb .gt_table_body {
   border-top-style: solid;
   /* field.border.top.style */
   border-top-width: 2px;
@@ -1418,55 +1428,55 @@ head(tx_names) %&gt;%
   /* field.border.bottom.color */
 }
 
-#fhcweyvldd .gt_footnote {
+#sjpaboajmb .gt_footnote {
   font-size: 90%;
   /* footnote.font.size */
   padding: 4px;
   /* footnote.padding */
 }
 
-#fhcweyvldd .gt_sourcenote {
+#sjpaboajmb .gt_sourcenote {
   font-size: 90%;
   /* sourcenote.font.size */
   padding: 4px;
   /* sourcenote.padding */
 }
 
-#fhcweyvldd .gt_center {
+#sjpaboajmb .gt_center {
   text-align: center;
 }
 
-#fhcweyvldd .gt_left {
+#sjpaboajmb .gt_left {
   text-align: left;
 }
 
-#fhcweyvldd .gt_right {
+#sjpaboajmb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fhcweyvldd .gt_font_normal {
+#sjpaboajmb .gt_font_normal {
   font-weight: normal;
 }
 
-#fhcweyvldd .gt_font_bold {
+#sjpaboajmb .gt_font_bold {
   font-weight: bold;
 }
 
-#fhcweyvldd .gt_font_italic {
+#sjpaboajmb .gt_font_italic {
   font-style: italic;
 }
 
-#fhcweyvldd .gt_super {
+#sjpaboajmb .gt_super {
   font-size: 65%;
 }
 
-#fhcweyvldd .gt_footnote_glyph {
+#sjpaboajmb .gt_footnote_glyph {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="fhcweyvldd" style="overflow-x:auto;"><!--gt table start-->
+<div id="sjpaboajmb" style="overflow-x:auto;"><!--gt table start-->
 <table class='gt_table'>
 <tr>
 <th class='gt_col_heading gt_right' rowspan='1' colspan='1'>year</th>
@@ -1568,7 +1578,7 @@ name_plot
 ```
 ````
 
-![](xaringan_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
+![](xaringan_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
 
 ]
 
@@ -1594,7 +1604,7 @@ name_plot
 ```
 ````
 
-&lt;img src="xaringan_files/figure-html/unnamed-chunk-20-1.png" width="504" /&gt;
+&lt;img src="xaringan_files/figure-html/unnamed-chunk-18-1.png" width="504" /&gt;
 ]
 
 .footnote[
@@ -1633,7 +1643,7 @@ name_plot + invthm
 ```
 ````
 
-![](xaringan_files/figure-html/unnamed-chunk-21-1.svg)&lt;!-- --&gt;
+![](xaringan_files/figure-html/unnamed-chunk-19-1.svg)&lt;!-- --&gt;
 ]
 
 
@@ -1744,7 +1754,7 @@ tx_plot
 ]
 
 .pull-right[
-&lt;img src="xaringan_files/figure-html/unnamed-chunk-23-1.png" width="504" /&gt;
+&lt;img src="xaringan_files/figure-html/unnamed-chunk-21-1.png" width="504" /&gt;
 ]
 
 
@@ -1812,12 +1822,12 @@ tx_plot
 
 
 ---
-name: yourturn-2
+name: yourturn2
 template: yourturn
 
 .right-column[
 
-[Fatten](#fat) up your slides with some R code chunks (+ `knitr` butter). Consider:
+[Fatten](#block2) up your slides with some R code chunks (+ `knitr` butter). Consider:
 
 1. Add a table ([demo slides](#table-demos))
 
@@ -1857,6 +1867,18 @@ template: acid
 
 # ACID = IMAGES
 
+---
+name: block3
+
+# Images
+
+What you need to know now:
+
+- [Add background images](#background-image)
+
+- [Make your title slide](#title-slides)
+
+- [Add a logo](#logos)
 
 ---
 name: background-image
@@ -2045,44 +2067,6 @@ background-size: cover
 seal disables 
 
 ---
-
-## Create your own .fancy[(*recommend!)]
-
-.pull-left[
-&lt;img src="img/xaringan-title-arm.png" width="5120" /&gt;
-
-]
-
-.pull-right[
-
-From [.Rmd](https://github.com/rstudio-education/arm-workshop-rsc2019/blob/master/static/slides/xaringan.Rmd)
-
-
-```r
-output:
-  xaringan::moon_reader:
-*   seal: false
-
----
-  
-name: xaringan-title
-class: left, middle, title-slide
-
-# Meet xaringan
-
-&lt;img src="https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png" alt="Sharingan" width="180" /&gt;
-
-### .fancy[Making slides in R Markdown]
-
-.large[Alison Hill | rstudio::conf | `r Sys.Date()`]
-
-&lt;!-- this ends up being the title slide since seal = FALSE--&gt;
----
-```
-
-]
-
----
 name: logos
 class: middle, center
 
@@ -2173,12 +2157,12 @@ layout: true
 &lt;div class="my-footer"&gt;&lt;span&gt;rstd.io/arm-xaringan&lt;/span&gt;&lt;/div&gt;
 
 ---
-name: yourturn-3
+name: yourturn3
 template: yourturn
 
 .right-column[
 
-Add some [acid](#acid) to your slides with images. Consider:
+Add some [acid](#block3) to your slides with images. Consider:
 
 1. Adding a background image to a slide ([demo slides](#background-image))
 
@@ -2212,6 +2196,18 @@ template: heat
 template: heat
 
 # HEAT = THEMES
+
+---
+name: block4
+
+# Themes
+
+What you need to know now:
+
+- [Built-in themes](#themes)
+
+- [Build your own theme](#css-theme)
+
 
 ---
 name: themes
@@ -2254,54 +2250,36 @@ output:
 
 
 ---
+class: middle, center, inverse
 name: css-theme
 
-# Now we need to use CSS to:
+## Want more control, but less CSS?
 
-- edit or create a new theme
-- throw at xaringan-themer package
+![](https://pkg.garrickadenbuie.com/xaringanthemer/articles/images/examples.gif)&lt;!-- --&gt;
 
----
-name: css-footer
+.footnote[
+https://pkg.garrickadenbuie.com/xaringanthemer/
+]
 
-# Now we need to use CSS to:
-
-- add a custom layout, like a footer
 
 ---
-name: yourturn-4
+name: yourturn4
 template: yourturn
 
 .right-column[
 
-Raise the [heat](#heat) on your slides by changing themes. Consider:
-
-1. Using a built-in theme ([demo slides](#themes))
-
-1. Creating your own theme ([demo slides](#css-theme))
-
-  + *Requires CSS*
-
-1. Adding a footer ([demo slide](#css-footer))
-
-  + *Requires CSS*
-
+Raise the [heat](#block4) on your slides by changing themes, using one of the built-in themes ([demo slides](#themes)).
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 ]
 
 .left-column[
-## .fancy[.heatinline[08:00 minutes]]
+## .fancy[.heatinline[03:00 minutes]]
 ]
-
----
-name: publish
-
-publishing from cloud setup
-
-workflow
-
-new project --&gt; new directory --&gt; new project
-
-in the new project, file --&gt; new file --&gt; rmarkdown --&gt; from template (maybe) (for xaringan, learnr, flexdashboard)
 
 ---
 name: rsconnect
@@ -2309,32 +2287,37 @@ name: rsconnect
 # RStudio Connect ☁️ + 💻
 
 
-+ `account =`
-+ `server =` (defaults to `beta.rstudioconnect.com`)
-
-
-```r
-publish_book(name = NULL, account = NULL, server = NULL,
-    render = c("none", "local", "server"))
-```
 
 ---
 name: netlify
 
-# GitHub + Netlify 💻
+# Netlify 💻
 
-1. Add/commit/push your edits to your remote repository
-1. Go to [Netlify.com](https://www.netlify.com/)
-  + Login
-  + Select "New Site from Git"
-  + Select "GitHub"
-  + Find &amp; select your repository with your bookdown project
-  + Leave "Build" empty
-  + Set "Publish Directory" to...
+---
+name: earlydeploy
+class: middle, inverse, center
+
+# 📣
+
+---
+template: earlydeploy
+
+## Go to [Netlify.com](https://www.netlify.com/) &amp; Log in
+
+&lt;img src="img/netlify-landing.png" width="1316" /&gt;
+
+---
+template: earlydeploy
+
+
+## Drag &amp; drop the `.html` file for your slides to deploy
+
+&lt;img src="img/netlify-new-site.png" width="60%" /&gt;
+
   
 ---
 template: yourturn
-name: yourturn-5
+name: yourturn5
 
 .right-column[
 
@@ -2351,24 +2334,6 @@ Serve your slides by publishing on either:
 .left-column[
 ## .fancy[.heatinline[05:00 minutes]]
 ]
-
-
-
----
-exclude: true
-
-If this is easy, try:
-
-+ using `???` to add [presenter notes](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#xaringan-notes) and play with [keyboard shortcuts](https://bookdown.org/yihui/rmarkdown/xaringan-key.html) like `M`!
-
-+ [name a single slide](https://github.com/gnab/remark/wiki/Markdown#name), then cross link to it: `[back to the beginning](#xaringan-title)` -&gt; [back to the beginning](#xaringan-title)
-
-
-If this is easy, try:
-
-+ combining with the salts (make code chunks incremental),
-
-+ play with adding emojis using the [emo package](https://github.com/hadley/emo)
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="https://platform.twitter.com/widgets.js"></script>

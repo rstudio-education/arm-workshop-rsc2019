@@ -3,7 +3,7 @@ title: xaringan
 
 date: "`r Sys.Date()`"
 
-draft: true
+draft: false
 toc: true
 type: docs
 
@@ -29,15 +29,15 @@ library(fontawesome)
 slides <- tribble(~link, ~description, 
                       "../../../slides/xaringan.html#1", "Full slide deck",
                       "../../../slides/xaringan.html#outline", "Outline", 
-                      "../../../slides/xaringan.html#workflow", "Workflows:",
+                      "../../../slides/xaringan.html#start-here", "Start Here",
                       "../../../slides/xaringan.html#publish", "Publishing")
 
 slides %>% 
   mutate(emoji_id = c(emo::ji("picture"), 
-                      emo::ji("pad"), 
-                      glue::glue('{emo::ji("cloud")} or {emo::ji("computer")}'), 
+                      emo::ji("heavy_check_mark"), 
+                      emo::ji("round_pushpin"), 
                       emo::ji("rocket"))) %>%
-  mutate(slide = cell_spec(glue::glue('{description} {emoji_id}'), 
+  mutate(slide = cell_spec(glue::glue('{emoji_id} {description}'), 
                            "html", 
                            link = link)
          ) %>% 
@@ -52,14 +52,14 @@ slides %>%
 
 ```{r}
 activities <- tribble(~link, ~description, ~time,
-                      "../../../slides/xaringan.html#yourturn-1", "Season some slides with remark.js salt", "05:00 minutes",
-                      "../../../slides/xaringan.html#yourturn-2", "Fatten up your slides with some R code chunks (+ knitr butter)", "05:00 minutes",
-                      "../../../slides/xaringan.html#yourturn-3", "Add some acid to your slides with images", "08:00 minutes",
-                      "../../../slides/xaringan.html#yourturn-4", "Raise the heat on your slides by changing themes", "08:00 minutes",
-                      "../../../slides/xaringan.html#yourturn-5", "Serve your slides by publishing them online", "05:00 minutes")
+                      "../../../slides/xaringan.html#yourturn1", "Season some slides with remark.js salt", "10:00 minutes",
+                      "../../../slides/xaringan.html#yourturn2", "Fatten up your slides with some R code chunks (+ knitr butter)", "05:00 minutes",
+                      "../../../slides/xaringan.html#yourturn3", "Add some acid to your slides with images", "08:00 minutes",
+                      "../../../slides/xaringan.html#yourturn4", "Raise the heat on your slides by changing themes", "03:00 minutes",
+                      "../../../slides/xaringan.html#yourturn5", "Serve your slides by publishing them online", "05:00 minutes")
 
 activities %>% 
-  mutate(activity = cell_spec(glue::glue('{emo::ji("sent")} Your turn #{
+  mutate(activity = cell_spec(glue::glue('{emo::ji("heavy_plus_sign")} Your turn #{
                                           stringr::str_sub(
                                                             htmltools::htmlEscape(link, attribute = TRUE),
                                           start = -1)}: {description}'), 
