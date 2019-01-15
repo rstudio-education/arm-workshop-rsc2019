@@ -1,0 +1,147 @@
+---
+title: "Tutorial"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = T)
+```
+
+
+## Topic 1
+
+### Exercise 
+
+*Here's a simple exercise with an empty code chunk provided for entering the answer.*
+
+A demo of Rmarkdown syntax: `sum()` or $x+y$ or $$x^2+y^2=z^2$$
+
+![](https://www.youtube.com/watch?v=62iX1Wh8AC4){width="60%"}
+![](https://www.rstudio.com/wp-content/uploads/2017/05/rmarkdown-200x232@2x.png){width=150px}
+
+Write the R code required to add two plus two:
+
+```{r two-plus-two}
+2+2
+```
+
+### Shiny Component
+
+```{r, echo=FALSE}
+sliderInput("bins", "Number of bins:", min = 1, max = 50, value = 30)
+plotOutput("distPlot")
+```
+
+```{r, context="server"}
+output$distPlot <- renderPlot({
+  x <- faithful[, 2]  # Old Faithful Geyser data
+  bins <- seq(min(x), max(x), length.out = input$bins + 1)
+  hist(x, breaks = bins, col = 'darkgray', border = 'white')
+})
+```
+
+### Exercise with Code
+
+*Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
+
+Now write a function that adds any two numbers and then call it:
+
+```{r add-function, exercise=T, exercise.eval = TRUE,exercise.lines = 6}
+add <- function(x,y) {
+  return(x+y)
+  }
+add(2,3)
+```
+
+## Topic 2
+
+### Exercise with Hint
+
+*Here's an exercise where the chunk is pre-evaulated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
+
+Modify the following code to limit the number of rows printed to 5:
+
+```{r filterdemo, exercise=TRUE, exercise.eval=F}
+library(dplyr)
+# Change the filter to select sepal.length greater than 5
+virginica <- filter(iris, Species == "virginica")
+virginica
+```
+
+```{r filterdemo-solution}
+iris2 <- filter(iris, Sepal.Length>5)
+iris2
+```
+
+```{r filter, exercise=TRUE}
+# filter the iris table with either virginica or sepal length greater than 5
+head(iris)
+```
+
+```{r filter-hint-1}
+filter(iris, ...)
+```
+
+```{r filter-hint-2}
+filter(iris, Species == "virginica")
+```
+
+```{r filter-hint-3}
+filter(iris, Species == "virginica"| Sepal.Length>5)
+```
+
+### Quiz
+
+*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
+
+Some questions to verify that you understand the purposes of various base and recommended R packages:
+
+```{r quiz}
+quiz(
+  question("Which package contains functions for installing other R packages?",
+    answer("base"),
+    answer("tools"),
+    answer("utils", correct = TRUE),
+    answer("codetools")
+  ),
+  question("Which of the R packages listed below are used to create plots?",
+    answer("lattice", correct = TRUE),
+    answer("tools"),
+    answer("stats"),
+    answer("grid", correct = TRUE)
+  )
+)
+
+```
+
+```{r letter-a1, echo=FALSE}
+question("What number is the letter A in the *English* alphabet?",
+  answer("8"),
+  answer("1", correct = TRUE),
+  answer("2", message = "2 is close but it's the letter B rather than A."),
+  answer("26")
+)
+```
+
+Math Quiz:
+```{r math, echo=FALSE}
+x <- 42
+question(sprintf("Suppose $x = %s$. Choose the correct statement:", x),
+  answer(sprintf("$\\sqrt{x} = %d$", x + 1)),
+  answer(sprintf("$x ^ 2 = %d$", x^2), correct = TRUE),
+  answer("$\\sin x = 1$")
+)
+```
+
+
+```{r letter-a, echo=FALSE}
+question("What number is the letter A in the English alphabet?",
+  answer("8"),
+  answer("14"),
+  answer("1", correct = TRUE),
+  answer("23"),
+  allow_retry = TRUE
+)
+```
