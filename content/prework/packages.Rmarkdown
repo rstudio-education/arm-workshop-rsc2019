@@ -344,7 +344,7 @@ is_installed(c("tidyverse", "babynames"))
 You can download our workshop companion package from the RStudio Education GitHub:
 
 ```{r}
-remotes::install_github("armcompanion", dependencies = TRUE)
+remotes::install_github("rstudio-education/armcompanion", dependencies = TRUE)
 ```
 
 Can you load the package?

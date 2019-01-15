@@ -1,7 +1,7 @@
 ---
 title: Install R packages
 author: ''
-date: "2019-01-14"
+date: "2019-01-15"
 slug: packages
 categories: []
 tags: []
@@ -439,7 +439,7 @@ You can download our workshop companion package from the RStudio Education GitHu
 
 
 ```r
-remotes::install_github("armcompanion", dependencies = TRUE)
+remotes::install_github("rstudio-education/armcompanion", dependencies = TRUE)
 ```
 
 Can you load the package?
