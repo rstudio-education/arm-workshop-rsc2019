@@ -1,5 +1,5 @@
 ---
-title: AM Session Overview
+title: AM Session
 author: "Jennifer Thompson"
 
 date: "2019-01-14"
@@ -12,15 +12,15 @@ linktitle: AM session
 menu: day1
 ---
 
-Welcome! Enjoy breakfast and walk through these steps before the workshop begins. Our instructors and TAs are available to help!
+Welcome! If you chose the [☁️ setup](../../prework/cloud), please enjoy breakfast and walk through these steps before the workshop begins. Our instructors and TAs are available to help!
 
 
 
-# Logging In
+## Log into our virtual classroom
 
-[`https://sol-eng.shinyapps.io/class/`](https://sol-eng.shinyapps.io/class/)
+Go here: http://rstd.io/class
 
-1. Enter the credentials from your email: `rmarkdown-test-classroom-20190113` **ALISON CHANGE THIS**
+1. Enter the credentials from your email: `<placeholder>`
 1. Enter your name and email address.
 1. Leave the toggle button set to "Create new server credentials."
 
@@ -38,7 +38,7 @@ Open the URL provided in a new tab. You should see a page with options to connec
 
 **Keep this tab open too!** We'll set up both Server and Connect from here.
 
-# Access RStudio Server
+## Access RStudio Server Pro
 
 Click `RStudio Server Pro`; you should see a page where you can sign in. You'll use the credentials from that open tab we just came from.
 
@@ -49,9 +49,9 @@ Once you're signed in, you should be in a fresh RStudio Server Pro instance. Loo
 <img src="/img/setup-screencaps/server.png" width="75%" />
 
 
-# RStudio Connect
+## RStudio Connect
 
-## Setup
+### Setup
 
 From the RMarkdown Training Server tab, click the `RStudio Connect` button, then Log In in the top right corner. Use the same credentials as you did for RStudio Server.
 
@@ -59,7 +59,7 @@ Once you're in, you should see something like this (`rstudio-user` will be repla
 
 <img src="/img/setup-screencaps/rsc_login.png" width="75%" />
 
-## Connecting Your Account
+### Connecting Your Account
 
 In order to publish your documents on RStudio Connect, you'll need to connect RStudio Server and RStudio Connect. One way to do this:
 
@@ -75,13 +75,13 @@ Once you've set up the initial connection, you'll be asked to verify your accoun
 
 <img src="/img/setup-screencaps/rsc_verify.png" width="75%" />
 
-## Sharing Your Work
+### Sharing Your Work
 
 Throughout the workshop, we may want to share our work on [Gitter](https://gitter.im/arm-austin/Lobby) *(make sure to sign in or create an account if you haven't - an invitation should have been emailed to you in early January).* Default permissions on RStudio Connect are set so that only you can view your files. To change this, you can change the settings on individual projects once you publish them, using the dropdown menu under "Who can view this document."
 
 <img src="/img/setup-screencaps/rsc_share_anyone.png" width="75%" />
 
-## Exporting Your Work
+### Exporting Your Work
 
 Feel free to take notes within the files set up for you on RStudio Server! You can export those updated files once the workshop is over. Make sure the files you want to export are checked, and then click `More -> Export`:
 
