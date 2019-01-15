@@ -31,7 +31,7 @@ library(DiagrammeR)
 
 layout: true
   
-<div class="my-footer"><span>rstd.io/arm-bookdown</span></div>
+<div class="my-footer"><span>arm.rbind.io/slides/bookdown</span></div>
 
 <!-- this adds the link footer to all slides, depends on my-footer class in css-->
 

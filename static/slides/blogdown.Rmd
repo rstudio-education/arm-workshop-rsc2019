@@ -31,7 +31,7 @@ library(magick)
 
 layout: true
   
-<div class="my-footer"><span>bit.ly/blogdown-rsconf19</span></div>
+<div class="my-footer"><span>arm.rbind.io/slides/blogdown</span></div>
 
 <!-- this adds the link footer to all slides, depends on my-footer class in css-->
 
