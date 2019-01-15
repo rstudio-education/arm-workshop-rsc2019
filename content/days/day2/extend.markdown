@@ -1,13 +1,13 @@
 ---
 title: Extending R Markdown
 
-date: "2019-01-14"
+date: "2019-01-15"
 
 draft: false
 toc: true
 type: docs
 
-linktitle: flexdashboard
+linktitle: Extending R Markdown
 menu:
   day2:
     parent: PM session

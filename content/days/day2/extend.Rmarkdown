@@ -7,7 +7,7 @@ draft: false
 toc: true
 type: docs
 
-linktitle: flexdashboard
+linktitle: Extending R Markdown
 menu:
   day2:
     parent: PM session
