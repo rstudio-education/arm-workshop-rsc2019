@@ -17,4 +17,4 @@ menu:
 https://arm.rbind.io/slides/learnr.pdf
 
 Activity: https://appforiarteam.shinyapps.io/PlayR 
-Stretch: [jiena/demo.Rmd](jiena/demo.Rmd)
+Stretch: [jiena/demo.Rmd](../../../jiena/demo.Rmd)
