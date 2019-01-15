@@ -15,3 +15,6 @@ menu:
 ---
 
 https://arm.rbind.io/slides/learnr.pdf
+
+Activity: https://appforiarteam.shinyapps.io/PlayR 
+Stretch: Demo Tutorial on RStudio Conf.Rmd (attached)
