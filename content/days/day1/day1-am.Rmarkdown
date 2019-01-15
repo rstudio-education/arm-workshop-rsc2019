@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = FALSE, out.width = '75%')
 
 Go here: http://rstd.io/class
 
-1. Enter the credentials from your email: `<placeholder>`
+1. Enter our classroom identifier/password (in your email): `advanced-rmarkdown`
 1. Enter your name and email address.
 1. Leave the toggle button set to "Create new server credentials."
 
@@ -32,7 +32,7 @@ knitr::include_graphics("/img/setup-screencaps/class_login.png")
 
 ```
 
-(Accept the cookies. `r emo::ji("cookie")`) Your credentials will be different, but your screen should look like this.
+(Accept the cookies. `r emo::ji("cookie")`) Your credentials will be different, but your screen should look like this. In fact, every person's credentials will be different- don't copy and paste your neighbor's!
 
 ```{r}
 knitr::include_graphics("/img/setup-screencaps/login.png")
@@ -125,4 +125,4 @@ knitr::include_graphics("/img/setup-screencaps/server_export.png")
 
 A dialog box will pop up allowing you to name the zip file.
 
-> These detailed instructions were kindly curated by [Jennifer Thompson](https://jenthompson.me/)
+> *These detailed instructions were kindly curated by our TA [Jennifer Thompson](https://jenthompson.me/).*

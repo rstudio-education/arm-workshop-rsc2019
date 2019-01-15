@@ -2,7 +2,7 @@
 title: AM Session
 author: "Jennifer Thompson"
 
-date: "2019-01-14"
+date: "2019-01-15"
 
 draft: false
 toc: true
@@ -20,13 +20,13 @@ Welcome! If you chose the [☁️ setup](../../prework/cloud), please enjoy brea
 
 Go here: http://rstd.io/class
 
-1. Enter the credentials from your email: `<placeholder>`
+1. Enter our classroom identifier/password (in your email): `advanced-rmarkdown`
 1. Enter your name and email address.
 1. Leave the toggle button set to "Create new server credentials."
 
 <img src="/img/setup-screencaps/class_login.png" width="75%" />
 
-(Accept the cookies. 🍪) Your credentials will be different, but your screen should look like this.
+(Accept the cookies. 🍪) Your credentials will be different, but your screen should look like this. In fact, every person's credentials will be different- don't copy and paste your neighbor's!
 
 <img src="/img/setup-screencaps/login.png" width="75%" />
 
@@ -89,4 +89,4 @@ Feel free to take notes within the files set up for you on RStudio Server! You c
 
 A dialog box will pop up allowing you to name the zip file.
 
-> These detailed instructions were kindly curated by [Jennifer Thompson](https://jenthompson.me/)
+> *These detailed instructions were kindly curated by our TA [Jennifer Thompson](https://jenthompson.me/).*
