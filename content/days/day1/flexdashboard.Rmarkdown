@@ -14,14 +14,56 @@ menu:
     weight: 4
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+```
+
+
 ## Slides {#slides}
 
-<!--[Link](../../../slides/flexdashboard.html)-->
+```{r}
+slides <- tribble(~link, ~description, 
+                      "../../../slides/flexdashboard.html#1", "Full slide deck",
+                      "../../../slides/flexdashboard.html#outline", "Outline", 
+                      "../../../slides/flexdashboard.html#start-here", "Start Here")
+
+slides %>% 
+  mutate(emoji_id = c(emo::ji("picture"), 
+                      emo::ji("heavy_check_mark"), 
+                      emo::ji("round_pushpin"))) %>%
+  mutate(slide = cell_spec(glue::glue('{emoji_id} {description}'), 
+                           "html", 
+                           link = link)
+         ) %>% 
+  select("Key Slides" = slide) %>% 
+  kable("html", escape = FALSE) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed")) 
+```
 
 
+## Activities {#activity}
 
-## Activity {#activity}
 
-## Stretch {#stretch}
+```{r}
+activities <- tribble(~link, ~description, ~time,
+                      "../../../slides/flexdashboard.html#yourturn1", "Add layouts", "05:00 minutes",
+                      "../../../slides/flexdashboard.html#yourturn2", "Add components", "05:00 minutes",
+                      "../../../slides/flexdashboard.html#block3", "On your own: play with interactivity", "infinite minutes")
 
-## More {#more}
+activities %>% 
+  mutate(activity = cell_spec(glue::glue('{emo::ji("heavy_plus_sign")} Your turn #{
+                                          stringr::str_sub(
+                                                            htmltools::htmlEscape(link, attribute = TRUE),
+                                          start = -1)}: {description}'), 
+                           "html", 
+                           link = link),
+         time = glue::glue('{emo::ji("clock")} {time}')
+         ) %>%
+  select(Activity = activity, Time = time) %>% 
+  kable("html", escape = FALSE) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed")) 
+```

@@ -14,6 +14,20 @@
     <script src="libs/moment-timezone/moment-timezone-with-data.js"></script>
     <script src="libs/moment-fquarter/moment-fquarter.min.js"></script>
     <script src="libs/dygraphs-binding/dygraphs.js"></script>
+    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet/leaflet.js"></script>
+    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+    <script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
+    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-binding/leaflet.js"></script>
+    <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs/datatables-binding/datatables.js"></script>
+    <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js" integrity="sha384-R5JkiUweZpJjELPWqttAYmYM1P3SNEJRM6ecTQF05pFFtxmCO+Y1CiUhvuDzgSVZ" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/gbbo.css" type="text/css" />
     <link rel="stylesheet" href="css/fonts.css" type="text/css" />
@@ -26,7 +40,7 @@
 
 layout: true
   
-&lt;div class="my-footer"&gt;&lt;span&gt;bit.ly/flexdashboard-rsconf19&lt;/span&gt;&lt;/div&gt;
+&lt;div class="my-footer"&gt;&lt;span&gt;arm.rbind.io/slides/flexdashboard&lt;/span&gt;&lt;/div&gt;
 
 &lt;!-- this adds the link footer to all slides, depends on my-footer class in css--&gt;
 
@@ -100,12 +114,20 @@ By [Jennifer Thompson](https://jenthompson.me) ([dashboard](https://jenthompson.
 
 
 ---
-## Why?
+
+# How does it work?
 
 - Use Markdown headings to describe the boxes and space division of your dashboard
+
     - Layout is implicit and automatic
     - Tweakable with custom attributes
+    
+--
+
 - Content in your boxes fills the box automatically
+
+--
+
 - Supply gaps between R offerings and common dashboard components
 
 ---
@@ -149,18 +171,6 @@ class: inverse, middle
 1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone) &lt;br&gt;
     *File &gt; New Project &gt; Version Control &gt; Git*
 
-1. Run:
-
-
-```r
-library(blogdown)
-new_site(theme = "jpescador/hugo-future-imperfect", 
-         sample = TRUE, 
-         theme_example = TRUE, 
-         empty_dirs = TRUE,
-         to_yaml = TRUE)
-```
-
 ]
 
 .pull-right[
@@ -169,15 +179,33 @@ new_site(theme = "jpescador/hugo-future-imperfect",
 
 
 1. Make a new RStudio project via wizard &lt;br&gt; 
-    *File &gt; New Project &gt; New Directory*
-
-1. Scroll down to select: &lt;br&gt;
-    &lt;img src="https://discourse-cdn-sjc2.com/standard10/uploads/gohugo/original/2X/c/c2d3414c64e766d814100b32063948e604298a70.png" width="4%"&gt; *Website using blogdown*
-
-&lt;img src="img/blogdown-workflow-wizard.png" width="80%" style="display: block; margin: auto;" /&gt;
+    *File &gt; New Project &gt; New Directory &gt; New Project*
 
 
 ]
+
+--
+
+&lt;hr&gt;
+
+.center[When inside your new project, do:
+
+*File &gt; New File &gt; R Markdown &gt; From Template*
+
+Select .bright["arm-flexdashboard"] from the **armcompanion** package
+]
+
+---
+## YAML header
+
+```
+---
+title: "Flex Dashboard"
+output: flexdashboard::flex_dashboard
+---
+```
+    
+  
 
 ---
 name: knit
@@ -225,15 +253,6 @@ class: middle, inverse
 
 
 
----
-## YAML header
-
-    ---
-    title: "Flex Dashboard"
-    output: flexdashboard::flex_dashboard
-    ---
-    
-    
 
 
 ---
@@ -305,13 +324,6 @@ Column {data-width=350}
 ```
 
 
-```r
-Column {data-width=650}
----
-  
-Column {data-width=350}
----
-```
 
 
 ]
@@ -320,15 +332,26 @@ Column {data-width=350}
 
 .pull-right[
 
-But we could also use level 2 headers too:
+But only 3 are required...
 
 
 ```r
-## Column {data-width=650}
+Column {data-width=650}
+*---
+  
+Column {data-width=350}
+*---
+```
+
+Or we could use level 2 headers too:
+
+
+```r
+*## Column {data-width=650}
 
 
 
-## Column {data-width=350}
+*## Column {data-width=350}
 ```
 
 
@@ -383,6 +406,15 @@ Row {data-height=350}
 ```
 
 
+
+
+]
+
+.pull-right[
+
+Again, only 3 are required:
+
+
 ```r
 Row {data-height=650}
 *---
@@ -391,20 +423,15 @@ Row {data-height=350}
 *---
 ```
 
-
-]
-
-.pull-right[
-
-But we could also use level 2 headers too:
+Or we could use level 2 headers too:
 
 
 ```r
-## Row {data-height=650}
+*## Row {data-height=650}
 
 
 
-## Row {data-height=350}
+*## Row {data-height=350}
 ```
 
 
@@ -504,7 +531,7 @@ class: middle, inverse
 
 
 ---
-name: yourturn-1
+name: yourturn1
 template: yourturn
 
 
@@ -549,40 +576,12 @@ https://bookdown.org/yihui/rmarkdown/dashboard-components.html
 ]
 
 ---
+name: valuebox
+class: middle, inverse
 
-## Plots and HTML widgets
+# Value boxes
 
-- Any R graphics are supported
-- Graphs and visualizations: the basic building blocks of most dashboards
-- Contents automatically scaled to the size of the box
-- HTML widgets can include interactivity 
-
----
-## Plots and HTML widgets
-
-    ### Iris data
-    
-    ```{r}
-    qplot(Sepal.Length, Petal.Length, data = iris, color = Species)
-    ```
-    
-    ### Birthplace of R
-
-    ```{r}
-    library(leaflet)
-    m &lt;- leaflet() %&gt;%
-      addTiles() %&gt;% 
-      addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
-    ```
-
----
-## Plots and HTML widgets
-
-![plots-and-widgets](plots-and-widgets.png)
-
----
-## Value boxes
-
+.pull-left[
 
 ```r
 library(flexdashboard)
@@ -591,12 +590,27 @@ valueBox(articles,
          icon = "fa-pencil", 
          caption = "Articles per Day")
 ```
+]
 
-![valuebox](valuebox.png)
+.pull-right[
+
+![valuebox](img/flexdashboard-valuebox.png)
+
+]
+
+.footnote[
+https://bookdown.org/yihui/rmarkdown/dashboard-components.html#value-boxes
+
+https://rmarkdown.rstudio.com/flexdashboard/using.html#value_boxes
+]
 
 ---
-## Gauges
+name: gauge
+class: middle, inverse
+
+# Gauges
  
+.pull-left[
 
 ```r
 satisfaction &lt;- 86
@@ -605,38 +619,102 @@ gauge(satisfaction, min = 0, max = 100, symbol = '%',
   success = c(80, 100), warning = c(40, 79), danger = c(0, 39)
 ))
 ```
+]
 
-![gauge](gauge.png)
+.pull-right[
+![gauge](img/flexdashboard-gauge.png)
 
----
-## Including Data: tabsets
+]
 
-    ## Column {.tabset}
-     
-    ### Chart 
+.footnote[
+https://bookdown.org/yihui/rmarkdown/dashboard-components.html#gauges
 
-    ```{r}
-    qplot(Sepal.Length, Petal.Length, data = iris, color = Species) 
-    ```
-    
-    ### Data
-    
-    ```{r}
-    knitr::kable(iris)
-    ```
-    
----
-## Including Data: Chart
+https://rmarkdown.rstudio.com/flexdashboard/using.html#gauges
+]
 
-![chart](tabset-chart.png)
+
 
 ---
-## Including Data: Table
+name: text-annotate
 
-![chart](tabset-data.png)
+# Text Annotations
+
+.pull-left[
+Each component within a dashboard includes optional title, which is the text following the level 3 heading `###`
+
+Notes are any text prefaced with ``&gt; after the code chunk that yields the component’s output, like:
+
+```
+&gt; Monthly deaths from lung disease in the UK, 1974–1979
+```
+]
+
+.pull-right[
+&lt;img src="https://bookdown.org/yihui/rmarkdown/images/dashboard-text.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.footnote[
+https://bookdown.org/yihui/rmarkdown/dashboard-components.html#text-annotations
+
+https://rmarkdown.rstudio.com/flexdashboard/using.html#text_annotations
+]
 
 ---
+name: navbar
 
+# Navigation Bar
+
+.pull-left[
+
+```r
+---
+title: "Source Code"
+output: 
+  flexdashboard::flex_dashboard:
+*   source_code: embed
+---
+```
+]
+
+.pull-right[
+
+
+```r
+---
+title: "Source Code"
+output: 
+  flexdashboard::flex_dashboard:
+*   source_code: "https://github.com/USER/REPO"
+---
+```
+
+]
+
+
+.footnote[
+https://bookdown.org/yihui/rmarkdown/dashboard-components.html#navigation-bar
+
+https://rmarkdown.rstudio.com/flexdashboard/using.html#navigation_bar
+]
+
+
+---
+name: yourturn2
+template: yourturn
+
+
+# .fancy[05:00 minutes]
+
+### Add some components like:
+
++ [Value boxes](#valuebox) 
+
++ [Gauges](#gauge)
+
++ [Text annotations](#text-annotate) 
+
++ [Navigation bar](#navbar) 
 
 ---
 name: block3
@@ -656,7 +734,12 @@ class: middle, inverse, center
 
 # You may not need Shiny!
 
+## Plots and HTML widgets
 
+- Any R graphics are supported
+- Graphs and visualizations: the basic building blocks of most dashboards
+- Contents automatically scaled to the size of the box
+- HTML widgets can include interactivity 
 
 ---
 # Interactivity with HTML widgets
@@ -683,8 +766,52 @@ dygraph(lungDeaths) %&gt;%
 ]
 
 .pull-right[
-<div id="htmlwidget-0f33cb7c5c1d20df5a8d" style="width:80%;height:504px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0f33cb7c5c1d20df5a8d">{"x":{"attrs":{"labels":["month","mdeaths","fdeaths"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1974-01-01T00:00:00.000Z","1974-02-01T00:00:00.000Z","1974-03-01T00:00:00.000Z","1974-04-01T00:00:00.000Z","1974-05-01T00:00:00.000Z","1974-06-01T00:00:00.000Z","1974-07-01T00:00:00.000Z","1974-08-01T00:00:00.000Z","1974-09-01T00:00:00.000Z","1974-10-01T00:00:00.000Z","1974-11-01T00:00:00.000Z","1974-12-01T00:00:00.000Z","1975-01-01T00:00:00.000Z","1975-02-01T00:00:00.000Z","1975-03-01T00:00:00.000Z","1975-04-01T00:00:00.000Z","1975-05-01T00:00:00.000Z","1975-06-01T00:00:00.000Z","1975-07-01T00:00:00.000Z","1975-08-01T00:00:00.000Z","1975-09-01T00:00:00.000Z","1975-10-01T00:00:00.000Z","1975-11-01T00:00:00.000Z","1975-12-01T00:00:00.000Z","1976-01-01T00:00:00.000Z","1976-02-01T00:00:00.000Z","1976-03-01T00:00:00.000Z","1976-04-01T00:00:00.000Z","1976-05-01T00:00:00.000Z","1976-06-01T00:00:00.000Z","1976-07-01T00:00:00.000Z","1976-08-01T00:00:00.000Z","1976-09-01T00:00:00.000Z","1976-10-01T00:00:00.000Z","1976-11-01T00:00:00.000Z","1976-12-01T00:00:00.000Z","1977-01-01T00:00:00.000Z","1977-02-01T00:00:00.000Z","1977-03-01T00:00:00.000Z","1977-04-01T00:00:00.000Z","1977-05-01T00:00:00.000Z","1977-06-01T00:00:00.000Z","1977-07-01T00:00:00.000Z","1977-08-01T00:00:00.000Z","1977-09-01T00:00:00.000Z","1977-10-01T00:00:00.000Z","1977-11-01T00:00:00.000Z","1977-12-01T00:00:00.000Z","1978-01-01T00:00:00.000Z","1978-02-01T00:00:00.000Z","1978-03-01T00:00:00.000Z","1978-04-01T00:00:00.000Z","1978-05-01T00:00:00.000Z","1978-06-01T00:00:00.000Z","1978-07-01T00:00:00.000Z","1978-08-01T00:00:00.000Z","1978-09-01T00:00:00.000Z","1978-10-01T00:00:00.000Z","1978-11-01T00:00:00.000Z","1978-12-01T00:00:00.000Z","1979-01-01T00:00:00.000Z","1979-02-01T00:00:00.000Z","1979-03-01T00:00:00.000Z","1979-04-01T00:00:00.000Z","1979-05-01T00:00:00.000Z","1979-06-01T00:00:00.000Z","1979-07-01T00:00:00.000Z","1979-08-01T00:00:00.000Z","1979-09-01T00:00:00.000Z","1979-10-01T00:00:00.000Z","1979-11-01T00:00:00.000Z","1979-12-01T00:00:00.000Z"],[2134,1863,1877,1877,1492,1249,1280,1131,1209,1492,1621,1846,2103,2137,2153,1833,1403,1288,1186,1133,1053,1347,1545,2066,2020,2750,2283,1479,1189,1160,1113,970,999,1208,1467,2059,2240,1634,1722,1801,1246,1162,1087,1013,959,1179,1229,1655,2019,2284,1942,1423,1340,1187,1098,1004,970,1140,1110,1812,2263,1820,1846,1531,1215,1075,1056,975,940,1081,1294,1341],[901,689,827,677,522,406,441,393,387,582,578,666,830,752,785,664,467,438,421,412,343,440,531,771,767,1141,896,532,447,420,376,330,357,445,546,764,862,660,663,643,502,392,411,348,387,385,411,638,796,853,737,546,530,446,431,362,387,430,425,679,821,785,727,612,478,429,405,379,393,411,487,574]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<div id="htmlwidget-bec980b16665e6153eb3" style="width:80%;height:504px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bec980b16665e6153eb3">{"x":{"attrs":{"labels":["month","mdeaths","fdeaths"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1974-01-01T00:00:00.000Z","1974-02-01T00:00:00.000Z","1974-03-01T00:00:00.000Z","1974-04-01T00:00:00.000Z","1974-05-01T00:00:00.000Z","1974-06-01T00:00:00.000Z","1974-07-01T00:00:00.000Z","1974-08-01T00:00:00.000Z","1974-09-01T00:00:00.000Z","1974-10-01T00:00:00.000Z","1974-11-01T00:00:00.000Z","1974-12-01T00:00:00.000Z","1975-01-01T00:00:00.000Z","1975-02-01T00:00:00.000Z","1975-03-01T00:00:00.000Z","1975-04-01T00:00:00.000Z","1975-05-01T00:00:00.000Z","1975-06-01T00:00:00.000Z","1975-07-01T00:00:00.000Z","1975-08-01T00:00:00.000Z","1975-09-01T00:00:00.000Z","1975-10-01T00:00:00.000Z","1975-11-01T00:00:00.000Z","1975-12-01T00:00:00.000Z","1976-01-01T00:00:00.000Z","1976-02-01T00:00:00.000Z","1976-03-01T00:00:00.000Z","1976-04-01T00:00:00.000Z","1976-05-01T00:00:00.000Z","1976-06-01T00:00:00.000Z","1976-07-01T00:00:00.000Z","1976-08-01T00:00:00.000Z","1976-09-01T00:00:00.000Z","1976-10-01T00:00:00.000Z","1976-11-01T00:00:00.000Z","1976-12-01T00:00:00.000Z","1977-01-01T00:00:00.000Z","1977-02-01T00:00:00.000Z","1977-03-01T00:00:00.000Z","1977-04-01T00:00:00.000Z","1977-05-01T00:00:00.000Z","1977-06-01T00:00:00.000Z","1977-07-01T00:00:00.000Z","1977-08-01T00:00:00.000Z","1977-09-01T00:00:00.000Z","1977-10-01T00:00:00.000Z","1977-11-01T00:00:00.000Z","1977-12-01T00:00:00.000Z","1978-01-01T00:00:00.000Z","1978-02-01T00:00:00.000Z","1978-03-01T00:00:00.000Z","1978-04-01T00:00:00.000Z","1978-05-01T00:00:00.000Z","1978-06-01T00:00:00.000Z","1978-07-01T00:00:00.000Z","1978-08-01T00:00:00.000Z","1978-09-01T00:00:00.000Z","1978-10-01T00:00:00.000Z","1978-11-01T00:00:00.000Z","1978-12-01T00:00:00.000Z","1979-01-01T00:00:00.000Z","1979-02-01T00:00:00.000Z","1979-03-01T00:00:00.000Z","1979-04-01T00:00:00.000Z","1979-05-01T00:00:00.000Z","1979-06-01T00:00:00.000Z","1979-07-01T00:00:00.000Z","1979-08-01T00:00:00.000Z","1979-09-01T00:00:00.000Z","1979-10-01T00:00:00.000Z","1979-11-01T00:00:00.000Z","1979-12-01T00:00:00.000Z"],[2134,1863,1877,1877,1492,1249,1280,1131,1209,1492,1621,1846,2103,2137,2153,1833,1403,1288,1186,1133,1053,1347,1545,2066,2020,2750,2283,1479,1189,1160,1113,970,999,1208,1467,2059,2240,1634,1722,1801,1246,1162,1087,1013,959,1179,1229,1655,2019,2284,1942,1423,1340,1187,1098,1004,970,1140,1110,1812,2263,1820,1846,1531,1215,1075,1056,975,940,1081,1294,1341],[901,689,827,677,522,406,441,393,387,582,578,666,830,752,785,664,467,438,421,412,343,440,531,771,767,1141,896,532,447,420,376,330,357,445,546,764,862,660,663,643,502,392,411,348,387,385,411,638,796,853,737,546,530,446,431,362,387,430,425,679,821,785,727,612,478,429,405,379,393,411,487,574]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+]
+
+---
+## Plots and HTML widgets
+
+.pull-left[
+
+
+```r
+library(leaflet)
+leaflet() %&gt;% 
+  addTiles() %&gt;% 
+  addMarkers(lat = 51.4560, lng = -1.4136)
+```
+
+]
+
+.pull-right[
+<div id="htmlwidget-c32b329d99e287ca4cc4" style="width:80%;height:504px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c32b329d99e287ca4cc4">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[51.456,-1.4136,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[51.456,51.456],"lng":[-1.4136,-1.4136]}},"evals":[],"jsHooks":[]}</script>
+
+]
+
+
+---
+## Plots and HTML widgets
+
+.pull-left[
+
+
+```r
+library(DT)
+library(bakeoff) 
+baker_results %&gt;% 
+  filter(series_winner == 1) %&gt;% 
+  select(series, baker) %&gt;% 
+  datatable()
+```
+
+]
+
+.pull-right[
+<div id="htmlwidget-1afce0ef5de9628e2588" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1afce0ef5de9628e2588">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8"],[1,2,3,4,5,6,7,8],["Edd","Joanne","John","Frances","Nancy","Nadiya","Candice","Sophie"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>series<\/th>\n      <th>baker<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":1},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 ]
 
 ---
@@ -693,6 +820,8 @@ dygraph(lungDeaths) %&gt;%
 - Static host vs. Shiny Server (or shinyapps.io)
 - Simplicity vs. complexity
 - Constraints vs. flexibility
+
+See [example with Shiny here](https://shiring.shinyapps.io/demo_dashboard_pred_maint_fast/)
 
 ---
 ## Advanced topics
@@ -703,10 +832,7 @@ dygraph(lungDeaths) %&gt;%
 - [Mobile friendly layouts](https://rmarkdown.rstudio.com/flexdashboard/using.html#mobile_layout)
    - Largely automatic but can show/hide specifically
 - [Storyboards](https://rmarkdown.rstudio.com/flexdashboard/using.html#storyboards)
-- Navigation
 
----
-# Wrap - up / Q &amp; A
 
 ---
 class: middle, center, inverse

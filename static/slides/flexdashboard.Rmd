@@ -25,11 +25,14 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", ou
 # options(knitr.table.format = "html")
 library(tidyverse)
 library(fontawesome) # from github: https://github.com/rstudio/fontawesome
+library(bakeoff)
+library(flexdashboard)
+#remotes::install_github("apreshill/bakeoff")
 ```
 
 layout: true
   
-<div class="my-footer"><span>bit.ly/flexdashboard-rsconf19</span></div>
+<div class="my-footer"><span>arm.rbind.io/slides/flexdashboard</span></div>
 
 <!-- this adds the link footer to all slides, depends on my-footer class in css-->
 
@@ -109,12 +112,20 @@ By [Jennifer Thompson](https://jenthompson.me) ([dashboard](https://jenthompson.
 
 
 ---
-## Why?
+
+# How does it work?
 
 - Use Markdown headings to describe the boxes and space division of your dashboard
+
     - Layout is implicit and automatic
     - Tweakable with custom attributes
+    
+--
+
 - Content in your boxes fills the box automatically
+
+--
+
 - Supply gaps between R offerings and common dashboard components
 
 ---
@@ -160,17 +171,6 @@ class: inverse, middle
 1. Make a [new RStudio project via git clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone) <br>
     *File > New Project > Version Control > Git*
 
-1. Run:
-
-```{r eval = FALSE}
-library(blogdown)
-new_site(theme = "jpescador/hugo-future-imperfect", 
-         sample = TRUE, 
-         theme_example = TRUE, 
-         empty_dirs = TRUE,
-         to_yaml = TRUE)
-```
-
 ]
 
 .pull-right[
@@ -179,17 +179,33 @@ new_site(theme = "jpescador/hugo-future-imperfect",
 
 
 1. Make a new RStudio project via wizard <br> 
-    *File > New Project > New Directory*
-
-1. Scroll down to select: <br>
-    <img src="https://discourse-cdn-sjc2.com/standard10/uploads/gohugo/original/2X/c/c2d3414c64e766d814100b32063948e604298a70.png" width="4%"> *Website using blogdown*
-
-```{r echo = FALSE, out.width='80%'}
-knitr::include_graphics("img/blogdown-workflow-wizard.png")
-```
+    *File > New Project > New Directory > New Project*
 
 
 ]
+
+--
+
+<hr>
+
+.center[When inside your new project, do:
+
+*File > New File > R Markdown > From Template*
+
+Select .bright["arm-flexdashboard"] from the **armcompanion** package
+]
+
+---
+## YAML header
+
+```
+---
+title: "Flex Dashboard"
+output: flexdashboard::flex_dashboard
+---
+```
+    
+  
 
 ---
 name: knit
@@ -239,15 +255,6 @@ class: middle, inverse
 
 
 
----
-## YAML header
-
-    ---
-    title: "Flex Dashboard"
-    output: flexdashboard::flex_dashboard
-    ---
-    
-    
 
 
 ---
@@ -318,13 +325,7 @@ Column {data-width=350}
 ------------------------------------
 ```
 
-```{r eval = FALSE}
-Column {data-width=650}
----
-  
-Column {data-width=350}
----
-```
+
 
 
 ]
@@ -333,14 +334,24 @@ Column {data-width=350}
 
 .pull-right[
 
-But we could also use level 2 headers too:
+But only 3 are required...
 
 ```{r eval = FALSE}
-## Column {data-width=650}
+Column {data-width=650}
+--- #<<
+  
+Column {data-width=350}
+--- #<<
+```
+
+Or we could use level 2 headers too:
+
+```{r eval = FALSE}
+## Column {data-width=650} #<<
 
 
 
-## Column {data-width=350}
+## Column {data-width=350} #<<
 ```
 
 
@@ -392,6 +403,15 @@ Row {data-height=350}
 ------------------------------------
 ```
 
+
+
+
+]
+
+.pull-right[
+
+Again, only 3 are required:
+
 ```{r eval = FALSE}
 Row {data-height=650}
 --- #<<
@@ -400,19 +420,14 @@ Row {data-height=350}
 --- #<<
 ```
 
-
-]
-
-.pull-right[
-
-But we could also use level 2 headers too:
+Or we could use level 2 headers too:
 
 ```{r eval = FALSE}
-## Row {data-height=650}
+## Row {data-height=650} #<<
 
 
 
-## Row {data-height=350}
+## Row {data-height=350} #<<
 ```
 
 
@@ -510,7 +525,7 @@ class: middle, inverse
 
 
 ---
-name: yourturn-1
+name: yourturn1
 template: yourturn
 
 
@@ -555,45 +570,12 @@ https://bookdown.org/yihui/rmarkdown/dashboard-components.html
 ]
 
 ---
+name: valuebox
+class: middle, inverse
 
-## Plots and HTML widgets
+# Value boxes
 
-- Any R graphics are supported
-- Graphs and visualizations: the basic building blocks of most dashboards
-- Contents automatically scaled to the size of the box
-- HTML widgets can include interactivity 
-
----
-## Plots and HTML widgets
-
-    ### Iris data
-    
-```{r, echo = FALSE, results="asis"}
-cat("    ```{r}",
-    "    qplot(Sepal.Length, Petal.Length, data = iris, color = Species)",
-    "    ```", sep = "\n")
-```
-    
-    ### Birthplace of R
-
-```{r, echo = FALSE, results="asis"}
-cat("    ```{r}",
-    "    library(leaflet)",
-    "    m <- leaflet() %>%",
-    "      addTiles() %>% ",
-    "      addMarkers(lng=174.768, lat=-36.852, popup=\"The birthplace of R\")", 
-    "    ```",
-    sep = "\n")
-```
-
----
-## Plots and HTML widgets
-
-![plots-and-widgets](plots-and-widgets.png)
-
----
-## Value boxes
-
+.pull-left[
 ```{r, eval=FALSE}
 library(flexdashboard)
 articles <- 204
@@ -601,55 +583,130 @@ valueBox(articles,
          icon = "fa-pencil", 
          caption = "Articles per Day")
 ```
+]
 
-![valuebox](valuebox.png)
+.pull-right[
+
+![valuebox](img/flexdashboard-valuebox.png)
+
+]
+
+.footnote[
+https://bookdown.org/yihui/rmarkdown/dashboard-components.html#value-boxes
+
+https://rmarkdown.rstudio.com/flexdashboard/using.html#value_boxes
+]
 
 ---
-## Gauges
+name: gauge
+class: middle, inverse
+
+# Gauges
  
-```{r, eval=FALSE}
+.pull-left[
+```{r gauge, eval=FALSE}
 satisfaction <- 86
 gauge(satisfaction, min = 0, max = 100, symbol = '%', 
   label = "Satisfaction", gaugeSectors(
   success = c(80, 100), warning = c(40, 79), danger = c(0, 39)
 ))
 ```
+]
 
-![gauge](gauge.png)
+.pull-right[
+![gauge](img/flexdashboard-gauge.png)
+
+]
+
+.footnote[
+https://bookdown.org/yihui/rmarkdown/dashboard-components.html#gauges
+
+https://rmarkdown.rstudio.com/flexdashboard/using.html#gauges
+]
+
+
 
 ---
-## Including Data: tabsets
+name: text-annotate
 
-    ## Column {.tabset}
-     
-    ### Chart 
+# Text Annotations
 
-```{r echo=FALSE, results='asis'}
-cat(paste("    ```{r}",
-          "    qplot(Sepal.Length, Petal.Length, data = iris, color = Species) ", 
-          "    ```", sep = "\n"))
+.pull-left[
+Each component within a dashboard includes optional title, which is the text following the level 3 heading `###`
+
+Notes are any text prefaced with ``> after the code chunk that yields the component’s output, like:
+
 ```
-    
-    ### Data
-    
-```{r echo=FALSE, results='asis'}
-cat(paste("    ```{r}",
-          "    knitr::kable(iris)", 
-          "    ```", sep = "\n"))
+> Monthly deaths from lung disease in the UK, 1974–1979
 ```
-    
+]
+
+.pull-right[
+```{r echo = FALSE}
+knitr:: include_graphics("https://bookdown.org/yihui/rmarkdown/images/dashboard-text.png")
+```
+
+]
+
+.footnote[
+https://bookdown.org/yihui/rmarkdown/dashboard-components.html#text-annotations
+
+https://rmarkdown.rstudio.com/flexdashboard/using.html#text_annotations
+]
+
 ---
-## Including Data: Chart
+name: navbar
 
-![chart](tabset-chart.png)
+# Navigation Bar
+
+.pull-left[
+```{r eval = FALSE}
+---
+title: "Source Code"
+output: 
+  flexdashboard::flex_dashboard:
+    source_code: embed #<<
+---
+```
+]
+
+.pull-right[
+
+```{r eval = FALSE}
+---
+title: "Source Code"
+output: 
+  flexdashboard::flex_dashboard:
+    source_code: "https://github.com/USER/REPO" #<<
+---
+```
+
+]
+
+
+.footnote[
+https://bookdown.org/yihui/rmarkdown/dashboard-components.html#navigation-bar
+
+https://rmarkdown.rstudio.com/flexdashboard/using.html#navigation_bar
+]
+
 
 ---
-## Including Data: Table
+name: yourturn2
+template: yourturn
 
-![chart](tabset-data.png)
 
----
+# .fancy[05:00 minutes]
 
+### Add some components like:
+
++ [Value boxes](#valuebox) 
+
++ [Gauges](#gauge)
+
++ [Text annotations](#text-annotate) 
+
++ [Navigation bar](#navbar) 
 
 ---
 name: block3
@@ -669,7 +726,12 @@ class: middle, inverse, center
 
 # You may not need Shiny!
 
+## Plots and HTML widgets
 
+- Any R graphics are supported
+- Graphs and visualizations: the basic building blocks of most dashboards
+- Contents automatically scaled to the size of the box
+- HTML widgets can include interactivity 
 
 ---
 # Interactivity with HTML widgets
@@ -700,11 +762,57 @@ dygraph(lungDeaths) %>%
 ]
 
 ---
+## Plots and HTML widgets
+
+.pull-left[
+
+```{r gbbo-park, eval = FALSE}
+library(leaflet)
+leaflet() %>% 
+  addTiles() %>% 
+  addMarkers(lat = 51.4560, lng = -1.4136)
+```
+
+]
+
+.pull-right[
+```{r ref.label='gbbo-park', echo = FALSE}
+
+```
+
+]
+
+
+---
+## Plots and HTML widgets
+
+.pull-left[
+
+```{r gbbo-winners, eval = FALSE}
+library(DT)
+library(bakeoff) 
+baker_results %>% 
+  filter(series_winner == 1) %>% 
+  select(series, baker) %>% 
+  datatable()
+```
+
+]
+
+.pull-right[
+```{r ref.label='gbbo-winners', echo = FALSE}
+
+```
+]
+
+---
 ## flexdashboard vs. shinydashboard
 
 - Static host vs. Shiny Server (or shinyapps.io)
 - Simplicity vs. complexity
 - Constraints vs. flexibility
+
+See [example with Shiny here](https://shiring.shinyapps.io/demo_dashboard_pred_maint_fast/)
 
 ---
 ## Advanced topics
@@ -715,10 +823,7 @@ dygraph(lungDeaths) %>%
 - [Mobile friendly layouts](https://rmarkdown.rstudio.com/flexdashboard/using.html#mobile_layout)
    - Largely automatic but can show/hide specifically
 - [Storyboards](https://rmarkdown.rstudio.com/flexdashboard/using.html#storyboards)
-- Navigation
 
----
-# Wrap - up / Q & A
 
 ---
 class: middle, center, inverse
