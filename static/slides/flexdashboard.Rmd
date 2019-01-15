@@ -80,14 +80,31 @@ By [Julia Silge](https://juliasilge.com/) ([blog](https://juliasilge.com/blog/fa
 class: middle, inverse, center
 
 ```{r echo = FALSE, out.width='70%'}
-knitr::include_graphics("https://jenthompson.me/images/flexdash_example.png")
+knitr::include_graphics("img/flexdashboard-mosaic.png")
 ```
 
 --
 
 .footnote[
 
-By [Jennifer Thompson](https://jenthompson.me) ([blog](https://jenthompson.me/2018/02/09/flexdashboards-monitoring/);  [source code](https://github.com/jenniferthompson/MOSAICProgress))
+By [Jennifer Thompson](https://jenthompson.me)
+([blog](https://jenthompson.me/2018/02/09/flexdashboards-monitoring/);  [dashboard](https://jenthompson.me/examples/progressdash.html); [source code](https://github.com/jenniferthompson/MOSAICProgress))
+
+]
+
+---
+class: middle, inverse, center
+
+```{r echo = FALSE, out.width='70%'}
+knitr::include_graphics("img/flexdashboard-insight.png")
+```
+
+--
+
+.footnote[
+
+By [Jennifer Thompson](https://jenthompson.me) ([dashboard](https://jenthompson.me/examples/insight_progress.html); [source code](https://github.com/jenniferthompson/INSIGHTProgress))
+
 ]
 
 
@@ -301,6 +318,14 @@ Column {data-width=350}
 ------------------------------------
 ```
 
+```{r eval = FALSE}
+Column {data-width=650}
+---
+  
+Column {data-width=350}
+---
+```
+
 
 ]
 
@@ -329,11 +354,15 @@ Let's change our long dashed lines to `##` now together!
 
 ???
 
-What you call your columns does NOT matter- the text not displayed anywhere
+There are two ways to indicate a new column.
 
-The column layout is implicit and automatic.
+The first is to use three or more dashes. This is helpful for visually separating out the columns.
 
-You can apply widths to columns, this is what data-width does
+The column name goes above the dashes then, but what you call your columns does NOT matter- the text is not displayed anywhere
+
+You can apply widths to columns, this is what data-width does.
+
+You could also use two hashtags to demarcate your columns.
 
 
 
@@ -361,6 +390,14 @@ Row {data-height=650}
   
 Row {data-height=350}
 ------------------------------------
+```
+
+```{r eval = FALSE}
+Row {data-height=650}
+--- #<<
+  
+Row {data-height=350}
+--- #<<
 ```
 
 
@@ -446,11 +483,11 @@ knitr::include_graphics("img/flexdashboard-pages.png")
 ```
 
 
-Technically, you can also demarcate pages with
+Technically, you can also demarcate pages with 3 or more `=`:
 
 ```{r eval = FALSE}
 Page 1 #<<
-===================================== #<<
+=== #<<
 
 ## Column
   
@@ -483,9 +520,9 @@ template: yourturn
 
 + [Boxes](#layouts-boxes) with `###`
 
-+ [Columns](#layouts-columns) with `##` .fancy[(play with `{data-width=}`)]
++ [Columns](#layouts-columns) with `##` or `---` .fancy[(play with `{data-width=}`)]
 
-+ [Pages](#layouts-pages) with `#`
++ [Pages](#layouts-pages) with `#` or `===` 
 
 + Extras:
   + Update YAML to try out [rows](#layouts-rows) with `orientation: rows`; .fancy[play with `{data-height=}`]
@@ -499,9 +536,9 @@ template: yourturn
 
 - flexdashboards are composed of space-filling [boxes](#layouts-boxes) created with level 3 headers (`###`)
 
-- Boxes can be grouped into [columns](#layouts-columns) (or [rows](#layouts-rows), or [tabs](https://rmarkdown.rstudio.com/flexdashboard/using.html#tabsets)) with level 2 headers (`##`)
+- Boxes can be grouped into [columns](#layouts-columns) (or [rows](#layouts-rows), or [tabs](https://rmarkdown.rstudio.com/flexdashboard/using.html#tabsets)) with level 2 headers (`##` or `---`)
 
-- [Pages](#layouts-pages) can group other kinds of components with level 1 headers (`#`)
+- [Pages](#layouts-pages) can group other kinds of components with level 1 headers (`#` or `===`)
 
 - Much more advanced layout is possible (see [docs for details]((https://rmarkdown.rstudio.com/flexdashboard/layouts.html))
 

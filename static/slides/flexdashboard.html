@@ -53,7 +53,7 @@ class: inverse
 
 ### .fancy[Making Dashboards in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2019-01-14]
+.large[Alison Hill | rstudio::conf | 2019-01-15]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
@@ -74,13 +74,28 @@ By [Julia Silge](https://juliasilge.com/) ([blog](https://juliasilge.com/blog/fa
 ---
 class: middle, inverse, center
 
-&lt;img src="https://jenthompson.me/images/flexdash_example.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/flexdashboard-mosaic.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 --
 
 .footnote[
 
-By [Jennifer Thompson](https://jenthompson.me) ([blog](https://jenthompson.me/2018/02/09/flexdashboards-monitoring/);  [source code](https://github.com/jenniferthompson/MOSAICProgress))
+By [Jennifer Thompson](https://jenthompson.me)
+([blog](https://jenthompson.me/2018/02/09/flexdashboards-monitoring/);  [dashboard](https://jenthompson.me/examples/progressdash.html); [source code](https://github.com/jenniferthompson/MOSAICProgress))
+
+]
+
+---
+class: middle, inverse, center
+
+&lt;img src="img/flexdashboard-insight.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+--
+
+.footnote[
+
+By [Jennifer Thompson](https://jenthompson.me) ([dashboard](https://jenthompson.me/examples/insight_progress.html); [source code](https://github.com/jenniferthompson/INSIGHTProgress))
+
 ]
 
 
@@ -290,6 +305,15 @@ Column {data-width=350}
 ```
 
 
+```r
+Column {data-width=650}
+---
+  
+Column {data-width=350}
+---
+```
+
+
 ]
 
 --
@@ -318,11 +342,15 @@ Let's change our long dashed lines to `##` now together!
 
 ???
 
-What you call your columns does NOT matter- the text not displayed anywhere
+There are two ways to indicate a new column.
 
-The column layout is implicit and automatic.
+The first is to use three or more dashes. This is helpful for visually separating out the columns.
 
-You can apply widths to columns, this is what data-width does
+The column name goes above the dashes then, but what you call your columns does NOT matter- the text is not displayed anywhere
+
+You can apply widths to columns, this is what data-width does.
+
+You could also use two hashtags to demarcate your columns.
 
 
 
@@ -352,6 +380,15 @@ Row {data-height=650}
   
 Row {data-height=350}
 ------------------------------------
+```
+
+
+```r
+Row {data-height=650}
+*---
+  
+Row {data-height=350}
+*---
 ```
 
 
@@ -439,12 +476,12 @@ Add another level-one header (`#`) at the bottom, save, 🚀
 ```
 
 
-Technically, you can also demarcate pages with
+Technically, you can also demarcate pages with 3 or more `=`:
 
 
 ```r
 *Page 1
-*=====================================
+*===
 
 ## Column
   
@@ -477,9 +514,9 @@ template: yourturn
 
 + [Boxes](#layouts-boxes) with `###`
 
-+ [Columns](#layouts-columns) with `##` .fancy[(play with `{data-width=}`)]
++ [Columns](#layouts-columns) with `##` or `---` .fancy[(play with `{data-width=}`)]
 
-+ [Pages](#layouts-pages) with `#`
++ [Pages](#layouts-pages) with `#` or `===` 
 
 + Extras:
   + Update YAML to try out [rows](#layouts-rows) with `orientation: rows`; .fancy[play with `{data-height=}`]
@@ -493,9 +530,9 @@ template: yourturn
 
 - flexdashboards are composed of space-filling [boxes](#layouts-boxes) created with level 3 headers (`###`)
 
-- Boxes can be grouped into [columns](#layouts-columns) (or [rows](#layouts-rows), or [tabs](https://rmarkdown.rstudio.com/flexdashboard/using.html#tabsets)) with level 2 headers (`##`)
+- Boxes can be grouped into [columns](#layouts-columns) (or [rows](#layouts-rows), or [tabs](https://rmarkdown.rstudio.com/flexdashboard/using.html#tabsets)) with level 2 headers (`##` or `---`)
 
-- [Pages](#layouts-pages) can group other kinds of components with level 1 headers (`#`)
+- [Pages](#layouts-pages) can group other kinds of components with level 1 headers (`#` or `===`)
 
 - Much more advanced layout is possible (see [docs for details]((https://rmarkdown.rstudio.com/flexdashboard/layouts.html))
 
@@ -646,8 +683,8 @@ dygraph(lungDeaths) %&gt;%
 ]
 
 .pull-right[
-<div id="htmlwidget-34dc2a53534ae6954455" style="width:80%;height:504px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-34dc2a53534ae6954455">{"x":{"attrs":{"labels":["month","mdeaths","fdeaths"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1974-01-01T00:00:00.000Z","1974-02-01T00:00:00.000Z","1974-03-01T00:00:00.000Z","1974-04-01T00:00:00.000Z","1974-05-01T00:00:00.000Z","1974-06-01T00:00:00.000Z","1974-07-01T00:00:00.000Z","1974-08-01T00:00:00.000Z","1974-09-01T00:00:00.000Z","1974-10-01T00:00:00.000Z","1974-11-01T00:00:00.000Z","1974-12-01T00:00:00.000Z","1975-01-01T00:00:00.000Z","1975-02-01T00:00:00.000Z","1975-03-01T00:00:00.000Z","1975-04-01T00:00:00.000Z","1975-05-01T00:00:00.000Z","1975-06-01T00:00:00.000Z","1975-07-01T00:00:00.000Z","1975-08-01T00:00:00.000Z","1975-09-01T00:00:00.000Z","1975-10-01T00:00:00.000Z","1975-11-01T00:00:00.000Z","1975-12-01T00:00:00.000Z","1976-01-01T00:00:00.000Z","1976-02-01T00:00:00.000Z","1976-03-01T00:00:00.000Z","1976-04-01T00:00:00.000Z","1976-05-01T00:00:00.000Z","1976-06-01T00:00:00.000Z","1976-07-01T00:00:00.000Z","1976-08-01T00:00:00.000Z","1976-09-01T00:00:00.000Z","1976-10-01T00:00:00.000Z","1976-11-01T00:00:00.000Z","1976-12-01T00:00:00.000Z","1977-01-01T00:00:00.000Z","1977-02-01T00:00:00.000Z","1977-03-01T00:00:00.000Z","1977-04-01T00:00:00.000Z","1977-05-01T00:00:00.000Z","1977-06-01T00:00:00.000Z","1977-07-01T00:00:00.000Z","1977-08-01T00:00:00.000Z","1977-09-01T00:00:00.000Z","1977-10-01T00:00:00.000Z","1977-11-01T00:00:00.000Z","1977-12-01T00:00:00.000Z","1978-01-01T00:00:00.000Z","1978-02-01T00:00:00.000Z","1978-03-01T00:00:00.000Z","1978-04-01T00:00:00.000Z","1978-05-01T00:00:00.000Z","1978-06-01T00:00:00.000Z","1978-07-01T00:00:00.000Z","1978-08-01T00:00:00.000Z","1978-09-01T00:00:00.000Z","1978-10-01T00:00:00.000Z","1978-11-01T00:00:00.000Z","1978-12-01T00:00:00.000Z","1979-01-01T00:00:00.000Z","1979-02-01T00:00:00.000Z","1979-03-01T00:00:00.000Z","1979-04-01T00:00:00.000Z","1979-05-01T00:00:00.000Z","1979-06-01T00:00:00.000Z","1979-07-01T00:00:00.000Z","1979-08-01T00:00:00.000Z","1979-09-01T00:00:00.000Z","1979-10-01T00:00:00.000Z","1979-11-01T00:00:00.000Z","1979-12-01T00:00:00.000Z"],[2134,1863,1877,1877,1492,1249,1280,1131,1209,1492,1621,1846,2103,2137,2153,1833,1403,1288,1186,1133,1053,1347,1545,2066,2020,2750,2283,1479,1189,1160,1113,970,999,1208,1467,2059,2240,1634,1722,1801,1246,1162,1087,1013,959,1179,1229,1655,2019,2284,1942,1423,1340,1187,1098,1004,970,1140,1110,1812,2263,1820,1846,1531,1215,1075,1056,975,940,1081,1294,1341],[901,689,827,677,522,406,441,393,387,582,578,666,830,752,785,664,467,438,421,412,343,440,531,771,767,1141,896,532,447,420,376,330,357,445,546,764,862,660,663,643,502,392,411,348,387,385,411,638,796,853,737,546,530,446,431,362,387,430,425,679,821,785,727,612,478,429,405,379,393,411,487,574]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<div id="htmlwidget-0f33cb7c5c1d20df5a8d" style="width:80%;height:504px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0f33cb7c5c1d20df5a8d">{"x":{"attrs":{"labels":["month","mdeaths","fdeaths"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1974-01-01T00:00:00.000Z","1974-02-01T00:00:00.000Z","1974-03-01T00:00:00.000Z","1974-04-01T00:00:00.000Z","1974-05-01T00:00:00.000Z","1974-06-01T00:00:00.000Z","1974-07-01T00:00:00.000Z","1974-08-01T00:00:00.000Z","1974-09-01T00:00:00.000Z","1974-10-01T00:00:00.000Z","1974-11-01T00:00:00.000Z","1974-12-01T00:00:00.000Z","1975-01-01T00:00:00.000Z","1975-02-01T00:00:00.000Z","1975-03-01T00:00:00.000Z","1975-04-01T00:00:00.000Z","1975-05-01T00:00:00.000Z","1975-06-01T00:00:00.000Z","1975-07-01T00:00:00.000Z","1975-08-01T00:00:00.000Z","1975-09-01T00:00:00.000Z","1975-10-01T00:00:00.000Z","1975-11-01T00:00:00.000Z","1975-12-01T00:00:00.000Z","1976-01-01T00:00:00.000Z","1976-02-01T00:00:00.000Z","1976-03-01T00:00:00.000Z","1976-04-01T00:00:00.000Z","1976-05-01T00:00:00.000Z","1976-06-01T00:00:00.000Z","1976-07-01T00:00:00.000Z","1976-08-01T00:00:00.000Z","1976-09-01T00:00:00.000Z","1976-10-01T00:00:00.000Z","1976-11-01T00:00:00.000Z","1976-12-01T00:00:00.000Z","1977-01-01T00:00:00.000Z","1977-02-01T00:00:00.000Z","1977-03-01T00:00:00.000Z","1977-04-01T00:00:00.000Z","1977-05-01T00:00:00.000Z","1977-06-01T00:00:00.000Z","1977-07-01T00:00:00.000Z","1977-08-01T00:00:00.000Z","1977-09-01T00:00:00.000Z","1977-10-01T00:00:00.000Z","1977-11-01T00:00:00.000Z","1977-12-01T00:00:00.000Z","1978-01-01T00:00:00.000Z","1978-02-01T00:00:00.000Z","1978-03-01T00:00:00.000Z","1978-04-01T00:00:00.000Z","1978-05-01T00:00:00.000Z","1978-06-01T00:00:00.000Z","1978-07-01T00:00:00.000Z","1978-08-01T00:00:00.000Z","1978-09-01T00:00:00.000Z","1978-10-01T00:00:00.000Z","1978-11-01T00:00:00.000Z","1978-12-01T00:00:00.000Z","1979-01-01T00:00:00.000Z","1979-02-01T00:00:00.000Z","1979-03-01T00:00:00.000Z","1979-04-01T00:00:00.000Z","1979-05-01T00:00:00.000Z","1979-06-01T00:00:00.000Z","1979-07-01T00:00:00.000Z","1979-08-01T00:00:00.000Z","1979-09-01T00:00:00.000Z","1979-10-01T00:00:00.000Z","1979-11-01T00:00:00.000Z","1979-12-01T00:00:00.000Z"],[2134,1863,1877,1877,1492,1249,1280,1131,1209,1492,1621,1846,2103,2137,2153,1833,1403,1288,1186,1133,1053,1347,1545,2066,2020,2750,2283,1479,1189,1160,1113,970,999,1208,1467,2059,2240,1634,1722,1801,1246,1162,1087,1013,959,1179,1229,1655,2019,2284,1942,1423,1340,1187,1098,1004,970,1140,1110,1812,2263,1820,1846,1531,1215,1075,1056,975,940,1081,1294,1341],[901,689,827,677,522,406,441,393,387,582,578,666,830,752,785,664,467,438,421,412,343,440,531,771,767,1141,896,532,447,420,376,330,357,445,546,764,862,660,663,643,502,392,411,348,387,385,411,638,796,853,737,546,530,446,431,362,387,430,425,679,821,785,727,612,478,429,405,379,393,411,487,574]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
 ]
 
 ---
