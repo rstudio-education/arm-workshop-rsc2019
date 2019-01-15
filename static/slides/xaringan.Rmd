@@ -1053,7 +1053,7 @@ head(tx_names)
 
 ```{r}
 head(tx_names) %>% 
-  kable()
+  knitr::kable()
 ```
 
 ]
@@ -1069,7 +1069,7 @@ head(tx_names) %>%
 .right-column[
 ```{r}
 head(tx_names) %>% 
-  kable(format = "html")
+  knitr::kable(format = "html")
 ```
 
 ]
