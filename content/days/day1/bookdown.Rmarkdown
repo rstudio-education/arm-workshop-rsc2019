@@ -3,7 +3,7 @@ title: bookdown
 
 date: "`r Sys.Date()`"
 
-draft: true
+draft: false
 toc: true
 type: docs
 
@@ -52,11 +52,11 @@ slides %>%
 
 ```{r}
 activities <- tribble(~link, ~description, ~time,
-                      "../../../slides/bookdown.html#yourturn-1", "Edit your index.Rmd YAML", "03:00 minutes",
-                      "../../../slides/bookdown.html#yourturn-2", "Add new YAML metadata tags to your index.Rmd", "03:00 minutes",
-                      "../../../slides/bookdown.html#yourturn-3", "Add/edit chapters in your book", "10:00 minutes",
-                      "../../../slides/bookdown.html#yourturn-4", "Change how your sidebar TOC looks & works", "05:00 minutes",
-                      "../../../slides/bookdown.html#yourturn-5", "Tune the book output & publish", "15:00 minutes")
+                      "../../../slides/bookdown.html#yourturn1", "Edit your index.Rmd YAML", "03:00 minutes",
+                      "../../../slides/bookdown.html#yourturn2", "Add new YAML metadata tags to your index.Rmd", "03:00 minutes",
+                      "../../../slides/bookdown.html#yourturn3", "Add/edit chapters in your book", "10:00 minutes",
+                      "../../../slides/bookdown.html#yourturn4", "Change how your sidebar TOC looks & works", "05:00 minutes",
+                      "../../../slides/bookdown.html#yourturn5", "Tune the book output & publish", "15:00 minutes")
 
 activities %>% 
   mutate(activity = cell_spec(glue::glue('{emo::ji("sent")} Your turn #{
