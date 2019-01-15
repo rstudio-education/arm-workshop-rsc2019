@@ -1,7 +1,7 @@
 ---
 title: Day 1 schedule
 author: ''
-date: "2019-01-13"
+date: "2019-01-14"
 slug: day1
 categories: []
 tags: []
@@ -24,7 +24,7 @@ Here is a tentative timetable for Day 1:
 
 | Unit          | When          | What   |
 |---------------|---------------|--------|
-|                | 08:00-09:00   |:doughnut: BREAKFAST|
+|                | 08:00-09:00   |[:doughnut: BREAKFAST](day1-am)|
 | Session #1, AM  | 09:00-10:30   |[xaringan](xaringan)|
 |               | 10:30-11:00 |:coffee: BREAK   |
 | Session #2, AM  | 11:00-12:30 |[flexdashboard](flexdashboard) & [learnr](learnr)|
