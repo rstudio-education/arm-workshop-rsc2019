@@ -34,7 +34,7 @@ install.packages(arm_from_cran, dependencies = TRUE)
 ```{r gh_pkgs, purl = TRUE, eval = TRUE}
 arm_from_gh <- c('yihui/xaringan', 'rstudio/blogdown',
                  'rstudio-education/armcompanion', 
-                 'haozhu233/kableExtra')
+                 'haozhu233/kableExtra', 'apreshill/bakeoff')
 ```
 
 ```{r install_gh, purl = TRUE}
@@ -359,10 +359,30 @@ Does this code return `TRUE`?
 is_installed("armcompanion")
 ```
 
+## bakeoff
+
+You can download our workshop companion package from GitHub:
+
+```{r}
+remotes::install_github("apreshill/bakeoff", dependencies = TRUE)
+```
+
+Can you load the package?
+```{r}
+# should just work if installed
+library(bakeoff)
+```
+
+
+Does this code return `TRUE`?
+```{r eval = TRUE}
+is_installed("bakeoff")
+```
+
 ## Check all package installs {#all}
 
 ```{r check_all_installs, eval = TRUE, purl = TRUE}
-is_installed(c(arm_from_cran, 'xaringan', 'blogdown', 'armcompanion', 'kableExtra'))
+is_installed(c(arm_from_cran, 'xaringan', 'blogdown', 'armcompanion', 'kableExtra', 'bakeoff'))
 ```
 
 

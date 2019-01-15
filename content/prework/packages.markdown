@@ -35,7 +35,7 @@ install.packages(arm_from_cran, dependencies = TRUE)
 ```r
 arm_from_gh <- c('yihui/xaringan', 'rstudio/blogdown',
                  'rstudio-education/armcompanion', 
-                 'haozhu233/kableExtra')
+                 'haozhu233/kableExtra', 'apreshill/bakeoff')
 ```
 
 
@@ -74,7 +74,7 @@ Can you load the package?
 library(xaringan)
 ```
 
-You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">0.13</a> for how to check for all packages):
+You can also check to make sure an individual package is installed by running this function (see Section <a href="#all">0.14</a> for how to check for all packages):
 
 
 
@@ -461,11 +461,39 @@ is_installed("armcompanion")
 #         TRUE
 ```
 
+## bakeoff
+
+You can download our workshop companion package from GitHub:
+
+
+```r
+remotes::install_github("apreshill/bakeoff", dependencies = TRUE)
+```
+
+Can you load the package?
+
+```r
+# should just work if installed
+library(bakeoff)
+```
+
+
+Does this code return `TRUE`?
+
+```r
+is_installed("bakeoff")
+```
+
+```
+# bakeoff 
+#    TRUE
+```
+
 ## Check all package installs {#all}
 
 
 ```r
-is_installed(c(arm_from_cran, 'xaringan', 'blogdown', 'armcompanion', 'kableExtra'))
+is_installed(c(arm_from_cran, 'xaringan', 'blogdown', 'armcompanion', 'kableExtra', 'bakeoff'))
 ```
 
 ```
@@ -474,7 +502,9 @@ is_installed(c(arm_from_cran, 'xaringan', 'blogdown', 'armcompanion', 'kableExtr
 #         memor       webshot     tidyverse       remotes     babynames 
 #          TRUE          TRUE          TRUE          TRUE          TRUE 
 #        magick      xaringan      blogdown  armcompanion    kableExtra 
-#          TRUE          TRUE          TRUE          TRUE          TRUE
+#          TRUE          TRUE          TRUE          TRUE          TRUE 
+#       bakeoff 
+#          TRUE
 ```
 
 
