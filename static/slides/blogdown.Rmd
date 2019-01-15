@@ -576,7 +576,7 @@ What are we seeing here? Everything that is the public folder.
 
 # Add image
 
-Mouse over to `static/img/main/` and see `logo.jpg`? We can replace that file, or make new file. I'll replace mine with [this picture](https://en.wikipedia.org/wiki/Ada_Lovelace).
+Mouse over to `static/img/main/` and see `logo.jpg`? We can replace that file, or make new file. I'll replace mine with [this picture](https://raw.githubusercontent.com/apreshill/ada-blog/hugo-theme-future-imperfect/static/img/main/ada_square.jpg).
 
 ```{r eval = FALSE}
 [params.intro]
