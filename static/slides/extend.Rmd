@@ -19,6 +19,8 @@ class: center, middle, inverse
 
 ## [http://bit.ly/extendRMD](http://bit.ly/extendRMD)
 
+## [Exercises](https://github.com/haozhu233/rstudioconf19_arm_workshop_extending_rmd/raw/master/extRmd_exercises.zip)
+
 <style>
 @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
@@ -247,7 +249,7 @@ read_xml(as.character(simple_html_tag)) # Convert to xml node
 
 ### Add a row to the end of the table. This row has 3 cells "RStudio", "Conf", "2019". 
 
-[Exercise #1 Starting Files](https://github.com/haozhu233/rstudioconf19_arm_workshop_extending_rmd/raw/master/01_add_row_to_table.zip)
+[Exercise Bundle](https://github.com/haozhu233/rstudioconf19_arm_workshop_extending_rmd/raw/master/extRmd_exercises.zip)
 
 ```{r, eval= F}
 library(kableExtra)
@@ -677,7 +679,7 @@ class: middle, center
 
 ### Exercise #2: Create a pdf_document-like template can allow users to put in some description after title.
 
-[Exercise #2 Starting Files](https://github.com/haozhu233/rstudioconf19_arm_workshop_extending_rmd/raw/master/02_desc_document.zip) 
+[Exercise bundle](https://github.com/haozhu233/rstudioconf19_arm_workshop_extending_rmd/raw/master/extRmd_exercises.zip) 
 
 **Tips:**
 - For simplicity, please use the Pandoc approach. **In this case, the only file you only need to modify is template.tex.**  
