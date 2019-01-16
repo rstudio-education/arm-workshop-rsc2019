@@ -41,3 +41,5 @@ Jennifer Thompson <a href="https://jenthompson.me/" target="_blank"><i class="fa
 Jiena Gu <a href="https://www.jienamclellan.com/" target="_blank"><i class="fas fa-link"></i></a> <a href="https://github.com/jienagu" target="_blank"><i class="fab fa-github"></i></a> <a href="https://twitter.com/JoannaMelon" target="_blank"><i class="fab fa-twitter"></i></a>
 
 Hao Zhu <a href="https://haozhu233.github.io/" target="_blank"><i class="fas fa-link"></i></a> <a href="https://github.com/haozhu233" target="_blank"><i class="fab fa-github"></i></a> <a href="https://twitter.com/haozhu233" target="_blank"><i class="fab fa-twitter"></i></a>
+
+Eric Nantz <a href="https://r-podcast.org" target="_blank"><i class="fas fa-link"></i></a> <a href="https://github.com/rpodcast" target="_blank"><i class="fab fa-github"></i></a> <a href="https://twitter.com/thercast" target="_blank"><i class="fab fa-twitter"></i></a>
