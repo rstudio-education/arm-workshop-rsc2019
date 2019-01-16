@@ -279,29 +279,8 @@ enableGitInfo = false
 
 [[menu.main]]
   name = "Day 2"
-  weight = 3
-  identifier = "day2"
-  
-[[menu.main]]
-  name = "Day 2: Schedule"
-  pre = "<i class=\"fas fa-clock\"></i>"
   url = "/days/day2"
-  weight = 1
-  parent = "day2"
-
-[[menu.main]]
-  name = "Day 2: AM"
-  pre = "<i class=\"fas fa-sun\"></i>"
-  url = "/days/day2/day2-am"
-  weight = 2
-  parent = "day2"
-  
-[[menu.main]]
-  name = "Day 2: PM"
-  pre = "<i class=\"fas fa-moon\"></i>"
-  url = "/days/day2/day2-pm"
   weight = 3
-  parent = "day2"
 
 [[menu.main]]
   pre = "<i class=\"fab fa-github fa-lg\"></i>"

@@ -4,11 +4,11 @@ categories: []
 date: "2019-01-09"
 menu:
   day2:
-    name: Day 2 schedule
+    name: Day 2
     weight: 1
 slug: day2
 tags: []
-title: Day 2 schedule
+title: Day 2
 toc: true
 type: docs
 ---
