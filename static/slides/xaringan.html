@@ -52,7 +52,7 @@ background-size: cover
 
 ### .fancy[Making slides in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2019-01-15]
+.large[Alison Hill | rstudio::conf | 2019-01-16]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
@@ -250,8 +250,8 @@ With R Markdown, you are used to this:
 
 With **xaringan** (no `pandoc`!):
 
-<div id="htmlwidget-1410206f1b4a9a163b7e" style="width:75%;height:50%;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1410206f1b4a9a163b7e">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       rankdir = \"LR\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"xaringan\\n .Rmd\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.75\", fillcolor = \"#61acf0\"] \n  \"2\" [label = \"knitr\", shape = \"square\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#f0a561\"] \n  \"3\" [label = \".md\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#cbd20a\"] \n  \"4\" [label = \"remark.js via\\n xaringan::moon_reader\", shape = \"rectangle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"2\", fillcolor = \"#f0a561\"] \n  \"5\" [label = \"html\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#e74a2f\"] \n\"1\"->\"2\" [color = \"#3C3C3C\"] \n\"2\"->\"3\" [color = \"#3C3C3C\"] \n\"3\"->\"4\" [color = \"#3C3C3C\"] \n\"4\"->\"5\" [color = \"#3C3C3C\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c74c87937203d6d6391b" style="width:75%;height:50%;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c74c87937203d6d6391b">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       rankdir = \"LR\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"xaringan\\n .Rmd\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.75\", fillcolor = \"#61acf0\"] \n  \"2\" [label = \"knitr\", shape = \"square\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#f0a561\"] \n  \"3\" [label = \".md\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#cbd20a\"] \n  \"4\" [label = \"remark.js via\\n xaringan::moon_reader\", shape = \"rectangle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"2\", fillcolor = \"#f0a561\"] \n  \"5\" [label = \"html\", shape = \"circle\", color = \"#3C3C3C\", fontname = \"Lato\", fontcolor = \"black\", width = \"0.5\", fillcolor = \"#e74a2f\"] \n\"1\"->\"2\" [color = \"#3C3C3C\"] \n\"2\"->\"3\" [color = \"#3C3C3C\"] \n\"3\"->\"4\" [color = \"#3C3C3C\"] \n\"4\"->\"5\" [color = \"#3C3C3C\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 
@@ -350,7 +350,7 @@ Save this!
 
 ---
 
-# Moon reader 👨‍🚀
+# Moon reader 👩‍🚀
 
 
 
@@ -822,7 +822,7 @@ Poptocat on your right
 .footnote[
 [1] On a full slide, these are each 47% width.
 
-[2] You can also similarly use `.left-column[ ]` (20%) and `.right-column` (75%).
+[2] You can also similarly use `.left-column[]` and `.right-column[]`. The sizes are then 20% and 75%, respectively.
 ]
 
 
@@ -1171,8 +1171,8 @@ head(tx_names) %&gt;%
   datatable()
 ```
 
-<div id="htmlwidget-e9cc4a766e33c573cd2b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e9cc4a766e33c573cd2b">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-dead2866dbe686a231dc" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dead2866dbe686a231dc">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.00151168219105e-05,2.54267455460817e-05,2.77785494041501e-05,2.42434037738899e-05,2.83219258909606e-05,3.23510593174645e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 ]
 
@@ -1195,7 +1195,7 @@ head(tx_names) %&gt;%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#bdlchpcgmx .gt_table {
+#hnolavvfcw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1214,13 +1214,13 @@ head(tx_names) %&gt;%
   /* table.border.top.color */
 }
 
-#bdlchpcgmx .gt_heading {
+#hnolavvfcw .gt_heading {
   background-color: #FFFFFF;
   /* heading.background.color */
   border-bottom-color: #FFFFFF;
 }
 
-#bdlchpcgmx .gt_title {
+#hnolavvfcw .gt_title {
   color: #000000;
   font-size: 125%;
   /* heading.title.font.size */
@@ -1231,7 +1231,7 @@ head(tx_names) %&gt;%
   border-bottom-width: 0;
 }
 
-#bdlchpcgmx .gt_subtitle {
+#hnolavvfcw .gt_subtitle {
   color: #000000;
   font-size: 85%;
   /* heading.subtitle.font.size */
@@ -1242,7 +1242,7 @@ head(tx_names) %&gt;%
   border-top-width: 0;
 }
 
-#bdlchpcgmx .gt_bottom_border {
+#hnolavvfcw .gt_bottom_border {
   border-bottom-style: solid;
   /* heading.border.bottom.style */
   border-bottom-width: 2px;
@@ -1251,7 +1251,7 @@ head(tx_names) %&gt;%
   /* heading.border.bottom.color */
 }
 
-#bdlchpcgmx .gt_column_spanner {
+#hnolavvfcw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #A8A8A8;
@@ -1259,7 +1259,7 @@ head(tx_names) %&gt;%
   padding-bottom: 4px;
 }
 
-#bdlchpcgmx .gt_col_heading {
+#hnolavvfcw .gt_col_heading {
   color: #000000;
   background-color: #FFFFFF;
   /* column_labels.background.color */
@@ -1272,11 +1272,11 @@ head(tx_names) %&gt;%
   margin: 10px;
 }
 
-#bdlchpcgmx .gt_sep_right {
+#hnolavvfcw .gt_sep_right {
   border-right: 5px solid #FFFFFF;
 }
 
-#bdlchpcgmx .gt_group_heading {
+#hnolavvfcw .gt_group_heading {
   padding: 8px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1300,7 +1300,7 @@ head(tx_names) %&gt;%
   vertical-align: middle;
 }
 
-#bdlchpcgmx .gt_empty_group_heading {
+#hnolavvfcw .gt_empty_group_heading {
   padding: 0.5px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1324,29 +1324,29 @@ head(tx_names) %&gt;%
   vertical-align: middle;
 }
 
-#bdlchpcgmx .gt_striped tr:nth-child(even) {
+#hnolavvfcw .gt_striped tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#bdlchpcgmx .gt_row {
+#hnolavvfcw .gt_row {
   padding: 10px;
   /* row.padding */
   margin: 10px;
   vertical-align: middle;
 }
 
-#bdlchpcgmx .gt_stub {
+#hnolavvfcw .gt_stub {
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #A8A8A8;
   padding-left: 12px;
 }
 
-#bdlchpcgmx .gt_stub.gt_row {
+#hnolavvfcw .gt_stub.gt_row {
   background-color: #FFFFFF;
 }
 
-#bdlchpcgmx .gt_summary_row {
+#hnolavvfcw .gt_summary_row {
   background-color: #FFFFFF;
   /* summary_row.background.color */
   padding: 6px;
@@ -1355,13 +1355,13 @@ head(tx_names) %&gt;%
   /* summary_row.text_transform */
 }
 
-#bdlchpcgmx .gt_first_summary_row {
+#hnolavvfcw .gt_first_summary_row {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
 }
 
-#bdlchpcgmx .gt_table_body {
+#hnolavvfcw .gt_table_body {
   border-top-style: solid;
   /* field.border.top.style */
   border-top-width: 2px;
@@ -1376,55 +1376,55 @@ head(tx_names) %&gt;%
   /* field.border.bottom.color */
 }
 
-#bdlchpcgmx .gt_footnote {
+#hnolavvfcw .gt_footnote {
   font-size: 90%;
   /* footnote.font.size */
   padding: 4px;
   /* footnote.padding */
 }
 
-#bdlchpcgmx .gt_sourcenote {
+#hnolavvfcw .gt_sourcenote {
   font-size: 90%;
   /* sourcenote.font.size */
   padding: 4px;
   /* sourcenote.padding */
 }
 
-#bdlchpcgmx .gt_center {
+#hnolavvfcw .gt_center {
   text-align: center;
 }
 
-#bdlchpcgmx .gt_left {
+#hnolavvfcw .gt_left {
   text-align: left;
 }
 
-#bdlchpcgmx .gt_right {
+#hnolavvfcw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bdlchpcgmx .gt_font_normal {
+#hnolavvfcw .gt_font_normal {
   font-weight: normal;
 }
 
-#bdlchpcgmx .gt_font_bold {
+#hnolavvfcw .gt_font_bold {
   font-weight: bold;
 }
 
-#bdlchpcgmx .gt_font_italic {
+#hnolavvfcw .gt_font_italic {
   font-style: italic;
 }
 
-#bdlchpcgmx .gt_super {
+#hnolavvfcw .gt_super {
   font-size: 65%;
 }
 
-#bdlchpcgmx .gt_footnote_glyph {
+#hnolavvfcw .gt_footnote_glyph {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="bdlchpcgmx" style="overflow-x:auto;"><!--gt table start-->
+<div id="hnolavvfcw" style="overflow-x:auto;"><!--gt table start-->
 <table class='gt_table'>
 <tr>
 <th class='gt_col_heading gt_right' rowspan='1' colspan='1'>year</th>
@@ -1497,8 +1497,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
 ```
 
-<div id="htmlwidget-b6adfe934f60d463ffe1" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b6adfe934f60d463ffe1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[30.2621,-97.7382],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-14ef1d69e256e35d6f8d" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-14ef1d69e256e35d6f8d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[30.2621,-97.7382],17,[]]},"evals":[],"jsHooks":[]}</script>
 ]
 
 

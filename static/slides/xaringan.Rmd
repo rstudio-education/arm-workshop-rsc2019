@@ -840,7 +840,7 @@ Poptocat on your right
 .footnote[
 [1] On a full slide, these are each 47% width.
 
-[2] You can also similarly use `.left-column[ ]` (20%) and `.right-column` (75%).
+[2] You can also similarly use `.left-column[]` and `.right-column[]`. The sizes are then 20% and 75%, respectively.
 ]
 
 
