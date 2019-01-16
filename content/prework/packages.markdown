@@ -22,7 +22,7 @@ For this workshop, you'll need to install several R packages. This page will gui
 
 ```r
 arm_from_cran <- c("flexdashboard", "learnr", "bookdown",
-                   "officer", "rticles", "memor", "webshot",
+                   "officer", "rticles", "webshot",
                    "tidyverse", "remotes", "babynames", "magick")
 ```
 
@@ -35,7 +35,8 @@ install.packages(arm_from_cran, dependencies = TRUE)
 ```r
 arm_from_gh <- c('yihui/xaringan', 'rstudio/blogdown',
                  'rstudio-education/armcompanion', 
-                 'haozhu233/kableExtra', 'apreshill/bakeoff')
+                 'haozhu233/kableExtra', 'apreshill/bakeoff',
+                 'hebrewseniorlife/memor')
 ```
 
 
@@ -378,11 +379,10 @@ is_installed("magick")
 
 ## memor {#memor}
 
-Install the [**memor** package](https://github.com/hebrewseniorlife/memor) from CRAN as follows:
-
+Install the [**memor** package](https://github.com/hebrewseniorlife/memor) from GitHub as follows:
 
 ```r
-install.packages("memor", dependencies = TRUE)
+remotes::install_packages("hebrewseniorlife/memor", dependencies = TRUE)
 ```
 
 Can you load the package?

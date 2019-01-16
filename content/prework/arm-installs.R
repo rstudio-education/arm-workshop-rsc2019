@@ -1,6 +1,6 @@
 ## ----cran_pkgs, purl = TRUE, eval = TRUE---------------------------------
 arm_from_cran <- c("flexdashboard", "learnr", "bookdown",
-                   "officer", "rticles", "memor", "webshot",
+                   "officer", "rticles", "webshot",
                    "tidyverse", "remotes", "babynames", "magick")
 
 ## ----install_cran, purl = TRUE-------------------------------------------
@@ -9,7 +9,8 @@ install.packages(arm_from_cran, dependencies = TRUE)
 ## ----gh_pkgs, purl = TRUE, eval = TRUE-----------------------------------
 arm_from_gh <- c('yihui/xaringan', 'rstudio/blogdown',
                  'rstudio-education/armcompanion', 
-                 'haozhu233/kableExtra', 'apreshill/bakeoff')
+                 'haozhu233/kableExtra', 'apreshill/bakeoff',
+                 'hebrewseniorlife/memor')
 
 ## ----install_gh, purl = TRUE---------------------------------------------
 remotes::install_github(arm_from_gh, dependencies = TRUE)
