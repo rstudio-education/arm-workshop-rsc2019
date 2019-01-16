@@ -281,12 +281,18 @@ enableGitInfo = false
   name = "Day 2"
   url = "/days/day2"
   weight = 3
+  
+[[menu.main]]
+  pre = "<i class=\"fas fa-comments fa-lg\"></i>"
+  name = "Chat"
+  url = "https://gitter.im/arm-austin/Lobby"
+  weight = 4
 
 [[menu.main]]
   pre = "<i class=\"fab fa-github fa-lg\"></i>"
   name = ""
   url = "https://github.com/rstudio-education/rmarkdown-extensions-conf19"
-  weight = 4
+  weight = 5
 
 
 # Search.
