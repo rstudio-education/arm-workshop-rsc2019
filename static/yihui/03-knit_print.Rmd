@@ -1,0 +1,23 @@
+A normal data frame:
+
+```{r, test-data}
+head(iris)
+```
+
+Register a `knit_print` method on `data.frame`:
+
+```{r}
+library(knitr)
+# define a method for objects of the class data.frame
+knit_print.data.frame = function(x, ...) {
+  res = paste(c('', '', kable(x)), collapse = '\n')
+  asis_output(res)
+}
+# register the method
+registerS3method("knit_print", "data.frame", knit_print.data.frame)
+```
+
+Print the data frame again:
+
+```{r, test-data}
+```
