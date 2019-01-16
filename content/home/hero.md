@@ -1,8 +1,8 @@
 ---
 active: true
 cta:
-  label: <i class="fas fa-pen-fancy"></i> Register
-  url: https://www.cvent.com/events/rstudio-conf-austin/registration-dd6d75526f3c4554b67c4de32aeffb47.aspx?fqp=true
+  label: <i class="fas fa-download"></i> Download Workshop Files
+  url: https://github.com/rstudio-education/arm-workshop-rsc2019/archive/master.zip
 date: "2017-10-15T00:00:00-07:00"
 img: bandthree2.png
 title: Welcome
