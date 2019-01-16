@@ -25,7 +25,7 @@ Here is a tentative timetable for Day 2:
 | Unit          | When          | What   |
 |---------------|---------------|--------|
 |                | 08:00-09:00   |:doughnut: BREAKFAST|
-| Session #1, AM  | 09:00-09:30   | [R Markdown via command line](https://bit.ly/arm-xie) <br> :arrow_right: [Download example .Rmd](../../../yihui/01-params-controls.Rmd) |
+| Session #1, AM  | 09:00-09:30   | [R Markdown via command line](https://bit.ly/arm-xie) <br> :arrow_right: [Download `01-params-controls.Rmd`](../../../yihui/01-params-controls.Rmd) |
 |               | 09:30-10:00 | [Understanding Pandoc's Markdown](https://bit.ly/arm-xie#26)   |
 |               | 10:00-10:30 | [Lesser-known features of knitr](https://bit.ly/arm-xie#39)   |
 |               | 10:30-11:00 |:coffee: BREAK   |
