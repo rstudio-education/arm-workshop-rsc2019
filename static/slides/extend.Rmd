@@ -247,6 +247,8 @@ read_xml(as.character(simple_html_tag)) # Convert to xml node
 
 ### Add a row to the end of the table. This row has 3 cells "RStudio", "Conf", "2019". 
 
+[Exercise #1 Starting Files](https://github.com/haozhu233/rstudioconf19_arm_workshop_extending_rmd/raw/master/01_add_row_to_table.zip)
+
 ```{r, eval= F}
 library(kableExtra)
 library(xml2)
@@ -675,7 +677,7 @@ class: middle, center
 
 ### Exercise #2: Create a pdf_document-like template can allow users to put in some description after title.
 
-You can start from `02_desc_document` in your folder. 
+[Exercise #2 Starting Files](https://github.com/haozhu233/rstudioconf19_arm_workshop_extending_rmd/raw/master/02_desc_document.zip) 
 
 **Tips:**
 - For simplicity, please use the Pandoc approach. **In this case, the only file you only need to modify is template.tex.**  
