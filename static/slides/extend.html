@@ -4,7 +4,7 @@
     <title>Extending R Markdown</title>
     <meta charset="utf-8">
     <meta name="author" content="Hao Zhu" />
-    <meta name="date" content="2019-01-14" />
+    <meta name="date" content="2019-01-16" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
     <script src="libs/kePrint/kePrint.js"></script>
@@ -15,12 +15,31 @@ class: center, middle, inverse, title-slide
 
 # Extending R Markdown
 ### Hao Zhu
-### 2019-01-14
+### 2019-01-16
 
 ---
 
 
 
+
+class: center, middle, inverse
+
+## [http://bit.ly/extendRMD](http://bit.ly/extendRMD)
+
+&lt;style&gt;
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
+
+body { font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif; }
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+}
+.remark-code, .remark-inline-code { font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace; }
+&lt;/style&gt;
+
+---
 
 # Recap
 - `Knit` button workflow
@@ -694,7 +713,7 @@ gt_example
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#qhvmcnjoes .gt_table {
+#cncgdgfrwc .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -713,13 +732,13 @@ gt_example
   /* table.border.top.color */
 }
 
-#qhvmcnjoes .gt_heading {
+#cncgdgfrwc .gt_heading {
   background-color: #FFFFFF;
   /* heading.background.color */
   border-bottom-color: #FFFFFF;
 }
 
-#qhvmcnjoes .gt_title {
+#cncgdgfrwc .gt_title {
   color: #000000;
   font-size: 125%;
   /* heading.title.font.size */
@@ -730,7 +749,7 @@ gt_example
   border-bottom-width: 0;
 }
 
-#qhvmcnjoes .gt_subtitle {
+#cncgdgfrwc .gt_subtitle {
   color: #000000;
   font-size: 85%;
   /* heading.subtitle.font.size */
@@ -741,7 +760,7 @@ gt_example
   border-top-width: 0;
 }
 
-#qhvmcnjoes .gt_bottom_border {
+#cncgdgfrwc .gt_bottom_border {
   border-bottom-style: solid;
   /* heading.border.bottom.style */
   border-bottom-width: 2px;
@@ -750,7 +769,7 @@ gt_example
   /* heading.border.bottom.color */
 }
 
-#qhvmcnjoes .gt_column_spanner {
+#cncgdgfrwc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #A8A8A8;
@@ -758,7 +777,7 @@ gt_example
   padding-bottom: 4px;
 }
 
-#qhvmcnjoes .gt_col_heading {
+#cncgdgfrwc .gt_col_heading {
   color: #000000;
   background-color: #FFFFFF;
   /* column_labels.background.color */
@@ -771,11 +790,11 @@ gt_example
   margin: 10px;
 }
 
-#qhvmcnjoes .gt_sep_right {
+#cncgdgfrwc .gt_sep_right {
   border-right: 5px solid #FFFFFF;
 }
 
-#qhvmcnjoes .gt_group_heading {
+#cncgdgfrwc .gt_group_heading {
   padding: 8px;
   color: #000000;
   background-color: #FFFFFF;
@@ -799,7 +818,7 @@ gt_example
   vertical-align: middle;
 }
 
-#qhvmcnjoes .gt_empty_group_heading {
+#cncgdgfrwc .gt_empty_group_heading {
   padding: 0.5px;
   color: #000000;
   background-color: #FFFFFF;
@@ -823,29 +842,29 @@ gt_example
   vertical-align: middle;
 }
 
-#qhvmcnjoes .gt_striped tr:nth-child(even) {
+#cncgdgfrwc .gt_striped {
   background-color: #f2f2f2;
 }
 
-#qhvmcnjoes .gt_row {
+#cncgdgfrwc .gt_row {
   padding: 10px;
   /* row.padding */
   margin: 10px;
   vertical-align: middle;
 }
 
-#qhvmcnjoes .gt_stub {
+#cncgdgfrwc .gt_stub {
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #A8A8A8;
   padding-left: 12px;
 }
 
-#qhvmcnjoes .gt_stub.gt_row {
+#cncgdgfrwc .gt_stub.gt_row {
   background-color: #FFFFFF;
 }
 
-#qhvmcnjoes .gt_summary_row {
+#cncgdgfrwc .gt_summary_row {
   background-color: #FFFFFF;
   /* summary_row.background.color */
   padding: 6px;
@@ -854,13 +873,13 @@ gt_example
   /* summary_row.text_transform */
 }
 
-#qhvmcnjoes .gt_first_summary_row {
+#cncgdgfrwc .gt_first_summary_row {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
 }
 
-#qhvmcnjoes .gt_table_body {
+#cncgdgfrwc .gt_table_body {
   border-top-style: solid;
   /* field.border.top.style */
   border-top-width: 2px;
@@ -875,55 +894,55 @@ gt_example
   /* field.border.bottom.color */
 }
 
-#qhvmcnjoes .gt_footnote {
+#cncgdgfrwc .gt_footnote {
   font-size: 90%;
   /* footnote.font.size */
   padding: 4px;
   /* footnote.padding */
 }
 
-#qhvmcnjoes .gt_sourcenote {
+#cncgdgfrwc .gt_sourcenote {
   font-size: 90%;
   /* sourcenote.font.size */
   padding: 4px;
   /* sourcenote.padding */
 }
 
-#qhvmcnjoes .gt_center {
+#cncgdgfrwc .gt_center {
   text-align: center;
 }
 
-#qhvmcnjoes .gt_left {
+#cncgdgfrwc .gt_left {
   text-align: left;
 }
 
-#qhvmcnjoes .gt_right {
+#cncgdgfrwc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qhvmcnjoes .gt_font_normal {
+#cncgdgfrwc .gt_font_normal {
   font-weight: normal;
 }
 
-#qhvmcnjoes .gt_font_bold {
+#cncgdgfrwc .gt_font_bold {
   font-weight: bold;
 }
 
-#qhvmcnjoes .gt_font_italic {
+#cncgdgfrwc .gt_font_italic {
   font-style: italic;
 }
 
-#qhvmcnjoes .gt_super {
+#cncgdgfrwc .gt_super {
   font-size: 65%;
 }
 
-#qhvmcnjoes .gt_footnote_glyph {
+#cncgdgfrwc .gt_footnote_glyph {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="qhvmcnjoes" style="overflow-x:auto;"><!--gt table start-->
+<div id="cncgdgfrwc" style="overflow-x:auto;"><!--gt table start-->
 <table class='gt_table'>
 <tr>
 <th class='gt_col_heading gt_left' rowspan='1' colspan='1'></th>
@@ -932,7 +951,7 @@ gt_example
 <th class='gt_col_heading gt_right' rowspan='1' colspan='1'>disp</th>
 <th class='gt_col_heading gt_right' rowspan='1' colspan='1'>hp</th>
 </tr>
-<tbody class='gt_table_body gt_striped'>
+<tbody class='gt_table_body'>
 <tr>
 <td class='gt_row gt_stub gt_left'>Mazda RX4</td>
 <td class='gt_row gt_right'>21.0</td>
@@ -942,10 +961,10 @@ gt_example
 </tr>
 <tr>
 <td class='gt_row gt_stub gt_left'>Mazda RX4 Wag</td>
-<td class='gt_row gt_right'>21.0</td>
-<td class='gt_row gt_right'>6</td>
-<td class='gt_row gt_right'>160</td>
-<td class='gt_row gt_right'>110</td>
+<td class='gt_row gt_right gt_striped'>21.0</td>
+<td class='gt_row gt_right gt_striped'>6</td>
+<td class='gt_row gt_right gt_striped'>160</td>
+<td class='gt_row gt_right gt_striped'>110</td>
 </tr>
 <tr>
 <td class='gt_row gt_stub gt_left'>Datsun 710</td>
@@ -976,7 +995,7 @@ mtcars[1:3, 1:4] %&gt;%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#sevzzfrxzi .gt_table {
+#gcipnryisq .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -995,13 +1014,13 @@ mtcars[1:3, 1:4] %&gt;%
   /* table.border.top.color */
 }
 
-#sevzzfrxzi .gt_heading {
+#gcipnryisq .gt_heading {
   background-color: #FFFFFF;
   /* heading.background.color */
   border-bottom-color: #FFFFFF;
 }
 
-#sevzzfrxzi .gt_title {
+#gcipnryisq .gt_title {
   color: #000000;
   font-size: 125%;
   /* heading.title.font.size */
@@ -1012,7 +1031,7 @@ mtcars[1:3, 1:4] %&gt;%
   border-bottom-width: 0;
 }
 
-#sevzzfrxzi .gt_subtitle {
+#gcipnryisq .gt_subtitle {
   color: #000000;
   font-size: 85%;
   /* heading.subtitle.font.size */
@@ -1023,7 +1042,7 @@ mtcars[1:3, 1:4] %&gt;%
   border-top-width: 0;
 }
 
-#sevzzfrxzi .gt_bottom_border {
+#gcipnryisq .gt_bottom_border {
   border-bottom-style: solid;
   /* heading.border.bottom.style */
   border-bottom-width: 2px;
@@ -1032,7 +1051,7 @@ mtcars[1:3, 1:4] %&gt;%
   /* heading.border.bottom.color */
 }
 
-#sevzzfrxzi .gt_column_spanner {
+#gcipnryisq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #A8A8A8;
@@ -1040,7 +1059,7 @@ mtcars[1:3, 1:4] %&gt;%
   padding-bottom: 4px;
 }
 
-#sevzzfrxzi .gt_col_heading {
+#gcipnryisq .gt_col_heading {
   color: #000000;
   background-color: #FFFFFF;
   /* column_labels.background.color */
@@ -1053,11 +1072,11 @@ mtcars[1:3, 1:4] %&gt;%
   margin: 10px;
 }
 
-#sevzzfrxzi .gt_sep_right {
+#gcipnryisq .gt_sep_right {
   border-right: 5px solid #FFFFFF;
 }
 
-#sevzzfrxzi .gt_group_heading {
+#gcipnryisq .gt_group_heading {
   padding: 8px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1081,7 +1100,7 @@ mtcars[1:3, 1:4] %&gt;%
   vertical-align: middle;
 }
 
-#sevzzfrxzi .gt_empty_group_heading {
+#gcipnryisq .gt_empty_group_heading {
   padding: 0.5px;
   color: #000000;
   background-color: #FFFFFF;
@@ -1105,29 +1124,29 @@ mtcars[1:3, 1:4] %&gt;%
   vertical-align: middle;
 }
 
-#sevzzfrxzi .gt_striped tr:nth-child(even) {
+#gcipnryisq .gt_striped {
   background-color: #f2f2f2;
 }
 
-#sevzzfrxzi .gt_row {
+#gcipnryisq .gt_row {
   padding: 10px;
   /* row.padding */
   margin: 10px;
   vertical-align: middle;
 }
 
-#sevzzfrxzi .gt_stub {
+#gcipnryisq .gt_stub {
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #A8A8A8;
   padding-left: 12px;
 }
 
-#sevzzfrxzi .gt_stub.gt_row {
+#gcipnryisq .gt_stub.gt_row {
   background-color: #FFFFFF;
 }
 
-#sevzzfrxzi .gt_summary_row {
+#gcipnryisq .gt_summary_row {
   background-color: #FFFFFF;
   /* summary_row.background.color */
   padding: 6px;
@@ -1136,13 +1155,13 @@ mtcars[1:3, 1:4] %&gt;%
   /* summary_row.text_transform */
 }
 
-#sevzzfrxzi .gt_first_summary_row {
+#gcipnryisq .gt_first_summary_row {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
 }
 
-#sevzzfrxzi .gt_table_body {
+#gcipnryisq .gt_table_body {
   border-top-style: solid;
   /* field.border.top.style */
   border-top-width: 2px;
@@ -1157,85 +1176,84 @@ mtcars[1:3, 1:4] %&gt;%
   /* field.border.bottom.color */
 }
 
-#sevzzfrxzi .gt_footnote {
+#gcipnryisq .gt_footnote {
   font-size: 90%;
   /* footnote.font.size */
   padding: 4px;
   /* footnote.padding */
 }
 
-#sevzzfrxzi .gt_sourcenote {
+#gcipnryisq .gt_sourcenote {
   font-size: 90%;
   /* sourcenote.font.size */
   padding: 4px;
   /* sourcenote.padding */
 }
 
-#sevzzfrxzi .gt_center {
+#gcipnryisq .gt_center {
   text-align: center;
 }
 
-#sevzzfrxzi .gt_left {
+#gcipnryisq .gt_left {
   text-align: left;
 }
 
-#sevzzfrxzi .gt_right {
+#gcipnryisq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sevzzfrxzi .gt_font_normal {
+#gcipnryisq .gt_font_normal {
   font-weight: normal;
 }
 
-#sevzzfrxzi .gt_font_bold {
+#gcipnryisq .gt_font_bold {
   font-weight: bold;
 }
 
-#sevzzfrxzi .gt_font_italic {
+#gcipnryisq .gt_font_italic {
   font-style: italic;
 }
 
-#sevzzfrxzi .gt_super {
+#gcipnryisq .gt_super {
   font-size: 65%;
 }
 
-#sevzzfrxzi .gt_footnote_glyph {
+#gcipnryisq .gt_footnote_glyph {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="sevzzfrxzi" style="overflow-x:auto;"><!--gt table start-->
+<div id="gcipnryisq" style="overflow-x:auto;"><!--gt table start-->
 <table class='gt_table'>
 <tr>
 <th class='gt_col_heading gt_left' rowspan='1' colspan='1'></th>
 <th class='gt_col_heading gt_right' rowspan='1' colspan='1'>mpg</th>
-<th class='gt_col_heading gt_right' rowspan='1' colspan='1'>cyl</th>
 <th class='gt_col_heading gt_right' rowspan='1' colspan='1'>disp</th>
 <th class='gt_col_heading gt_right' rowspan='1' colspan='1'>hp</th>
 </tr>
-<tbody class='gt_table_body gt_striped'>
+<tbody class='gt_table_body'>
 <tr class='gt_group_heading_row'>
-<td colspan='5' class='gt_empty_group_heading'></td>
+<td colspan='4' class='gt_group_heading'>6</td>
 </tr>
 <tr>
 <td class='gt_row gt_stub gt_left'>Mazda RX4</td>
 <td class='gt_row gt_right'>$21.00</td>
-<td class='gt_row gt_right'>6</td>
 <td class='gt_row gt_right'>160</td>
 <td class='gt_row gt_right'>110</td>
 </tr>
 <tr>
 <td class='gt_row gt_stub gt_left'>Mazda RX4 Wag</td>
-<td class='gt_row gt_right'>$21.00</td>
-<td class='gt_row gt_right'>6</td>
-<td class='gt_row gt_right'>160</td>
-<td class='gt_row gt_right'>110</td>
+<td class='gt_row gt_right gt_striped'>$21.00</td>
+<td class='gt_row gt_right gt_striped'>160</td>
+<td class='gt_row gt_right gt_striped'>110</td>
+</tr>
+<tr class='gt_group_heading_row'>
+<td colspan='4' class='gt_group_heading'>4</td>
 </tr>
 <tr>
 <td class='gt_row gt_stub gt_left'>Datsun 710</td>
 <td class='gt_row gt_right'>$22.80</td>
-<td class='gt_row gt_right'>4</td>
 <td class='gt_row gt_right'>108</td>
 <td class='gt_row gt_right'>93</td>
 </tr>
@@ -1283,10 +1301,10 @@ gt_example %&gt;%
 &lt;tr grouplength="2"&gt;&lt;td colspan="5" style="background-color: gray;color:white;padding-left: 10px;"&gt;&lt;strong&gt;Test&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style="padding:10px;margin:10px;vertical-align:middle;border-right-style:solid;border-right-width:2px;border-right-color:#A8A8A8;padding-left:12px;text-align:left; padding-left: 2em;" indentlevel="1"&gt;Mazda RX4 Wag&lt;/td&gt;
-&lt;td style="padding:10px;margin:10px;vertical-align:middle;text-align:right;font-variant-numeric:tabular-nums;"&gt;21.0&lt;/td&gt;
-&lt;td style="padding:10px;margin:10px;vertical-align:middle;text-align:right;font-variant-numeric:tabular-nums;font-weight: bold;font-style: italic;color: red;"&gt;6&lt;/td&gt;
-&lt;td style="padding:10px;margin:10px;vertical-align:middle;text-align:right;font-variant-numeric:tabular-nums;"&gt;160&lt;/td&gt;
-&lt;td style="padding:10px;margin:10px;vertical-align:middle;text-align:right;font-variant-numeric:tabular-nums;"&gt;110&lt;/td&gt;
+&lt;td style="background-color:#f2f2f2;padding:10px;margin:10px;vertical-align:middle;text-align:right;font-variant-numeric:tabular-nums;"&gt;21.0&lt;/td&gt;
+&lt;td style="background-color:#f2f2f2;padding:10px;margin:10px;vertical-align:middle;text-align:right;font-variant-numeric:tabular-nums;font-weight: bold;font-style: italic;color: red;"&gt;6&lt;/td&gt;
+&lt;td style="background-color:#f2f2f2;padding:10px;margin:10px;vertical-align:middle;text-align:right;font-variant-numeric:tabular-nums;"&gt;160&lt;/td&gt;
+&lt;td style="background-color:#f2f2f2;padding:10px;margin:10px;vertical-align:middle;text-align:right;font-variant-numeric:tabular-nums;"&gt;110&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style="padding:10px;margin:10px;vertical-align:middle;border-right-style:solid;border-right-width:2px;border-right-color:#A8A8A8;padding-left:12px;text-align:left; padding-left: 2em;" indentlevel="1"&gt;Datsun 710&lt;/td&gt;
@@ -1449,9 +1467,25 @@ rmarkdown::pdf_document()
 ## 
 ## 
 ## 
+## $knitr$opts_chunk$crop
+## [1] TRUE
+## 
 ## 
 ## $knitr$knit_hooks
-## NULL
+## $knitr$knit_hooks$crop
+## function (before, options, envir) 
+## {
+##     ext = options$fig.ext
+##     if (options$dev == "tikz" &amp;&amp; options$external) 
+##         ext = "pdf"
+##     if (before || (fig.num &lt;- options$fig.num %n% 0L) == 0L) 
+##         return()
+##     paths = all_figs(options, ext, fig.num)
+##     in_base_dir(for (f in paths) plot_crop(f))
+## }
+## &lt;bytecode: 0x7f9d189cbd88&gt;
+## &lt;environment: namespace:knitr&gt;
+## 
 ## 
 ## $knitr$opts_hooks
 ## NULL
@@ -1512,16 +1546,16 @@ rmarkdown::pdf_document()
 ##             files_dir, output_dir)
 ##     else invisible(NULL)
 ## }
-## &lt;bytecode: 0x7f9c0c07de38&gt;
-## &lt;environment: 0x7f9c0c07c5b8&gt;
+## &lt;bytecode: 0x7f9d189783e0&gt;
+## &lt;environment: 0x7f9d1897ab88&gt;
 ## 
 ## $intermediates_generator
 ## function (...) 
 ## {
 ##     general_intermediates_generator(saved_files_dir, ...)
 ## }
-## &lt;bytecode: 0x7f9c0c07d310&gt;
-## &lt;environment: 0x7f9c0c07c5b8&gt;
+## &lt;bytecode: 0x7f9d1897b8e0&gt;
+## &lt;environment: 0x7f9d1897ab88&gt;
 ## 
 ## $post_processor
 ## NULL
