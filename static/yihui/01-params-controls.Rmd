@@ -1,0 +1,34 @@
+---
+title: My Document
+output: html_fragment
+params:
+  year:
+    label: "Year"
+    value: 2017
+    input: slider
+    min: 2010
+    max: 2018
+    step: 1
+    sep: ""
+  region:
+    label: "Region:"
+    value: Europe
+    input: select
+    choices: [North America, Europe, Asia, Africa]
+  printcode:
+    label: "Display Code:"
+    value: TRUE
+  data:
+    label: "Input dataset:"
+    value: results.csv
+    input: file
+  pass:
+    label: "Password"
+    value: ""
+    input: password
+---
+
+```{r}
+str(params)
+```
+
