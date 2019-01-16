@@ -25,11 +25,11 @@ Here is a tentative timetable for Day 2:
 | Unit          | When          | What   |
 |---------------|---------------|--------|
 |                | 08:00-09:00   |:doughnut: BREAKFAST|
-| Session #1, AM  | 09:00-09:30   | R Markdown via command line |
-|               | 09:30-10:00 | Understanding Pandoc's Markdown   |
-|               | 10:00-10:30 | Lesser-known features of knitr   |
+| Session #1, AM  | 09:00-09:30   | [R Markdown via command line](https://bit.ly/arm-xie) |
+|               | 09:30-10:00 | [Understanding Pandoc's Markdown](https://bit.ly/arm-xie#26)   |
+|               | 10:00-10:30 | [Lesser-known features of knitr](https://bit.ly/arm-xie#39)   |
 |               | 10:30-11:00 |:coffee: BREAK   |
-| Session #2, AM  | 11:00-12:30 | R Markdown output formats |
+| Session #2, AM  | 11:00-12:30 | [R Markdown output formats](https://bit.ly/arm-xie#63) |
 |               | 12:30-02:00  |:fork_and_knife: LUNCH |
 | Session #3, PM  | 02:00-03:30   | [Extending R Markdown (Hao Zhu)](extend) |
 |              | 03:30-04:00   |:coffee: BREAK   |
@@ -38,3 +38,5 @@ Here is a tentative timetable for Day 2:
 |               |05:30-07:30 | :tropical_drink: `rstudio::conf` reception |
 
 Yihui's slides are available at https://bit.ly/arm-xie.
+
+Example code is available at http://bit.ly/arm-exm.
