@@ -26,12 +26,12 @@ Here is a tentative timetable for Day 2:
 |---------------|---------------|--------|
 |                | 08:00-09:00   |:doughnut: BREAKFAST|
 | Session #1, AM  | 09:00-09:30   | [R Markdown via command line](https://bit.ly/arm-xie) <br> :arrow_right: [Download `01-params-controls.Rmd`](../../../yihui/01-params-controls.Rmd) |
-|               | 09:30-10:00 | [Understanding Pandoc's Markdown](https://bit.ly/arm-xie#26)   |
+|               | 09:30-10:00 | [Understanding Pandoc's Markdown](https://bit.ly/arm-xie#16) <br> :arrow_right: [Download `02-markdown-data.md`](../../../yihui/02-markdown-data.md)   |
 |               | 10:00-10:30 | [Lesser-known features of knitr](https://bit.ly/arm-xie#39)   |
 |               | 10:30-11:00 |:coffee: BREAK   |
 | Session #2, AM  | 11:00-12:30 | [R Markdown output formats](https://bit.ly/arm-xie#63) |
 |               | 12:30-02:00  |:fork_and_knife: LUNCH |
-| Session #3, PM  | 02:00-03:30   | [Extending R Markdown (Hao Zhu)](extend) |
+| Session #3, PM  | 02:00-03:30   | [Extending R Markdown (Hao Zhu)](../../../slides/extend.html) |
 |              | 03:30-04:00   |:coffee: BREAK   |
 | Session #4, PM   | 04:00-05:00   | HTML widgets and Shiny |
 | Session #5, PM  | 05:00-05:30  | More advanced stuff, or Q & A if we are all tired |
