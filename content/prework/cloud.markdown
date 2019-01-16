@@ -1,7 +1,7 @@
 ---
 title: Cloud setup
 author: ''
-date: "2019-01-15"
+date: "2019-01-16"
 slug: cloud
 categories: []
 tags: []

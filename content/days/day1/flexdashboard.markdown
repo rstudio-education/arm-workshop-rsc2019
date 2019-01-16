@@ -1,7 +1,7 @@
 ---
 title: flexdashboard
 
-date: "2019-01-15"
+date: "2019-01-16"
 
 draft: false
 toc: true
@@ -54,15 +54,15 @@ menu:
 <tbody>
   <tr>
    <td style="text-align:left;"> <a href="../../../slides/flexdashboard.html#yourturn1" style="     ">➕ Your turn #1: Add layouts</a> </td>
-   <td style="text-align:left;"> 🕤 05:00 minutes </td>
+   <td style="text-align:left;"> 🕧 05:00 minutes </td>
   </tr>
   <tr>
    <td style="text-align:left;"> <a href="../../../slides/flexdashboard.html#yourturn2" style="     ">➕ Your turn #2: Add components</a> </td>
-   <td style="text-align:left;"> 🕤 05:00 minutes </td>
+   <td style="text-align:left;"> 🕧 05:00 minutes </td>
   </tr>
   <tr>
    <td style="text-align:left;"> <a href="../../../slides/flexdashboard.html#block3" style="     ">➕ Your turn #3: On your own: play with interactivity</a> </td>
-   <td style="text-align:left;"> 🕤 infinite minutes </td>
+   <td style="text-align:left;"> 🕧 infinite minutes </td>
   </tr>
 </tbody>
 </table>

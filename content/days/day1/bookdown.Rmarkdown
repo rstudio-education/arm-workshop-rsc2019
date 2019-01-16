@@ -49,6 +49,8 @@ slides %>%
 
 ## Activities {#activity}
 
+[Download slide .Rmd](../../../slides/bookdown.Rmd)
+
 
 ```{r}
 activities <- tribble(~link, ~description, ~time,

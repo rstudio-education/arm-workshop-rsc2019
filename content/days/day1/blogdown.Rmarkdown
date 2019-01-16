@@ -25,6 +25,8 @@ library(fontawesome)
 
 ## Slides {#slides}
 
+[Download slide .Rmd](../../../slides/blogdown.Rmd)
+
 ```{r}
 slides <- tribble(~link, ~description, 
                       "../../../slides/blogdown.html#1", "Full slide deck",

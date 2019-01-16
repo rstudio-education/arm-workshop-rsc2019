@@ -1,7 +1,7 @@
 ---
 title: bookdown
 
-date: "2019-01-15"
+date: "2019-01-16"
 
 draft: false
 toc: true
@@ -44,6 +44,8 @@ menu:
 
 ## Activities {#activity}
 
+[Download slide .Rmd](../../../slides/bookdown.Rmd)
+
 
 <table class="table table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -54,24 +56,24 @@ menu:
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn1" style="     ">📩 Your turn #1: Edit your index.Rmd YAML</a> </td>
-   <td style="text-align:left;"> 🕙 03:00 minutes </td>
+   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn1" style="     ">📤 Your turn #1: Edit your index.Rmd YAML</a> </td>
+   <td style="text-align:left;"> 🕠 03:00 minutes </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn2" style="     ">📩 Your turn #2: Add new YAML metadata tags to your index.Rmd</a> </td>
-   <td style="text-align:left;"> 🕙 03:00 minutes </td>
+   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn2" style="     ">📤 Your turn #2: Add new YAML metadata tags to your index.Rmd</a> </td>
+   <td style="text-align:left;"> 🕠 03:00 minutes </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn3" style="     ">📩 Your turn #3: Add/edit chapters in your book</a> </td>
-   <td style="text-align:left;"> 🕙 10:00 minutes </td>
+   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn3" style="     ">📤 Your turn #3: Add/edit chapters in your book</a> </td>
+   <td style="text-align:left;"> 🕠 10:00 minutes </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn4" style="     ">📩 Your turn #4: Change how your sidebar TOC looks &amp; works</a> </td>
-   <td style="text-align:left;"> 🕙 05:00 minutes </td>
+   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn4" style="     ">📤 Your turn #4: Change how your sidebar TOC looks &amp; works</a> </td>
+   <td style="text-align:left;"> 🕠 05:00 minutes </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn5" style="     ">📩 Your turn #5: Tune the book output &amp; publish</a> </td>
-   <td style="text-align:left;"> 🕙 15:00 minutes </td>
+   <td style="text-align:left;"> <a href="../../../slides/bookdown.html#yourturn5" style="     ">📤 Your turn #5: Tune the book output &amp; publish</a> </td>
+   <td style="text-align:left;"> 🕠 15:00 minutes </td>
   </tr>
 </tbody>
 </table>

@@ -1,7 +1,7 @@
 ---
 title: Install R packages
 author: ''
-date: "2019-01-15"
+date: "2019-01-16"
 slug: packages
 categories: []
 tags: []
@@ -381,6 +381,7 @@ is_installed("magick")
 
 Install the [**memor** package](https://github.com/hebrewseniorlife/memor) from GitHub as follows:
 
+
 ```r
 remotes::install_packages("hebrewseniorlife/memor", dependencies = TRUE)
 ```
@@ -499,12 +500,10 @@ is_installed(c(arm_from_cran, 'xaringan', 'blogdown', 'armcompanion', 'kableExtr
 ```
 # flexdashboard        learnr      bookdown       officer       rticles 
 #          TRUE          TRUE          TRUE          TRUE          TRUE 
-#         memor       webshot     tidyverse       remotes     babynames 
+#       webshot     tidyverse       remotes     babynames        magick 
 #          TRUE          TRUE          TRUE          TRUE          TRUE 
-#        magick      xaringan      blogdown  armcompanion    kableExtra 
-#          TRUE          TRUE          TRUE          TRUE          TRUE 
-#       bakeoff 
-#          TRUE
+#      xaringan      blogdown  armcompanion    kableExtra       bakeoff 
+#          TRUE          TRUE          TRUE          TRUE          TRUE
 ```
 
 
