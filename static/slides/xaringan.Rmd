@@ -1570,7 +1570,7 @@ You may use:
 .pull-right[
 
 ````
-```{r}`r ''`
+```{r out.width = '50%'}`r ''`
 # url
 knitr::include_graphics("http://bit.ly/arm-greens") 
 # local
@@ -1578,7 +1578,9 @@ knitr::include_graphics("img/arm-greens.jpg")
 ```
 ````
 
-[?include_graphics](https://www.rdocumentation.org/packages/knitr/versions/1.20/topics/include_graphics) to control size
+To control size:
++ use [`knitr::include_graphics`](https://www.rdocumentation.org/packages/knitr/versions/1.20/topics/include_graphics)
++ combine with [knitr code chunk options](https://yihui.name/knitr/options/#plots) like `out.width`
 ]
 
 
