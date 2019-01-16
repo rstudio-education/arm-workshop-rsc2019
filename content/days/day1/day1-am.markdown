@@ -75,13 +75,13 @@ Once you've set up the initial connection, you'll be asked to verify your accoun
 
 <img src="/img/setup-screencaps/rsc_verify.png" width="75%" />
 
-### Sharing Your Work
+### Sharing Your Work {#share}
 
 Throughout the workshop, we may want to share our work on [Gitter](https://gitter.im/arm-austin/Lobby) *(make sure to sign in or create an account if you haven't - an invitation should have been emailed to you in early January).* Default permissions on RStudio Connect are set so that only you can view your files. To change this, you can change the settings on individual projects once you publish them, using the dropdown menu under "Who can view this document."
 
 <img src="/img/setup-screencaps/rsc_share_anyone.png" width="75%" />
 
-### Exporting Your Work
+### Exporting Your Work {#export}
 
 Feel free to take notes within the files set up for you on RStudio Server! You can export those updated files once the workshop is over. Make sure the files you want to export are checked, and then click `More -> Export`:
 
