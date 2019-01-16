@@ -37,4 +37,4 @@ Here is a tentative timetable for Day 2:
 | Session #5, PM  | 05:00-05:30  | More advanced stuff, or Q & A if we are all tired |
 |               |05:30-07:30 | :tropical_drink: `rstudio::conf` reception |
 
-Slides are available at https://bit.ly/arm-xie.
+Yihui's slides are available at https://bit.ly/arm-xie.
