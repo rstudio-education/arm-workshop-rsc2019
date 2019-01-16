@@ -32,7 +32,7 @@ background-size: cover
 
 ### .fancy[Making Books in R Markdown]
 
-.large[Alison Hill | rstudio::conf | 2019-01-15]
+.large[Alison Hill | rstudio::conf | 2019-01-16]
 
 &lt;!-- this ends up being the title slide since seal = FALSE--&gt;
 
@@ -494,7 +494,7 @@ name: edit-yaml
 --- 
 title: "A Minimal Book Example"
 author: "Yihui Xie"
-date: "2019-01-15"
+date: "2019-01-16"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -518,7 +518,7 @@ The `site` is **required**
 --- 
 title: "A Minimal Book Example" 
 author: "Yihui Xie" 
-date: "2019-01-15" 
+date: "2019-01-16" 
 site: bookdown::bookdown_site 
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -872,8 +872,7 @@ Here is a review of existing methods.
 
 ???
 
-You can un-number a chapter by following the header text with curly brackets, with a dash inside, like I did for "Prerequisites" here.
-
+You can un-number a chapter by following the header text with curly brackets, with .unnumbered, like I did for "Prerequisites" here.
 
 
 ---
@@ -886,7 +885,7 @@ name: headers-cross
 `index.Rmd`
 
 ```r
-# Prerequisites {-}
+# Prerequisites {-#pre} 
 
 This is a _sample_ book written in **Markdown**. 
 ```

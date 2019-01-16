@@ -886,8 +886,7 @@ Here is a review of existing methods.
 
 ???
 
-You can un-number a chapter by following the header text with curly brackets, with a dash inside, like I did for "Prerequisites" here.
-
+You can un-number a chapter by following the header text with curly brackets, with .unnumbered, like I did for "Prerequisites" here.
 
 
 ---
@@ -899,7 +898,7 @@ name: headers-cross
 .pull-left[
 `index.Rmd`
 ```{r eval = FALSE}
-# Prerequisites {-}
+# Prerequisites {-#pre} 
 
 This is a _sample_ book written in **Markdown**. 
 ```
