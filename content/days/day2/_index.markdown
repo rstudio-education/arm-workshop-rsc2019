@@ -31,10 +31,11 @@ Here is a tentative timetable for Day 2:
 |               | 10:30-11:00 |:coffee: BREAK   |
 | Session #2, AM  | 11:00-12:30 | [R Markdown output formats](https://bit.ly/arm-xie#63) |
 |               | 12:30-02:00  |:fork_and_knife: LUNCH |
+|               | 01:30-02:00  |:rocket: Publishing Clinic |
 | Session #3, PM  | 02:00-03:30   | [Extending R Markdown (Hao Zhu)](../../../slides/extend.html) & [Exercises](https://github.com/haozhu233/rstudioconf19_arm_workshop_extending_rmd/raw/master/extRmd_exercises.zip) |
 |              | 03:30-04:00   |:coffee: BREAK   |
-| Session #4, PM   | 04:00-05:00   | HTML widgets and Shiny |
-| Session #5, PM  | 05:00-05:30  | More advanced stuff, or Q & A if we are all tired |
+| Session #4, PM   | 04:00-05:00   | [HTML widgets and Shiny](https://bit.ly/arm-xie#82) |
+| Session #5, PM  | 05:00-05:30  | [More advanced stuff](https://bit.ly/arm-xie#82), or Q & A if we are all tired |
 |               |05:30-07:30 | :tropical_drink: `rstudio::conf` reception |
 
 Yihui's slides are available at https://bit.ly/arm-xie.
