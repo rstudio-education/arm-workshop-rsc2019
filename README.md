@@ -1,49 +1,9 @@
-[![Join the chat at https://gitter.im/arm-austin/Lobby](https://badges.gitter.im/arm-austin/Lobby.svg)](https://gitter.im/arm-austin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/arm-austin/Lobby](https://badges.gitter.im/arm-austin/Lobby.svg)](https://gitter.im/arm-austin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Netlify Status](https://api.netlify.com/api/v1/badges/8d7e6ffb-62c0-47ff-ba7a-de9450f8f2ea/deploy-status)](https://app.netlify.com/sites/arm-austin/deploys)
 
-# Project Kickstart-R
+This is the website for a workshop by Alison Hill and Yihui Xie from RStudio. It was last updated for rstudio::conf on 2019-01-16.
 
-**Project Kickstart-R** provides a minimal template to create a **Landing Page** and **Knowledge Sharing Platform** with *Academic* and **(R) Markdown**.
+The workshop website is: https://arm.rbind.io/
 
-**Academic** is a framework to help you create a beautiful website quickly.
+All slides are made with R Markdown using the xaringan package. You can view their source files in:
 
-[Check out the demo](https://sourcethemes.com/academic/) of what you'll get in less than 5 minutes or [view the documentation](https://sourcethemes.com/academic/docs/).
-
-
-## Install in 5 Steps
-
-Open [RStudio](https://www.rstudio.com/products/rstudio/) and create a new project.
-
-Run the following commands in RStudio to bootstrap your new project website with **Project Kickstart-R**:
-
-1. Install the [Blogdown](https://bookdown.org/yihui/blogdown/) dependency:
-
-    `install.packages("blogdown")`
-
-2. Install the [Hugo](https://gohugo.io/) dependency:
-
-    `install.packages("hugo")`
-
-3. Install the [Academic](https://sourcethemes.com/academic/) dependency:
-
-    `blogdown::new_site(theme = "gcushen/hugo-academic", sample = FALSE, theme_example = FALSE)`
-
-4. Download **Project Kickstart-R**:
-
-    `download.file( url = "https://github.com/sourcethemes/project-kickstart-r/archive/master.zip", destfile="project-kickstart-r.zip")`
-
-5. Install **Project Kickstart-R** into your new project folder:
-
-    `unzip( zipfile = "project-kickstart-r.zip", junkpaths = TRUE )`
-
-A browser tab should open, displaying your new website. Otherwise, check your RStudio console messages.
-
-Finally, learn how to [customize](https://sourcethemes.com/academic/docs/get-started/) and [deploy](https://sourcethemes.com/academic/docs/deployment/) your site.
-
-
-## License
-
-Copyright 2018-present [George Cushen](https://georgecushen.com).
-
-Released under the [MIT](https://github.com/sourcethemes/project-kickstart-r/blob/master/LICENSE.md) license.
-
-[![Analytics](https://ga-beacon.appspot.com/UA-78646709-2/project-kickstart-r/readme?pixel)](https://github.com/igrigorik/ga-beacon)
+[`static/slides`](https://github.com/rstudio-education/arm-workshop-rsc2019/tree/master/static/slides)
